@@ -1,325 +1,52 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
 import Image from "next/image";
-import { Onest, Playwrite_US_Modern } from "next/font/google";
-import { AnimatePresence, motion, type Variants } from "framer-motion";
 import {
   ArrowRight,
   ChefHat,
   Clock,
   ForkKnife,
-  List,
   SealCheck,
-  ShoppingBag,
   Sparkle,
   Star,
-  X,
 } from "@phosphor-icons/react";
-
-const ease = [0.22, 1, 0.36, 1] as const;
-const viewport = { once: true, amount: 0.18 } as const;
-
-const sectionReveal: Variants = {
-  hidden: { opacity: 0, y: 54 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.82, ease },
-  },
-};
-
-const staggerReveal: Variants = {
-  hidden: {},
-  show: {
-    transition: {
-      delayChildren: 0.08,
-      staggerChildren: 0.09,
-    },
-  },
-};
-
-const itemReveal: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.62, ease },
-  },
-};
-
-const imageReveal: Variants = {
-  hidden: { opacity: 0, scale: 1.04, y: 28 },
-  show: {
-    opacity: 1,
-    scale: 1,
-    y: 0,
-    transition: { duration: 0.9, ease },
-  },
-};
-
-const logoFont = Playwrite_US_Modern({
-  display: "swap",
-  weight: "400",
-});
-
-const maguiFont = Onest({
-  display: "swap",
-  subsets: ["latin"],
-  weight: ["600", "700", "900"],
-});
-
-const images = {
-  hero: "/images/lacreme/hero.png",
-  display:
-    "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&fm=jpg&q=84&w=1600",
-  bolo_morango: "/images/lacreme/bolo_morango.mp4",
-  table:
-    "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&fm=jpg&q=84&w=1800",
-  donuts:
-    "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&fm=jpg&q=84&w=1400",
-  macarons:
-    "https://images.unsplash.com/photo-1558326567-98ae2405596b?auto=format&fit=crop&fm=jpg&q=84&w=1400",
-  redvelvet: "/images/lacreme/naked_cake_morango.png",
-  berries:
-    "https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?auto=format&fit=crop&fm=jpg&q=84&w=1400",
-  torta_frutas_vermelhas: "/images/lacreme/torta_frutas_vermelhas.png",
-  torta_ferrero: "/images/lacreme/torta_ferrero.png",
-  caixa_macarons: "/images/lacreme/caixa_macaron.png",
-  torta_limao: "/images/lacreme/torta_limao.png",
-  flor_de_baunilha: "/images/lacreme/flor_de_baunilha.png",
-  brownie_nozes: "/images/lacreme/brownie_nozes.png",
-  macaron_pistache: "/images/lacreme/macaron_pistache.png",
-  mil_folhas_de_baunilha: "/images/lacreme/mil_folhas_de_baunilha.png",
-  cookies: "/images/lacreme/cookies.png",
-  processo_la_creme: "/images/lacreme/processo_la_creme.png",
-  cupcake_morango: "/images/lacreme/cupcake_morango.png",
-  copo_da_felicidade: "/images/lacreme/copo_da_felicidade.png",
-  floresta_negra: "/images/lacreme/floresta_negra.png",
-  embalagem_bolo: "/images/lacreme/embalagem_bolo.png",
-  embalagem_doce: "/images/lacreme/embalagem_doce.png",
-  embalagem_docinhos: "/images/lacreme/embalagem_docinhos.png",
-  embalagem_sobremesa: "/images/lacreme/embalagem_sobremesa.png",
-};
-
-const video = "/images/lacreme/bolo_morango.mp4";
-const whatsapp =
-  "https://wa.me/5511999999999?text=Oi%2C%20La%20Cr%C3%A8me%21%20Quero%20fazer%20uma%20encomenda.";
-
-const nav = [
-  { label: "Vitrine", href: "#vitrine" },
-  { label: "Atelier", href: "#atelier" },
-  { label: "Encomendas", href: "#encomendas" },
-  { label: "Menu", href: "#menu" },
-  { label: "Contato", href: "#contato" },
-];
-
-const signatures = [
-  {
-    name: "Torta de Frutas Vermelhas",
-    detail: "Massa amanteigada, creme leve e frutas vermelhas",
-    price: "R$ 148",
-    image: images.torta_frutas_vermelhas,
-  },
-  {
-    name: "Caixa de Macarons",
-    detail: "12 unidades para cafe, presente ou reuniao",
-    price: "R$ 86",
-    image: images.caixa_macarons,
-  },
-  {
-    name: "Torta de Ferrero Rocher",
-    detail: "Mousse 64%, crocante de avela e glaçagem espelhada",
-    price: "R$ 172",
-    image: images.torta_ferrero,
-  },
-];
-
-const steps = [
-  [
-    "01",
-    "Alinhamento e Formato",
-    "Definição da estrutura ideal para a sua proposta, seja uma mesa de doces contemporânea, caixas corporativas ou bolos conceituais.",
-  ],
-  [
-    "02",
-    "Desenho de Sabores",
-    "Planejamento meticuloso do perfil sensorial: equilibramos as notas de acidez, texturas e eventuais restrições alimentares.",
-  ],
-  [
-    "03",
-    "Produção sob Demanda",
-    "Execução artesanal em pequenas jornadas exclusivas, garantindo o ponto exato de frescor, montagem e acabamento.",
-  ],
-  [
-    "04",
-    "Logística e Entrega",
-    "Envio seguro com transporte climatizado e agendamento rigoroso, acompanhado de orientações de serviço e conservação.",
-  ],
-];
-
-const menu = [
-  "Bolos conceituais com acabamento botânico",
-  "Tortas de frutas sazonais e creme leve",
-  "Cookies artesanais de chocolate belga e flor de sal",
-  "Macarons autorais em caixas para presente",
-  "Mesa de doces estruturada para celebrações íntimas",
-  "Café, fatia do dia e sobremesas individuais",
-];
-
-const sweets = [
-  {
-    title: "Brownie Belga",
-    note: "Base densa de cacau intenso, finalizada com a crocância de nozes selecionadas.",
-    image: images.brownie_nozes,
-  },
-  {
-    title: "Macaron de Pistache",
-    note: "Casquinha de amêndoas perfeitamente crocante com ganache aveludada de pistache puro.",
-    image: images.macaron_pistache,
-  },
-  {
-    title: "Mil Folhas de Baunilha",
-    note: "Camadas ultra crocantes de massa folhada artesanal intercaladas com creme leve de confeiteiro.",
-    image: images.mil_folhas_de_baunilha,
-  },
-  {
-    title: "Flor de Baunilha",
-    note: "Açúcar de confeiteiro polvilhado sobre pétalas de massa folhada e creme de baunilha real.",
-    image: images.flor_de_baunilha,
-  },
-];
-
-const occasions = [
-  "Celebrações Íntimas",
-  "Relações Corporativas",
-  "Casamentos Civis & Mini Weddings",
-  "Chás da Tarde Editoriais",
-  "Sobremesas para Jantares",
-  "Lançamentos & Eventos de Marca",
-];
-
-const heroBadges = [
-  "Fruta Fresca",
-  "Baunilha Real",
-  "Cacau 64%",
-  "Massa Amanteigada",
-  "Doce Artesanal",
-];
-
-const dailyDrops = [
-  "Bolo de Amora",
-  "Cookie de Flor de Sal",
-  "Torta de Limão",
-  "Macaron de Pistache",
-  "Entremet de Cacau",
-  "Bolo de Cenoura com Chocolate",
-  "Brownie Tradicional",
-  "Cheesecake de Frutas Vermelhas",
-];
-
-const tastingNotes = [
-  [
-    "Textura & Base",
-    "Massa amanteigada e delicada, projetada para ceder com precisão antes do creme.",
-  ],
-  [
-    "Contraste Cítrico",
-    "Notas vibrantes de frutas frescas, calculadas para despertar e limpar o paladar.",
-  ],
-  [
-    "Densidade Leve",
-    "Recheio aveludado e com doçura equilibrada, priorizando a leveza em cada camada.",
-  ],
-  [
-    "Final Aromático",
-    "Sinfonia discreta de baunilha real, raspas cítricas e o calor das castanhas tostadas.",
-  ],
-];
-
-const testimonials = [
-  [
-    "A mesa parecia pequena ate todo mundo repetir.",
-    "casamento civil, 38 convidados",
-  ],
-  [
-    "O bolo chegou lindo e continuou perfeito depois do jantar.",
-    "aniversário em casa",
-  ],
-  ["Virou presente fixo para clientes importantes.", "caixa corporativa"],
-];
-
-function CTA({
-  children,
-  href = "#contato",
-  light = false,
-}: {
-  children: string;
-  href?: string;
-  light?: boolean;
-}) {
-  return (
-    <a
-      href={href}
-      className={
-        light
-          ? "group inline-flex items-center justify-center gap-3 bg-white px-7 py-5 text-sm font-semibold text-[#2b1714] transition duration-300 hover:-translate-y-1 hover:bg-[#ffd8df]"
-          : "group inline-flex items-center justify-center gap-3 bg-[#2b1714] px-7 py-5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#9d2d40]"
-      }
-    >
-      {children}
-      <ArrowRight
-        size={17}
-        className="transition duration-300 group-hover:translate-x-1"
-      />
-    </a>
-  );
-}
-
-function WhatsAppCTA({ light = false }: { light?: boolean }) {
-  return (
-    <a
-      href={whatsapp}
-      className={
-        light
-          ? "inline-flex items-center justify-center gap-3 rounded-full bg-[#25d366] px-7 py-5 text-sm font-semibold text-[#12351f] shadow-[0_18px_48px_rgba(37,211,102,0.22)] transition duration-300 hover:-translate-y-1 hover:bg-white"
-          : "inline-flex items-center justify-center gap-3 rounded-full bg-[#25d366] px-7 py-5 text-sm font-semibold text-[#12351f] transition duration-300 hover:-translate-y-1 hover:bg-[#b8f7cb]"
-      }
-    >
-      Pedir no WhatsApp
-      <ArrowRight size={17} />
-    </a>
-  );
-}
-
-function AnimatedSection({
-  children,
-  className,
-  id,
-}: {
-  children: ReactNode;
-  className: string;
-  id?: string;
-}) {
-  return (
-    <motion.section
-      id={id}
-      className={className}
-      initial="hidden"
-      whileInView="show"
-      viewport={viewport}
-      variants={sectionReveal}
-    >
-      {children}
-    </motion.section>
-  );
-}
+import { CTA, WhatsAppCTA } from "@/components/la-creme/actions";
+import {
+  dailyDrops,
+  heroBadges,
+  images,
+  menu,
+  occasions,
+  signatures,
+  steps,
+  sweets,
+  tastingNotes,
+  testimonials,
+  video,
+  whatsapp,
+} from "@/components/la-creme/data";
+import { LaCremeFooter } from "@/components/la-creme/footer";
+import { LaCremeHeader } from "@/components/la-creme/header";
+import {
+  AnimatedSection,
+  ease,
+  imageReveal,
+  itemReveal,
+  LaCremeMotionProvider,
+  motion,
+  staggerReveal,
+} from "@/components/la-creme/motion";
 
 export default function Landing16ConfeitariaLaCreme() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   return (
-    <main className="overflow-hidden bg-[#fff8ef] text-[#2b1714]">
+    <LaCremeMotionProvider>
+      <main className="overflow-hidden bg-[#fff8ef] text-[#2b1714]">
+        <a
+          href="#inicio"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-[#2b1714] focus:shadow-[0_18px_48px_rgba(43,23,20,0.18)]"
+        >
+          Pular para conteúdo
+        </a>
       <style>{`
         @keyframes pastry-marquee {
           from { transform: translateX(0); }
@@ -377,161 +104,17 @@ export default function Landing16ConfeitariaLaCreme() {
           transform: translateX(-120%);
           animation: pastry-shimmer 4.8s ease-in-out infinite;
         }
+
+        @media (prefers-reduced-motion: reduce) {
+          .sweet-carousel,
+          .pastry-drift,
+          .pastry-shimmer::after {
+            animation: none !important;
+          }
+        }
       `}</style>
 
-      <header className="relative z-30 border-b border-[#2b1714]/10 bg-[#fff8ef]">
-        <div className="mx-auto flex max-w-[1540px] items-center justify-between gap-5 px-5 py-5 md:px-8 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:py-6 lg:px-10">
-          <div className="hidden max-w-xs text-[11px] font-semibold uppercase tracking-[0.24em] text-[#9d2d40] lg:block">
-            atelier aberto de terça a sábado / retiradas com hora marcada
-          </div>
-
-          <a
-            href="#inicio"
-            onClick={() => setIsMenuOpen(false)}
-            className="justify-self-start lg:justify-self-center"
-          >
-            <span
-              className={`${logoFont.className} text-4xl leading-none tracking-[-0.08em] text-[#2b1714] sm:text-5xl`}
-            >
-              La Crème
-            </span>
-          </a>
-
-          <div className="hidden items-center gap-3 lg:flex lg:justify-self-end">
-            <a
-              href="https://www.instagram.com/"
-              className="rounded-full border border-[#2b1714]/14 px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2b1714]/62 transition duration-300 hover:border-[#9d2d40] hover:text-[#9d2d40]"
-            >
-              Instagram
-            </a>
-            <a
-              href={whatsapp}
-              className="inline-flex items-center gap-3 rounded-full bg-[#2b1714] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_38px_rgba(43,23,20,0.18)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#9d2d40]"
-            >
-              Encomendar
-              <ShoppingBag size={16} />
-            </a>
-          </div>
-
-          <button
-            type="button"
-            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
-            aria-expanded={isMenuOpen}
-            onClick={() => setIsMenuOpen((current) => !current)}
-            className="group inline-flex size-12 items-center justify-center rounded-full border border-[#2b1714]/12 bg-white text-[#2b1714] shadow-[0_14px_34px_rgba(43,23,20,0.08)] transition duration-300 hover:border-[#9d2d40] hover:text-[#9d2d40] lg:hidden"
-          >
-            <motion.span
-              key={isMenuOpen ? "close" : "open"}
-              initial={{ opacity: 0, rotate: -18, scale: 0.82 }}
-              animate={{ opacity: 1, rotate: 0, scale: 1 }}
-              transition={{ duration: 0.22, ease }}
-            >
-              {isMenuOpen ? <X size={22} /> : <List size={24} />}
-            </motion.span>
-          </button>
-        </div>
-
-        <div className="hidden border-t border-[#2b1714]/10 bg-white/58 lg:block">
-          <div className="mx-auto flex max-w-[1540px] items-center justify-between gap-6 overflow-x-auto px-5 py-3 md:px-8 lg:px-10">
-            <nav className="flex min-w-max items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#2b1714]/58">
-              {nav.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="transition duration-300 hover:text-[#9d2d40]"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-            <p className="hidden min-w-max items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9d2d40] md:flex">
-              <span className="size-1.5 rounded-full bg-[#25d366]" />
-              agenda da semana aberta
-            </p>
-          </div>
-        </div>
-
-        <AnimatePresence>
-          {isMenuOpen ? (
-            <motion.div
-              className="border-t border-[#2b1714]/10 px-5 pb-5 md:px-8 lg:hidden"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.34, ease }}
-            >
-              <motion.div
-                className="mx-auto mt-2 max-w-[1540px] overflow-hidden rounded-[30px] border border-[#2b1714]/10 bg-white shadow-[0_24px_70px_rgba(43,23,20,0.12)]"
-                initial={{ y: -18, scale: 0.98 }}
-                animate={{ y: 0, scale: 1 }}
-                exit={{ y: -12, scale: 0.98 }}
-                transition={{ duration: 0.34, ease }}
-              >
-                <div className="relative h-40 overflow-hidden">
-                  <Image
-                    src={images.torta_frutas_vermelhas}
-                    alt="Torta artesanal La Crème"
-                    fill
-                    sizes="100vw"
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#2b1714]/82 via-[#2b1714]/38 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
-                    <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#ffd8df]">
-                      menu la crème
-                    </p>
-                    <p className="mt-3 max-w-xs text-2xl font-semibold leading-tight tracking-[-0.04em]">
-                      Encomendas, vitrine e doces da semana.
-                    </p>
-                  </div>
-                </div>
-
-                <nav className="grid p-3">
-                  {nav.map((item, index) => (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      onClick={() => setIsMenuOpen(false)}
-                      className="group flex items-center justify-between rounded-[22px] px-4 py-4 text-[#2b1714] transition duration-300 hover:bg-[#fff1f3]"
-                    >
-                      <span className="flex items-center gap-4">
-                        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#9d2d40]/58">
-                          0{index + 1}
-                        </span>
-                        <span className="text-lg font-semibold tracking-[-0.03em]">
-                          {item.label}
-                        </span>
-                      </span>
-                      <ArrowRight
-                        size={16}
-                        className="text-[#9d2d40] transition duration-300 group-hover:translate-x-1"
-                      />
-                    </a>
-                  ))}
-                </nav>
-
-                <div className="grid gap-3 border-t border-[#2b1714]/10 bg-[#fff8ef] p-4">
-                  <a
-                    href={whatsapp}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="inline-flex items-center justify-center gap-3 rounded-full bg-[#2b1714] px-6 py-4 text-sm font-semibold text-white transition duration-300 hover:bg-[#9d2d40]"
-                  >
-                    Pedir no WhatsApp
-                    <ShoppingBag size={16} />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/"
-                    onClick={() => setIsMenuOpen(false)}
-                    className="inline-flex items-center justify-center rounded-full border border-[#2b1714]/12 px-6 py-4 text-xs font-bold uppercase tracking-[0.18em] text-[#2b1714]/62 transition duration-300 hover:border-[#9d2d40] hover:text-[#9d2d40]"
-                  >
-                    Instagram
-                  </a>
-                </div>
-              </motion.div>
-            </motion.div>
-          ) : null}
-        </AnimatePresence>
-      </header>
+      <LaCremeHeader />
 
       <motion.section
         id="inicio"
@@ -545,6 +128,7 @@ export default function Landing16ConfeitariaLaCreme() {
           alt="Bolo de chocolate com cobertura cremosa e morangos"
           fill
           priority
+          quality={86}
           sizes="100vw"
           className="object-cover"
         />
@@ -595,6 +179,7 @@ export default function Landing16ConfeitariaLaCreme() {
                   src={images.redvelvet}
                   alt="Naked cake de red velvet com morangos"
                   fill
+                  quality={74}
                   sizes="360px"
                   className="object-cover"
                 />
@@ -762,6 +347,7 @@ export default function Landing16ConfeitariaLaCreme() {
                     src={item.image}
                     alt={item.name}
                     fill
+                    quality={74}
                     sizes="(min-width: 768px) 31vw, 100vw"
                     className="object-cover transition duration-700 group-hover:scale-105"
                   />
@@ -843,6 +429,7 @@ export default function Landing16ConfeitariaLaCreme() {
                       src={item.image}
                       alt={item.title}
                       fill
+                      quality={72}
                       sizes="390px"
                       className="object-cover transition duration-700 hover:scale-[1.04]"
                     />
@@ -879,6 +466,7 @@ export default function Landing16ConfeitariaLaCreme() {
               src={images.processo_la_creme}
               alt="Bolo de chocolate sendo preparado com frutas"
               fill
+              quality={74}
               sizes="(min-width: 1024px) 58vw, 100vw"
               className="object-cover"
             />
@@ -940,19 +528,18 @@ export default function Landing16ConfeitariaLaCreme() {
 
         {/* Container do Vídeo: Ocupa metade da tela no desktop e vira background responsivo no mobile */}
         <motion.div
-          className="absolute inset-y-0 right-0 w-full opacity-40 lg:w-1/2 lg:opacity-100"
+          className="absolute inset-y-0 right-0 w-full opacity-40 md:[clip-path:polygon(12%_0%,100%_0%,100%_100%,0%_100%)] lg:w-1/2 lg:opacity-100"
           variants={imageReveal}
-          style={{
-            clipPath: "polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          }}
         >
           <video
+            aria-hidden="true"
             className="h-full w-full object-cover"
             autoPlay
             muted
             loop
+            preload="none"
             playsInline
-            poster={images.bolo_morango}
+            poster={images.processo_la_creme}
           >
             <source src={video} type="video/mp4" />
           </video>
@@ -1081,7 +668,7 @@ export default function Landing16ConfeitariaLaCreme() {
             src={images.cookies}
             alt="Cookies de chocolate em close"
             fill
-            priority
+            quality={74}
             sizes="100vw"
             className="object-cover transition duration-1000 scale-100 hover:scale-[1.02]"
           />
@@ -1167,6 +754,7 @@ export default function Landing16ConfeitariaLaCreme() {
                   src={images.copo_da_felicidade}
                   alt="Copos da felicidade"
                   fill
+                  quality={74}
                   sizes="(min-width: 1024px) 62vw, 100vw"
                   className="object-cover transition duration-1000 group-hover:scale-[1.02]"
                 />
@@ -1178,6 +766,7 @@ export default function Landing16ConfeitariaLaCreme() {
                   src={images.cupcake_morango}
                   alt="Cupcakes e doces decorados"
                   fill
+                  quality={72}
                   sizes="25vw"
                   className="object-cover transition duration-700 group-hover:scale-[1.05]"
                 />
@@ -1250,6 +839,7 @@ export default function Landing16ConfeitariaLaCreme() {
             src={images.floresta_negra}
             alt="Bolo floresta negra"
             fill
+            quality={74}
             sizes="100vw"
             className="object-cover"
           />
@@ -1362,221 +952,9 @@ export default function Landing16ConfeitariaLaCreme() {
         </motion.div>
       </AnimatedSection>
 
-      <motion.footer
-        className="relative w-full overflow-hidden bg-[#fffdfa] text-[#2b1714]"
-        initial="hidden"
-        whileInView="show"
-        viewport={viewport}
-        variants={sectionReveal}
-      >
-        {/* Linha técnica divisória de topo */}
-        <div className="absolute inset-x-0 top-0 h-px bg-[#2b1714]/10" />
+      <LaCremeFooter />
 
-        {/* --- BLOCO SUPERIOR: Fechamento Conceitual --- */}
-        <motion.div
-          className="mx-auto max-w-[1540px] px-5 py-24 md:px-8 lg:px-10 lg:py-32"
-          variants={staggerReveal}
-        >
-          {/* --- Bloco de Texto Superior: Alinhamento Editorial Limpo --- */}
-          <motion.div
-            className="flex flex-col lg:flex-row lg:items-end lg:justify-between border-b border-[#2b1714]/10 pb-12"
-            variants={itemReveal}
-          >
-            <div className="max-w-3xl">
-              <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#9d2d40]">
-                03 // encomendas da semana
-              </p>
-              <h2 className="mt-6 text-4xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-7xl text-[#2b1714]">
-                A sobremesa como <br className="hidden sm:block" /> objeto de
-                design.
-              </h2>
-            </div>
-
-            <div className="mt-6 lg:mt-0 max-w-md">
-              <p className="text-base leading-relaxed text-[#2b1714]/70">
-                Informe a data, a estimativa de convidados e as diretrizes do
-                evento. Desenvolvemos a escala de proporções, perfis de sabor e
-                acabamento estrutural com montagem cronometrada.
-              </p>
-
-              {/* Ações Diretas */}
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row w-full sm:w-auto">
-                <WhatsAppCTA />
-                <a
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center border border-[#2b1714]/20 px-8 py-4 text-xs font-bold uppercase tracking-widest text-[#2b1714] transition-colors duration-300 hover:border-[#2b1714] hover:bg-[#2b1714]/5 rounded-none"
-                >
-                  Ver Instagram
-                </a>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* --- Galeria Inferior: Grid Monolítico de 4 Colunas --- */}
-          <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4 lg:gap-6">
-            {[
-              images.embalagem_bolo,
-              images.embalagem_doce,
-              images.embalagem_docinhos,
-              images.embalagem_sobremesa,
-            ].map((img, index) => (
-              <motion.div
-                key={index}
-                variants={imageReveal}
-                whileHover={{ y: -10, rotate: index % 2 === 0 ? -1 : 1 }}
-                className="relative w-full aspect-[3/4] bg-[#2b1714]/5 overflow-hidden transition-all duration-500 hover:opacity-90"
-              >
-                <Image
-                  src={img}
-                  alt="Apresentação de confeitaria autoral"
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 45vw"
-                  className="object-cover transition-transform duration-700 ease-out hover:scale-103"
-                  priority={index < 2}
-                />
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* --- BLOCO INFERIOR: Rodapé Institucional --- */}
-        <div className="border-t border-[#2b1714]/10 bg-[#2b1714]/5">
-          <motion.div
-            className="mx-auto grid max-w-[1540px] gap-12 px-5 py-16 md:px-8 lg:grid-cols-[0.40fr_0.22fr_0.19fr_0.19fr] lg:px-10 lg:py-20"
-            variants={staggerReveal}
-          >
-            {/* Branding & Descrição Realista */}
-            <motion.div
-              className="flex flex-col justify-between"
-              variants={itemReveal}
-            >
-              <div>
-                <span
-                  className={`${logoFont.className} text-4xl font-normal leading-none tracking-tight text-[#2b1714]`}
-                >
-                  La Crème
-                </span>
-                <p className="mt-4 max-w-xs text-xs leading-relaxed text-[#2b1714]/60">
-                  Ateliê de confeitaria artesanal especializado em bolos
-                  festivos, doces finos e sobremesas autorais para celebrações.
-                </p>
-              </div>
-              <p className="mt-8 text-[10px] font-mono text-[#2b1714]/40 hidden lg:block">
-                © {new Date().getFullYear()} La Crème. Todos os direitos
-                reservados.
-              </p>
-            </motion.div>
-
-            {/* Atendimento e Retiradas */}
-            <motion.div variants={itemReveal}>
-              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#9d2d40]">
-                Ateliê & Retiradas
-              </p>
-              <div className="mt-6 space-y-4 text-xs text-[#2b1714]/70 font-medium">
-                <div>
-                  <span className="block font-bold text-[#2b1714] text-[10px] uppercase font-mono tracking-wider">
-                    Endereço
-                  </span>
-                  <p className="mt-1">Rua das Flores, 128 — Ateliê Central</p>
-                </div>
-                <div>
-                  <span className="block font-bold text-[#2b1714] text-[10px] uppercase font-mono tracking-wider">
-                    Horário de Retirada
-                  </span>
-                  <p className="mt-1">Terça a Sábado, das 10h às 18h</p>
-                </div>
-                <div>
-                  <span className="block font-bold text-[#2b1714] text-[10px] uppercase font-mono tracking-wider">
-                    Encomendas
-                  </span>
-                  <p className="mt-1">
-                    Produção limitada mediante agendamento prévio
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Links de Navegação Institucional */}
-            <motion.div variants={itemReveal}>
-              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#9d2d40]">
-                Navegação
-              </p>
-              <div className="mt-6 flex flex-col gap-3 text-xs font-medium text-[#2b1714]/70">
-                {nav.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className="transition-colors duration-200 hover:text-[#9d2d40] w-fit"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Catálogo / Menu rápido */}
-            <motion.div variants={itemReveal}>
-              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#9d2d40]">
-                Nosso Menu
-              </p>
-              <div className="mt-6 flex flex-col gap-3 text-xs font-medium text-[#2b1714]/70">
-                <a
-                  href="#bolos"
-                  className="transition-colors duration-200 hover:text-[#9d2d40] w-fit"
-                >
-                  Bolos Festivos
-                </a>
-                <a
-                  href="#doces"
-                  className="transition-colors duration-200 hover:text-[#9d2d40] w-fit"
-                >
-                  Doces & Monoporções
-                </a>
-                <a
-                  href="#sazonais"
-                  className="transition-colors duration-200 hover:text-[#9d2d40] w-fit"
-                >
-                  Cardápio Sazonal
-                </a>
-                <a
-                  href="#Corporativo"
-                  className="transition-colors duration-200 hover:text-[#9d2d40] w-fit"
-                >
-                  Eventos & Corporativo
-                </a>
-              </div>
-            </motion.div>
-
-            {/* Copyright para telas menores */}
-            <p className="mt-4 text-[10px] font-mono text-[#2b1714]/40 lg:hidden border-t border-[#2b1714]/5 pt-6">
-              © {new Date().getFullYear()} La Crème.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="mx-auto flex max-w-[1540px] justify-end border-t border-[#2b1714]/10 px-5 py-5 md:px-8 lg:px-10"
-            variants={itemReveal}
-          >
-            <span
-              className={`${maguiFont.className} text-xs font-semibold tracking-[-0.02em] text-[#2b1714]`}
-            >
-              Oferecido por{" "}
-              <a
-                href="https://magui.studio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition duration-300 hover:opacity-70"
-              >
-                <strong className="font-black text-[#2b1714]">MAGUI</strong>
-                <span className="text-[#0094C8]">.</span>
-                <span className="font-semibold text-[#2b1714]">studio</span>
-              </a>
-            </span>
-          </motion.div>
-        </div>
-      </motion.footer>
-    </main>
+      </main>
+    </LaCremeMotionProvider>
   );
 }
