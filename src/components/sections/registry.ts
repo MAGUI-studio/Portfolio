@@ -9,6 +9,16 @@ import Landing07BancoPrivado from "@/components/sections/landing-07-banco-privad
 import Landing08ResidenciaAutoral from "@/components/sections/landing-08-residencia-autoral";
 import Landing09BagagemModular from "@/components/sections/landing-09-bagagem-modular";
 import Landing10ViagemPrivada from "@/components/sections/landing-10-viagem-privada";
+import Landing11EnergiaSolarIndustrial from "@/components/sections/landing-11-energia-solar-industrial";
+import Landing12EducacaoExecutiva from "@/components/sections/landing-12-educacao-executiva";
+import Landing13LogisticaFria from "@/components/sections/landing-13-logistica-fria";
+import Landing14AgritechPrecisao from "@/components/sections/landing-14-agritech-precisao";
+import Landing15Ciberseguranca from "@/components/sections/landing-15-ciberseguranca";
+import Landing16DiagnosticoImagem from "@/components/sections/landing-16-diagnostico-imagem";
+import Landing17ModaCircular from "@/components/sections/landing-17-moda-circular";
+import Landing18VinhoAltitude from "@/components/sections/landing-18-vinho-altitude";
+import Landing19LaboratorioFarmaceutico from "@/components/sections/landing-19-laboratorio-farmaceutico";
+import Landing20InfraestruturaPortuaria from "@/components/sections/landing-20-infraestrutura-portuaria";
 
 export type SectionEntry = {
   category: string;
@@ -31,6 +41,16 @@ export const sections: SectionEntry[] = [
   { index: "08", slug: "landing-08-residencia-autoral", title: "Atlas Living", description: "Incorporadora de alto padrao com produto, processo e lancamento.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing08ResidenciaAutoral },
   { index: "09", slug: "landing-09-bagagem-modular", title: "Norte Prive", description: "Agencia de viagens privadas com curadoria e operacao completa.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing09BagagemModular },
   { index: "10", slug: "landing-10-viagem-privada", title: "Vector Advisory", description: "Consultoria de tecnologia empresarial com processo e implementacao.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing10ViagemPrivada },
+  { index: "11", slug: "landing-11-energia-solar-industrial", title: "HelioGrid", description: "Energia solar industrial com engenharia, viabilidade e governanca.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing11EnergiaSolarIndustrial },
+  { index: "12", slug: "landing-12-educacao-executiva", title: "Prisma Fellows", description: "Educacao executiva para liderancas seniores e programas aplicados.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing12EducacaoExecutiva },
+  { index: "13", slug: "landing-13-logistica-fria", title: "Nivela Cold", description: "Logistica fria com rastreabilidade, SLA e operacao controlada.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing13LogisticaFria },
+  { index: "14", slug: "landing-14-agritech-precisao", title: "TerraMetria", description: "Agritech de precisao para fazendas orientadas por dados.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing14AgritechPrecisao },
+  { index: "15", slug: "landing-15-ciberseguranca", title: "CifraSec", description: "Ciberseguranca corporativa com governanca, resposta e monitoramento.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing15Ciberseguranca },
+  { index: "16", slug: "landing-16-diagnostico-imagem", title: "Lumen Diagnostica", description: "Diagnostico por imagem com experiencia clinica e laudos consistentes.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing16DiagnosticoImagem },
+  { index: "17", slug: "landing-17-moda-circular", title: "Reforma Atelier", description: "Moda circular premium para curadoria, reparo e redesign.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing17ModaCircular },
+  { index: "18", slug: "landing-18-vinho-altitude", title: "Cume Vinhos", description: "Vinicola boutique de altitude com portfolio, visitas e clube.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing18VinhoAltitude },
+  { index: "19", slug: "landing-19-laboratorio-farmaceutico", title: "Novera Labs", description: "Laboratorio farmaceutico com P&D, qualidade e transferencia.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing19LaboratorioFarmaceutico },
+  { index: "20", slug: "landing-20-infraestrutura-portuaria", title: "Doca Norte", description: "Infraestrutura portuaria com torre de controle e previsibilidade.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing20InfraestruturaPortuaria },
 ];
 
 export const sectionMap = Object.fromEntries(
@@ -38,5 +58,5 @@ export const sectionMap = Object.fromEntries(
 ) as Record<string, SectionEntry>;
 
 export const sectionCategories = [
-  { label: "Landing Pages", description: "Dez landings corporativas completas, cada uma com pelo menos 10 secoes e animacoes discretas.", count: 10 },
+  { label: "Landing Pages", description: "Vinte landings corporativas completas, cada uma com pelo menos 10 secoes e animacoes discretas.", count: 20 },
 ] as const;

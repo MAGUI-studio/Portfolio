@@ -69,7 +69,7 @@ export default async function Home(props: PageProps<"/">) {
               </div>
               <div className="w-full space-y-5">
                 <h1 className="font-sans text-4xl font-semibold tracking-[-0.07em] text-[var(--ink-strong)] md:text-6xl">
-                  Dez modelos completos, cada um de um segmento, com visual clean, moderno e premium.
+                  Vinte modelos completos, cada um de um segmento, com visual clean, moderno e premium.
                 </h1>
                 <p className="text-sm leading-7 text-[var(--muted-strong)] md:text-base">
                   Abra qualquer landing para navegar em tela cheia sem sair da pagina e comparar direcoes visuais bem diferentes.
