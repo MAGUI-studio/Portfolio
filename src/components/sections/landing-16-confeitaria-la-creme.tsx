@@ -1,30 +1,72 @@
 "use client";
 
+import { useState, type ReactNode } from "react";
 import Image from "next/image";
-import { Playwrite_US_Modern } from "next/font/google";
-import { motion } from "framer-motion";
+import { Onest, Playwrite_US_Modern } from "next/font/google";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
 import {
   ArrowRight,
-  Check,
   ChefHat,
   Clock,
-  Cookie,
   ForkKnife,
-  Heart,
-  InstagramLogo,
-  MapPin,
+  List,
   SealCheck,
   ShoppingBag,
   Sparkle,
   Star,
-  Storefront,
+  X,
 } from "@phosphor-icons/react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
+const viewport = { once: true, amount: 0.18 } as const;
+
+const sectionReveal: Variants = {
+  hidden: { opacity: 0, y: 54 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.82, ease },
+  },
+};
+
+const staggerReveal: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      delayChildren: 0.08,
+      staggerChildren: 0.09,
+    },
+  },
+};
+
+const itemReveal: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.62, ease },
+  },
+};
+
+const imageReveal: Variants = {
+  hidden: { opacity: 0, scale: 1.04, y: 28 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: { duration: 0.9, ease },
+  },
+};
 
 const logoFont = Playwrite_US_Modern({
   display: "swap",
   weight: "400",
+});
+
+const maguiFont = Onest({
+  display: "swap",
+  subsets: ["latin"],
+  weight: ["600", "700", "900"],
 });
 
 const images = {
@@ -207,29 +249,6 @@ const testimonials = [
   ["Virou presente fixo para clientes importantes.", "caixa corporativa"],
 ];
 
-const credits = [
-  {
-    name: "American Heritage Chocolate",
-    url: "https://unsplash.com/photos/chocolate-cake-on-white-ceramic-plate-vdx5hPQhXFk",
-  },
-  {
-    name: "Brooke Lark",
-    url: "https://unsplash.com/photos/assorted-sliced-fruits-in-white-ceramic-bowl-HlNcigvUi4Q",
-  },
-  {
-    name: "Jennifer Pallian",
-    url: "https://unsplash.com/photos/chocolate-cake-with-raspberries-on-top-yK23J6f6mFI",
-  },
-  {
-    name: "Jr R",
-    url: "https://unsplash.com/photos/cupcakes-on-white-surface-90HdOlGbjck",
-  },
-  {
-    name: "Taryn Elliott",
-    url: "https://www.pexels.com/video/topping-a-baked-cake-with-icing-using-a-wooden-spatula-3325991/",
-  },
-];
-
 function CTA({
   children,
   href = "#contato",
@@ -273,7 +292,32 @@ function WhatsAppCTA({ light = false }: { light?: boolean }) {
   );
 }
 
+function AnimatedSection({
+  children,
+  className,
+  id,
+}: {
+  children: ReactNode;
+  className: string;
+  id?: string;
+}) {
+  return (
+    <motion.section
+      id={id}
+      className={className}
+      initial="hidden"
+      whileInView="show"
+      viewport={viewport}
+      variants={sectionReveal}
+    >
+      {children}
+    </motion.section>
+  );
+}
+
 export default function Landing16ConfeitariaLaCreme() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <main className="overflow-hidden bg-[#fff8ef] text-[#2b1714]">
       <style>{`
@@ -302,6 +346,17 @@ export default function Landing16ConfeitariaLaCreme() {
           to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
+        @keyframes pastry-drift {
+          0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+          50% { transform: translate3d(0, -18px, 0) rotate(0.8deg); }
+        }
+
+        @keyframes pastry-shimmer {
+          0% { transform: translateX(-120%); opacity: 0; }
+          28% { opacity: 0.72; }
+          100% { transform: translateX(120%); opacity: 0; }
+        }
+
         .sweet-carousel:hover {
           animation-play-state: paused;
         }
@@ -309,29 +364,43 @@ export default function Landing16ConfeitariaLaCreme() {
         .cream-reveal {
           animation: cream-rise 0.8s cubic-bezier(${ease.join(",")}) both;
         }
+
+        .pastry-drift {
+          animation: pastry-drift 8s ease-in-out infinite;
+        }
+
+        .pastry-shimmer::after {
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.36), transparent);
+          content: "";
+          inset: 0;
+          position: absolute;
+          transform: translateX(-120%);
+          animation: pastry-shimmer 4.8s ease-in-out infinite;
+        }
       `}</style>
 
       <header className="relative z-30 border-b border-[#2b1714]/10 bg-[#fff8ef]">
-        <div className="mx-auto grid max-w-[1540px] gap-5 px-5 py-6 md:px-8 lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:px-10">
+        <div className="mx-auto flex max-w-[1540px] items-center justify-between gap-5 px-5 py-5 md:px-8 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:py-6 lg:px-10">
           <div className="hidden max-w-xs text-[11px] font-semibold uppercase tracking-[0.24em] text-[#9d2d40] lg:block">
             atelier aberto de terça a sábado / retiradas com hora marcada
           </div>
 
           <a
             href="#inicio"
+            onClick={() => setIsMenuOpen(false)}
             className="justify-self-start lg:justify-self-center"
           >
             <span
-              className={`${logoFont.className} text-4xl leading-none tracking-[-0.08em] text-[#2b1714] md:text-5xl`}
+              className={`${logoFont.className} text-4xl leading-none tracking-[-0.08em] text-[#2b1714] sm:text-5xl`}
             >
               La Crème
             </span>
           </a>
 
-          <div className="flex items-center gap-3 lg:justify-self-end">
+          <div className="hidden items-center gap-3 lg:flex lg:justify-self-end">
             <a
               href="https://www.instagram.com/"
-              className="hidden rounded-full border border-[#2b1714]/14 px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2b1714]/62 transition duration-300 hover:border-[#9d2d40] hover:text-[#9d2d40] sm:inline-flex"
+              className="rounded-full border border-[#2b1714]/14 px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2b1714]/62 transition duration-300 hover:border-[#9d2d40] hover:text-[#9d2d40]"
             >
               Instagram
             </a>
@@ -343,9 +412,26 @@ export default function Landing16ConfeitariaLaCreme() {
               <ShoppingBag size={16} />
             </a>
           </div>
+
+          <button
+            type="button"
+            aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={isMenuOpen}
+            onClick={() => setIsMenuOpen((current) => !current)}
+            className="group inline-flex size-12 items-center justify-center rounded-full border border-[#2b1714]/12 bg-white text-[#2b1714] shadow-[0_14px_34px_rgba(43,23,20,0.08)] transition duration-300 hover:border-[#9d2d40] hover:text-[#9d2d40] lg:hidden"
+          >
+            <motion.span
+              key={isMenuOpen ? "close" : "open"}
+              initial={{ opacity: 0, rotate: -18, scale: 0.82 }}
+              animate={{ opacity: 1, rotate: 0, scale: 1 }}
+              transition={{ duration: 0.22, ease }}
+            >
+              {isMenuOpen ? <X size={22} /> : <List size={24} />}
+            </motion.span>
+          </button>
         </div>
 
-        <div className="border-t border-[#2b1714]/10 bg-white/58">
+        <div className="hidden border-t border-[#2b1714]/10 bg-white/58 lg:block">
           <div className="mx-auto flex max-w-[1540px] items-center justify-between gap-6 overflow-x-auto px-5 py-3 md:px-8 lg:px-10">
             <nav className="flex min-w-max items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#2b1714]/58">
               {nav.map((item) => (
@@ -364,11 +450,95 @@ export default function Landing16ConfeitariaLaCreme() {
             </p>
           </div>
         </div>
+
+        <AnimatePresence>
+          {isMenuOpen ? (
+            <motion.div
+              className="border-t border-[#2b1714]/10 px-5 pb-5 md:px-8 lg:hidden"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.34, ease }}
+            >
+              <motion.div
+                className="mx-auto mt-2 max-w-[1540px] overflow-hidden rounded-[30px] border border-[#2b1714]/10 bg-white shadow-[0_24px_70px_rgba(43,23,20,0.12)]"
+                initial={{ y: -18, scale: 0.98 }}
+                animate={{ y: 0, scale: 1 }}
+                exit={{ y: -12, scale: 0.98 }}
+                transition={{ duration: 0.34, ease }}
+              >
+                <div className="relative h-40 overflow-hidden">
+                  <Image
+                    src={images.torta_frutas_vermelhas}
+                    alt="Torta artesanal La Crème"
+                    fill
+                    sizes="100vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#2b1714]/82 via-[#2b1714]/38 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#ffd8df]">
+                      menu la crème
+                    </p>
+                    <p className="mt-3 max-w-xs text-2xl font-semibold leading-tight tracking-[-0.04em]">
+                      Encomendas, vitrine e doces da semana.
+                    </p>
+                  </div>
+                </div>
+
+                <nav className="grid p-3">
+                  {nav.map((item, index) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="group flex items-center justify-between rounded-[22px] px-4 py-4 text-[#2b1714] transition duration-300 hover:bg-[#fff1f3]"
+                    >
+                      <span className="flex items-center gap-4">
+                        <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#9d2d40]/58">
+                          0{index + 1}
+                        </span>
+                        <span className="text-lg font-semibold tracking-[-0.03em]">
+                          {item.label}
+                        </span>
+                      </span>
+                      <ArrowRight
+                        size={16}
+                        className="text-[#9d2d40] transition duration-300 group-hover:translate-x-1"
+                      />
+                    </a>
+                  ))}
+                </nav>
+
+                <div className="grid gap-3 border-t border-[#2b1714]/10 bg-[#fff8ef] p-4">
+                  <a
+                    href={whatsapp}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="inline-flex items-center justify-center gap-3 rounded-full bg-[#2b1714] px-6 py-4 text-sm font-semibold text-white transition duration-300 hover:bg-[#9d2d40]"
+                  >
+                    Pedir no WhatsApp
+                    <ShoppingBag size={16} />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="inline-flex items-center justify-center rounded-full border border-[#2b1714]/12 px-6 py-4 text-xs font-bold uppercase tracking-[0.18em] text-[#2b1714]/62 transition duration-300 hover:border-[#9d2d40] hover:text-[#9d2d40]"
+                  >
+                    Instagram
+                  </a>
+                </div>
+              </motion.div>
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
       </header>
 
-      <section
+      <motion.section
         id="inicio"
         className="relative min-h-[1040px] overflow-hidden px-6 py-14 text-white md:px-12 md:py-18 lg:px-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.9, ease }}
       >
         <Image
           src={images.hero}
@@ -531,9 +701,9 @@ export default function Landing16ConfeitariaLaCreme() {
             </a>
           </motion.div>
         </div>
-      </section>
+      </motion.section>
 
-      <section className="bg-[#ffd8df] py-7 text-[#2b1714]">
+      <AnimatedSection className="bg-[#ffd8df] py-7 text-[#2b1714]">
         <div
           className="flex w-max items-center gap-10 whitespace-nowrap text-4xl font-semibold tracking-[-0.05em] md:text-6xl"
           style={{ animation: "pastry-marquee 26s linear infinite" }}
@@ -548,23 +718,32 @@ export default function Landing16ConfeitariaLaCreme() {
             </span>
           ))}
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section id="vitrine" className="px-5 py-24 md:px-8 md:py-32 lg:px-10">
-        <div className="mx-auto max-w-[1540px]">
+      <AnimatedSection
+        id="vitrine"
+        className="px-5 py-24 md:px-8 md:py-32 lg:px-10"
+      >
+        <motion.div
+          className="mx-auto max-w-[1540px]"
+          variants={staggerReveal}
+        >
           <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
-            <div>
+            <motion.div variants={itemReveal}>
               <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#9d2d40]">
                 vitrine
               </p>
               <h2 className="mt-7 max-w-4xl text-5xl font-semibold leading-none tracking-[-0.05em] md:text-7xl">
                 Doces frescos, bonitos e prontos para roubar a mesa.
               </h2>
-            </div>
-            <p className="max-w-xl text-lg leading-8 text-[#2b1714]/62">
+            </motion.div>
+            <motion.p
+              className="max-w-xl text-lg leading-8 text-[#2b1714]/62"
+              variants={itemReveal}
+            >
               Pequenas quantidades, sabores sazonais e uma seleção feita para
               café, presente ou celebração de última hora.
-            </p>
+            </motion.p>
           </div>
 
           <div className="mt-16 grid gap-6 md:grid-cols-3">
@@ -575,6 +754,7 @@ export default function Landing16ConfeitariaLaCreme() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.28 }}
                 transition={{ duration: 0.5, delay: index * 0.06, ease }}
+                whileHover={{ y: -12, transition: { duration: 0.35, ease } }}
                 className="group overflow-hidden rounded-[28px] bg-white shadow-[0_24px_80px_rgba(43,23,20,0.07)]"
               >
                 <div className="relative h-[330px] overflow-hidden">
@@ -614,12 +794,19 @@ export default function Landing16ConfeitariaLaCreme() {
               </motion.article>
             ))}
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </AnimatedSection>
 
-      <section className="px-5 pb-24 md:px-8 md:pb-32 lg:px-10">
-        <div className="mx-auto grid max-w-[1540px] gap-6 lg:grid-cols-[0.38fr_0.62fr]">
-          <div className="rounded-[28px] bg-[#9d2d40] p-8 text-white md:p-10 flex flex-col justify-between min-h-[400px]">
+      <AnimatedSection className="px-5 pb-24 md:px-8 md:pb-32 lg:px-10">
+        <motion.div
+          className="mx-auto grid max-w-[1540px] gap-6 lg:grid-cols-[0.38fr_0.62fr]"
+          variants={staggerReveal}
+        >
+          <motion.div
+            className="relative overflow-hidden rounded-[28px] bg-[#9d2d40] p-8 text-white md:p-10 flex flex-col justify-between min-h-[400px] pastry-shimmer"
+            variants={itemReveal}
+            whileHover={{ y: -8, scale: 1.01 }}
+          >
             <Star size={44} className="text-[#ffd8df]" />
             <div>
               <h2 className="text-5xl font-semibold leading-tight tracking-[-0.05em] md:text-6xl">
@@ -630,9 +817,9 @@ export default function Landing16ConfeitariaLaCreme() {
                 textura, acidez e um final inesquecível.
               </p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="overflow-hidden">
+          <motion.div className="overflow-hidden" variants={itemReveal}>
             {/* Adicionado a classe hover:[animation-play-state:paused] para parar o carrossel no mouse hover */}
             <div
               className="sweet-carousel flex w-max gap-6 hover:[animation-play-state:paused] cursor-pointer"
@@ -671,16 +858,23 @@ export default function Landing16ConfeitariaLaCreme() {
                 </motion.figure>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
+          </motion.div>
+        </motion.div>
+      </AnimatedSection>
 
-      <section
+      <AnimatedSection
         id="atelier"
         className="bg-[#f4e6d6] px-5 py-24 md:px-8 md:py-32 lg:px-10"
       >
-        <div className="mx-auto grid max-w-[1540px] gap-6 lg:grid-cols-[0.58fr_0.42fr]">
-          <figure className="relative min-h-[660px] overflow-hidden rounded-[28px]">
+        <motion.div
+          className="mx-auto grid max-w-[1540px] gap-6 lg:grid-cols-[0.58fr_0.42fr]"
+          variants={staggerReveal}
+        >
+          <motion.figure
+            className="relative min-h-[660px] overflow-hidden rounded-[28px]"
+            variants={imageReveal}
+            whileHover={{ scale: 0.985 }}
+          >
             <Image
               src={images.processo_la_creme}
               alt="Bolo de chocolate sendo preparado com frutas"
@@ -696,9 +890,13 @@ export default function Landing16ConfeitariaLaCreme() {
                 Massa, recheio e acabamento feitos perto da entrega.
               </p>
             </div>
-          </figure>
+          </motion.figure>
 
-          <div className="grid content-between gap-12 rounded-[28px] bg-[#2b1714] p-8 text-white md:p-10">
+          <motion.div
+            className="grid content-between gap-12 rounded-[28px] bg-[#2b1714] p-8 text-white md:p-10"
+            variants={itemReveal}
+            whileHover={{ y: -8 }}
+          >
             <ChefHat size={44} className="text-[#ffd8df]" />
             <div>
               <h2 className="text-5xl font-semibold leading-none tracking-[-0.05em] md:text-6xl">
@@ -709,31 +907,41 @@ export default function Landing16ConfeitariaLaCreme() {
                 ponto de creme e conservação até a hora de servir.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
+          </motion.div>
+        </motion.div>
+      </AnimatedSection>
 
-      <section className="relative bg-[#2b1714] text-white overflow-hidden min-h-[640px] lg:min-h-[800px] flex items-center">
+      <AnimatedSection className="relative bg-[#2b1714] text-white overflow-hidden min-h-[640px] lg:min-h-[800px] flex items-center">
         {/* Container do Conteúdo (Texto) */}
         <div className="relative z-10 mx-auto w-full max-w-[1540px] px-5 py-24 md:px-8 md:py-32 lg:px-10">
-          <div className="max-w-xl lg:max-w-[38%]">
+          <motion.div
+            className="max-w-xl lg:max-w-[38%]"
+            variants={staggerReveal}
+          >
             <p className="inline-flex items-center gap-3 rounded-full bg-[#ffd8df] px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#2b1714]">
               <ForkKnife size={17} weight="bold" />
               processo artesanal
             </p>
-            <h2 className="mt-10 text-5xl font-semibold leading-[1.05] tracking-[-0.05em] md:text-6xl xl:text-7xl">
+            <motion.h2
+              className="mt-10 text-5xl font-semibold leading-[1.05] tracking-[-0.05em] md:text-6xl xl:text-7xl"
+              variants={itemReveal}
+            >
               Onde o tempo dita o ponto perfeito.
-            </h2>
-            <p className="mt-8 text-lg leading-8 text-white/64">
+            </motion.h2>
+            <motion.p
+              className="mt-8 text-lg leading-8 text-white/64"
+              variants={itemReveal}
+            >
               A beleza está nos movimentos precisos, no caimento lento e no
               contraste que desperta os sentidos antes do primeiro pedaço.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
 
         {/* Container do Vídeo: Ocupa metade da tela no desktop e vira background responsivo no mobile */}
-        <div
+        <motion.div
           className="absolute inset-y-0 right-0 w-full opacity-40 lg:w-1/2 lg:opacity-100"
+          variants={imageReveal}
           style={{
             clipPath: "polygon(12% 0%, 100% 0%, 100% 100%, 0% 100%)",
           }}
@@ -748,13 +956,19 @@ export default function Landing16ConfeitariaLaCreme() {
           >
             <source src={video} type="video/mp4" />
           </video>
-        </div>
-      </section>
+        </motion.div>
+      </AnimatedSection>
 
-      <section className="px-5 py-20 md:px-8 md:py-24 lg:px-10 bg-[#fffdfa]">
-        <div className="mx-auto max-w-[1540px]">
+      <AnimatedSection className="px-5 py-20 md:px-8 md:py-24 lg:px-10 bg-[#fffdfa]">
+        <motion.div
+          className="mx-auto max-w-[1540px]"
+          variants={staggerReveal}
+        >
           {/* Header da Section */}
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between pb-12">
+          <motion.div
+            className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between pb-12"
+            variants={itemReveal}
+          >
             <div className="max-w-4xl">
               <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#9d2d40]">
                 alta degustação
@@ -768,7 +982,7 @@ export default function Landing16ConfeitariaLaCreme() {
               equilíbrio: a textura que quebra, o recheio que envolve e o
               frescor que permanece.
             </p>
-          </div>
+          </motion.div>
 
           <div className="mt-12 grid gap-x-12 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {tastingNotes.map(([title, text], index) => (
@@ -794,16 +1008,22 @@ export default function Landing16ConfeitariaLaCreme() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </AnimatedSection>
 
-      <section
+      <AnimatedSection
         id="encomendas"
         className="px-5 py-24 md:px-8 md:py-32 lg:px-10 bg-[#fffdfa]"
       >
-        <div className="mx-auto max-w-[1540px]">
+        <motion.div
+          className="mx-auto max-w-[1540px]"
+          variants={staggerReveal}
+        >
           {/* Header da Section */}
-          <div className="grid gap-8 md:grid-cols-[0.42fr_0.58fr] md:items-end border-b border-[#2b1714]/10 pb-12">
+          <motion.div
+            className="grid gap-8 md:grid-cols-[0.42fr_0.58fr] md:items-end border-b border-[#2b1714]/10 pb-12"
+            variants={itemReveal}
+          >
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#9d2d40]">
                 encomendas exclusivas
@@ -817,7 +1037,7 @@ export default function Landing16ConfeitariaLaCreme() {
               eventos corporativos e momentos que exigem o máximo cuidado, sem
               qualquer excesso.
             </p>
-          </div>
+          </motion.div>
 
           {/* Lista de Etapas (Layout Tabela Minimalista) */}
           <div className="mt-8 grid gap-0">
@@ -828,6 +1048,7 @@ export default function Landing16ConfeitariaLaCreme() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: index * 0.05, ease }}
+                whileHover={{ x: 10 }}
                 className="group relative grid gap-4 border-b border-[#2b1714]/10 py-10 last:border-b-0 md:grid-cols-[0.10fr_0.38fr_0.52fr] md:items-baseline transition-colors duration-300 hover:bg-[#2b1714]/[0.01]"
               >
                 {/* Linha de progresso sutil no hover */}
@@ -847,12 +1068,15 @@ export default function Landing16ConfeitariaLaCreme() {
               </motion.article>
             ))}
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </AnimatedSection>
 
-      <section className="relative min-h-[700px] lg:min-h-[850px] w-full overflow-hidden flex items-center bg-[#2b1714]">
+      <AnimatedSection className="relative min-h-[700px] lg:min-h-[850px] w-full overflow-hidden flex items-center bg-[#2b1714]">
         {/* Imagem como Plano de Fundo Absoluto */}
-        <div className="absolute inset-0 w-full h-full">
+        <motion.div
+          className="absolute inset-0 w-full h-full"
+          variants={imageReveal}
+        >
           <Image
             src={images.cookies}
             alt="Cookies de chocolate em close"
@@ -864,11 +1088,14 @@ export default function Landing16ConfeitariaLaCreme() {
           {/* Máscara de iluminação linear: Escurece a esquerda para leitura e revela a imagem na direita */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#2b1714] via-[#2b1714]/85 to-[#2b1714]/20 lg:via-[#2b1714]/60" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#2b1714] via-transparent to-transparent md:hidden" />
-        </div>
+        </motion.div>
 
         {/* Conteúdo flutuando sobre o Background */}
         <div className="relative z-10 mx-auto w-full max-w-[1540px] px-5 py-24 md:px-8 md:py-32 lg:px-10">
-          <div className="max-w-xl lg:max-w-2xl">
+          <motion.div
+            className="max-w-xl lg:max-w-2xl"
+            variants={staggerReveal}
+          >
             {/* Badge Técnico Minimalista */}
             <div className="inline-flex items-center gap-3 rounded-full border border-white/20 bg-white/5 backdrop-blur-md px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#ffd8df]">
               <SealCheck size={14} weight="bold" />
@@ -889,16 +1116,22 @@ export default function Landing16ConfeitariaLaCreme() {
                 revela no equilíbrio exato e no final limpo a cada mordida.
               </p>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </AnimatedSection>
 
-      <section className="bg-[#fff1f3] px-5 py-24 md:px-8 md:py-32 lg:px-10 overflow-hidden">
-        <div className="mx-auto max-w-[1540px]">
+      <AnimatedSection className="bg-[#fff1f3] px-5 py-24 md:px-8 md:py-32 lg:px-10 overflow-hidden">
+        <motion.div
+          className="mx-auto max-w-[1540px]"
+          variants={staggerReveal}
+        >
           {/* Layout de Grade Assimétrica - Ajustado proporção para o novo texto */}
           <div className="grid gap-12 lg:grid-cols-[0.38fr_0.62fr] lg:items-start">
             {/* Coluna da Esquerda: Textos e Tags de Ocasião */}
-            <div className="flex flex-col lg:sticky lg:top-12">
+            <motion.div
+              className="flex flex-col lg:sticky lg:top-12"
+              variants={itemReveal}
+            >
               <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#9d2d40]">
                 contexto & presença
               </p>
@@ -909,21 +1142,25 @@ export default function Landing16ConfeitariaLaCreme() {
               {/* Lista Vertical de Ocasiões (Estilo Índice Minimalista) */}
               <div className="mt-12 flex flex-col border-t border-[#2b1714]/10">
                 {occasions.map((item, index) => (
-                  <div
+                  <motion.div
                     key={item}
+                    variants={itemReveal}
                     className="group flex items-center justify-between border-b border-[#2b1714]/10 py-5 text-sm text-[#2b1714]/80 font-medium cursor-default transition-colors duration-300 hover:text-[#2b1714]"
                   >
                     <span className="pr-4 leading-relaxed">{item}</span>
                     <span className="text-[10px] font-mono text-[#9d2d40]/40 group-hover:text-[#9d2d40] transition-colors duration-300 shrink-0">
                       0{index + 1}
                     </span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Coluna da Direita: Composição Tridimensional de Imagens */}
-            <div className="relative w-full pt-12 md:pt-20 lg:pt-0">
+            <motion.div
+              className="relative w-full pt-12 md:pt-20 lg:pt-0"
+              variants={imageReveal}
+            >
               {/* Imagem de Fundo (Grande e Imponente) */}
               <figure className="relative aspect-[4/3] w-full overflow-hidden rounded-[24px] shadow-[0_32px_80px_rgba(43,23,20,0.06)] group">
                 <Image
@@ -936,7 +1173,7 @@ export default function Landing16ConfeitariaLaCreme() {
               </figure>
 
               {/* Imagem Flutuante Detalhe (Sobreposta na Frente) */}
-              <figure className="absolute -bottom-12 -left-4 md:-bottom-20 md:left-12 w-[42%] aspect-[3/4] overflow-hidden rounded-[20px] border-8 border-[#fff1f3] shadow-[0_24px_48px_rgba(0,0,0,0.12)] hidden sm:block group">
+              <figure className="absolute -bottom-12 -left-4 md:-bottom-20 md:left-12 w-[42%] aspect-[3/4] overflow-hidden rounded-[20px] border-8 border-[#fff1f3] shadow-[0_24px_48px_rgba(0,0,0,0.12)] hidden sm:block group pastry-drift">
                 <Image
                   src={images.cupcake_morango}
                   alt="Cupcakes e doces decorados"
@@ -945,15 +1182,21 @@ export default function Landing16ConfeitariaLaCreme() {
                   className="object-cover transition duration-700 group-hover:scale-[1.05]"
                 />
               </figure>
-            </div>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </AnimatedSection>
 
-      <section className="px-5 py-24 md:px-8 md:py-32 lg:px-10 bg-[#fffdfa]">
-        <div className="mx-auto max-w-[1540px]">
+      <AnimatedSection className="px-5 py-24 md:px-8 md:py-32 lg:px-10 bg-[#fffdfa]">
+        <motion.div
+          className="mx-auto max-w-[1540px]"
+          variants={staggerReveal}
+        >
           {/* Cabeçalho Editorial */}
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between border-b border-[#2b1714]/10 pb-12">
+          <motion.div
+            className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between border-b border-[#2b1714]/10 pb-12"
+            variants={itemReveal}
+          >
             <div className="max-w-4xl">
               <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#9d2d40]">
                 relatos & experiências
@@ -966,7 +1209,7 @@ export default function Landing16ConfeitariaLaCreme() {
               <span className="h-1.5 w-1.5 rounded-full bg-[#9d2d40]" />A
               perspectiva de quem experimenta.
             </p>
-          </div>
+          </motion.div>
 
           {/* Grid de Depoimentos Minimalista (Sem caixas pesadas) */}
           <div className="mt-16 grid gap-x-12 gap-y-12 md:grid-cols-3 border-b border-[#2b1714]/10 pb-16">
@@ -977,6 +1220,7 @@ export default function Landing16ConfeitariaLaCreme() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: index * 0.06, ease }}
+                whileHover={{ y: -8 }}
                 className="flex flex-col justify-between pt-4 md:pt-0"
               >
                 <div>
@@ -997,51 +1241,64 @@ export default function Landing16ConfeitariaLaCreme() {
               </motion.blockquote>
             ))}
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </AnimatedSection>
 
-      <section className="relative min-h-[760px] overflow-hidden px-5 py-24 text-white md:px-8 md:py-32 lg:px-10">
-        <Image
-          src={images.floresta_negra}
-          alt="Bolo floresta negra"
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
+      <AnimatedSection className="relative min-h-[760px] overflow-hidden px-5 py-24 text-white md:px-8 md:py-32 lg:px-10">
+        <motion.div className="absolute inset-0" variants={imageReveal}>
+          <Image
+            src={images.floresta_negra}
+            alt="Bolo floresta negra"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-[#2b1714]/64" />
-        <div className="relative z-10 mx-auto max-w-[1540px]">
+        <motion.div
+          className="relative z-10 mx-auto max-w-[1540px]"
+          variants={staggerReveal}
+        >
           <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#ffd8df]">
             mesa doce
           </p>
-          <h2 className="mt-8 max-w-5xl text-6xl font-semibold leading-[0.94] tracking-[-0.06em] md:text-8xl">
+          <motion.h2
+            className="mt-8 max-w-5xl text-6xl font-semibold leading-[0.94] tracking-[-0.06em] md:text-8xl"
+            variants={itemReveal}
+          >
             Uma mesa bonita começa no equilíbrio entre cor, altura e vontade de
             repetir.
-          </h2>
-        </div>
-      </section>
+          </motion.h2>
+        </motion.div>
+      </AnimatedSection>
 
       {/* --- SEÇÃO: MENU (Lista Técnica de Linha Única) --- */}
-      <section
+      <AnimatedSection
         id="menu"
         className="px-5 py-24 md:px-8 md:py-32 lg:px-10 bg-[#fffdfa]"
       >
-        <div className="mx-auto max-w-[1540px]">
+        <motion.div
+          className="mx-auto max-w-[1540px]"
+          variants={staggerReveal}
+        >
           <div className="grid gap-12 lg:grid-cols-[0.35fr_0.65fr] lg:items-start">
             {/* Esquerda: Identificação de Seção */}
-            <div className="lg:sticky lg:top-16">
+            <motion.div className="lg:sticky lg:top-16" variants={itemReveal}>
               <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#9d2d40]">
                 catálogo técnico
               </p>
               <h2 className="mt-6 text-4xl font-semibold leading-[1.1] tracking-[-0.04em] md:text-5xl text-[#2b1714]">
                 Menu de assinatura <br />e edições sazonais.
               </h2>
-            </div>
+            </motion.div>
 
             {/* Direita: Lista Estendida de Linha Única */}
             <div className="flex flex-col border-t border-[#2b1714]/10">
               {menu.map((item, index) => (
-                <div
+                <motion.div
                   key={item}
+                  variants={itemReveal}
+                  whileHover={{ x: 8 }}
                   className="group flex items-baseline justify-between border-b border-[#2b1714]/10 py-6 cursor-default transition-colors duration-300"
                 >
                   <div className="flex items-baseline gap-6 pr-4">
@@ -1059,19 +1316,22 @@ export default function Landing16ConfeitariaLaCreme() {
                   <span className="text-[10px] font-mono uppercase tracking-wider text-[#2b1714]/40 shrink-0">
                     Sazonal
                   </span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </AnimatedSection>
 
       {/* --- SEÇÃO: CONTATO (Statement Monolítico Total) --- */}
-      <section id="contato" className="w-full bg-[#2b1714] text-white">
-        <div className="mx-auto max-w-[1540px] px-5 py-24 md:px-8 md:py-32 lg:px-10">
+      <AnimatedSection id="contato" className="w-full bg-[#2b1714] text-white">
+        <motion.div
+          className="mx-auto max-w-[1540px] px-5 py-24 md:px-8 md:py-32 lg:px-10"
+          variants={staggerReveal}
+        >
           <div className="grid gap-16 lg:grid-cols-12 lg:items-end">
             {/* Esquerda: Tipografia Monumental */}
-            <div className="lg:col-span-7">
+            <motion.div className="lg:col-span-7" variants={itemReveal}>
               <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#ffd8df]/60">
                 diretoria de encomendas
               </p>
@@ -1079,10 +1339,13 @@ export default function Landing16ConfeitariaLaCreme() {
                 Defina a ocasião. <br />
                 Projetamos o doce.
               </h2>
-            </div>
+            </motion.div>
 
             {/* Direita: O Fluxo Seco e Direto */}
-            <div className="lg:col-span-5 flex flex-col items-start">
+            <motion.div
+              className="lg:col-span-5 flex flex-col items-start"
+              variants={itemReveal}
+            >
               <p className="text-base leading-7 text-white/70 max-w-lg">
                 Envie data, volume, preferências de sabor e o formato da sua
                 celebração. Alinhamos a proposta técnica e retornamos com
@@ -1094,19 +1357,31 @@ export default function Landing16ConfeitariaLaCreme() {
                 <WhatsAppCTA />
                 <CTA href="mailto:pedidos@lacreme.example">Enviar E-mail</CTA>
               </div>
-            </div>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </AnimatedSection>
 
-      <footer className="relative w-full overflow-hidden bg-[#fffdfa] text-[#2b1714]">
+      <motion.footer
+        className="relative w-full overflow-hidden bg-[#fffdfa] text-[#2b1714]"
+        initial="hidden"
+        whileInView="show"
+        viewport={viewport}
+        variants={sectionReveal}
+      >
         {/* Linha técnica divisória de topo */}
         <div className="absolute inset-x-0 top-0 h-px bg-[#2b1714]/10" />
 
         {/* --- BLOCO SUPERIOR: Fechamento Conceitual --- */}
-        <div className="mx-auto max-w-[1540px] px-5 py-24 md:px-8 lg:px-10 lg:py-32">
+        <motion.div
+          className="mx-auto max-w-[1540px] px-5 py-24 md:px-8 lg:px-10 lg:py-32"
+          variants={staggerReveal}
+        >
           {/* --- Bloco de Texto Superior: Alinhamento Editorial Limpo --- */}
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between border-b border-[#2b1714]/10 pb-12">
+          <motion.div
+            className="flex flex-col lg:flex-row lg:items-end lg:justify-between border-b border-[#2b1714]/10 pb-12"
+            variants={itemReveal}
+          >
             <div className="max-w-3xl">
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#9d2d40]">
                 03 // encomendas da semana
@@ -1137,7 +1412,7 @@ export default function Landing16ConfeitariaLaCreme() {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* --- Galeria Inferior: Grid Monolítico de 4 Colunas --- */}
           <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4 lg:gap-6">
@@ -1147,8 +1422,10 @@ export default function Landing16ConfeitariaLaCreme() {
               images.embalagem_docinhos,
               images.embalagem_sobremesa,
             ].map((img, index) => (
-              <div
+              <motion.div
                 key={index}
+                variants={imageReveal}
+                whileHover={{ y: -10, rotate: index % 2 === 0 ? -1 : 1 }}
                 className="relative w-full aspect-[3/4] bg-[#2b1714]/5 overflow-hidden transition-all duration-500 hover:opacity-90"
               >
                 <Image
@@ -1159,16 +1436,22 @@ export default function Landing16ConfeitariaLaCreme() {
                   className="object-cover transition-transform duration-700 ease-out hover:scale-103"
                   priority={index < 2}
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* --- BLOCO INFERIOR: Rodapé Institucional --- */}
         <div className="border-t border-[#2b1714]/10 bg-[#2b1714]/5">
-          <div className="mx-auto grid max-w-[1540px] gap-12 px-5 py-16 md:px-8 lg:grid-cols-[0.40fr_0.22fr_0.19fr_0.19fr] lg:px-10 lg:py-20">
+          <motion.div
+            className="mx-auto grid max-w-[1540px] gap-12 px-5 py-16 md:px-8 lg:grid-cols-[0.40fr_0.22fr_0.19fr_0.19fr] lg:px-10 lg:py-20"
+            variants={staggerReveal}
+          >
             {/* Branding & Descrição Realista */}
-            <div className="flex flex-col justify-between">
+            <motion.div
+              className="flex flex-col justify-between"
+              variants={itemReveal}
+            >
               <div>
                 <span
                   className={`${logoFont.className} text-4xl font-normal leading-none tracking-tight text-[#2b1714]`}
@@ -1184,10 +1467,10 @@ export default function Landing16ConfeitariaLaCreme() {
                 © {new Date().getFullYear()} La Crème. Todos os direitos
                 reservados.
               </p>
-            </div>
+            </motion.div>
 
             {/* Atendimento e Retiradas */}
-            <div>
+            <motion.div variants={itemReveal}>
               <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#9d2d40]">
                 Ateliê & Retiradas
               </p>
@@ -1213,10 +1496,10 @@ export default function Landing16ConfeitariaLaCreme() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Links de Navegação Institucional */}
-            <div>
+            <motion.div variants={itemReveal}>
               <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#9d2d40]">
                 Navegação
               </p>
@@ -1231,10 +1514,10 @@ export default function Landing16ConfeitariaLaCreme() {
                   </a>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Catálogo / Menu rápido */}
-            <div>
+            <motion.div variants={itemReveal}>
               <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#9d2d40]">
                 Nosso Menu
               </p>
@@ -1264,15 +1547,36 @@ export default function Landing16ConfeitariaLaCreme() {
                   Eventos & Corporativo
                 </a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Copyright para telas menores */}
             <p className="mt-4 text-[10px] font-mono text-[#2b1714]/40 lg:hidden border-t border-[#2b1714]/5 pt-6">
               © {new Date().getFullYear()} La Crème.
             </p>
-          </div>
+          </motion.div>
+
+          <motion.div
+            className="mx-auto flex max-w-[1540px] justify-end border-t border-[#2b1714]/10 px-5 py-5 md:px-8 lg:px-10"
+            variants={itemReveal}
+          >
+            <span
+              className={`${maguiFont.className} text-xs font-semibold tracking-[-0.02em] text-[#2b1714]`}
+            >
+              Oferecido por{" "}
+              <a
+                href="https://magui.studio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition duration-300 hover:opacity-70"
+              >
+                <strong className="font-black text-[#2b1714]">MAGUI</strong>
+                <span className="text-[#0094C8]">.</span>
+                <span className="font-semibold text-[#2b1714]">studio</span>
+              </a>
+            </span>
+          </motion.div>
         </div>
-      </footer>
+      </motion.footer>
     </main>
   );
 }
