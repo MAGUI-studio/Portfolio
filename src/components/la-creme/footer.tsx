@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { images, nav } from "./data";
-import { WhatsAppCTA } from "./actions";
 import { logoFont, maguiFont } from "./fonts";
 import {
   imageReveal,
@@ -12,8 +11,13 @@ import {
   staggerReveal,
   viewport,
 } from "./motion";
+import Link from "next/link";
 
 export function LaCremeFooter() {
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <motion.footer
       className="relative w-full overflow-hidden bg-[#fffdfa] text-[#2b1714]"
@@ -34,32 +38,20 @@ export function LaCremeFooter() {
         >
           <div className="max-w-3xl">
             <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#9d2d40]">
-              03 // encomendas da semana
+              Estética & Cuidado
             </p>
             <h2 className="mt-6 text-4xl font-semibold leading-[1.05] tracking-[-0.04em] text-[#2b1714] sm:text-5xl md:text-6xl lg:text-7xl">
-              A sobremesa como <br className="hidden sm:block" /> objeto de
-              design.
+              A excelência impressa <br className="hidden sm:block" /> em cada
+              detalhe.
             </h2>
           </div>
 
           <div className="mt-6 max-w-md lg:mt-0">
-            <p className="text-base leading-relaxed text-[#2b1714]">
-              Informe a data, a estimativa de convidados e as diretrizes do
-              evento. Desenvolvemos a escala de proporções, perfis de sabor e
-              acabamento estrutural com montagem cronometrada.
+            <p className="text-base leading-relaxed text-[#2b1714]/80">
+              Nossas criações são pensadas para ir além do sabor. Desenvolvemos
+              embalagens minimalistas e sofisticadas que transformam cada doce
+              em um presente memorável e autêntico.
             </p>
-
-            <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-              <WhatsAppCTA />
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center border border-[#2b1714]/20 px-8 py-4 text-xs font-bold uppercase tracking-widest text-[#2b1714] transition-colors duration-300 hover:border-[#2b1714] hover:bg-[#2b1714]/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2"
-              >
-                Ver Instagram
-              </a>
-            </div>
           </div>
         </motion.div>
 
@@ -78,7 +70,7 @@ export function LaCremeFooter() {
             >
               <Image
                 src={img}
-                alt="Apresentação de confeitaria autoral"
+                alt="Apresentação de embalagens e confeitaria autoral"
                 fill
                 quality={72}
                 sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 45vw"
@@ -89,7 +81,7 @@ export function LaCremeFooter() {
         </div>
       </motion.div>
 
-      <div className="border-t border-[#2b1714]/10 bg-[#2b1714]/5">
+      <div className="border-t border-[#2b1714]/10 bg-[#2b1714] text-white">
         <motion.div
           className="mx-auto grid max-w-[1540px] gap-12 px-5 py-16 md:px-8 lg:grid-cols-[0.40fr_0.22fr_0.19fr_0.19fr] lg:px-10 lg:py-20"
           variants={staggerReveal}
@@ -100,40 +92,40 @@ export function LaCremeFooter() {
           >
             <div>
               <span
-                className={`${logoFont.className} text-4xl font-normal leading-none tracking-tight text-[#2b1714]`}
+                className={`${logoFont.className} text-4xl font-normal leading-none tracking-tight text-[#ffd8df]`}
               >
                 La Crème
               </span>
-              <p className="mt-4 max-w-xs text-xs leading-relaxed text-[#2b1714]">
+              <p className="mt-4 max-w-xs text-xs leading-relaxed">
                 Ateliê de confeitaria artesanal especializado em bolos festivos,
                 doces finos e sobremesas autorais para celebrações.
               </p>
             </div>
-            <p className="mt-8 hidden text-[10px] font-mono text-[#2b1714] lg:block">
+            <p className="mt-8 hidden text-[10px]  lg:block">
               © {new Date().getFullYear()} La Crème. Todos os direitos
               reservados.
             </p>
           </motion.div>
 
           <motion.div variants={itemReveal}>
-            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#9d2d40]">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#ffd8df]">
               Ateliê & Retiradas
             </p>
-            <div className="mt-6 space-y-4 text-xs font-medium text-[#2b1714]">
+            <div className="mt-6 space-y-4 text-xs font-medium">
               <div>
-                <span className="block font-mono text-[10px] font-bold uppercase tracking-wider text-[#2b1714]">
+                <span className="block  text-[10px] font-bold uppercase tracking-wider text-[#ffd8df]">
                   Endereço
                 </span>
                 <p className="mt-1">Rua das Flores, 128 — Ateliê Central</p>
               </div>
               <div>
-                <span className="block font-mono text-[10px] font-bold uppercase tracking-wider text-[#2b1714]">
+                <span className="block  text-[10px] font-bold uppercase tracking-wider text-[#ffd8df]">
                   Horário de Retirada
                 </span>
                 <p className="mt-1">Terça a Sábado, das 10h às 18h</p>
               </div>
               <div>
-                <span className="block font-mono text-[10px] font-bold uppercase tracking-wider text-[#2b1714]">
+                <span className="block  text-[10px] font-bold uppercase tracking-wider text-[#ffd8df]">
                   Encomendas
                 </span>
                 <p className="mt-1">
@@ -144,15 +136,15 @@ export function LaCremeFooter() {
           </motion.div>
 
           <motion.div variants={itemReveal}>
-            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#9d2d40]">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#ffd8df]">
               Navegação
             </p>
-            <div className="mt-6 flex flex-col gap-3 text-xs font-medium text-[#2b1714]">
+            <div className="mt-6 flex flex-col gap-3 text-xs font-medium">
               {nav.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="w-fit transition-colors duration-200 hover:text-[#9d2d40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2"
+                  className="w-fit transition-colors duration-200 hover:text-[#ffd8df] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2"
                 >
                   {item.label}
                 </a>
@@ -161,51 +153,62 @@ export function LaCremeFooter() {
           </motion.div>
 
           <motion.div variants={itemReveal}>
-            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#9d2d40]">
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#ffd8df]">
               Nosso Menu
             </p>
-            <div className="mt-6 flex flex-col gap-3 text-xs font-medium text-[#2b1714]">
+            <div className="mt-6 flex flex-col gap-3 text-xs font-medium">
               {[
                 ["#bolos", "Bolos Festivos"],
                 ["#doces", "Doces & Monoporções"],
                 ["#sazonais", "Cardápio Sazonal"],
                 ["#Corporativo", "Eventos & Corporativo"],
               ].map(([href, label]) => (
-                <a
+                <Link
                   key={href}
                   href={href}
-                  className="w-fit transition-colors duration-200 hover:text-[#9d2d40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2"
+                  className="w-fit transition-colors duration-200 hover:text-[#ffd8df] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2"
                 >
                   {label}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.div>
 
-          <p className="mt-4 border-t border-[#2b1714]/5 pt-6 text-[10px] font-mono text-[#2b1714] lg:hidden">
+          <p className="mt-4 border-t border-[#2b1714]/5 pt-6 text-[10px]  lg:hidden">
             © {new Date().getFullYear()} La Crème.
           </p>
         </motion.div>
 
         <motion.div
-          className="mx-auto flex max-w-[1540px] justify-end border-t border-[#2b1714]/10 px-5 py-5 md:px-8 lg:px-10"
+          className="mx-auto flex max-w-[1540px] flex-wrap items-center justify-end gap-3 border-t border-[#2b1714]/10 px-5 py-5 md:px-8 lg:px-10"
           variants={itemReveal}
         >
-          <span
-            className={`${maguiFont.className} text-xs font-semibold tracking-[-0.02em] text-[#2b1714]`}
-          >
+          <span className="text-xs font-medium">
             Oferecido por{" "}
-            <a
+            <Link
               href="https://magui.studio"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition duration-300 hover:opacity-70 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2"
+              className={`transition duration-300 hover:opacity-70 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#2b1714] ${maguiFont.className}`}
             >
-              <strong className="font-black text-[#2b1714]">MAGUI</strong>
+              <strong className="font-black">MAGUI</strong>
               <span className="text-[#0094C8]">.</span>
-              <span className="font-semibold text-[#2b1714]">studio</span>
-            </a>
+              <span className="font-semibold">studio</span>
+            </Link>
           </span>
+
+          <span aria-hidden="true" className="text-white/32">
+            |
+          </span>
+
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="inline-flex items-center gap-1 text-xs font-medium text-white transition duration-300 hover:text-[#ffd8df] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#2b1714] cursor-pointer"
+          >
+            Voltar ao topo
+            <span aria-hidden="true">↑</span>
+          </button>
         </motion.div>
       </div>
     </motion.footer>

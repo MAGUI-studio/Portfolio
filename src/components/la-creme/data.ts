@@ -80,9 +80,9 @@ export const steps = [
 export const menu = [
   "Bolos conceituais com acabamento botânico",
   "Tortas de frutas sazonais e creme leve",
-  "Cookies artesanais de chocolate belga e flor de sal",
+  "Cookies artesanais de chocolate belga",
   "Macarons autorais em caixas para presente",
-  "Mesa de doces estruturada para celebrações íntimas",
+  "Mesa de doces estruturada para celebrações",
   "Café, fatia do dia e sobremesas individuais",
 ] as const;
 
@@ -99,7 +99,7 @@ export const sweets = [
   },
   {
     title: "Mil Folhas de Baunilha",
-    note: "Camadas ultra crocantes de massa folhada artesanal intercaladas com creme leve de confeiteiro.",
+    note: "Camadas ultra crocantes de massa folhada intercaladas com creme leve de baunilha.",
     image: images.mil_folhas_de_baunilha,
   },
   {

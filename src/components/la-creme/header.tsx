@@ -3,10 +3,11 @@
 import { useEffect, useId, useRef, useState } from "react";
 import Image from "next/image";
 import { AnimatePresence } from "framer-motion";
-import { ArrowRight, List, ShoppingBag, X } from "@phosphor-icons/react";
+import { ArrowRight, List, ShoppingBag, ShoppingBagIcon, X } from "@phosphor-icons/react";
 import { images, nav, whatsapp } from "./data";
 import { logoFont } from "./fonts";
 import { ease, motion } from "./motion";
+import Link from "next/link";
 
 export function LaCremeHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,7 +35,7 @@ export function LaCremeHeader() {
   }
 
   return (
-    <header className="relative z-30 border-b border-[#2b1714]/10 bg-[#fff8ef]">
+    <header className="relative z-30 border-b border-[#2b1714]/10 bg-[#FFFDFA]">
       <div className="mx-auto flex max-w-[1540px] items-center justify-between gap-5 px-5 py-5 md:px-8 lg:grid lg:grid-cols-[1fr_auto_1fr] lg:px-10 lg:py-6">
         <div className="hidden max-w-xs text-[11px] font-semibold uppercase tracking-[0.24em] text-[#9d2d40] lg:block">
           atelier aberto de terça a sábado / retiradas com hora marcada
@@ -53,19 +54,23 @@ export function LaCremeHeader() {
         </a>
 
         <div className="hidden items-center gap-3 lg:flex lg:justify-self-end">
-          <a
+          <Link
             href="https://www.instagram.com/"
             className="rounded-full border border-[#2b1714]/14 px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2b1714] transition duration-300 hover:border-[#9d2d40] hover:text-[#9d2d40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Instagram
-          </a>
-          <a
+          </Link>
+          <Link
             href={whatsapp}
             className="inline-flex items-center gap-3 rounded-full bg-[#2b1714] px-5 py-3 text-sm font-semibold text-white shadow-[0_16px_38px_rgba(43,23,20,0.18)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#9d2d40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Encomendar
-            <ShoppingBag size={16} aria-hidden="true" />
-          </a>
+            <ShoppingBagIcon size={16} aria-hidden="true" />
+          </Link>
         </div>
 
         <button
@@ -175,7 +180,7 @@ export function LaCremeHeader() {
                 ))}
               </nav>
 
-              <div className="grid gap-3 border-t border-[#2b1714]/10 bg-[#fff8ef] p-4">
+              <div className="grid gap-3 border-t border-[#2b1714]/10 bg-[#FFFDFA] p-4">
                 <a
                   href={whatsapp}
                   onClick={closeMenu}
