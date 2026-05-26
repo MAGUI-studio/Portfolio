@@ -1,15 +1,12 @@
-"use client";
-
 import Link from "next/link";
 import {
   ArrowUpRight,
   Clock,
   EnvelopeSimple,
   MapPin,
-} from "@phosphor-icons/react";
+} from "@phosphor-icons/react/ssr";
 import { nav } from "./data";
 import { BrandLockup } from "./brand";
-import { ease, motion } from "./motion";
 
 const contactLinks = [
   {
@@ -37,17 +34,9 @@ const serviceLinks = [
 ];
 
 export function KromaFooter() {
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
   return (
-    <motion.footer
+    <footer
       className="-mt-px bg-[#1E1E1E] text-white"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.18 }}
-      transition={{ duration: 0.5, ease }}
     >
       <div className="grid gap-10 border-t border-white/10 p-7 md:grid-cols-[0.38fr_0.62fr] md:p-10 lg:p-12">
         <div className="flex flex-col justify-between gap-10">
@@ -158,16 +147,15 @@ export function KromaFooter() {
             |
           </span>
 
-          <button
-            type="button"
-            onClick={scrollToTop}
+          <Link
+            href="#inicio"
             className="inline-flex cursor-pointer items-center gap-1 text-white transition duration-300 hover:text-[#FFBC4F] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1E1E1E]"
           >
             Voltar ao topo
             <span aria-hidden="true">↑</span>
-          </button>
+          </Link>
         </div>
       </div>
-    </motion.footer>
+    </footer>
   );
 }

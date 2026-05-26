@@ -1,10 +1,7 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { solutions } from "./data";
 import { alexandria } from "./fonts";
-import { motion } from "./motion";
 
 export function KromaSolutionsSection() {
   return (
@@ -14,11 +11,7 @@ export function KromaSolutionsSection() {
     >
       <div className="relative mx-auto max-w-[1560px]">
         <div className="overflow-hidden border-y border-white/10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+          <div
             className="grid lg:grid-cols-[150px_1fr]"
           >
             <div className="flex items-center border-b border-white/10 px-6 py-5 lg:min-h-[420px] lg:border-r lg:border-b-0 lg:[writing-mode:vertical-rl]">
@@ -52,17 +45,13 @@ export function KromaSolutionsSection() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {solutions.map((item, index) => (
-            <motion.article
+            <article
               key={item.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: index * 0.1 }}
               className="group flex w-full flex-col overflow-hidden border border-white/10 bg-[#2A2A2A]/86"
             >
               <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-white/10 bg-black">
@@ -122,7 +111,7 @@ export function KromaSolutionsSection() {
                   </Link>
                 </div>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>

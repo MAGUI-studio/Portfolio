@@ -1,20 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight } from "@phosphor-icons/react";
-import { images, nav } from "./data";
+import { images, nav, whatsappHref } from "./data";
 import { KromaWordmark } from "./brand";
 import { alexandria } from "./fonts";
-import { ease, motion } from "./motion";
 
-const whatsappHref =
-  "https://wa.me/5500000000000?text=Quero%20falar%20com%20um%20especialista%20da%20Kroma";
+const ease = [0.22, 1, 0.36, 1] as const;
 
 export function KromaHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    closeButtonRef.current?.focus();
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [menuOpen]);
 
   return (
     <>
@@ -69,6 +82,7 @@ export function KromaHeader() {
               type="button"
               aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
               aria-expanded={menuOpen}
+              aria-controls="kroma-mobile-menu"
               onClick={() => setMenuOpen((current) => !current)}
               className="group grid size-11 place-items-center border border-white/24 text-white transition duration-300 hover:border-[#FFBC4F] hover:text-[#FFBC4F] lg:hidden"
             >
@@ -102,12 +116,44 @@ export function KromaHeader() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.24, ease }}
             className="fixed inset-0 z-[80] overflow-y-auto text-white lg:hidden"
+            id="kroma-mobile-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Menu de navegação Kroma"
+            ref={menuRef}
+            onKeyDown={(event) => {
+              if (event.key === "Escape") {
+                setMenuOpen(false);
+              }
+
+              if (event.key !== "Tab") return;
+
+              const focusableElements = menuRef.current?.querySelectorAll<
+                HTMLAnchorElement | HTMLButtonElement
+              >(
+                'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+              );
+
+              if (!focusableElements?.length) return;
+
+              const firstElement = focusableElements[0];
+              const lastElement = focusableElements[focusableElements.length - 1];
+
+              if (event.shiftKey && document.activeElement === firstElement) {
+                event.preventDefault();
+                lastElement.focus();
+              }
+
+              if (!event.shiftKey && document.activeElement === lastElement) {
+                event.preventDefault();
+                firstElement.focus();
+              }
+            }}
           >
             <Image
               src={images.hero}
               alt="Paineis solares ao fundo do menu Kroma"
               fill
-              priority
               sizes="100vw"
               className="object-cover"
             />
@@ -134,6 +180,7 @@ export function KromaHeader() {
                   <button
                     type="button"
                     aria-label="Fechar menu"
+                    ref={closeButtonRef}
                     onClick={() => setMenuOpen(false)}
                     className="grid size-12 shrink-0 place-items-center border border-white/20 text-white transition duration-300 hover:border-[#FFBC4F] hover:text-[#FFBC4F]"
                   >

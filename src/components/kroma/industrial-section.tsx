@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
 import { alexandria } from "./fonts";
-import { ease, motion } from "./motion";
 
 export function KromaIndustrialSection() {
   return (
@@ -10,7 +7,7 @@ export function KromaIndustrialSection() {
       <div className="grid min-h-170 w-full overflow-hidden sm:min-h-150 sm:grid-cols-[minmax(0,1fr)_11rem]">
         <div className="relative min-h-150 overflow-hidden sm:min-h-150 sm:[clip-path:polygon(0_0,calc(100%_-_72px)_0,100%_72px,100%_calc(100%_-_72px),calc(100%_-_72px)_100%,0_100%)]">
           <Image
-            src="/images/kroma/paineis.png"
+            src="/images/kroma/paineis.webp"
             alt="Paineis solares Kroma em instalacao industrial"
             fill
             sizes="(min-width: 1024px) calc(100vw - 176px), 100vw"
@@ -21,11 +18,7 @@ export function KromaIndustrialSection() {
           <div className="absolute top-0 right-0 hidden h-18 w-18 bg-[#1E1E1E] [clip-path:polygon(100%_0,100%_100%,0_0)] sm:block" />
           <div className="absolute right-0 bottom-0 hidden h-18 w-18 bg-[#1E1E1E] [clip-path:polygon(100%_0,100%_100%,0_100%)] sm:block" />
 
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.28 }}
-            transition={{ duration: 0.58, delay: 0.08, ease }}
+          <div
             className="relative z-20 m-6 w-[calc(100%-3rem)] max-w-xl bg-[#1E1E1E]/42 p-7 shadow-[0_28px_90px_rgba(0,0,0,0.28)] backdrop-blur-md sm:m-10 md:m-12 md:p-9"
           >
             <div className="flex items-center justify-between gap-5 border-b border-white/12 pb-5">
@@ -59,7 +52,7 @@ export function KromaIndustrialSection() {
                 </span>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
 
         <div className="pointer-events-none relative flex h-24 select-none flex-col items-center justify-center bg-[#1E1E1E] sm:h-auto">

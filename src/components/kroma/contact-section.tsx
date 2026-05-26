@@ -1,14 +1,8 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "@phosphor-icons/react";
-import { images } from "./data";
+import { ArrowRight } from "@phosphor-icons/react/ssr";
+import { images, whatsappHref } from "./data";
 import { alexandria } from "./fonts";
-import { ease, motion } from "./motion";
-
-const whatsappHref =
-  "https://wa.me/5500000000000?text=Quero%20dimensionar%20um%20projeto%20solar%20com%20a%20Kroma";
 
 export function KromaContactSection() {
   return (
@@ -27,12 +21,7 @@ export function KromaContactSection() {
 
       <div className="relative z-10 flex min-h-[820px] flex-col justify-end p-5 pb-24 md:p-8 md:pb-28 lg:p-10 lg:pb-32">
         <div className="grid gap-12 lg:grid-cols-[0.62fr_0.38fr] lg:items-end">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease }}
-          >
+          <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-[#FFBC4F]">
               vamos dimensionar
             </p>
@@ -41,13 +30,9 @@ export function KromaContactSection() {
             >
               Coloque a Kroma para mover o seu futuro.
             </h2>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, delay: 0.08, ease }}
+          <div
             className="border border-white/12 bg-[#1E1E1E]/42 p-7 text-white backdrop-blur-xl md:p-9"
           >
             <p className="mt-10 text-xl leading-9 text-white/78">
@@ -66,7 +51,7 @@ export function KromaContactSection() {
                 <ArrowRight size={17} weight="bold" />
               </Link>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

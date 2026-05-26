@@ -1,10 +1,7 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { images, proof } from "./data";
 import { alexandria } from "./fonts";
-import { motion } from "./motion";
 
 
 export function KromaHeroSection() {
@@ -28,10 +25,7 @@ export function KromaHeroSection() {
 
   <div className="relative z-10 mx-auto w-full max-w-400 px-5 pt-32 md:px-8 lg:px-10 flex-grow flex items-center">
     <div className="grid grid-cols-1 lg:grid-cols-[0.65fr_0.35fr] gap-16 lg:gap-24 w-full items-start">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+      <div
         className="flex flex-col items-start"
       >
         <div className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#FFBC4F]">
@@ -63,12 +57,9 @@ export function KromaHeroSection() {
             Ver Ecossistema
           </Link>
         </div>
-      </motion.div>
+      </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
+      <div
         className="hidden w-full flex-col border border-white/12 bg-[#2A2A2A]/42 p-5 shadow-[0_24px_80px_rgba(0,0,0,0.22)] backdrop-blur-md lg:flex"
       >
         <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
@@ -131,15 +122,12 @@ export function KromaHeroSection() {
             </span>
           ))}
         </div>
-      </motion.div>
+      </div>
     </div>
   </div>
 
   {/* ================= DATA BAR (RODAPÉ TÉCNICO DE LINHA ÚNICA) ================= */}
-  <motion.div
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ duration: 1, delay: 0.3 }}
+  <div
     className="relative z-10 w-full border-t border-white/10 bg-[#2A2A2A]/40 backdrop-blur-md mt-24"
   >
     <div className="mx-auto max-w-[1440px] px-5 md:px-8 lg:px-10 py-8">
@@ -167,7 +155,7 @@ export function KromaHeroSection() {
         ))}
       </div>
     </div>
-  </motion.div>
+  </div>
 </section>
 
   );

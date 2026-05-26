@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, type PointerEvent } from "react";
+import { motion } from "framer-motion";
 import {
   ArrowLeft,
   ArrowRight,
@@ -13,7 +14,8 @@ import {
 } from "@phosphor-icons/react";
 import { process } from "./data";
 import { alexandria } from "./fonts";
-import { ease, motion } from "./motion";
+
+const ease = [0.22, 1, 0.36, 1] as const;
 
 const processIcons = [
   Gauge,
@@ -170,6 +172,8 @@ export function KromaProcessSection() {
             onPointerUp={stopDragging}
             onPointerCancel={stopDragging}
             onScroll={updateActiveCard}
+            role="region"
+            aria-label="Etapas do processo Kroma"
             className={`flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-3 select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
               isDragging ? "cursor-grabbing" : "cursor-grab"
             }`}
@@ -181,6 +185,8 @@ export function KromaProcessSection() {
               return (
                 <article
                   key={title}
+                  aria-label={`Etapa ${number}: ${title}`}
+                  aria-current={isActive ? "step" : undefined}
                   ref={(node) => {
                     cardRefs.current[index] = node;
                   }}
@@ -231,6 +237,7 @@ export function KromaProcessSection() {
                   type="button"
                   onClick={() => selectCard(index)}
                   aria-label={`Ir para etapa ${number}: ${title}`}
+                  aria-current={activeIndex === index ? "step" : undefined}
                   className={`h-2 transition-all duration-300 ${
                     activeIndex === index
                       ? "w-12 bg-[#FFBC4F]"

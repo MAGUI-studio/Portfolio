@@ -1,8 +1,5 @@
-"use client";
-
 import { monitoring } from "./data";
 import { alexandria } from "./fonts";
-import { ease, motion } from "./motion";
 
 const indicators = [
   ["98%", "disponibilidade acompanhada"],
@@ -65,12 +62,8 @@ export function KromaMonitoringSection() {
               const Icon = item.icon;
 
               return (
-                <motion.article
+                <article
                   key={item.title}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.08, ease }}
                   className="flex flex-col items-start"
                 >
                   {/* Ícone sutil no topo do bloco */}
@@ -91,7 +84,7 @@ export function KromaMonitoringSection() {
                   <p className="mt-4 text-sm leading-relaxed text-white/50">
                     {item.text}
                   </p>
-                </motion.article>
+                </article>
               );
             })}
           </div>

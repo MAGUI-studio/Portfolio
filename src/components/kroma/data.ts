@@ -9,14 +9,23 @@ import {
 } from "@phosphor-icons/react/ssr";
 
 export const images = {
-  hero: "/images/kroma/painel.png",
-  industrial: "/images/kroma/industrial.png",
-  residential: "/images/kroma/residencial.png",
-  business: "/images/kroma/empresarial.png",
-  panels:
-    "/images/kroma/paineis_sol.png",
+  hero: "/images/kroma/painel.webp",
+  industrial: "/images/kroma/industrial.webp",
+  residential: "/images/kroma/residencial.webp",
+  business: "/images/kroma/empresarial.webp",
+  panels: "/images/kroma/paineis_sol.webp",
 };
 
+export const productImages = [
+  "/images/kroma/painel.webp",
+  "/images/kroma/inversor.webp",
+  "/images/kroma/estruturas.webp",
+  "/images/kroma/bateria.webp",
+  "/images/kroma/monitoramento.webp",
+];
+
+export const whatsappHref =
+  "https://wa.me/5500000000000?text=Quero%20falar%20com%20um%20especialista%20da%20Kroma";
 
 export const nav = [
   { label: "Soluções", href: "#solucoes" },

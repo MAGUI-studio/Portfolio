@@ -4,18 +4,10 @@ import { useState } from "react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, Check } from "@phosphor-icons/react";
-import { products } from "./data";
+import { productImages, products } from "./data";
 import { alexandria } from "./fonts";
 
 const ease = [0.22, 1, 0.36, 1] as const;
-
-const productImages = [
-  "/images/kroma/painel.png",
-  "/images/kroma/inversor.png",
-  "/images/kroma/estruturas.png",
-  "/images/kroma/bateria.png",
-  "/images/kroma/monitoramento.png",
-];
 
 const productTags = [
   ["captação", "alta eficiência", "garantia"],
@@ -102,7 +94,6 @@ export default function EcoSystemSection() {
                   fill
                   sizes="(min-width: 1024px) 58vw, 100vw"
                   className="object-cover opacity-90 transition-all duration-700 group-hover:scale-[1.02] group-hover:opacity-100"
-                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
               </motion.div>
@@ -118,6 +109,7 @@ export default function EcoSystemSection() {
               <button
                 type="button"
                 onClick={goToPrevious}
+                aria-label="Produto anterior"
                 className="grid size-11 place-items-center border border-white/20 bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-[#FFBC4F] hover:text-[#2A2A2A] hover:border-[#FFBC4F]"
               >
                 <ArrowLeft size={16} weight="bold" />
@@ -125,6 +117,7 @@ export default function EcoSystemSection() {
               <button
                 type="button"
                 onClick={goToNext}
+                aria-label="Proximo produto"
                 className="grid size-11 place-items-center border border-white/20 bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-[#FFBC4F] hover:text-[#2A2A2A] hover:border-[#FFBC4F]"
               >
                 <ArrowRight size={16} weight="bold" />
@@ -144,6 +137,8 @@ export default function EcoSystemSection() {
                     <button
                       type="button"
                       onClick={() => setActiveIndex(index)}
+                      aria-expanded={isActive}
+                      aria-controls={`kroma-product-panel-${index}`}
                       className={`w-full text-left px-6 py-6 md:px-8 transition-all duration-300 flex items-center justify-between gap-4 ${
                         isActive
                           ? "bg-[#FFBC4F] text-[#2A2A2A]"
@@ -181,6 +176,7 @@ export default function EcoSystemSection() {
                     <AnimatePresence initial={false}>
                       {isActive && (
                         <motion.div
+                          id={`kroma-product-panel-${index}`}
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
