@@ -10,7 +10,7 @@ export function KromaSolutionsSection() {
       className="relative overflow-hidden bg-[#1E1E1E] px-5 pt-24 pb-12 text-white md:px-8 md:pt-32 md:pb-16 lg:px-10"
     >
       <div className="relative mx-auto max-w-[1560px]">
-        <div className="overflow-hidden border-y border-white/10">
+        <div className="kroma-reveal overflow-hidden border-y border-white/10">
           <div
             className="grid lg:grid-cols-[150px_1fr]"
           >
@@ -52,7 +52,7 @@ export function KromaSolutionsSection() {
           {solutions.map((item, index) => (
             <article
               key={item.title}
-              className="group flex w-full flex-col overflow-hidden border border-white/10 bg-[#2A2A2A]/86"
+              className="kroma-reveal group flex w-full flex-col overflow-hidden border border-white/10 bg-[#2A2A2A]/86"
             >
               <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-white/10 bg-black">
                 <Image
@@ -60,7 +60,7 @@ export function KromaSolutionsSection() {
                   alt={`Sistema solar ${item.title.toLowerCase()}`}
                   fill
                   sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover opacity-90 transition duration-700 group-hover:scale-[1.03] group-hover:opacity-100"
+                  className="object-cover opacity-90 transition duration-700 group-hover:scale-[1.06] group-hover:opacity-100"
                 />
                 <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/72 to-transparent p-4 pt-10">
                   <span className="font-mono text-[10px] uppercase tracking-widest text-[#FFBC4F]">
@@ -95,14 +95,14 @@ export function KromaSolutionsSection() {
                         className="flex items-center justify-between text-[11px] font-medium uppercase tracking-wide text-white/72"
                       >
                         <span>{point}</span>
-                        <span className="h-1 w-1 bg-[#FFBC4F]" />
+                        <span className="kroma-pulse-dot h-1 w-1 bg-[#FFBC4F]" />
                       </div>
                     ))}
                   </div>
 
                   <Link
                     href="#contato"
-                    className="group/link mt-8 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#FFBC4F] transition-colors hover:text-white"
+                    className="kroma-link-underline group/link mt-8 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#FFBC4F] transition-colors hover:text-white"
                   >
                     Configurar sistema
                     <span className="transform transition-transform group-hover/link:translate-x-1">

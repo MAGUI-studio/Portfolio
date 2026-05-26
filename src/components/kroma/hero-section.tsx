@@ -17,7 +17,7 @@ export function KromaHeroSection() {
       fill
       priority
       sizes="100vw"
-      className="object-cover"
+      className="kroma-kenburns object-cover"
     />
     {/* Máscara de alto contraste escura e homogênea para priorizar a leitura */}
     <div className="absolute inset-0 bg-[#2A2A2A]/40 mix-blend-multiply" />
@@ -26,7 +26,7 @@ export function KromaHeroSection() {
   <div className="relative z-10 mx-auto w-full max-w-400 px-5 pt-32 md:px-8 lg:px-10 flex-grow flex items-center">
     <div className="grid grid-cols-1 lg:grid-cols-[0.65fr_0.35fr] gap-16 lg:gap-24 w-full items-start">
       <div
-        className="flex flex-col items-start"
+        className="kroma-reveal flex flex-col items-start"
       >
         <div className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#FFBC4F]">
           [ Kroma // Inteligência Energética ]
@@ -46,13 +46,13 @@ export function KromaHeroSection() {
         <div className="mt-12 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
           <Link
             href="#contato"
-            className="inline-flex items-center justify-center bg-[#FFBC4F] px-8 py-4.5 text-xs font-bold uppercase tracking-widest text-[#2A2A2A] transition duration-300 hover:bg-white rounded-none"
+            className="kroma-cta inline-flex items-center justify-center bg-[#FFBC4F] px-8 py-4.5 text-xs font-bold uppercase tracking-widest text-[#2A2A2A] transition duration-300 hover:bg-white rounded-none"
           >
             Solicitar Estudo Técnico
           </Link>
           <Link
             href="#produtos"
-            className="inline-flex items-center justify-center border border-white/20 px-8 py-4.5 text-xs font-bold uppercase tracking-widest text-white backdrop-blur-sm transition duration-300 hover:bg-white hover:text-[#2A2A2A] rounded-none"
+            className="kroma-cta inline-flex items-center justify-center border border-white/20 px-8 py-4.5 text-xs font-bold uppercase tracking-widest text-white backdrop-blur-sm transition duration-300 hover:bg-white hover:text-[#2A2A2A] rounded-none"
           >
             Ver Ecossistema
           </Link>
@@ -60,7 +60,7 @@ export function KromaHeroSection() {
       </div>
 
       <div
-        className="hidden w-full flex-col border border-white/12 bg-[#2A2A2A]/42 p-5 shadow-[0_24px_80px_rgba(0,0,0,0.22)] backdrop-blur-md lg:flex"
+        className="kroma-card-hover kroma-reveal kroma-delay-2 hidden w-full flex-col border border-white/12 bg-[#2A2A2A]/42 p-5 shadow-[0_24px_80px_rgba(0,0,0,0.22)] backdrop-blur-md lg:flex"
       >
         <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
           <div>
@@ -93,7 +93,7 @@ export function KromaHeroSection() {
           ].map((item) => (
             <div
               key={item.num}
-              className="group grid grid-cols-[42px_1fr] gap-4 py-5"
+            className="group grid grid-cols-[42px_1fr] gap-4 py-5 transition duration-300 hover:translate-x-1"
             >
               <span className="pt-1 font-mono text-[11px] text-[#FFBC4F]">
                 {item.num}
@@ -128,11 +128,11 @@ export function KromaHeroSection() {
 
   {/* ================= DATA BAR (RODAPÉ TÉCNICO DE LINHA ÚNICA) ================= */}
   <div
-    className="relative z-10 w-full border-t border-white/10 bg-[#2A2A2A]/40 backdrop-blur-md mt-24"
+    className="kroma-reveal kroma-delay-3 relative z-10 w-full border-t border-white/10 bg-[#2A2A2A]/40 backdrop-blur-md mt-24"
   >
     <div className="mx-auto max-w-[1440px] px-5 md:px-8 lg:px-10 py-8">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-between">
-        <div className="flex flex-col">
+        <div className="kroma-drift flex flex-col">
           <span className="font-mono text-[10px] uppercase tracking-wider text-[#FFBC4F]">
             Kroma Core
           </span>
@@ -143,7 +143,7 @@ export function KromaHeroSection() {
         {proof.slice(1).map((item) => (
           <div
             key={item.label}
-            className="flex flex-col border-l border-white/10 pl-6"
+            className="flex flex-col border-l border-white/10 pl-6 transition duration-300 hover:border-[#FFBC4F] hover:pl-8"
           >
             <span className="font-mono text-2xl font-light tracking-tight text-white">
               {item.value}

@@ -137,7 +137,7 @@ export function KromaProcessSection() {
                   type="button"
                   onClick={() => selectCard(activeIndex - 1)}
                   aria-label="Card anterior"
-                  className="grid size-12 place-items-center bg-[#242424] text-white transition duration-300 hover:bg-[#FFBC4F] hover:text-[#2A2A2A]"
+                  className="grid size-12 place-items-center bg-[#242424] text-white transition duration-300 hover:-translate-y-1 hover:bg-[#FFBC4F] hover:text-[#2A2A2A]"
                 >
                   <ArrowLeft size={18} weight="bold" />
                 </button>
@@ -145,7 +145,7 @@ export function KromaProcessSection() {
                   type="button"
                   onClick={() => selectCard(activeIndex + 1)}
                   aria-label="Proximo card"
-                  className="grid size-12 place-items-center bg-[#FFBC4F] text-[#2A2A2A] transition duration-300 hover:bg-white"
+                  className="grid size-12 place-items-center bg-[#FFBC4F] text-[#2A2A2A] transition duration-300 hover:-translate-y-1 hover:bg-white"
                 >
                   <ArrowRight size={18} weight="bold" />
                 </button>
@@ -190,7 +190,7 @@ export function KromaProcessSection() {
                   ref={(node) => {
                     cardRefs.current[index] = node;
                   }}
-                  className={`group relative flex min-h-[430px] w-[84vw] shrink-0 snap-start flex-col justify-between overflow-hidden border border-white/10 bg-[#242424]/72 p-7 shadow-[0_24px_90px_rgba(0,0,0,0.2)] backdrop-blur-md transition duration-300 md:w-[48vw] lg:w-[31.6%] ${
+                  className={`kroma-card-hover group relative flex min-h-[430px] w-[84vw] shrink-0 snap-start flex-col justify-between overflow-hidden border border-white/10 bg-[#242424]/72 p-7 shadow-[0_24px_90px_rgba(0,0,0,0.2)] backdrop-blur-md transition duration-300 md:w-[48vw] lg:w-[31.6%] ${
                     isActive
                       ? "border-white/18 bg-[#2A2A2A]/84"
                       : "hover:border-white/16 hover:bg-[#2A2A2A]/72"
@@ -199,14 +199,14 @@ export function KromaProcessSection() {
                   <Icon
                     size={240}
                     weight="duotone"
-                    className="pointer-events-none absolute -right-14 -bottom-12 text-white/8 transition duration-500 group-hover:scale-105 group-hover:text-white/12"
+                    className="pointer-events-none absolute -right-14 -bottom-12 text-white/8 transition duration-500 group-hover:scale-110 group-hover:rotate-3 group-hover:text-white/12"
                   />
 
                   <div className="relative z-10 flex items-center justify-between gap-5">
                     <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-white/42">
                       etapa {number}
                     </span>
-                    <span className="grid size-12 place-items-center bg-white/6 text-white/54">
+                    <span className="grid size-12 place-items-center bg-white/6 text-white/54 transition duration-300 group-hover:bg-[#FFBC4F] group-hover:text-[#2A2A2A]">
                       <Icon size={24} weight="duotone" />
                     </span>
                   </div>
@@ -230,7 +230,7 @@ export function KromaProcessSection() {
           </div>
 
           <div className="mt-8 flex flex-wrap items-center justify-between gap-5">
-            <div className="flex items-center gap-2">
+            <div className="kroma-bars flex items-end gap-2">
               {process.map(([number, title], index) => (
                 <button
                   key={title}

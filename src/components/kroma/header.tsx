@@ -54,7 +54,7 @@ export function KromaHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="p-3 transition duration-300 hover:text-[#FFBC4F]"
+                className="kroma-link-underline p-3 transition duration-300 hover:text-[#FFBC4F]"
               >
                 {item.label}
               </Link>
@@ -66,7 +66,7 @@ export function KromaHeader() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="group hidden items-center gap-3 text-[10px] font-black uppercase tracking-[0.18em] text-white/78 transition duration-300 hover:text-[#FFBC4F] sm:inline-flex"
+              className="kroma-link-underline group hidden items-center gap-3 text-[10px] font-black uppercase tracking-[0.18em] text-white/78 transition duration-300 hover:text-[#FFBC4F] sm:inline-flex"
             >
               Falar com especialista
               <span className="grid size-9 place-items-center border border-white/20 text-white transition duration-300 group-hover:border-[#FFBC4F] group-hover:text-[#FFBC4F]">
@@ -84,7 +84,7 @@ export function KromaHeader() {
               aria-expanded={menuOpen}
               aria-controls="kroma-mobile-menu"
               onClick={() => setMenuOpen((current) => !current)}
-              className="group grid size-11 place-items-center border border-white/24 text-white transition duration-300 hover:border-[#FFBC4F] hover:text-[#FFBC4F] lg:hidden"
+              className="group grid size-11 place-items-center border border-white/24 text-white transition duration-300 hover:-translate-y-0.5 hover:border-[#FFBC4F] hover:text-[#FFBC4F] lg:hidden"
             >
               <span className="grid w-5 gap-1.5">
                 <span
@@ -155,7 +155,7 @@ export function KromaHeader() {
               alt="Paineis solares ao fundo do menu Kroma"
               fill
               sizes="100vw"
-              className="object-cover"
+              className="kroma-kenburns object-cover"
             />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(30,30,30,0.92)_0%,rgba(30,30,30,0.74)_48%,rgba(30,30,30,0.96)_100%)]" />
 
@@ -182,7 +182,7 @@ export function KromaHeader() {
                     aria-label="Fechar menu"
                     ref={closeButtonRef}
                     onClick={() => setMenuOpen(false)}
-                    className="grid size-12 shrink-0 place-items-center border border-white/20 text-white transition duration-300 hover:border-[#FFBC4F] hover:text-[#FFBC4F]"
+                    className="grid size-12 shrink-0 place-items-center border border-white/20 text-white transition duration-300 hover:-translate-y-0.5 hover:border-[#FFBC4F] hover:text-[#FFBC4F]"
                   >
                     <span className="relative grid size-5 place-items-center">
                       <span className="absolute h-0.5 w-6 rotate-45 bg-current" />
@@ -207,7 +207,7 @@ export function KromaHeader() {
                       <Link
                         href={item.href}
                         onClick={() => setMenuOpen(false)}
-                        className="group flex items-center justify-between py-6"
+                        className="group flex items-center justify-between py-6 transition duration-300 hover:pl-2"
                       >
                         <span
                           className={`text-4xl font-semibold leading-none text-white md:text-6xl ${alexandria.className}`}
@@ -242,7 +242,7 @@ export function KromaHeader() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMenuOpen(false)}
-                  className="inline-flex items-center justify-center gap-3 bg-[#FFBC4F] p-5 text-sm font-black uppercase tracking-[0.16em] text-[#1E1E1E]"
+                  className="kroma-cta inline-flex items-center justify-center gap-3 bg-[#FFBC4F] p-5 text-sm font-black uppercase tracking-[0.16em] text-[#1E1E1E]"
                 >
                   Dimensionar sistema
                   <ArrowRight size={17} weight="bold" />

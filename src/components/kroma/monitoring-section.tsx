@@ -15,7 +15,7 @@ export function KromaMonitoringSection() {
     >
       <div className="mx-auto max-w-[1560px]">
         {/* HEADER BRUTALISTA */}
-        <div className="max-w-5xl">
+        <div className="kroma-reveal max-w-5xl">
           <div className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#FFBC4F]">
             [ 04 // Telemetria ativa ]
           </div>
@@ -42,9 +42,9 @@ export function KromaMonitoringSection() {
             {/* Linha técnica com dados numéricos crus */}
             <div className="space-y-8 border-l-2 border-[#FFBC4F] pl-6">
               {indicators.map(([value, label]) => (
-                <div key={label} className="flex flex-col">
+                <div key={label} className="flex flex-col transition duration-300 hover:translate-x-2">
                   <span
-                    className={`text-4xl md:text-5xl font-medium tracking-tight ${alexandria.className}`}
+                    className={`kroma-drift text-4xl md:text-5xl font-medium tracking-tight ${alexandria.className}`}
                   >
                     {value}
                   </span>
@@ -64,10 +64,10 @@ export function KromaMonitoringSection() {
               return (
                 <article
                   key={item.title}
-                  className="flex flex-col items-start"
+                  className="kroma-reveal group flex flex-col items-start"
                 >
                   {/* Ícone sutil no topo do bloco */}
-                  <div className="p-3 bg-white/5 border border-white/10 mb-6 text-[#FFBC4F]">
+                  <div className="p-3 bg-white/5 border border-white/10 mb-6 text-[#FFBC4F] transition duration-300 group-hover:border-[#FFBC4F]">
                     <Icon size={20} weight="light" />
                   </div>
 

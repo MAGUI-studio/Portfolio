@@ -41,7 +41,7 @@ export default function EcoSystemSection() {
     >
       <div className="relative mx-auto max-w-[1560px]">
         {/* ================= CABEÇALHO DA SEÇÃO ================= */}
-        <div className="border-y border-white/10 py-14">
+        <div className="kroma-reveal border-y border-white/10 py-14">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -76,9 +76,9 @@ export default function EcoSystemSection() {
         </div>
 
         {/* ================= GRID DO ECOSSISTEMA ================= */}
-        <div className="mt-12 grid grid-cols-1 overflow-hidden bg-[#2A2A2A]/86 lg:grid-cols-[0.58fr_0.42fr]">
+        <div className="kroma-reveal kroma-delay-2 mt-12 grid grid-cols-1 overflow-hidden bg-[#2A2A2A]/86 lg:grid-cols-[0.58fr_0.42fr]">
           {/* PAINEL VISUAL (ESQUERDA) */}
-          <div className="group relative min-h-[450px] overflow-hidden bg-black">
+          <div className="kroma-scanline group relative min-h-[450px] overflow-hidden bg-black">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
@@ -93,7 +93,7 @@ export default function EcoSystemSection() {
                   alt={`Equipamento Kroma: ${activeProduct.title}`}
                   fill
                   sizes="(min-width: 1024px) 58vw, 100vw"
-                  className="object-cover opacity-90 transition-all duration-700 group-hover:scale-[1.02] group-hover:opacity-100"
+                  className="object-cover opacity-90 transition-all duration-700 group-hover:scale-[1.06] group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
               </motion.div>
@@ -110,7 +110,7 @@ export default function EcoSystemSection() {
                 type="button"
                 onClick={goToPrevious}
                 aria-label="Produto anterior"
-                className="grid size-11 place-items-center border border-white/20 bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-[#FFBC4F] hover:text-[#2A2A2A] hover:border-[#FFBC4F]"
+                className="grid size-11 place-items-center border border-white/20 bg-black/40 text-white backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-[#FFBC4F] hover:text-[#2A2A2A] hover:border-[#FFBC4F]"
               >
                 <ArrowLeft size={16} weight="bold" />
               </button>
@@ -118,7 +118,7 @@ export default function EcoSystemSection() {
                 type="button"
                 onClick={goToNext}
                 aria-label="Proximo produto"
-                className="grid size-11 place-items-center border border-white/20 bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-[#FFBC4F] hover:text-[#2A2A2A] hover:border-[#FFBC4F]"
+                className="grid size-11 place-items-center border border-white/20 bg-black/40 text-white backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:bg-[#FFBC4F] hover:text-[#2A2A2A] hover:border-[#FFBC4F]"
               >
                 <ArrowRight size={16} weight="bold" />
               </button>
@@ -139,10 +139,10 @@ export default function EcoSystemSection() {
                       onClick={() => setActiveIndex(index)}
                       aria-expanded={isActive}
                       aria-controls={`kroma-product-panel-${index}`}
-                      className={`w-full text-left px-6 py-6 md:px-8 transition-all duration-300 flex items-center justify-between gap-4 ${
+                      className={`group w-full text-left px-6 py-6 md:px-8 transition-all duration-300 flex items-center justify-between gap-4 ${
                         isActive
                           ? "bg-[#FFBC4F] text-[#2A2A2A]"
-                          : "bg-transparent text-white hover:bg-white/6"
+                          : "bg-transparent text-white hover:bg-white/6 hover:pl-9"
                       }`}
                     >
                       <div className="flex items-center gap-5">
@@ -167,7 +167,7 @@ export default function EcoSystemSection() {
                         className={
                           isActive
                             ? "text-[#2A2A2A]"
-                            : "text-white/40 transition-colors group-hover:text-white"
+                            : "text-white/40 transition duration-300 group-hover:scale-110 group-hover:text-white"
                         }
                       />
                     </button>
@@ -193,7 +193,7 @@ export default function EcoSystemSection() {
                               {productTags[index].map((tag) => (
                                 <span
                                   key={tag}
-                                  className="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 px-2.5 py-1 text-[9px] font-mono uppercase tracking-wider text-white/80"
+                                  className="inline-flex items-center gap-1.5 bg-white/5 border border-white/10 px-2.5 py-1 text-[9px] font-mono uppercase tracking-wider text-white/80 transition duration-300 hover:border-[#FFBC4F] hover:text-white"
                                 >
                                   <Check
                                     size={10}

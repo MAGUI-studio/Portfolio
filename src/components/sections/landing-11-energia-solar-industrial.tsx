@@ -1,4 +1,5 @@
 import { KromaContactSection } from "../kroma/contact-section";
+import { KromaAnimationStyles } from "../kroma/animation-styles";
 import EcoSystemSection from "../kroma/ecosystemSection";
 import { KromaFooter } from "../kroma/footer";
 import { KromaHeader } from "../kroma/header";
@@ -12,6 +13,7 @@ import { KromaSolutionsSection } from "../kroma/solutions-section";
 export default function Landing11EnergiaSolarIndustrial() {
   return (
     <main className="overflow-hidden bg-[#f7f3e8] text-[#2A2A2A]">
+      <KromaAnimationStyles />
       <div className="relative">
         <KromaHeader />
         <KromaHeroSection />

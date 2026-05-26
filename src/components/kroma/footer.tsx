@@ -57,7 +57,7 @@ export function KromaFooter() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="w-fit transition duration-300 hover:text-white"
+                  className="kroma-link-underline w-fit transition duration-300 hover:text-white"
                 >
                   {item.label}
                 </Link>
@@ -74,7 +74,7 @@ export function KromaFooter() {
                 <Link
                   key={label}
                   href={href}
-                  className="w-fit transition duration-300 hover:text-white"
+                  className="kroma-link-underline w-fit transition duration-300 hover:text-white"
                 >
                   {label}
                 </Link>
@@ -100,7 +100,7 @@ export function KromaFooter() {
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className="group flex items-center justify-between gap-4 text-sm text-white/58 transition duration-300 hover:text-white"
+                    className="group flex items-center justify-between gap-4 text-sm text-white/58 transition duration-300 hover:translate-x-1 hover:text-white"
                   >
                     <span className="flex items-center gap-3">
                       <Icon
@@ -149,7 +149,7 @@ export function KromaFooter() {
 
           <Link
             href="#inicio"
-            className="inline-flex cursor-pointer items-center gap-1 text-white transition duration-300 hover:text-[#FFBC4F] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1E1E1E]"
+            className="kroma-link-underline inline-flex cursor-pointer items-center gap-1 text-white transition duration-300 hover:text-[#FFBC4F] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1E1E1E]"
           >
             Voltar ao topo
             <span aria-hidden="true">↑</span>
