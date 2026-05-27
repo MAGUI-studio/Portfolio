@@ -4,7 +4,6 @@ import { syncopate } from "./fonts";
 export function VittaPrinciplesSection() {
   return (
     <section className="relative overflow-hidden bg-[#0A0A0A] px-6 py-28 text-white md:px-12 md:py-36">
-      <div className="pointer-events-none absolute right-[-16%] top-[-18%] size-[620px] rounded-full bg-[#D7A98B]/7 blur-[130px]" />
 
       <div className="relative z-10 mx-auto max-w-[1500px]">
         <div className="vitta-reveal grid gap-10 lg:grid-cols-[0.44fr_0.56fr] lg:items-end">

@@ -10,17 +10,14 @@ export function VittaProductsSection() {
     <section id="produtos" className="relative overflow-hidden bg-[#0A0A0A] px-6 py-28 text-white md:px-12 md:py-36">
       <Image
         src={images.products}
-        width={1800}
-        height={1400}
+        fill
         alt="Produtos VITTA usados nas consultas e disponíveis para venda"
-        className="absolute inset-0 size-full object-contain object-left opacity-80"
-        priority={false}
+        sizes="100vw"
+        className="absolute inset-0 object-cover object-center opacity-80"
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,#0A0A0A_0%,rgba(10,10,10,0.86)_38%,rgba(10,10,10,0.26)_100%)]" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A]/10" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-transparent to-[#0A0A0A]/10" />
-
-
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-transparent to-[#0A0A0A]/10" />
 
       <div className="relative z-10 mx-auto grid min-h-[760px] max-w-[1600px] gap-16 lg:grid-cols-[0.48fr_0.52fr] lg:items-end">
         <div className="vitta-reveal flex flex-col justify-between gap-12">
