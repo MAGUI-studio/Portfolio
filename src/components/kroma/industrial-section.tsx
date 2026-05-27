@@ -8,7 +8,7 @@ export function KromaIndustrialSection() {
         <div className="kroma-scanline relative min-h-150 overflow-hidden sm:min-h-150 sm:[clip-path:polygon(0_0,calc(100%_-_72px)_0,100%_72px,100%_calc(100%_-_72px),calc(100%_-_72px)_100%,0_100%)]">
           <Image
             src="/images/kroma/paineis.webp"
-            alt="Paineis solares Kroma em instalacao industrial"
+            alt="Paineis solares KROMA em instalacao industrial"
             fill
             sizes="(min-width: 1024px) calc(100vw - 176px), 100vw"
             className="kroma-kenburns object-cover object-bottom"

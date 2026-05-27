@@ -35,7 +35,7 @@ export function KromaMarqueeSection() {
 
       <div
         className={`kroma-marquee-track flex w-max items-center gap-10 whitespace-nowrap text-3xl font-black uppercase tracking-[-0.04em] md:text-5xl ${alexandria.className}`}
-        aria-label="Componentes do sistema Kroma"
+        aria-label="Componentes do sistema KROMA"
       >
         {[...marqueeItems, ...marqueeItems, ...marqueeItems].map(
           (item, index) => (

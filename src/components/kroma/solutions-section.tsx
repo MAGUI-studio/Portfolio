@@ -29,7 +29,7 @@ export function KromaSolutionsSection() {
 
               <div className="mt-10 grid gap-6 pt-8 lg:grid-cols-[0.52fr_0.48fr] lg:items-end">
                 <p className="max-w-2xl text-lg leading-8 text-white/64">
-                  A Kroma adapta a mesma engenharia solar a três ritmos de
+                  A KROMA adapta a mesma engenharia solar a três ritmos de
                   consumo: rotina residencial, previsibilidade comercial e
                   potência industrial.
                 </p>

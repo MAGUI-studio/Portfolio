@@ -25,7 +25,7 @@ export const productImages = [
 ];
 
 export const whatsappHref =
-  "https://wa.me/5500000000000?text=Quero%20falar%20com%20um%20especialista%20da%20Kroma";
+  "https://wa.me/5500000000000?text=Quero%20falar%20com%20um%20especialista%20da%20KROMA";
 
 export const nav = [
   { label: "Soluções", href: "#solucoes" },

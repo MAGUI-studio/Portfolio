@@ -28,7 +28,7 @@ export function KromaContactSection() {
             <h2
               className={`mt-7 text-6xl font-semibold leading-[0.92] md:text-8xl lg:text-[112px] ${alexandria.className} uppercase`}
             >
-              Coloque a Kroma para mover o seu futuro.
+              Coloque a KROMA para mover o seu futuro.
             </h2>
           </div>
 
@@ -36,7 +36,7 @@ export function KromaContactSection() {
             className="kroma-card-hover kroma-reveal kroma-delay-2 border border-white/12 bg-[#1E1E1E]/42 p-7 text-white backdrop-blur-xl md:p-9"
           >
             <p className="mt-10 text-xl leading-9 text-white/78">
-              Envie sua conta de energia e o tipo de imóvel. A Kroma retorna com
+              Envie sua conta de energia e o tipo de imóvel. A KROMA retorna com
               uma leitura inicial de potência, economia estimada e o caminho
               mais inteligente para gerar sua própria energia.
             </p>

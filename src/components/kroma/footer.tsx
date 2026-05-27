@@ -124,7 +124,7 @@ export function KromaFooter() {
 
       <div className="flex flex-col gap-5 border-t border-white/10 p-5 text-xs text-white/48 md:flex-row md:items-center md:justify-between md:p-7 lg:p-8">
         <p>
-          © {new Date().getFullYear()} Kroma Energia Solar. Todos os direitos
+          © {new Date().getFullYear()} KROMA Energia Solar. Todos os direitos
           reservados.
         </p>
 
@@ -149,7 +149,7 @@ export function KromaFooter() {
 
           <Link
             href="#inicio"
-            className="kroma-link-underline inline-flex cursor-pointer items-center gap-1 text-white transition duration-300 hover:text-[#FFBC4F] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1E1E1E]"
+            className="inline-flex cursor-pointer items-center gap-1 text-white transition duration-300 hover:text-[#FFBC4F] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1E1E1E]"
           >
             Voltar ao topo
             <span aria-hidden="true">↑</span>

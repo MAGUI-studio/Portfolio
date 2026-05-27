@@ -90,7 +90,7 @@ export default function EcoSystemSection() {
               >
                 <Image
                   src={productImages[activeIndex]}
-                  alt={`Equipamento Kroma: ${activeProduct.title}`}
+                  alt={`Equipamento KROMA: ${activeProduct.title}`}
                   fill
                   sizes="(min-width: 1024px) 58vw, 100vw"
                   className="object-cover opacity-90 transition-all duration-700 group-hover:scale-[1.06] group-hover:opacity-100"

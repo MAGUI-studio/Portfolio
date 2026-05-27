@@ -29,7 +29,7 @@ export function KromaHeroSection() {
         className="kroma-reveal flex flex-col items-start"
       >
         <div className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#FFBC4F]">
-          [ Kroma // Inteligência Energética ]
+          [ KROMA // Inteligência Energética ]
         </div>
 
         <h1 className={`mt-6 text-5xl font-semibold leading-[0.95] tracking-[-0.04em] sm:text-7xl md:text-8xl xl:text-[100px] text-white uppercase ${alexandria.className}`}>
@@ -134,7 +134,7 @@ export function KromaHeroSection() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-between">
         <div className="kroma-drift flex flex-col">
           <span className="font-mono text-[10px] uppercase tracking-wider text-[#FFBC4F]">
-            Kroma Core
+            KROMA Core
           </span>
           <span className="mt-2 text-xs text-white/60">
             Infraestrutura solar corporativa e residencial.

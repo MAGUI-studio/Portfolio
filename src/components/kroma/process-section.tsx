@@ -173,7 +173,7 @@ export function KromaProcessSection() {
             onPointerCancel={stopDragging}
             onScroll={updateActiveCard}
             role="region"
-            aria-label="Etapas do processo Kroma"
+            aria-label="Etapas do processo KROMA"
             className={`flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-3 select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
               isDragging ? "cursor-grabbing" : "cursor-grab"
             }`}

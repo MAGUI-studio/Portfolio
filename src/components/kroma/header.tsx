@@ -35,7 +35,7 @@ export function KromaHeader() {
         <div className="flex items-center justify-between gap-5">
           <Link
             href="#inicio"
-            aria-label="Kroma, voltar ao inicio"
+            aria-label="KROMA, voltar ao inicio"
             onClick={() => setMenuOpen(false)}
             className="group inline-flex items-center gap-4"
           >
@@ -66,7 +66,7 @@ export function KromaHeader() {
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="kroma-link-underline group hidden items-center gap-3 text-[10px] font-black uppercase tracking-[0.18em] text-white/78 transition duration-300 hover:text-[#FFBC4F] sm:inline-flex"
+              className="group hidden items-center gap-3 text-[10px] font-black uppercase tracking-[0.18em] text-white/78 transition duration-300 hover:text-[#FFBC4F] sm:inline-flex"
             >
               Falar com especialista
               <span className="grid size-9 place-items-center border border-white/20 text-white transition duration-300 group-hover:border-[#FFBC4F] group-hover:text-[#FFBC4F]">
@@ -119,7 +119,7 @@ export function KromaHeader() {
             id="kroma-mobile-menu"
             role="dialog"
             aria-modal="true"
-            aria-label="Menu de navegação Kroma"
+            aria-label="Menu de navegação KROMA"
             ref={menuRef}
             onKeyDown={(event) => {
               if (event.key === "Escape") {
@@ -152,7 +152,7 @@ export function KromaHeader() {
           >
             <Image
               src={images.hero}
-              alt="Paineis solares ao fundo do menu Kroma"
+              alt="Paineis solares ao fundo do menu KROMA"
               fill
               sizes="100vw"
               className="kroma-kenburns object-cover"
@@ -169,7 +169,7 @@ export function KromaHeader() {
                 >
                   <Link
                     href="#inicio"
-                    aria-label="Kroma, voltar ao inicio"
+                    aria-label="KROMA, voltar ao inicio"
                     onClick={() => setMenuOpen(false)}
                     className="inline-flex items-center gap-3"
                   >
