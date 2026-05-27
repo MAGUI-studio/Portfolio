@@ -11,6 +11,18 @@ export function VittaAnimationStyles() {
         50% { transform: scale(1.055); }
       }
 
+      @keyframes vitta-hero-primary {
+        0%, 42% { opacity: 1; transform: scale(1); }
+        50%, 92% { opacity: 0; transform: scale(1.035); }
+        100% { opacity: 1; transform: scale(1); }
+      }
+
+      @keyframes vitta-hero-secondary {
+        0%, 42% { opacity: 0; transform: scale(1.035); }
+        50%, 92% { opacity: 1; transform: scale(1); }
+        100% { opacity: 0; transform: scale(1.035); }
+      }
+
       @keyframes vitta-marquee {
         from { transform: translateX(0); }
         to { transform: translateX(-50%); }
@@ -32,6 +44,18 @@ export function VittaAnimationStyles() {
       .vitta-soft-zoom {
         animation: vitta-soft-zoom 18s ease-in-out infinite;
         transform-origin: center;
+      }
+
+      .vitta-hero-primary {
+        animation: vitta-hero-primary 14s ease-in-out infinite;
+        transform-origin: center;
+        will-change: opacity, transform;
+      }
+
+      .vitta-hero-secondary {
+        animation: vitta-hero-secondary 14s ease-in-out infinite;
+        transform-origin: center;
+        will-change: opacity, transform;
       }
 
       .vitta-marquee-track {
@@ -67,12 +91,18 @@ export function VittaAnimationStyles() {
 
       @media (prefers-reduced-motion: reduce) {
         .vitta-reveal,
+        .vitta-hero-primary,
+        .vitta-hero-secondary,
         .vitta-soft-zoom,
         .vitta-marquee-track,
         .vitta-orbit {
           animation: none !important;
           opacity: 1 !important;
           transform: none !important;
+        }
+
+        .vitta-hero-secondary {
+          display: none !important;
         }
 
         .vitta-card,

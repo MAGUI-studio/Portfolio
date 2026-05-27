@@ -29,7 +29,7 @@ export function VittaProtocolsSection() {
               matriz terapêutica
             </p>
             <h2 className={`${syncopate.className} mt-6 text-3xl font-light leading-[1.1] tracking-[-0.04em] sm:text-5xl md:text-6xl lg:text-7xl`}>
-              a pele no centro. o protocolo ao redor.
+              cada pele pede uma rota própria.
             </h2>
           </div>
 

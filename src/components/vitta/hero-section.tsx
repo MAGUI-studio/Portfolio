@@ -17,9 +17,17 @@ export function VittaHeroSection() {
           src={images.hero}
           fill
           alt="Tratamento facial em ambiente de estética clínica"
-          className="object-cover saturate-[0.85] transition-transform duration-[12s] ease-out scale-100"
+          className="vitta-hero-primary object-cover saturate-[0.85]"
           sizes="100vw"
           priority
+        />
+        <Image
+          src={images.heroSecondary}
+          fill
+          alt=""
+          aria-hidden="true"
+          className="vitta-hero-secondary object-cover saturate-[0.85]"
+          sizes="100vw"
         />
         {/* Gradients de Contraste e Proteção de Leitura */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/40 to-transparent" />

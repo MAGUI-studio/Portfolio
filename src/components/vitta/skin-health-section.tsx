@@ -33,8 +33,6 @@ export function VittaSkinHealthSection() {
 
       {/* BLOCO 2: Janela Cinematográfica Horizontal + Marquee + Assinatura Glass */}
       <div className="mt-24 relative">
-        <VittaMarqueeSection />
-
         <div className="relative w-full aspect-[21/9] md:aspect-[32/14] bg-[#121214] border-y border-white/10 overflow-hidden group/canvas">
           <Image
             src={images.team}
@@ -60,6 +58,7 @@ export function VittaSkinHealthSection() {
             </p>
           </div>
         </div>
+        <VittaMarqueeSection />
       </div>
 
       {/* BLOCO 3: Grid Clínico de 6 Pilares */}
