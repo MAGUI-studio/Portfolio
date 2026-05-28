@@ -39,7 +39,7 @@ export function ShinobiMarqueeSection() {
         <div className="shinobi-marquee-track flex w-max items-center gap-0">
           {repeated.map((item, index) => (
             <div key={`${item}-${index}`} className="flex items-center">
-              <span className="whitespace-nowrap text-xl font-black uppercase tracking-[0.18em] text-white md:text-3xl">
+              <span className="whitespace-nowrap text-xl font-black uppercase tracking-[0.18em] text-white [font-family:var(--font-shinobi-display)] md:text-3xl">
                 {item}
               </span>
               <span className="mx-8 h-px w-16 bg-white/45" />

@@ -8,81 +8,136 @@ export function ShinobiHeroBannerSection() {
     <section
       id="inicio"
       aria-labelledby="shinobi-awakening-title"
-      className="group relative min-h-[88svh] overflow-hidden bg-[#050302] text-white"
+      className="group relative overflow-hidden bg-black text-white flex flex-col justify-end pt-38"
     >
-      <Image
-        src="/images/shinobi/homem.png"
-        alt="Latas SHINOBI em destaque"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04] group-hover:opacity-0 group-hover:blur-[3px]"
-      />
+      {/* Estilos embutidos com o efeito "Sword Slash" e Glassmorphism nos Botões */}
+      <style dangerouslySetInnerHTML={{ __html: `
+        /* Estado Inicial: O samurai está escondido em uma linha diagonal invisível no canto superior direito */
+        .hero-bg-samurai {
+          clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+          transition: clip-path 1.4s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
+        /* Estado Hover: O corte atravessa a tela na diagonal e abre instantaneamente */
+        .group:hover .hero-bg-samurai {
+          clip-path: polygon(0 0, 120% 0, 100% 100%, -20% 100%);
+        }
 
-      <Image
-        src="/images/shinobi/samurai.png"
-        alt=""
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover opacity-0 blur-[5px] transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-100 group-hover:opacity-100 group-hover:blur-0"
-      />
+        /* Efeito opcional: Uma leve puxada na escala da imagem para dar impacto ao corte */
+        .hero-bg-samurai img {
+          transition: transform 1.4s cubic-bezier(0.19, 1, 0.22, 1);
+        }
 
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,3,2,0.95)_0%,rgba(5,3,2,0.68)_36%,rgba(5,3,2,0.14)_72%,rgba(5,3,2,0.42)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_42%,rgba(244,38,28,0.2),transparent_34%)]" />
-      <div className="absolute inset-0 bg-[#F4261C]/0 mix-blend-screen transition duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:bg-[#F4261C]/10" />
-      <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0A0A0A] to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-[#050302] to-transparent" />
+        /* Efeito de revelação suave para o texto no load */
+        @keyframes heroTextReveal {
+          0% { transform: translateY(30px); opacity: 0; }
+          100% { transform: translateY(0); opacity: 1; }
+        }
+        .animate-hero-text {
+          animation: heroTextReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
 
-      <div className="relative z-10 mx-auto flex min-h-svh max-w-400 flex-col justify-end px-5 py-24 md:px-10 lg:py-28">
-        <div className="max-w-7xl">
+        /* Hover dos Botões com Clip-Path e efeito Glass Sutil */
+        .btn-clip-glass-fill::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-color: rgba(255, 255, 255, 0.08);
+          transition: clip-path 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          clip-path: inset(0 100% 0 0);
+          z-index: 0;
+        }
+        .btn-clip-glass-fill:hover::before {
+          clip-path: inset(0 0 0 0);
+        }
+
+        .btn-clip-glass-stroke::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background-color: rgba(255, 255, 255, 0.04);
+          transition: clip-path 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+          clip-path: inset(100% 0 0 0);
+          z-index: 0;
+        }
+        .btn-clip-glass-stroke:hover::before {
+          clip-path: inset(0 0 0 0);
+        }
+      `}} />
+
+      {/* Imagem de Fundo */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/shinobi/homem.png"
+          alt="Latas SHINOBI em destaque"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
+
+      {/* Overlays de vinheta escura minimalista */}
+      <div className="absolute inset-0 z-20 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 z-20 h-96 bg-gradient-to-t from-black via-black/80 to-transparent" />
+
+      {/* Conteúdo Principal */}
+      <div className="animate-hero-text relative z-30 mx-auto w-full max-w-[1540px] px-5 py-20 md:px-8 lg:px-10">
+        <div className="max-w-4xl">
           <h1
             id="shinobi-awakening-title"
-            className="mt-7 max-w-5xl text-6xl font-black uppercase leading-[0.9] md:text-8xl lg:text-[116px]"
+            className="text-5xl font-extrabold uppercase tracking-tight leading-[0.9] [font-family:var(--font-shinobi-display)] sm:text-7xl md:text-8xl lg:text-[100px]"
           >
-            Um gole.
-            <span className="block text-[#F4261C]">O samurai acorda.</span>
+            Um gole. <br />
+            <span className="text-neutral-400">O samurai acorda.</span>
           </h1>
 
-          <p className="mt-7 max-w-2xl text-base leading-8 text-white/72 md:text-xl md:leading-9">
+          <p className="mt-8 max-w-xl text-base leading-relaxed text-neutral-400 md:text-lg">
             SHINOBI transforma o instante em ritual: energia intensa, presença
-            escura e uma explosão de sabor para entrar no modo foco absoluto.
+            escura e uma fórmula milimetricamente desenhada para foco absoluto.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-4">
+          {/* Botões com Efeito Glassmorphism Cirúrgico e Vazado */}
+          <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#sabores"
-              className="group/link inline-flex items-center gap-3 rounded-full bg-[#F4261C] px-7 py-4 text-sm font-black uppercase text-white transition hover:scale-105"
+              className="btn-clip-glass-fill group/btn relative inline-flex items-center gap-3 border border-white/20 bg-black/20 backdrop-blur-md px-8 py-4 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 [font-family:var(--font-shinobi-display)] hover:border-white"
             >
-              Ver sabores
-              <ArrowRight
-                className="transition group-hover/link:translate-x-1"
-                size={18}
-              />
+              <span className="relative z-10 inline-flex items-center gap-3">
+                Ver sabores
+                <ArrowRight
+                  className="transition-transform duration-300 group-hover/btn:translate-x-1"
+                  size={16}
+                  weight="bold"
+                />
+              </span>
             </a>
 
             <a
               href="#pedido"
-              className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-7 py-4 text-sm font-black uppercase text-white backdrop-blur-xl transition hover:bg-white hover:text-black"
+              className="btn-clip-glass-stroke group/btn relative inline-flex items-center gap-3 border border-white/10 bg-white/[0.02] backdrop-blur-md px-8 py-4 text-xs font-bold uppercase tracking-wider text-neutral-400 transition-all duration-300 [font-family:var(--font-shinobi-display)] hover:text-white hover:border-white/30"
             >
-              Pedir agora
+              <span className="relative z-10">
+                Pedir agora
+              </span>
             </a>
           </div>
         </div>
 
-        <div className="mt-16 grid w-fit grid-cols-3 py-5">
+        {/* Linha Divisória Fina */}
+        <div className="mt-20 w-full h-px bg-neutral-900" />
+
+        {/* Métricas/Status Minimalistas */}
+        <div className="mt-8 flex gap-12">
           {[
-            ["06", "sabores"],
+            ["06", "sabores complexos"],
             ["100%", "modo shinobi"],
           ].map(([value, label]) => (
-            <div
-              key={label}
-              className="border-r border-white/15 px-4 first:pl-0 last:border-r-0 md:px-8"
-            >
-              <p className="text-3xl font-black uppercase text-white md:text-5xl">
+            <div key={label} className="group/metric">
+              <p className="text-3xl font-extrabold uppercase text-white [font-family:var(--font-shinobi-display)] md:text-4xl">
                 {value}
               </p>
-              <p className="mt-2 text-[10px] font-black uppercase tracking-[0.18em] text-white/56">
+              <p className="mt-1 text-[9px] font-bold uppercase tracking-[0.2em] text-neutral-600 transition-colors duration-300 group-hover:text-neutral-400">
                 {label}
               </p>
             </div>
