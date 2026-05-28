@@ -10,7 +10,6 @@ export function ShinobiHeroBannerSection() {
       aria-labelledby="shinobi-awakening-title"
       className="group relative overflow-hidden bg-black text-white flex flex-col justify-end pt-38"
     >
-      {/* Estilos embutidos com o efeito "Sword Slash" e Glassmorphism nos Botões */}
       <style dangerouslySetInnerHTML={{ __html: `
         /* Estado Inicial: O samurai está escondido em uma linha diagonal invisível no canto superior direito */
         .hero-bg-samurai {
@@ -65,7 +64,6 @@ export function ShinobiHeroBannerSection() {
         }
       `}} />
 
-      {/* Imagem de Fundo */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/shinobi/homem.png"
@@ -77,11 +75,18 @@ export function ShinobiHeroBannerSection() {
         />
       </div>
 
-      {/* Overlays de vinheta escura minimalista */}
       <div className="absolute inset-0 z-20 bg-gradient-to-r from-black/90 via-black/50 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 z-20 h-96 bg-gradient-to-t from-black via-black/80 to-transparent" />
 
-      {/* Conteúdo Principal */}
+      <Image
+        src="/images/shinobi/logo_icon.png"
+        alt=""
+        width={420}
+        height={420}
+        aria-hidden="true"
+        className="pointer-events-none hidden! lg:block! absolute bottom-32 right-32 z-25 w-40 mix-blend-screen md:w-64"
+      />
+
       <div className="animate-hero-text relative z-30 mx-auto w-full max-w-[1540px] px-5 py-20 md:px-8 lg:px-10">
         <div className="max-w-4xl">
           <h1
@@ -97,7 +102,6 @@ export function ShinobiHeroBannerSection() {
             escura e uma fórmula milimetricamente desenhada para foco absoluto.
           </p>
 
-          {/* Botões com Efeito Glassmorphism Cirúrgico e Vazado */}
           <div className="mt-10 flex flex-wrap gap-4">
             <a
               href="#sabores"
@@ -124,10 +128,6 @@ export function ShinobiHeroBannerSection() {
           </div>
         </div>
 
-        {/* Linha Divisória Fina */}
-        <div className="mt-20 w-full h-px bg-neutral-900" />
-
-        {/* Métricas/Status Minimalistas */}
         <div className="mt-8 flex gap-12">
           {[
             ["06", "sabores complexos"],

@@ -26,14 +26,6 @@ export function ShinobiHeader() {
           className="inline-flex items-center gap-4 transition hover:opacity-80"
         >
           <Image
-            src={shinobiBrand.icon}
-            alt=""
-            priority
-            width={54}
-            height={54}
-            className="hidden size-12 object-contain sm:block"
-          />
-          <Image
             src={shinobiBrand.logo}
             alt="SHINOBI"
             priority
