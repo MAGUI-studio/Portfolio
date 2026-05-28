@@ -19,6 +19,7 @@ import Landing17ModaCircular from "@/components/sections/landing-17-moda-circula
 import Landing18VinhoAltitude from "@/components/sections/landing-18-vinho-altitude";
 import Landing19LaboratorioFarmaceutico from "@/components/sections/landing-19-laboratorio-farmaceutico";
 import Landing20InfraestruturaPortuaria from "@/components/sections/landing-20-infraestrutura-portuaria";
+import Landing21Shinobi from "@/components/sections/landing-21-shinobi";
 
 export type SectionEntry = {
   category: string;
@@ -51,6 +52,7 @@ export const sections: SectionEntry[] = [
   { index: "18", slug: "landing-18-vinho-altitude", title: "Cume Vinhos", description: "Vinicola boutique de altitude com portfolio, visitas e clube.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing18VinhoAltitude },
   { index: "19", slug: "landing-19-laboratorio-farmaceutico", title: "Novera Labs", description: "Laboratorio farmaceutico com P&D, qualidade e transferencia.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing19LaboratorioFarmaceutico },
   { index: "20", slug: "landing-20-infraestrutura-portuaria", title: "Doca Norte", description: "Infraestrutura portuaria com torre de controle e previsibilidade.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing20InfraestruturaPortuaria },
+  { index: "21", slug: "landing-21-shinobi", title: "SHINOBI", description: "Energetico dark com hero interativa, sabores coloridos e narrativa completa de marca.", category: "Landing Pages", mode: "landing completa + motion", component: Landing21Shinobi },
 ];
 
 export const sectionMap = Object.fromEntries(
@@ -58,5 +60,5 @@ export const sectionMap = Object.fromEntries(
 ) as Record<string, SectionEntry>;
 
 export const sectionCategories = [
-  { label: "Landing Pages", description: "Vinte landings corporativas completas, cada uma com pelo menos 10 secoes e animacoes discretas.", count: 20 },
+  { label: "Landing Pages", description: "Vinte e uma landings completas, cada uma com uma direcao visual propria e motion aplicado.", count: 21 },
 ] as const;
