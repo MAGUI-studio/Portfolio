@@ -1,103 +1,115 @@
-"use client";
-
+import { ArrowUpRight } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
-import { shinobiBrand, shinobiNav } from "./data";
 import Link from "next/link";
+import { shinobiBrand, shinobiWhatsappHref } from "./data";
+
+const shinobiFooterNav = [
+  { label: "Inicio", href: "#inicio" },
+  { label: "Sabores", href: "#sabores" },
+  { label: "Pedido", href: "#pedido" },
+  { label: "Manifesto", href: "#manifesto" },
+];
 
 export function ShinobiFooter() {
   return (
-    <footer className="bg-black px-5 pb-12 text-white md:px-8 lg:px-10">
-      <div className="mx-auto max-w-[1540px] border-t border-neutral-900 pt-16">
-        
-        {/* Grid Principal */}
-        <div className="grid gap-12 lg:grid-cols-[0.52fr_0.22fr_0.26fr]">
-          
-          {/* Coluna da Marca */}
+    <footer className="bg-[#050302] px-5 py-16 text-white md:px-8 lg:px-10">
+      <div className="mx-auto max-w-[1540px] border-t border-white/12 pt-12">
+        <div className="grid gap-12 lg:grid-cols-[0.58fr_0.2fr_0.22fr]">
           <div>
-            <div className="relative h-16 w-64 max-w-full opacity-90">
-              <Image 
-                src={shinobiBrand.logo} 
-                alt="SHINOBI" 
-                fill 
-                sizes="256px" 
-                className="object-contain object-left" 
+            <Link
+              href="#inicio"
+              aria-label="Voltar para o inicio do SHINOBI"
+              className="inline-flex items-center gap-4 transition hover:opacity-80"
+            >
+              <Image
+                src={shinobiBrand.logo}
+                alt="SHINOBI"
+                width={220}
+                height={64}
+                className="h-auto w-80 object-contain object-left"
               />
-            </div>
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-neutral-400">
-              Energético de identidade noturna, sabores frutados e impacto visual 
-              desenhado para freezer, evento e cultura digital.
+            </Link>
+
+            <h2 className="mt-10 max-w-3xl text-5xl font-black uppercase leading-[0.9] [font-family:var(--font-shinobi-display)]">
+              Energia não é barulho.
+            </h2>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-white/56">
+              SHINOBI é presença, ritmo e foco. Uma marca feita para quem entra
+              no modo silencioso antes de acelerar.
             </p>
           </div>
 
-          {/* Coluna Navegação */}
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-neutral-600 [font-family:var(--font-shinobi-display)]">
-              navegação
+            <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#5D9601] [font-family:var(--font-shinobi-display)]">
+              navegar
             </p>
-            <div className="mt-6 grid gap-3 text-xs font-bold uppercase tracking-wider text-neutral-400">
-              {shinobiNav.map((item) => (
+            <nav className="mt-6 grid gap-4 text-sm text-white/52">
+              {shinobiFooterNav.map((item) => (
                 <Link
-                  key={item.href} 
-                  href={item.href} 
-                  className="w-fit transition-transform duration-300 hover:text-white hover:translate-x-1"
+                  key={item.href}
+                  href={item.href}
+                  className="w-fit border-b border-transparent pb-1 transition hover:border-[#5D9601] hover:text-white"
                 >
                   {item.label}
                 </Link>
               ))}
-            </div>
+            </nav>
           </div>
 
-          {/* Coluna Comercial */}
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-neutral-600 [font-family:var(--font-shinobi-display)]">
-              comercial
+            <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#5D9601] [font-family:var(--font-shinobi-display)]">
+              contato
             </p>
-            <div className="mt-6 grid gap-3 text-xs text-neutral-400">
-              <Link 
-                href="mailto:comercial@shinobi.example" 
-                className="w-fit font-bold uppercase tracking-wider text-white transition-colors duration-300 hover:text-neutral-400"
+            <div className="mt-6 grid gap-4 text-sm text-white/52">
+              <Link
+                href={shinobiWhatsappHref}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex w-fit items-center gap-3 border border-[#5D9601] bg-[#5D9601] px-5 py-4 text-[10px] font-black uppercase tracking-[0.2em] text-white transition [font-family:var(--font-shinobi-display)] hover:bg-transparent hover:text-[#5D9601]"
               >
-                comercial@shinobi.example
+                Atendimento
+                <ArrowUpRight
+                  size={14}
+                  weight="bold"
+                  className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
               </Link>
-              <div className="mt-2 space-y-1 text-neutral-500">
-                <p>Distribuição e ativações</p>
-                <p>Freezer, evento e varejo</p>
-              </div>
+              <p>Distribuicao, eventos e varejo.</p>
             </div>
           </div>
-
         </div>
 
-        {/* Linha Inferior / Créditos */}
-        <div className="mt-16 flex flex-col gap-6 border-t border-neutral-900 pt-8 text-[10px] font-bold uppercase tracking-[0.15em] text-neutral-600 md:flex-row md:items-center md:justify-between">
-          <p>SHINOBI Energia. Identidade noturna e sabores frutados.</p>
+        <div className="mt-14 flex flex-col gap-5 border-t border-white/12 pt-6 text-xs text-white/44 md:flex-row md:items-center md:justify-between">
+          <p>SHINOBI Energia. Identidade noturna e foco absoluto.</p>
 
-          <div className="flex flex-wrap items-center gap-4">
-            <span className="text-neutral-500">
+          <div className="flex flex-wrap items-center gap-3">
+            <span>
               Oferecido por{" "}
               <Link
                 href="https://magui.studio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-black text-white transition-colors duration-300 hover:text-neutral-400 [font-family:var(--font-shinobi-display)]"
+                className="font-semibold text-white transition duration-300 hover:text-[#5D9601] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5D9601] focus-visible:ring-offset-2 focus-visible:ring-offset-[#050302]"
               >
-                MAGUI.studio
+                <strong className="font-black">MAGUI</strong>
+                <span className="text-[#5D9601]">.</span>
+                <span>studio</span>
               </Link>
             </span>
 
-            <span aria-hidden="true" className="text-neutral-800">
-              /
+            <span aria-hidden="true" className="text-white/20">
+              |
             </span>
 
             <Link
               href="#inicio"
-              className="inline-flex cursor-pointer items-center gap-1 text-white transition-colors duration-300 hover:text-neutral-400"
+              className="inline-flex cursor-pointer items-center gap-1 text-white transition duration-300 hover:text-[#5D9601] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5D9601] focus-visible:ring-offset-2 focus-visible:ring-offset-[#050302]"
             >
-              Voltar ao topo ↑
+              Voltar ao topo
+              <span aria-hidden="true">↑</span>
             </Link>
           </div>
         </div>
-        
       </div>
     </footer>
   );

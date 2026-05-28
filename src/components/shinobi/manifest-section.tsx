@@ -1,12 +1,12 @@
 "use client";
 
-import { Eye, Shield, Lightning, ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowUpRight } from "@phosphor-icons/react";
 import Image from "next/image";
 
 export function ShinobiManifestoSection() {
   return (
     <section
-      id="pedido"
+      id="manifesto"
       className="relative overflow-hidden text-white py-24 lg:py-32"
     >
       <style

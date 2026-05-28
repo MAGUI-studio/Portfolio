@@ -24,7 +24,6 @@ export function ShinobiOrderSection() {
       id="pedido"
       className="relative overflow-hidden bg-black px-5 py-24 text-white md:px-8 lg:px-10"
     >
-      {/* Estilos customizados para clip-path e keyframes injetados localmente */}
       <style dangerouslySetInnerHTML={{ __html: `
         /* Keyframes de Revelação Inicial */
         @keyframes revealUp {
@@ -92,15 +91,12 @@ export function ShinobiOrderSection() {
         }
       `}} />
 
-      {/* Linha divisória minimalista no topo */}
-      <div className="absolute inset-x-0 top-0 h-px bg-neutral-800" />
-
       <div className="mx-auto max-w-[1540px]">
         {/* Seção Principal com Revelação via Clip-Path */}
         <div className="relative grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-stretch">
           
           {/* Card Esquerdo: Pedido Rápido */}
-          <div className="animate-reveal-up flex flex-col justify-between border border-neutral-800 bg-neutral-950/40 p-8 md:p-12">
+          <div className="animate-reveal-up flex flex-col justify-between  bg-neutral-950/40 p-8 md:p-12">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-500 [font-family:var(--font-shinobi-display)]">
                 pedido rápido
@@ -146,7 +142,7 @@ export function ShinobiOrderSection() {
           </div>
 
           {/* Card Direito: Kit Degustação */}
-          <article className="animate-reveal-down group relative min-h-[520px] overflow-hidden border border-neutral-800 bg-neutral-950">
+          <article className="animate-reveal-down group relative min-h-[520px] overflow-hidden bg-neutral-950">
             <Image
               src="/images/shinobi/degustacao.png"
               alt="Kit degustação SHINOBI com sabores variados"
@@ -197,7 +193,7 @@ export function ShinobiOrderSection() {
         </div>
 
         {/* Divisor de Seção */}
-        <div className="relative mt-20 flex flex-col gap-6 border-y border-neutral-800 py-8 md:flex-row md:items-center md:justify-between">
+        <div className="relative mt-20 flex flex-col gap-6 py-8 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-500 [font-family:var(--font-shinobi-display)]">
               sabores avulsos
@@ -206,7 +202,7 @@ export function ShinobiOrderSection() {
               Escolha sua lata
             </h3>
           </div>
-          <p className="max-w-xl text-sm leading-relaxed text-neutral-500 md:text-right">
+          <p className="max-w-2xl text-sm leading-relaxed text-neutral-500 md:text-right">
             Escolha entre frutas intensas, perfis refrescantes e final marcante.
             Explore a complexidade de cada fórmula.
           </p>
@@ -237,7 +233,7 @@ export function ShinobiOrderSection() {
                 
                 <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4">
                   <div>
-                    <p className="text-[9px] font-bold uppercase tracking-[0.25em] text-neutral-500 [font-family:var(--font-shinobi-display)]">
+                    <p className="text-[9px] font-bold uppercase tracking-[0.25em] [font-family:var(--font-shinobi-display)]">
                       lata 269 ml
                     </p>
                     <h3 className="mt-2 text-4xl font-extrabold uppercase leading-none [font-family:var(--font-shinobi-display)]">
