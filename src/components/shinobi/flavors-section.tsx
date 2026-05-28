@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight } from "@phosphor-icons/react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ShinobiFlavor, shinobiFlavors } from "./data";
@@ -121,22 +121,30 @@ export function ShinobiFlavorsSection({
         </div>
 
         {/* Animação da Lata */}
-        <motion.div
-          key={activeFlavor.slug}
-          initial={{ opacity: 0, y: 90, rotate: -8, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
-          transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-20 h-[760px] w-full"
-        >
-          <Image
-            src={activeFlavor.lata}
-            alt={`Lata SHINOBI sabor ${activeFlavor.name}`}
-            fill
-            priority
-            sizes="760px"
-            className="object-cover drop-shadow-[0_45px_90px_rgba(0,0,0,0.95)]"
-          />
-        </motion.div>
+        <div className="relative z-20 h-[760px] w-full overflow-hidden">
+          <AnimatePresence initial={false}>
+            <motion.div
+              key={activeFlavor.slug}
+              initial={{ opacity: 0, x: "-115%", rotate: -10, scale: 0.9 }}
+              animate={{ opacity: 1, x: "0%", rotate: 0, scale: 1 }}
+              exit={{ opacity: 0, x: "115%", rotate: 10, scale: 0.9 }}
+              transition={{
+                duration: 0.95,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={activeFlavor.lata}
+                alt={`Lata SHINOBI sabor ${activeFlavor.name}`}
+                fill
+                priority
+                sizes="760px"
+                className="object-cover drop-shadow-[0_45px_90px_rgba(0,0,0,0.95)]"
+              />
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </div>
 
       {/* Modal */}
