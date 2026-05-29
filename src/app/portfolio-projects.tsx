@@ -114,11 +114,11 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
             Galeria de projetos
           </p>
           <h2 className="mt-2 text-2xl font-light leading-tight tracking-tight text-[var(--ink-strong)] md:text-4xl">
-            Soluções reais desenvolvidas sob medida.
+            Soluções desenvolvidas sob medida.
           </h2>
         </div>
         <p className="text-xs font-medium tracking-wide uppercase text-black/40">
-          Showing {filteredProjects.length} — {projects.length} Projetos
+          Exibindo {filteredProjects.length} — {projects.length} Projetos
         </p>
       </div>
 

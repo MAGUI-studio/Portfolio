@@ -119,8 +119,7 @@ export default async function Home(props: PageProps<"/">) {
       
       {/* 4. MINIMAL FOOTER */}
       <footer className="w-full border-t border-black/5 bg-neutral-50/50 py-12 px-6 md:px-12 lg:px-16 text-center md:flex md:justify-between md:items-center text-xs text-neutral-400">
-        <p>© {new Date().getFullYear()} MAGUI.studio. Todos os direitos reservados.</p>
-        <p className="mt-2 md:mt-0 tracking-wider uppercase font-medium text-neutral-500">Design & Architecture Excellence</p>
+        <p>{new Date().getFullYear()} MAGUI.studio. Todos os direitos reservados.</p>
       </footer>
 
     </main>

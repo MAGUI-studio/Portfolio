@@ -95,7 +95,7 @@ export const sections: SectionEntry[] = [
       "Paineis solares, inversores, baterias e projetos completos para uso residencial, comercial e industrial.",
     category: "Landing Pages",
     cardImage: "/images/kroma/project-cover.png",
-    industry: "Energia",
+    industry: "Tecnologia",
     projectType: "Solucoes solares",
     goal: "Explicar projetos completos de energia solar para residencias, empresas e industrias.",
     tags: ["Energia solar", "B2B", "Sustentabilidade"],
