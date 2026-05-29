@@ -74,7 +74,7 @@ export function PulseHeroSection() {
         Frete gratis acima de R$ 499 · primeira colecao Pulse disponivel
       </div>
 
-      <div className="relative min-h-160 overflow-hidden md:min-h-250">
+      <div className="relative min-h-180 overflow-hidden md:min-h-250">
         {banners.map((banner, index) => (
           <div
             key={banner.image}

@@ -12,7 +12,7 @@ export function PulseHeader() {
   const { itemCount, openCart } = usePulseCart();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-[#0A0A0A]/80 text-white backdrop-blur-md selection:bg-[#F97316] selection:text-black">
+    <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-[#0A0A0A]/95 text-white backdrop-blur-md selection:bg-[#F97316] selection:text-black">
       <div className="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-5 md:px-12 lg:px-16">
         <Link href="#inicio" aria-label="Pulse Home" className="relative z-50 flex items-center">
           <Image
@@ -90,24 +90,27 @@ export function PulseHeader() {
       </div>
 
       <div
-        className={`fixed inset-0 z-40 flex flex-col bg-[#0A0A0A] px-6 py-24 transition-all duration-300 lg:hidden ${
-          isOpen ? "visible opacity-100" : "invisible opacity-0"
+        className={`absolute left-0 right-0 top-full z-40 border-b border-white/10 bg-[#0A0A0A] px-6 pb-7 pt-5 shadow-[0_24px_60px_rgba(0,0,0,0.45)] transition-all duration-300 lg:hidden ${
+          isOpen
+            ? "visible translate-y-0 opacity-100"
+            : "invisible -translate-y-3 opacity-0"
         }`}
       >
-        <div className="flex flex-col gap-6 border-t border-white/5 pt-8">
+        <div className="grid gap-1 border-t border-white/8 pt-5">
           {pulseNav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={() => setIsOpen(false)}
-              className="text-xl font-black uppercase tracking-widest text-white transition-colors hover:text-[#F97316]"
+              className="flex items-center justify-between border-b border-white/8 py-4 text-sm font-black uppercase tracking-[0.22em] text-white transition-colors hover:text-[#F97316]"
             >
-              {item.label}
+              <span>{item.label}</span>
+              <ArrowUpRight size={14} weight="bold" />
             </Link>
           ))}
         </div>
 
-        <div className="mt-auto border-t border-white/5 pt-8">
+        <div className="pt-5">
           <Link
             href={pulseWhatsapp}
             target="_blank"

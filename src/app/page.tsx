@@ -1,155 +1,128 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ArrowUpRight, SquaresFour, X } from "@phosphor-icons/react/dist/ssr";
-import { sectionCategories, sectionMap, sections } from "@/components/sections/registry";
+import Image from "next/image";
+import { ArrowLeft, ArrowRight, X } from "@phosphor-icons/react/dist/ssr";
+import { PortfolioProjects, type PortfolioProject } from "@/app/portfolio-projects";
+import { sectionMap, visibleSections } from "@/components/sections/registry";
+
+interface PageProps<T extends string> {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}
 
 export default async function Home(props: PageProps<"/">) {
   const searchParams = await props.searchParams;
-  const activeSlug = typeof searchParams.section === "string" ? searchParams.section : undefined;
-  const activeIndex = sections.findIndex((section) => section.slug === activeSlug);
-  const activeEntry = activeIndex >= 0 ? sections[activeIndex] : undefined;
-  const previousEntry = activeIndex > 0 ? sections[activeIndex - 1] : undefined;
-  const nextEntry = activeIndex >= 0 && activeIndex < sections.length - 1 ? sections[activeIndex + 1] : undefined;
-  const ActiveComponent = activeEntry ? sectionMap[activeEntry.slug].component : null;
+  const activeSlug =
+    typeof searchParams.project === "string"
+      ? searchParams.project
+      : typeof searchParams.section === "string"
+        ? searchParams.section
+        : undefined;
+        
+  const activeEntry = activeSlug ? sectionMap[activeSlug] : undefined;
+  const activeIndex = activeEntry
+    ? visibleSections.findIndex((section) => section.slug === activeEntry.slug)
+    : -1;
+  const navigationIndex = activeIndex >= 0 ? activeIndex : 0;
+  
+  const previousEntry =
+    visibleSections[(navigationIndex - 1 + visibleSections.length) % visibleSections.length];
+  const nextEntry =
+    visibleSections[(navigationIndex + 1) % visibleSections.length];
+  const ActiveComponent = activeEntry?.component ?? null;
+  
+  const portfolioProjects: PortfolioProject[] = visibleSections.map((section) => ({
+    description: section.description,
+    goal: section.goal,
+    image: section.cardImage ?? "/utils/placeholder.svg",
+    index: section.index,
+    industry: section.industry,
+    projectType: section.projectType,
+    slug: section.slug,
+    tags: section.tags,
+    title: section.title,
+  }));
 
+  // INTERFACE: Visão Detalhada do Projeto Aberto
   if (activeEntry && ActiveComponent) {
     return (
-      <main className="bg-[var(--canvas)]">
-        <div className="bg-[rgba(246,242,235,0.92)] shadow-[0_12px_40px_rgba(17,17,17,0.04)]">
-          <div className="flex w-full items-center justify-between gap-4 px-4 py-4 md:px-6">
-            <div className="min-w-0">
-              <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--accent)]">{activeEntry.category}</p>
-              <h1 className="truncate text-lg font-semibold tracking-[-0.04em] text-[var(--ink-strong)]">
-                {activeEntry.title}
-              </h1>
-            </div>
-            <div className="flex items-center gap-2">
-              <Link
-                href={previousEntry ? `/?section=${previousEntry.slug}` : "#"}
-                scroll={false}
-                aria-disabled={!previousEntry}
-                className={`inline-flex h-11 w-11 items-center justify-center bg-white shadow-[0_10px_30px_rgba(17,17,17,0.06)] transition duration-300 ${previousEntry ? "hover:-translate-y-0.5 hover:bg-[#f1f1f1]" : "pointer-events-none opacity-30"}`}
-              >
-                <ArrowLeft size={18} />
-              </Link>
-              <Link
-                href={nextEntry ? `/?section=${nextEntry.slug}` : "#"}
-                scroll={false}
-                aria-disabled={!nextEntry}
-                className={`inline-flex h-11 w-11 items-center justify-center bg-white shadow-[0_10px_30px_rgba(17,17,17,0.06)] transition duration-300 ${nextEntry ? "hover:-translate-y-0.5 hover:bg-[#f1f1f1]" : "pointer-events-none opacity-30"}`}
-              >
-                <ArrowRight size={18} />
-              </Link>
-              <Link
-                href="/"
-                scroll={false}
-                className="inline-flex h-11 w-11 items-center justify-center bg-white shadow-[0_10px_30px_rgba(17,17,17,0.06)] transition duration-300 hover:-translate-y-0.5 hover:bg-[#f1f1f1]"
-              >
-                <X size={18} />
-              </Link>
-            </div>
-          </div>
-        </div>
+      <main className="min-h-screen w-full bg-[var(--canvas)]">
+        <ActiveComponent />
 
-        <div>
-          <ActiveComponent />
-        </div>
+        <nav
+          aria-label="Navegação entre projetos"
+          className="fixed inset-x-0 bottom-4 z-[80] flex justify-center px-4 md:bottom-6 w-fit! mx-auto"
+        >
+          <div className="flex items-center gap-1 rounded-full border border-black/5 bg-white/70 p-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.08)] backdrop-blur-xl">
+            <Link
+              href={`/?project=${previousEntry.slug}`}
+              scroll
+              title={`Abrir ${previousEntry.title}`}
+              className="inline-flex size-8 items-center justify-center rounded-full text-[var(--ink-strong)] transition duration-300 hover:bg-black hover:text-white md:size-9"
+            >
+              <ArrowLeft size={15} weight="bold" />
+            </Link>
+
+            <Link
+              href={`/?project=${nextEntry.slug}`}
+              scroll
+              title={`Abrir ${nextEntry.title}`}
+              className="inline-flex size-8 items-center justify-center rounded-full text-[var(--ink-strong)] transition duration-300 hover:bg-black hover:text-white md:size-9"
+            >
+              <ArrowRight size={15} weight="bold" />
+            </Link>
+
+            <span className="mx-1.5 h-4 w-px bg-black/10" aria-hidden="true" />
+
+            <Link
+              href="/"
+              scroll={false}
+              title="Fechar projeto"
+              className="inline-flex size-8 items-center justify-center rounded-full text-[var(--ink-strong)] transition duration-300 hover:bg-neutral-100 md:size-9 md:hover:bg-red-50 md:hover:text-red-500"
+            >
+              <X size={15} weight="bold" />
+            </Link>
+          </div>
+        </nav>
       </main>
     );
   }
 
+  // INTERFACE: Landing Page / Portfólio Principal (Full-Width)
   return (
-    <main className="bg-[var(--canvas)] px-6 py-8 text-[var(--ink)] md:px-10 lg:px-14">
-      <div className="w-full space-y-10">
-        <section className="section-shell overflow-hidden bg-[var(--surface)]">
-          <div className="grid gap-0 lg:grid-cols-[1.2fr_0.8fr]">
-            <div className="space-y-8 p-8 md:p-12">
-              <div className="inline-flex items-center gap-3 bg-[#f6f6f6] px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--accent)] shadow-[inset_0_0_0_1px_rgba(17,17,17,0.04)]">
-                <SquaresFour size={14} />
-                Colecao de landing pages
-              </div>
-              <div className="w-full space-y-5">
-                <h1 className="font-sans text-4xl font-semibold tracking-[-0.07em] text-[var(--ink-strong)] md:text-6xl">
-                  Vinte modelos completos, cada um de um segmento, com visual clean, moderno e premium.
-                </h1>
-                <p className="text-sm leading-7 text-[var(--muted-strong)] md:text-base">
-                  Abra qualquer landing para navegar em tela cheia sem sair da pagina e comparar direcoes visuais bem diferentes.
-                </p>
-              </div>
-            </div>
+    <main className="min-h-screen w-full bg-[var(--canvas)] text-[var(--ink)] antialiased selection:bg-black selection:text-white">
+      
+      {/* 1. BANNER HERO BLOCK (100% da largura) */}
+      <section className="w-full bg-[#0796bc]">
+        <Image
+          src="/utils/magui-banner.png"
+          alt="MAGUI.studio"
+          width={2048}
+          height={854}
+          priority
+          sizes="100vw"
+          className="h-auto w-full block"
+        />
+      </section>
 
-            <div className="grid bg-[#fafafa]">
-              {sectionCategories.map((category) => (
-                <div key={category.label} className="p-6 md:p-8">
-                  <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--accent)]">
-                    {category.label}
-                  </p>
-                  <div className="mt-4 flex items-end justify-between gap-4">
-                    <p className="text-sm leading-7 text-[var(--muted-strong)]">
-                      {category.description}
-                    </p>
-                    <span className="text-4xl font-semibold tracking-[-0.07em] text-[var(--ink-strong)]">
-                      {category.count}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+      {/* 2. HEADLINE SECTION */}
+      <section className="w-full px-6 py-16 md:px-12 lg:px-16">
+        <div className="border-b border-black/10 pb-12">
+          <h1 className="text-3xl font-light leading-[1.15] tracking-tight text-[var(--ink-strong)] md:text-5xl lg:text-6xl xl:text-7xl">
+            Explore projetos por <span className="font-medium text-black">segmento</span>, <span className="font-medium text-black">objetivo comercial</span> e <span className="font-medium text-black">estilo de marca</span>.
+          </h1>
+        </div>
+      </section>
 
-        {sectionCategories.map((category) => (
-          <section key={category.label} className="space-y-4">
-            <div className="flex items-end justify-between pb-4">
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--accent)]">
-                  {category.label}
-                </p>
-                <h2 className="mt-2 text-2xl font-semibold tracking-[-0.05em] text-[var(--ink-strong)]">
-                  {category.description}
-                </h2>
-              </div>
-            </div>
+      {/* 3. DINAMIC PORTFOLIO SECTION */}
+      <section className="w-full pb-24">
+        <PortfolioProjects projects={portfolioProjects} />
+      </section>
+      
+      {/* 4. MINIMAL FOOTER */}
+      <footer className="w-full border-t border-black/5 bg-neutral-50/50 py-12 px-6 md:px-12 lg:px-16 text-center md:flex md:justify-between md:items-center text-xs text-neutral-400">
+        <p>© {new Date().getFullYear()} MAGUI.studio. Todos os direitos reservados.</p>
+        <p className="mt-2 md:mt-0 tracking-wider uppercase font-medium text-neutral-500">Design & Architecture Excellence</p>
+      </footer>
 
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-              {sections
-                .filter((section) => section.category === category.label)
-                .map((section) => (
-                  <Link
-                    key={section.slug}
-                    href={`/?section=${section.slug}`}
-                    scroll={false}
-                    className="section-shell group flex min-h-72 flex-col justify-between bg-[var(--surface)] p-6 transition duration-500 hover:-translate-y-1 hover:bg-white"
-                  >
-                    <div className="space-y-6">
-                      <div className="flex items-center justify-between">
-                        <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[var(--accent)]">
-                          {section.index}
-                        </span>
-                        <ArrowUpRight
-                          size={18}
-                          className="text-[var(--ink)] transition duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                        />
-                      </div>
-                      <div className="space-y-3">
-                        <h3 className="text-2xl font-semibold tracking-[-0.05em] text-[var(--ink-strong)]">
-                          {section.title}
-                        </h3>
-                        <p className="text-sm leading-7 text-[var(--muted-strong)]">
-                          {section.description}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between pt-5 text-[11px] uppercase tracking-[0.24em] text-[var(--muted-strong)]">
-                      <span>{section.mode}</span>
-                      <span>Abrir</span>
-                    </div>
-                  </Link>
-                ))}
-            </div>
-          </section>
-        ))}
-      </div>
     </main>
   );
 }
