@@ -1,6 +1,6 @@
 import type { ComponentType } from "react";
 import Landing01FlagshipPhone from "@/components/sections/landing-01-flagship-phone";
-import Landing02SedaEletrico from "@/components/sections/landing-02-seda-eletrico";
+import Landing02NachoLibre from "@/components/sections/landing-02-nacho-libre";
 import Landing03CosmeticoEssencial from "@/components/sections/landing-03-cosmetico-essencial";
 import Landing04HotelRefugio from "@/components/sections/landing-04-hotel-refugio";
 import Landing05HeadphonesSignature from "@/components/sections/landing-05-headphones-signature";
@@ -33,7 +33,7 @@ export type SectionEntry = {
 
 export const sections: SectionEntry[] = [
   { index: "01", slug: "landing-01-flagship-phone", title: "Orla Arquitetura", description: "Escritorio de arquitetura residencial com 10 secoes completas.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing01FlagshipPhone },
-  { index: "02", slug: "landing-02-seda-eletrico", title: "Atto Patrimonio", description: "Consultoria patrimonial com linguagem institucional e fluxo completo.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing02SedaEletrico },
+  { index: "02", slug: "landing-02-nacho-libre", title: "Nacho Libre", description: "Restaurante mexicano moderno com tacos, burritos, nachos, drinks, rodizio e autoatendimento.", category: "Landing Pages", mode: "landing completa + motion", component: Landing02NachoLibre },
   { index: "03", slug: "landing-03-cosmetico-essencial", title: "VITTA", description: "Clinica de estetica focada em saude da pele, protocolos personalizados e acompanhamento.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing03CosmeticoEssencial },
   { index: "04", slug: "landing-04-hotel-refugio", title: "Serra Alta", description: "Hotel boutique com narrativa de hospitalidade e atmosfera de refúgio.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing04HotelRefugio },
   { index: "05", slug: "landing-05-headphones-signature", title: "Nexo Juridico", description: "Escritorio juridico empresarial com estrutura completa de landing.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing05HeadphonesSignature },
