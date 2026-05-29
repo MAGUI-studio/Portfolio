@@ -3,7 +3,7 @@ import Landing01FlagshipPhone from "@/components/sections/landing-01-flagship-ph
 import Landing02NachoLibre from "@/components/sections/landing-02-nacho-libre";
 import Landing03CosmeticoEssencial from "@/components/sections/landing-03-cosmetico-essencial";
 import Landing04HotelRefugio from "@/components/sections/landing-04-hotel-refugio";
-import Landing05HeadphonesSignature from "@/components/sections/landing-05-headphones-signature";
+import Landing05Pulse from "@/components/sections/landing-05-pulse";
 import Landing06CafeAtelier from "@/components/sections/landing-06-cafe-atelier";
 import Landing07BancoPrivado from "@/components/sections/landing-07-banco-privado";
 import Landing08ResidenciaAutoral from "@/components/sections/landing-08-residencia-autoral";
@@ -36,7 +36,7 @@ export const sections: SectionEntry[] = [
   { index: "02", slug: "landing-02-nacho-libre", title: "Nacho Libre", description: "Restaurante mexicano moderno com tacos, burritos, nachos, drinks, rodizio e autoatendimento.", category: "Landing Pages", mode: "landing completa + motion", component: Landing02NachoLibre },
   { index: "03", slug: "landing-03-cosmetico-essencial", title: "VITTA", description: "Clinica de estetica focada em saude da pele, protocolos personalizados e acompanhamento.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing03CosmeticoEssencial },
   { index: "04", slug: "landing-04-hotel-refugio", title: "Serra Alta", description: "Hotel boutique com narrativa de hospitalidade e atmosfera de refúgio.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing04HotelRefugio },
-  { index: "05", slug: "landing-05-headphones-signature", title: "Nexo Juridico", description: "Escritorio juridico empresarial com estrutura completa de landing.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing05HeadphonesSignature },
+  { index: "05", slug: "landing-05-pulse", title: "Pulse", description: "Marca premium de roupas fitness para homens e mulheres com tecnologia, performance e estilo.", category: "Landing Pages", mode: "landing completa + motion", component: Landing05Pulse },
   { index: "06", slug: "landing-06-cafe-atelier", title: "Brasa Studio", description: "Estudio de branding com posicionamento, processo e casos.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing06CafeAtelier },
   { index: "07", slug: "landing-07-banco-privado", title: "Aura Estetica", description: "Clinica de estetica avancada com protocolos, jornada e FAQ.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing07BancoPrivado },
   { index: "08", slug: "landing-08-residencia-autoral", title: "Atlas Living", description: "Incorporadora de alto padrao com produto, processo e lancamento.", category: "Landing Pages", mode: "10 secoes + motion", component: Landing08ResidenciaAutoral },
