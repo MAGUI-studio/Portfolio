@@ -8,7 +8,7 @@ import Landing06CafeAtelier from "@/components/sections/landing-06-cafe-atelier"
 import Landing07BancoPrivado from "@/components/sections/landing-07-banco-privado";
 import Landing08ResidenciaAutoral from "@/components/sections/landing-08-residencia-autoral";
 import Landing09BagagemModular from "@/components/sections/landing-09-bagagem-modular";
-import Landing10ViagemPrivada from "@/components/sections/landing-10-viagem-privada";
+import BitesLanding from "@/components/sections/bites";
 import Landing11EnergiaSolarIndustrial from "@/components/sections/kroma";
 import Landing12EducacaoExecutiva from "@/components/sections/landing-12-educacao-executiva";
 import Landing13LogisticaFria from "@/components/sections/landing-13-logistica-fria";
@@ -223,19 +223,20 @@ export const sections: SectionEntry[] = [
     component: Landing09BagagemModular,
   },
   {
-    index: "13",
-    slug: "vector-advisory",
-    aliases: ["landing-10-viagem-privada"],
-    title: "Vector Advisory",
+    index: "07",
+    slug: "bites",
+    aliases: ["landing-10-viagem-privada", "vector-advisory"],
+    title: "BITES",
     description:
-      "Consultoria de tecnologia empresarial com processo e implementacao.",
+      "Comfort food premium com salgados classicos, visual apetitoso e conveniencia delivery-first.",
     category: "Landing Pages",
-    industry: "Tecnologia",
-    projectType: "Consultoria empresarial",
-    goal: "Explicar metodologia, implementacao e impacto para decisores B2B.",
-    tags: ["B2B", "Consultoria", "Implementacao"],
-    visible: false,
-    component: Landing10ViagemPrivada,
+    cardImage: "/images/bites/hero.png",
+    industry: "Gastronomia",
+    projectType: "Salgados premium",
+    goal: "Transformar classicos fritos em uma experiencia moderna, crocante e desejavel.",
+    tags: ["Comfort food", "Delivery", "Marca premium"],
+    visible: true,
+    component: BitesLanding,
   },
   {
     index: "14",

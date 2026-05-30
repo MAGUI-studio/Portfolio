@@ -4,11 +4,11 @@ import { ArrowLeft, ArrowRight, X } from "@phosphor-icons/react/dist/ssr";
 import { PortfolioProjects, type PortfolioProject } from "@/app/portfolio-projects";
 import { sectionMap, visibleSections } from "@/components/sections/registry";
 
-interface PageProps<T extends string> {
+interface HomePageProps {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
 
-export default async function Home(props: PageProps<"/">) {
+export default async function Home(props: HomePageProps) {
   const searchParams = await props.searchParams;
   const activeSlug =
     typeof searchParams.project === "string"
