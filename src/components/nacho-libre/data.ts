@@ -17,11 +17,11 @@ export const nachoLibreImages = {
 export const nachoLibreWhatsapp =
   "https://wa.me/5500000000000?text=Oi%2C%20Nacho%20Libre.%20Quero%20visitar%20a%20casa.";
 
-export const nachoLibreAddress = "Rua Oaxaca, 118 - Centro Gastronomico";
+export const nachoLibreAddress = "Rua Oaxaca, 118 - Centro Gastronômico";
 
 export const nachoLibreNav = [
   { label: "Menu", href: "#menu" },
-  { label: "Rodizio", href: "#rodizio" },
+  { label: "Rodízio", href: "#rodizio" },
   { label: "Pedido", href: "#pedido" },
   { label: "Visite", href: "#visite" },
 ];
@@ -30,14 +30,14 @@ export const menuItems = [
   {
     name: "Tacos",
     tag: "4 tortillas / recheios autorais",
-    text: "Milho, carne lenta, salsa fresca e final de limao.",
+    text: "Milho, carne lenta, salsa fresca e final de limão.",
     image: nachoLibreImages.tacos,
     color: "#E86A17",
   },
   {
     name: "Burritos",
-    tag: "grande, quente, sem miseria",
-    text: "Arroz temperado, feijao, queijo fundido e proteina bem marcada.",
+    tag: "grande, quente, sem miséria",
+    text: "Arroz temperado, feijão, queijo fundido e proteína bem marcada.",
     image: nachoLibreImages.burritos,
     color: "#C62828",
   },
@@ -51,7 +51,7 @@ export const menuItems = [
   {
     name: "Nachos",
     tag: "a montanha da casa",
-    text: "Chips crocantes, chilli, jalapeno, cheddar, sour cream e guacamole.",
+    text: "Chips crocantes, chilli, jalapeño, cheddar, sour cream e guacamole.",
     image: nachoLibreImages.nachos,
     color: "#5D8C45",
   },
@@ -59,6 +59,6 @@ export const menuItems = [
 
 export const visitStats = [
   ["12h-23h", "cozinha aberta todos os dias"],
-  ["6 min", "pedido medio no totem"],
+  ["6 min", "pedido médio no totem"],
   ["100%", "molhos feitos na casa"],
 ];

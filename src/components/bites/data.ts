@@ -35,8 +35,8 @@ export const bitesProducts = [
 ] as const;
 
 export const bitesPillars = [
-  "Crocancia de vitrine",
-  "Identidade memoravel",
-  "Pedido simples e rapido",
+  "Crocância de vitrine",
+  "Identidade memorável",
+  "Pedido simples e rápido",
   "Visual que abre o apetite",
 ] as const;

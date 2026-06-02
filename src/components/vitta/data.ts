@@ -80,7 +80,7 @@ export const skinPillars = [
   {
     icon: Waves,
     title: "Refino de Textura",
-    text: "Renovação celular microfluídica e tecnologias não-ablativas que reestruturam o relevo cutâneo, suavizando poros e linhas sem comprometer a estabilidade orgânica.",
+    text: "Renovação celular microfluídica e tecnologias não ablativas que reestruturam o relevo cutâneo, suavizando poros e linhas sem comprometer a estabilidade orgânica.",
   },
   {
     icon: ActivityIcon,

@@ -17,8 +17,8 @@ export const pulseImages = {
 };
 
 export const pulseNav = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Colecao", href: "#colecao" },
+  { label: "Início", href: "#inicio" },
+  { label: "Coleção", href: "#colecao" },
   { label: "Tecnologia", href: "#tecnologia" },
   { label: "Guia", href: "#guia" },
 ];
@@ -34,7 +34,7 @@ export const pulseProducts = [
     tone: "#F97316",
     price: "R$ 389",
     sizes: ["PP", "P", "M", "G"],
-    text: "Top de sustentacao, legging de compressao e acabamento limpo para treinos intensos.",
+    text: "Top de sustentação, legging de compressão e acabamento limpo para treinos intensos.",
   },
   {
     name: "Flow Set",
@@ -52,7 +52,7 @@ export const pulseProducts = [
     tone: "#F97316",
     price: "R$ 459",
     sizes: ["PP", "P", "M", "G"],
-    text: "Modelagem premium com presenca visual sem abrir mao de performance.",
+    text: "Modelagem premium com presença visual sem abrir mão de performance.",
   },
   {
     name: "Drive Set",
@@ -61,7 +61,7 @@ export const pulseProducts = [
     tone: "#1A1A1A",
     price: "R$ 329",
     sizes: ["P", "M", "G", "GG"],
-    text: "Camiseta tecnica e short leve para potencia, corrida e treino funcional.",
+    text: "Camiseta técnica e short leve para potência, corrida e treino funcional.",
   },
   {
     name: "Prime Set",
@@ -70,7 +70,7 @@ export const pulseProducts = [
     tone: "#F97316",
     price: "R$ 349",
     sizes: ["P", "M", "G", "GG"],
-    text: "Estrutura respiravel, silhueta precisa e conforto para repeticao diaria.",
+    text: "Estrutura respirável, silhueta precisa e conforto para repetição diária.",
   },
   {
     name: "Discipline Set",

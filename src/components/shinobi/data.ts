@@ -26,8 +26,8 @@ export const shinobiNav = [
 export const shinobiFlavors: ShinobiFlavor[] = [
   {
     slug: "maca-verde",
-    name: "Maca Verde",
-    profile: "Citrico e preciso",
+    name: "Maçã Verde",
+    profile: "Cítrico e preciso",
     description: "Ataque fresco, crocante e limpo para manter a mente afiada.",
     accent: "#73b82b",
     fundo: "/images/shinobi/bebidas/maca-verde/fundo.png",
@@ -40,7 +40,7 @@ export const shinobiFlavors: ShinobiFlavor[] = [
     name: "Morango",
     profile: "Frutado e direto",
     description:
-      "Perfil vermelho, intenso e facil de beber sem perder atitude.",
+      "Perfil vermelho, intenso e fácil de beber sem perder atitude.",
     accent: "#e73543",
     fundo: "/images/shinobi/bebidas/morango/fundo.png",
     lata: "/images/shinobi/bebidas/morango/lata.png",
@@ -50,7 +50,7 @@ export const shinobiFlavors: ShinobiFlavor[] = [
   {
     slug: "abacaxi",
     name: "Abacaxi",
-    profile: "Tropical e eletrico",
+    profile: "Tropical e elétrico",
     description:
       "Acidez brilhante, final doce e uma assinatura que corta o calor.",
     accent: "#d99d18",
@@ -61,10 +61,10 @@ export const shinobiFlavors: ShinobiFlavor[] = [
   },
   {
     slug: "acai",
-    name: "Acai",
+    name: "Açaí",
     profile: "Denso e noturno",
     description:
-      "Fruta escura, corpo cheio e presenca forte para viradas longas.",
+      "Fruta escura, corpo cheio e presença forte para viradas longas.",
     accent: "#a733ca",
     fundo: "/images/shinobi/bebidas/acai/fundo.png",
     lata: "/images/shinobi/bebidas/acai/lata.png",
@@ -76,7 +76,7 @@ export const shinobiFlavors: ShinobiFlavor[] = [
     slug: "melancia",
     name: "Melancia",
     profile: "Gelado e explosivo",
-    description: "Doce suculento, refrescancia alta e energia de fim de tarde.",
+    description: "Doce suculento, refrescância alta e energia de fim de tarde.",
     accent: "#db2028",
     fundo: "/images/shinobi/bebidas/melancia/fundo.png",
     lata: "/images/shinobi/bebidas/melancia/lata.png",
@@ -85,7 +85,7 @@ export const shinobiFlavors: ShinobiFlavor[] = [
   },
   {
     slug: "pessego",
-    name: "Pessego",
+    name: "Pêssego",
     profile: "Maciez com impacto",
     description: "Aroma macio, fruta madura e um golpe final mais aveludado.",
     accent: "#e57418",
@@ -98,38 +98,38 @@ export const shinobiFlavors: ShinobiFlavor[] = [
 
 export const shinobiSignals = [
   ["Energia", "Ritmo alto para treino, estudo, game e noite."],
-  ["Foco", "Presenca marcante para entrar em modo missao."],
+  ["Foco", "Presença marcante para entrar em modo missão."],
   [
-    "Resistencia",
+    "Resistência",
     "Bebida gelada, carbonatada e pronta para acompanhar o corre.",
   ],
-  ["Sabor", "Fruta evidente para o energetico nao virar ruido generico."],
+  ["Sabor", "Fruta evidente para o energético não virar ruído genérico."],
 ];
 
 export const shinobiOccasions = [
   {
     title: "Treino noturno",
-    text: "Uma lata gelada antes da sessao em que o corpo precisa responder rapido.",
+    text: "Uma lata gelada antes da sessão em que o corpo precisa responder rápido.",
   },
   {
     title: "Game e streaming",
-    text: "Presenca de marca para setup, arena, live e maratona competitiva.",
+    text: "Presença de marca para setup, arena, live e maratona competitiva.",
   },
   {
     title: "Estrada e festival",
-    text: "Consumo frio, rapido e visualmente forte em rotas, conveniencias e eventos.",
+    text: "Consumo frio, rápido e visualmente forte em rotas, conveniências e eventos.",
   },
 ];
 
 export const shinobiTrade = [
-  "Seis sabores com cor propria no freezer",
+  "Seis sabores com cor própria no freezer",
   "Lata 269 ml para compra impulsiva",
   "Identidade forte para ponto de venda",
-  "Campanha pronta para redes sociais e ativacoes",
+  "Campanha pronta para redes sociais e ativações",
 ];
 
 export const shinobiRitual = [
-  "Resfrie ate a lata suar.",
+  "Resfrie até a lata suar.",
   "Abra no momento de virada.",
-  "Escolha o sabor pela missao do dia.",
+  "Escolha o sabor pela missão do dia.",
 ];

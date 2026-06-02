@@ -25,7 +25,7 @@ export const sayegServices = [
     image: sayegImages.brows,
     number: "01",
     label: "Micropigmentação de sobrancelhas",
-    title: "Nanoblading ultra-fino",
+    title: "Nanoblading ultrafino",
     text: "Fios delicados e estrategicamente posicionados recompõem densidade e definição com leveza. Cada traço acompanha o crescimento natural e respeita o desenho exclusivo de cada mulher.",
   },
   {
@@ -33,7 +33,7 @@ export const sayegServices = [
     number: "02",
     label: "Micropigmentação labial",
     title: "Cor e contorno sutis",
-    text: "Uma revitalização personalizada para devolver uniformidade, viço e equilíbrio aos lábios. A escolha de pigmentos considera subtom de pele, contraste e resultado desejado.",
+    text: "Uma revitalização personalizada para devolver uniformidade, viço e equilíbrio aos lábios. A escolha de pigmentos considera o subtom de pele, o contraste e o resultado desejado.",
   },
   {
     image: sayegImages.visagism,

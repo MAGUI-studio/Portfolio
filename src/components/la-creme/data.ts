@@ -42,13 +42,13 @@ export const signatures = [
   },
   {
     name: "Caixa de Macarons",
-    detail: "12 unidades para cafe, presente ou reuniao",
+    detail: "12 unidades para café, presente ou reunião",
     price: "R$ 86",
     image: images.caixa_macarons,
   },
   {
     name: "Torta de Ferrero Rocher",
-    detail: "Mousse 64%, crocante de avela e glaçagem espelhada",
+    detail: "Mousse 64%, crocante de avelã e glaçagem espelhada",
     price: "R$ 172",
     image: images.torta_ferrero,
   },
@@ -98,8 +98,8 @@ export const sweets = [
     image: images.macaron_pistache,
   },
   {
-    title: "Mil Folhas de Baunilha",
-    note: "Camadas ultra crocantes de massa folhada intercaladas com creme leve de baunilha.",
+    title: "Mil-folhas de Baunilha",
+    note: "Camadas ultracrocantes de massa folhada intercaladas com creme leve de baunilha.",
     image: images.mil_folhas_de_baunilha,
   },
   {
@@ -158,7 +158,7 @@ export const tastingNotes = [
 
 export const testimonials = [
   [
-    "A mesa parecia pequena ate todo mundo repetir.",
+    "A mesa parecia pequena até todo mundo repetir.",
     "casamento civil, 38 convidados",
   ],
   [

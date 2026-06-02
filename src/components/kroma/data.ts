@@ -166,7 +166,7 @@ export const packages = [
     name: "Empresa Previsível",
     tag: "comercial",
     detail:
-      "Para negócios que precisam reduzir custos fixos, mitigar oscilações tarifas e chancelar seu compromisso com a sustentabilidade.",
+      "Para negócios que precisam reduzir custos fixos, mitigar oscilações tarifárias e chancelar seu compromisso com a sustentabilidade.",
     includes: [
       "projeto financeiro",
       "obra executada por etapas",
@@ -215,7 +215,7 @@ export const faqs = [
   {
     question: "O sistema atende tanto residências quanto indústrias?",
     answer:
-      "Atende perfeitamente a ambos, mas a engenharia do projeto muda significativamente. O cenário residencial prioriza harmonia estética e simplicidade operacional. Já o ambiente industrial exige análise rigorosa de demanda, conformidades de segurança, cronogramas de obra complexos e governança sobre o retorno financeiro.",
+      "Atende perfeitamente a ambos, mas a engenharia do projeto muda significativamente. O cenário residencial prioriza harmonia estética e simplicidade operacional. Já o ambiente industrial exige análise rigorosa de demanda, conformidade com as normas de segurança, cronogramas de obra complexos e governança sobre o retorno financeiro.",
   },
   {
     question: "É possível realizar o financiamento do projeto?",
