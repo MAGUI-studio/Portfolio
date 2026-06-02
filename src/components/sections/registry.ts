@@ -146,7 +146,7 @@ export const sections: SectionEntry[] = [
     projectType: "Escritorio residencial",
     goal: "Apresentar portfolio, processo e assinatura estetica para projetos autorais.",
     tags: ["Portfolio", "Alto padrao", "Servicos"],
-    visible: false,
+    visible: true,
     component: Landing01FlagshipPhone,
   },
   {
@@ -230,7 +230,7 @@ export const sections: SectionEntry[] = [
     description:
       "Comfort food premium com salgados classicos, visual apetitoso e conveniencia delivery-first.",
     category: "Landing Pages",
-    cardImage: "/images/bites/hero.png",
+    cardImage: "/images/bites/project-cover.png",
     industry: "Gastronomia",
     projectType: "Salgados premium",
     goal: "Transformar classicos fritos em uma experiencia moderna, crocante e desejavel.",
