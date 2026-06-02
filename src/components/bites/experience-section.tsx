@@ -63,8 +63,8 @@ export function BitesExperienceSection() {
           />
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#030401]/82 via-[#030401]/42 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#030401]/72 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-[#030401]/82 via-[#030401]/42 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#030401]/72 via-transparent to-transparent" />
 
           {/* Conteúdo */}
           <div className="relative z-10 flex min-h-[760px] flex-col justify-end px-5 py-10 md:px-10 lg:px-14">

@@ -82,7 +82,7 @@ export default function Landing15Ciberseguranca() {
       `}</style>
 
       <header className="relative z-30 border-b border-white/10 bg-[#050507] px-5 py-5 md:px-8 lg:px-10">
-        <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-5">
+        <div className="mx-auto flex max-w-400 flex-wrap items-center justify-between gap-5">
           <a href="#inicio" className="flex items-center gap-3">
             <span className="flex size-11 items-center justify-center bg-[#f6ff00] text-[#050507]">
               <ShieldCheck size={24} weight="duotone" />
@@ -119,7 +119,7 @@ export default function Landing15Ciberseguranca() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,7,0.96)_0%,rgba(5,5,7,0.78)_48%,rgba(5,5,7,0.36)_100%)]" />
         <div className="absolute inset-x-0 bottom-0 h-1/3 bg-[linear-gradient(180deg,transparent,rgba(5,5,7,1))]" />
 
-        <div className="relative z-10 mx-auto flex min-h-[860px] max-w-[1600px] flex-col justify-between">
+        <div className="relative z-10 mx-auto flex min-h-[860px] max-w-400 flex-col justify-between">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.78, ease }}>
             <p className="inline-flex items-center gap-3 bg-white/8 px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.24em] text-[#f6ff00] backdrop-blur">
               <TerminalWindow size={17} weight="bold" />
@@ -151,7 +151,7 @@ export default function Landing15Ciberseguranca() {
       </section>
 
       <section id="superficie" className="relative px-5 py-28 md:px-8 md:py-36 lg:px-10">
-        <div className="mx-auto max-w-[1600px]">
+        <div className="mx-auto max-w-400">
           <div className="flex flex-col gap-14 lg:flex-row lg:items-start lg:justify-between">
             <div className="max-w-4xl">
               <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#f6ff00]">superficie de ataque</p>
@@ -203,7 +203,7 @@ export default function Landing15Ciberseguranca() {
       <section className="relative min-h-[820px] overflow-hidden px-5 py-28 md:px-8 md:py-36 lg:px-10">
         <Image src={images.server} alt="Corredor de servidores em data center" fill sizes="100vw" className="object-cover opacity-48" />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(5,5,7,0.92),rgba(5,5,7,0.4))]" />
-        <div className="relative z-10 mx-auto flex max-w-[1600px] flex-col gap-24">
+        <div className="relative z-10 mx-auto flex max-w-400 flex-col gap-24">
           <p className="max-w-5xl text-6xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-8xl">
             O alerta util ja chega com ativo, dono, impacto e proxima acao.
           </p>
@@ -230,7 +230,7 @@ export default function Landing15Ciberseguranca() {
       </section>
 
       <section id="incidente" className="px-5 py-28 md:px-8 md:py-36 lg:px-10">
-        <div className="mx-auto max-w-[1600px]">
+        <div className="mx-auto max-w-400">
           <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
             <h2 className="max-w-5xl text-6xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-8xl">
               Nao se cria resposta no meio do ataque.
@@ -265,7 +265,7 @@ export default function Landing15Ciberseguranca() {
           <Image src={images.code} alt="Codigo em tela escura" fill sizes="50vw" className="object-cover" />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,#050507_0%,#050507_50%,rgba(5,5,7,0.72)_100%)]" />
-        <div className="relative z-10 mx-auto max-w-[1600px]">
+        <div className="relative z-10 mx-auto max-w-400">
           <LockKey size={56} className="text-[#f6ff00]" />
           <h2 className="mt-12 max-w-4xl text-6xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-8xl">
             Controle bom e aquele que continua funcionando depois da reuniao.
@@ -284,7 +284,7 @@ export default function Landing15Ciberseguranca() {
       <section id="contato" className="relative min-h-[780px] px-5 py-28 md:px-8 md:py-36 lg:px-10">
         <Image src={images.desk} alt="Pessoa usando notebook em ambiente de trabalho" fill sizes="100vw" className="object-cover opacity-42" />
         <div className="absolute inset-0 bg-[#050507]/78" />
-        <div className="relative z-10 mx-auto flex max-w-[1600px] flex-col gap-16 lg:flex-row lg:items-end lg:justify-between">
+        <div className="relative z-10 mx-auto flex max-w-400 flex-col gap-16 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <Bug size={54} className="text-[#f6ff00]" />
             <h2 className="mt-12 max-w-5xl text-6xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-8xl lg:text-[108px]">
@@ -304,7 +304,7 @@ export default function Landing15Ciberseguranca() {
       </section>
 
       <footer className="border-t border-white/10 bg-[#050507] px-5 py-14 text-white md:px-8 lg:px-10">
-        <div className="mx-auto flex max-w-[1600px] flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
+        <div className="mx-auto flex max-w-400 flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-sm">
             <div className="flex items-center gap-3">
               <span className="flex size-11 items-center justify-center bg-[#f6ff00] text-[#050507]">

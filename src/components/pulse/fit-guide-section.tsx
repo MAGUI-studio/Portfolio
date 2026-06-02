@@ -102,7 +102,7 @@ export function PulseFitGuideSection() {
               sizes="(min-width: 1024px) 29vw, 100vw"
               className="object-cover"
             />
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0B0B0B]/82 to-transparent p-6 pt-24">
+            <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-[#0B0B0B]/82 to-transparent p-6 pt-24">
               <p className="text-3xl font-extrabold uppercase leading-none">
                 treino + rotina
               </p>

@@ -38,7 +38,7 @@ export function ShinobiMarqueeSection() {
         }
       `}} />
 
-      <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-black via-transparent to-black opacity-60" />
+      <div className="absolute inset-0 z-10 pointer-events-none bg-linear-to-r from-black via-transparent to-black opacity-60" />
 
       <div className="border-y border-white/10 bg-black/40 backdrop-blur-md py-6">
         <div className="shinobi-marquee-track flex w-max items-center gap-0">

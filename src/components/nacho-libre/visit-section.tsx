@@ -100,7 +100,7 @@ export function NachoLibreVisitSection() {
               sizes="(min-width: 1024px) 62vw, 100vw"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/78 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-[#111111]/78 via-transparent to-transparent" />
             <div className="absolute inset-0 bg-[repeating-linear-gradient(135deg,transparent_0_16px,rgba(255,255,255,0.16)_16px_17px)] opacity-24" />
             <figcaption className="absolute bottom-7 left-6 right-6 md:left-8 md:right-8">
               <p className="max-w-3xl text-4xl font-black uppercase leading-[0.88] tracking-[0] text-[#F0F0F0] md:text-6xl">

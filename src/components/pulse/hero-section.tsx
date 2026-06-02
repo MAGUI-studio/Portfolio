@@ -94,8 +94,8 @@ export function PulseHeroSection() {
           </div>
         ))}
 
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-black/60" />
 
         <div className="relative mx-auto flex min-h-[640px] max-w-[1540px] items-end px-5 py-8 md:min-h-[760px] md:px-8 lg:px-10 lg:py-12">
           <div key={active.title} className="max-w-3xl text-white transition">

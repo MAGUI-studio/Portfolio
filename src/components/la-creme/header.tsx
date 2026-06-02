@@ -143,7 +143,7 @@ export function LaCremeHeader() {
                   sizes="100vw"
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#2b1714]/82 via-[#2b1714]/38 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-r from-[#2b1714]/82 via-[#2b1714]/38 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5 text-white">
                   <p className="text-[10px] font-bold uppercase tracking-[0.24em] text-[#ffd8df]">
                     menu la crème

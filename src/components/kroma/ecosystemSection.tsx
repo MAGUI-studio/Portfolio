@@ -95,7 +95,7 @@ export default function EcoSystemSection() {
                   sizes="(min-width: 1024px) 58vw, 100vw"
                   className="object-cover opacity-90 transition-all duration-700 group-hover:scale-[1.06] group-hover:opacity-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/10 to-transparent" />
               </motion.div>
             </AnimatePresence>
 

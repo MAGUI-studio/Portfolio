@@ -37,8 +37,8 @@ export function NachoLibreExperienceSection() {
           sizes="100vw"
           className="object-cover opacity-44"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/96 via-[#111111]/82 to-[#111111]/42" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-[#111111]/70" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#111111]/96 via-[#111111]/82 to-[#111111]/42" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#111111] via-transparent to-[#111111]/70" />
         <div className="absolute inset-0 bg-[repeating-linear-gradient(135deg,transparent_0_16px,rgba(255,255,255,0.16)_16px_17px)] opacity-30" />
       </div>
 
@@ -116,7 +116,7 @@ export function NachoLibreExperienceSection() {
               sizes="(min-width: 1024px) 62vw, 100vw"
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/82 via-[#111111]/8 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-[#111111]/82 via-[#111111]/8 to-transparent" />
             <div className="absolute bottom-0 left-0 h-3 w-full bg-[#E86A17]" />
             <figcaption className="absolute bottom-8 left-6 right-6 md:left-8 md:right-8">
               <p className="max-w-3xl text-4xl font-black uppercase leading-[0.88] tracking-[0] text-[#F0F0F0] md:text-6xl">
@@ -137,7 +137,7 @@ export function NachoLibreExperienceSection() {
                 sizes="(min-width: 1024px) 38vw, 100vw"
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/76 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#111111]/76 via-transparent to-transparent" />
               <p className="absolute bottom-5 left-5 right-5 text-3xl font-black uppercase leading-none tracking-[0] text-[#F0F0F0] md:text-4xl">
                 bar aceso ate o ultimo gole.
               </p>

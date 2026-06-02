@@ -21,7 +21,7 @@ export function NachoLibreHeroSection() {
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/92 via-transparent to-[#111111]/72" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#111111]/92 via-transparent to-[#111111]/72" />
         <div className="absolute inset-0 bg-[repeating-linear-gradient(135deg,transparent_0_16px,rgba(255,255,255,0.18)_16px_17px)] opacity-20" />
       </div>
 

@@ -7,7 +7,7 @@ import { syncopate } from "./fonts";
 
 export function VittaProductsSection() {
   return (
-    <section id="produtos" className="relative overflow-hidden bg-[#0A0A0A] px-6 py-28 text-white md:px-12 md:py-36">
+    <section id="produtos" className="relative overflow-hidden bg-[#161616] px-6 py-28 text-white md:px-12 md:py-36">
       <Image
         src={images.products}
         fill
@@ -15,11 +15,11 @@ export function VittaProductsSection() {
         sizes="100vw"
         className="absolute inset-0 object-cover object-center opacity-80"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,#0A0A0A_0%,rgba(10,10,10,0.86)_38%,rgba(10,10,10,0.26)_100%)]" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A]/10" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A] via-transparent to-[#0A0A0A]/10" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,#161616_0%,rgba(10,10,10,0.86)_38%,rgba(10,10,10,0.26)_100%)]" />
+      <div className="absolute inset-0 bg-linear-to-t from-[#161616] via-transparent to-[#161616]/10" />
+      <div className="absolute inset-0 bg-linear-to-b from-[#161616] via-transparent to-[#161616]/10" />
 
-      <div className="relative z-10 mx-auto grid min-h-[760px] max-w-[1600px] gap-16 lg:grid-cols-[0.48fr_0.52fr] lg:items-end">
+      <div className="relative z-10 mx-auto grid min-h-[760px] max-w-400 gap-16 lg:grid-cols-[0.48fr_0.52fr] lg:items-end">
         <div className="vitta-reveal flex flex-col justify-between gap-12">
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-[#D7A98B]">
@@ -35,7 +35,7 @@ export function VittaProductsSection() {
 
           <div className="grid gap-px bg-white/10 backdrop-blur-md">
             {products.map((product, index) => (
-              <article key={product.title} className="group grid gap-5 bg-[#0A0A0A]/62 p-6 transition-colors duration-300 hover:bg-[#0A0A0A]/78 md:grid-cols-[0.18fr_0.82fr]">
+              <article key={product.title} className="group grid gap-5 bg-[#161616]/62 p-6 transition-colors duration-300 hover:bg-[#161616]/78 md:grid-cols-[0.18fr_0.82fr]">
                 <div>
                   <span className={`${syncopate.className} text-xl font-light text-[#D7A98B]`}>0{index + 1}</span>
                   <p className="mt-3 font-mono text-[9px] uppercase tracking-[0.28em] text-white/28">{product.category}</p>
@@ -52,7 +52,7 @@ export function VittaProductsSection() {
         </div>
 
         <div className="vitta-reveal vitta-delay-1 flex justify-end lg:pb-8">
-          <div className="max-w-xl border border-white/10 bg-[#0A0A0A]/46 p-7 backdrop-blur-md md:p-9">
+          <div className="max-w-xl border border-white/10 bg-[#161616]/46 p-7 backdrop-blur-md md:p-9">
             <p className="font-mono text-[9px] uppercase tracking-[0.35em] text-[#D7A98B]">
               {"// prescrição assistida"}
             </p>
@@ -63,7 +63,7 @@ export function VittaProductsSection() {
               href={links.whatsapp}
               target="_blank"
               rel="noreferrer"
-              className="vitta-cta group/link mt-8 inline-flex items-center gap-3 border border-white/12 px-6 py-4 font-mono text-[11px] uppercase tracking-widest text-white transition-all duration-300 hover:border-[#D7A98B] hover:bg-[#D7A98B] hover:text-[#0A0A0A]"
+              className="vitta-cta group/link mt-8 inline-flex items-center gap-3 border border-white/12 px-6 py-4 font-mono text-[11px] uppercase tracking-widest text-white transition-all duration-300 hover:border-[#D7A98B] hover:bg-[#D7A98B] hover:text-[#161616]"
             >
               Consultar disponibilidade
               <ArrowUpRight size={14} className="transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />

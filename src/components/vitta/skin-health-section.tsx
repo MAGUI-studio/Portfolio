@@ -7,10 +7,9 @@ export function VittaSkinHealthSection() {
   return (
     <section
       id="pele"
-      className="relative bg-[#0A0A0A] pt-32 pb-40 text-white selection:bg-[#D7A98B]/30 overflow-hidden"
+      className="relative bg-[#161616] pt-32 pb-40 text-white selection:bg-[#D7A98B]/30 overflow-hidden"
     >
-      {/* BLOCO 1: Manifesto Tipográfico de Abertura */}
-      <div className="mx-auto w-full max-w-[1600px] px-6 md:px-12 text-center">
+      <div className="mx-auto w-full max-w-400 px-6 md:px-12 text-center">
         <div className="vitta-reveal max-w-360 mx-auto">
           <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-[#D7A98B]">
             {"// investigação clínica / pilares de saúde"}
@@ -31,9 +30,8 @@ export function VittaSkinHealthSection() {
         </div>
       </div>
 
-      {/* BLOCO 2: Janela Cinematográfica Horizontal + Marquee + Assinatura Glass */}
       <div className="mt-24 relative">
-        <div className="relative w-full aspect-[21/9] md:aspect-[32/14] bg-[#121214] border-y border-white/10 overflow-hidden group/canvas">
+        <div className="relative w-full aspect-21/9 md:aspect-32/14 bg-[#161616] overflow-hidden group/canvas">
           <Image
             src={images.team}
             fill
@@ -43,12 +41,10 @@ export function VittaSkinHealthSection() {
             priority
           />
 
-          {/* Vinhetas laterais discretas de fusão com o fundo escuro */}
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#0A0A0A] to-transparent opacity-60 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#0A0A0A] to-transparent opacity-60 pointer-events-none" />
+          <div className="absolute inset-y-0 left-0 w-24 bg-linear-to-r from-[#161616] to-transparent opacity-60 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-24 bg-linear-to-l from-[#161616] to-transparent opacity-60 pointer-events-none" />
 
-          {/* Bloco Glassmorphic Flutuante (Assinatura Editorial) */}
-          <div className="hidden md:block absolute bottom-6 left-6 md:bottom-10 md:left-12 z-20 max-w-[280px] md:max-w-xs bg-black/25 backdrop-blur-md border border-white/10 p-5 md:p-6 transition-colors duration-500 hover:border-white/20">
+          <div className="hidden md:block absolute bottom-6 left-6 md:bottom-10 md:left-12 z-20 max-w-70 md:max-w-xs bg-black/25 backdrop-blur-md border border-white/10 p-5 md:p-6 transition-colors duration-500 hover:border-white/20">
             <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-[#D7A98B] block mb-2">
               {"// direção técnica"}
             </span>
@@ -61,8 +57,7 @@ export function VittaSkinHealthSection() {
         <VittaMarqueeSection />
       </div>
 
-      {/* BLOCO 3: Grid Clínico de 6 Pilares */}
-      <div className="mx-auto w-full max-w-[1600px] px-6 md:px-12 mt-28">
+      <div className="mx-auto w-full max-w-400 px-6 md:px-12 mt-28">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16 lg:gap-x-16 lg:gap-y-20">
           {skinPillars.map(({ icon: Icon, title, text }, index) => (
             <article key={title} className="group/pilar flex flex-col gap-5">

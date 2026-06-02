@@ -46,7 +46,7 @@ export function VittaFooter() {
             href={links.whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex w-fit items-center gap-3 bg-[#D7A98B] px-6 py-4 font-mono text-[10px] uppercase tracking-[0.22em] text-[#0A0A0A] transition-colors duration-300 hover:bg-white"
+            className="group inline-flex w-fit items-center gap-3 bg-[#D7A98B] px-6 py-4 font-mono text-[10px] uppercase tracking-[0.22em] text-[#161616] transition-colors duration-300 hover:bg-white"
           >
             Agendar avaliação
             <ArrowUpRight size={14} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

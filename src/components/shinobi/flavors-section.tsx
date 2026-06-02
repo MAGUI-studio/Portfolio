@@ -77,8 +77,8 @@ export function ShinobiFlavorsSection({
         className="object-cover transition-all duration-700"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/50" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-black/50" />
 
       <div className="relative z-10 mx-auto max-w-[1540px] items-center gap-10 px-5 py-24 md:px-8 lg:px-10">
         

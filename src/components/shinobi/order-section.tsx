@@ -151,8 +151,8 @@ export function ShinobiOrderSection() {
               className="object-cover transition-all duration-1000 ease-out group-hover:scale-103 group-hover:opacity-80"
             />
             {/* Vinheta minimalista escura */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/40 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-black to-transparent" />
 
             <div className="relative z-10 flex min-h-[520px] flex-col justify-between p-8 md:p-12">
               <div>
@@ -224,7 +224,7 @@ export function ShinobiOrderSection() {
                   sizes="(min-width: 1280px) 30vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover opacity-75 transition-all duration-700 ease-out group-hover:scale-103 group-hover:opacity-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/80" />
+                <div className="absolute inset-0 bg-linear-to-b from-black/10 via-transparent to-black/80" />
                 
                 {/* Badge Convertido para Glass */}
                 <span className="absolute left-6 top-6 border border-white/10 bg-black/40 backdrop-blur-sm px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.2em] text-neutral-300 [font-family:var(--font-shinobi-display)]">

@@ -34,14 +34,7 @@ export const images = {
   heroSecondary: "/images/vitta/cover_two.jpeg",
   products: "/images/vitta/itens.png",
   wallpaper: "/images/vitta/clinica.png",
-  consultation:
-    "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1700&q=90",
-  team: "/images/vitta/time.png",
-  ritual:
-    "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=90",
-  room: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=90",
-  portrait:
-    "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1500&q=90",
+  team: "/images/vitta/equipe.png",
 };
 
 export const nav = [

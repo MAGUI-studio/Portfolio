@@ -9,7 +9,7 @@ export function VittaHeroSection() {
   return (
     <section
       id="inicio"
-      className="relative flex flex-col justify-center overflow-hidden bg-[#0A0A0A] px-6 py-28 text-white md:px-12 md:py-36 lg:py-40 selection:bg-[#D7A98B]/30"
+      className="relative flex flex-col justify-center overflow-hidden bg-[#161616] px-6 py-28 text-white md:px-12 md:py-36 lg:py-40 selection:bg-[#D7A98B]/30"
     >
       {/* Background Imersivo (Foto do Hero cobrindo 100% da seção) */}
       <div className="absolute inset-0 z-0">
@@ -30,12 +30,12 @@ export function VittaHeroSection() {
           sizes="100vw"
         />
         {/* Gradients de Contraste e Proteção de Leitura */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/40 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A]/60" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#161616]/40 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#161616] via-transparent to-[#161616]/60" />
       </div>
 
       {/* Container de Conteúdo Assimétrico */}
-      <div className="relative z-10 mx-auto w-full max-w-[1600px]">
+      <div className="relative z-10 mx-auto w-full max-w-400">
         {/* COLUNA ESQUERDA: Tipografia Monumental e CTAs */}
         <div className="flex flex-col justify-center pr-0 lg:pr-12">
           <div className="vitta-reveal w-full">
@@ -71,7 +71,7 @@ export function VittaHeroSection() {
                 href={links.whatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center justify-center gap-3 bg-[#D7A98B] border border-[#D7A98B] px-8 py-5 text-[10px] font-mono uppercase tracking-[0.2em] text-[#0A0A0A] transition-all duration-300 hover:bg-transparent hover:text-white rounded-none"
+                className="group inline-flex items-center justify-center gap-3 bg-[#D7A98B] border border-[#D7A98B] px-8 py-5 text-[10px] font-mono uppercase tracking-[0.2em] text-[#161616] transition-all duration-300 hover:bg-transparent hover:text-white rounded-none"
               >
                 Agendar avaliação
                 <ArrowUpRight
@@ -82,7 +82,7 @@ export function VittaHeroSection() {
 
               <Link
                 href="#pele"
-                className="group inline-flex items-center justify-center gap-3 border border-white/20 bg-black/30 px-8 py-5 text-[10px] font-mono uppercase tracking-[0.2em] text-white backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-[#0A0A0A] hover:border-white rounded-none"
+                className="group inline-flex items-center justify-center gap-3 border border-white/20 bg-black/30 px-8 py-5 text-[10px] font-mono uppercase tracking-[0.2em] text-white backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-[#161616] hover:border-white rounded-none"
               >
                 Ver protocolos
                 <CaretDown

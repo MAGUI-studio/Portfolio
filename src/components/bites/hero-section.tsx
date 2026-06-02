@@ -21,7 +21,7 @@ export function BitesHeroSection() {
           className="object-cover object-[58%_center]"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/80 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#0A0A0A]/80 to-transparent" />
 
         <div className="relative z-10 flex min-h-[780px] flex-col justify-end p-5 pt-28 md:p-8 lg:p-12">
           <div className="flex flex-wrap items-center gap-3">

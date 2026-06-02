@@ -14,7 +14,7 @@ export function VittaHeader() {
 
   return (
     <header className="absolute inset-x-0 top-0 z-40 px-5 py-5 md:px-10">
-      <div className="mx-auto grid max-w-[1600px] grid-cols-[auto_1fr_auto] items-center gap-4 text-white">
+      <div className="mx-auto grid max-w-400 grid-cols-[auto_1fr_auto] items-center gap-4 text-white">
         <Link
           href="#inicio"
           aria-label="Ir para o início da VITTA"
@@ -38,7 +38,7 @@ export function VittaHeader() {
             href={links.whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-3 border border-white/14 bg-white/[0.06] px-5 py-4 font-mono text-[10px] uppercase tracking-[0.24em] text-white backdrop-blur-xl transition-all duration-300 hover:border-[#D7A98B] hover:bg-[#D7A98B] hover:text-[#0A0A0A]"
+            className="group inline-flex items-center gap-3 border border-white/14 bg-white/[0.06] px-5 py-4 font-mono text-[10px] uppercase tracking-[0.24em] text-white backdrop-blur-xl transition-all duration-300 hover:border-[#D7A98B] hover:bg-[#D7A98B] hover:text-[#161616]"
           >
             Avaliação
             <ArrowUpRight size={14} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -50,7 +50,7 @@ export function VittaHeader() {
           aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
           aria-expanded={isOpen}
           onClick={() => setIsOpen((current) => !current)}
-          className="justify-self-end border border-white/14 bg-white/[0.06] px-4 py-3 text-white backdrop-blur-xl transition-colors hover:border-[#D7A98B] hover:bg-[#D7A98B] hover:text-[#0A0A0A] lg:hidden"
+          className="justify-self-end border border-white/14 bg-white/[0.06] px-4 py-3 text-white backdrop-blur-xl transition-colors hover:border-[#D7A98B] hover:bg-[#D7A98B] hover:text-[#161616] lg:hidden"
         >
           {isOpen ? <X size={24} /> : <List size={25} />}
         </button>
@@ -58,12 +58,12 @@ export function VittaHeader() {
 
       <div
         aria-hidden={!isOpen}
-        className={`fixed inset-0 z-50 bg-[#0A0A0A]/72 p-3 backdrop-blur-md transition-all duration-500 ease-out lg:hidden ${
+        className={`fixed inset-0 z-50 bg-[#161616]/72 p-3 backdrop-blur-md transition-all duration-500 ease-out lg:hidden ${
           isOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
         <div
-          className={`relative flex min-h-full flex-col overflow-hidden bg-[#0A0A0A] text-white shadow-[0_30px_120px_rgba(0,0,0,0.45)] transition-all duration-500 ease-out ${
+          className={`relative flex min-h-full flex-col overflow-hidden bg-[#161616] text-white shadow-[0_30px_120px_rgba(0,0,0,0.45)] transition-all duration-500 ease-out ${
             isOpen ? "translate-y-0 scale-100 opacity-100" : "translate-y-5 scale-[0.98] opacity-0"
           }`}
         >
@@ -76,7 +76,7 @@ export function VittaHeader() {
                 type="button"
                 aria-label="Fechar menu"
                 onClick={closeMenu}
-                className="border border-white/14 bg-white/[0.06] p-4 transition-colors hover:border-[#D7A98B] hover:bg-[#D7A98B] hover:text-[#0A0A0A]"
+                className="border border-white/14 bg-white/[0.06] p-4 transition-colors hover:border-[#D7A98B] hover:bg-[#D7A98B] hover:text-[#161616]"
               >
                 <X size={26} />
               </button>
@@ -115,7 +115,7 @@ export function VittaHeader() {
                 target="_blank"
                 rel="noreferrer"
                 onClick={closeMenu}
-                className="group inline-flex items-center justify-center gap-3 bg-[#D7A98B] px-6 py-5 font-mono text-[11px] uppercase tracking-[0.22em] text-[#0A0A0A]"
+                className="group inline-flex items-center justify-center gap-3 bg-[#D7A98B] px-6 py-5 font-mono text-[11px] uppercase tracking-[0.22em] text-[#161616]"
               >
                 Agendar avaliação
                 <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

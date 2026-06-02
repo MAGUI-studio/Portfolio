@@ -11,7 +11,7 @@ import { inter } from "../vitta/fonts";
 export default function Landing03CosmeticoEssencial() {
   return (
     <main
-      className={`${inter.className} overflow-hidden bg-[#0A0A0A] text-white`}
+      className={`${inter.className} overflow-x-clip bg-[#161616] text-white`}
     >
       <VittaAnimationStyles />
       <div className="relative">

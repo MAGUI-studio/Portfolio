@@ -142,7 +142,7 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw"
                     className="object-cover transition duration-700 ease-out group-hover:scale-103"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent opacity-60" />
                   <span className="absolute left-4 top-4 bg-white/85 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-black/75 backdrop-blur-md border border-black/5 rounded-xs">
                     {project.industry}
                   </span>

@@ -62,7 +62,7 @@ export function KromaSolutionsSection() {
                   sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover opacity-90 transition duration-700 group-hover:scale-[1.06] group-hover:opacity-100"
                 />
-                <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-black/72 to-transparent p-4 pt-10">
+                <div className="absolute inset-x-0 bottom-0 flex items-center justify-between bg-linear-to-t from-black/72 to-transparent p-4 pt-10">
                   <span className="font-mono text-[10px] uppercase tracking-widest text-[#FFBC4F]">
                     {`// 0${index + 1}`}
                   </span>

@@ -36,9 +36,9 @@ export function ShinobiManifestoSection() {
           priority
           className="object-cover opacity-85"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black to-transparent" />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/40 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-black to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-linear-to-b from-black to-transparent" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-[1540px] px-5 md:px-8 lg:px-10 flex flex-col gap-28">
