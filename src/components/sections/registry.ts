@@ -1,5 +1,4 @@
 import type { ComponentType } from "react";
-import Landing01FlagshipPhone from "@/components/sections/landing-01-flagship-phone";
 import Landing02NachoLibre from "@/components/sections/nacho-libre";
 import Landing03CosmeticoEssencial from "@/components/sections/vitta";
 import Landing04HotelRefugio from "@/components/sections/landing-04-hotel-refugio";
@@ -20,6 +19,7 @@ import Landing18VinhoAltitude from "@/components/sections/landing-18-vinho-altit
 import Landing19LaboratorioFarmaceutico from "@/components/sections/landing-19-laboratorio-farmaceutico";
 import Landing20InfraestruturaPortuaria from "@/components/sections/landing-20-infraestrutura-portuaria";
 import Landing21Shinobi from "@/components/sections/shinobi";
+import SayegLanding from "@/components/sections/sayeg";
 
 export type SectionEntry = {
   aliases?: string[];
@@ -138,16 +138,17 @@ export const sections: SectionEntry[] = [
     index: "07",
     slug: "orla-arquitetura",
     aliases: ["landing-01-flagship-phone"],
-    title: "Orla Arquitetura",
+    title: "Beatriz Sayeg",
     description:
-      "Escritorio de arquitetura residencial com 10 secoes completas.",
+      "Visagismo avancado e micropigmentacao personalizada com posicionamento de luxo.",
     category: "Landing Pages",
-    industry: "Arquitetura",
-    projectType: "Escritorio residencial",
-    goal: "Apresentar portfolio, processo e assinatura estetica para projetos autorais.",
-    tags: ["Portfolio", "Alto padrao", "Servicos"],
+    cardImage: "/images/sayeg/beatriz-sayeg-cover.png",
+    industry: "Beleza",
+    projectType: "Especialista em visagismo",
+    goal: "Apresentar autoridade, especialidades e atendimento personalizado para gerar agendamentos.",
+    tags: ["Visagismo", "Micropigmentacao", "Marca pessoal"],
     visible: true,
-    component: Landing01FlagshipPhone,
+    component: SayegLanding,
   },
   {
     index: "08",
