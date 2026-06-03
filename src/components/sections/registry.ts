@@ -62,7 +62,7 @@ export const sections: SectionEntry[] = [
     description:
       "Clinica de estetica focada em saúde da pele, protocolos personalizados e acompanhamento.",
     category: "Landing Pages",
-    cardImage: "/images/vitta/project-cover.png",
+    cardImage: "/images/vitta/project-cover.webp",
     industry: "Saúde",
     projectType: "Clinica de pele e estetica",
     goal: "Comunicar confianca, cuidado e protocolos personalizados para consultas de alto valor.",

@@ -30,11 +30,11 @@ export const links = {
 };
 
 export const images = {
-  hero: "/images/vitta/cover.png",
-  heroSecondary: "/images/vitta/cover_two.jpeg",
-  products: "/images/vitta/itens.png",
-  wallpaper: "/images/vitta/clinica.png",
-  team: "/images/vitta/equipe.png",
+  hero: "/images/vitta/cover.webp",
+  heroSecondary: "/images/vitta/cover_two.webp",
+  products: "/images/vitta/itens.webp",
+  wallpaper: "/images/vitta/clinica.webp",
+  team: "/images/vitta/equipe.webp",
 };
 
 export const nav = [
