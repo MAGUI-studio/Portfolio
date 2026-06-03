@@ -7,6 +7,7 @@ import {
 } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
+import { ScrollTopLink } from "@/components/scroll-top-link";
 import { pulseImages, pulseNav, pulseWhatsapp } from "./data";
 
 const shopLinks = [
@@ -219,13 +220,12 @@ export function PulseFooter() {
             <span aria-hidden="true" className="text-white/20">
               |
             </span>
-            <Link
-              href="#inicio"
+            <ScrollTopLink
               className="inline-flex cursor-pointer items-center gap-1 text-white transition hover:text-[#F97316] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0A]"
             >
               Voltar ao topo
               <span aria-hidden="true">↑</span>
-            </Link>
+            </ScrollTopLink>
           </div>
         </div>
       </div>

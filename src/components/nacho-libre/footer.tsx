@@ -1,6 +1,7 @@
 import { ArrowRight, InstagramLogo, MapPin } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
+import { ScrollTopLink } from "@/components/scroll-top-link";
 import {
   nachoLibreAddress,
   nachoLibreImages,
@@ -139,13 +140,12 @@ export function NachoLibreFooter() {
             <span aria-hidden="true" className="text-[#111111]/35">
               |
             </span>
-            <Link
-              href="#inicio"
+            <ScrollTopLink
               className="inline-flex items-center gap-2 transition hover:text-[#F0F0F0] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#E86A17]"
             >
               Voltar ao topo
               <span aria-hidden="true">↑</span>
-            </Link>
+            </ScrollTopLink>
           </div>
         </div>
       </div>

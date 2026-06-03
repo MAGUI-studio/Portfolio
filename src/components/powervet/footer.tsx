@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ScrollTopLink } from "@/components/scroll-top-link";
 import { ArrowUpRight, Clock, MapPin } from "@phosphor-icons/react/dist/ssr";
 
 import { powervetImages, powervetNav, powervetWhatsapp } from "./data";
@@ -28,7 +29,7 @@ export function PowervetFooter() {
         </div>
       </div>
       <div className="border-t border-white/14 px-5 py-5 text-xs text-white/46 md:px-10 lg:px-14">
-        <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} POWERVET.</p><div className="flex flex-wrap items-center gap-3"><span>Oferecido por <Link href="https://magui.studio" target="_blank" rel="noopener noreferrer" className="font-semibold text-white hover:text-[#DDD6C8]"><strong>MAGUI</strong><span className="text-[#DDD6C8]">.</span>studio</Link></span><span className="text-white/20">|</span><Link href="#inicio" className="text-white transition-colors hover:text-[#DDD6C8]">Voltar ao topo ↑</Link></div></div>
+        <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} POWERVET.</p><div className="flex flex-wrap items-center gap-3"><span>Oferecido por <Link href="https://magui.studio" target="_blank" rel="noopener noreferrer" className="font-semibold text-white hover:text-[#DDD6C8]"><strong>MAGUI</strong><span className="text-[#DDD6C8]">.</span>studio</Link></span><span className="text-white/20">|</span><ScrollTopLink className="text-white transition-colors hover:text-[#DDD6C8]">Voltar ao topo ↑</ScrollTopLink></div></div>
       </div>
     </footer>
   );

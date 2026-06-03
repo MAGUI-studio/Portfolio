@@ -12,12 +12,9 @@ import {
   viewport,
 } from "./motion";
 import Link from "next/link";
+import { ScrollTopLink } from "@/components/scroll-top-link";
 
 export function LaCremeFooter() {
-  function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
   return (
     <motion.footer
       className="relative w-full overflow-hidden bg-[#fffdfa] text-[#2b1714]"
@@ -201,14 +198,12 @@ export function LaCremeFooter() {
             |
           </span>
 
-          <button
-            type="button"
-            onClick={scrollToTop}
+          <ScrollTopLink
             className="inline-flex items-center gap-1 text-xs font-medium text-white transition duration-300 hover:text-[#ffd8df] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#2b1714] cursor-pointer"
           >
             Voltar ao topo
             <span aria-hidden="true">↑</span>
-          </button>
+          </ScrollTopLink>
         </motion.div>
       </div>
     </motion.footer>

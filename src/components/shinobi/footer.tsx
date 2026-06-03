@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import Link from "next/link";
+import { ScrollTopLink } from "@/components/scroll-top-link";
 import { shinobiBrand, shinobiWhatsappHref } from "./data";
 
 const shinobiFooterNav = [
@@ -101,13 +102,12 @@ export function ShinobiFooter() {
               |
             </span>
 
-            <Link
-              href="#inicio"
+            <ScrollTopLink
               className="inline-flex cursor-pointer items-center gap-1 text-white transition duration-300 hover:text-[#5D9601] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5D9601] focus-visible:ring-offset-2 focus-visible:ring-offset-[#050302]"
             >
               Voltar ao topo
               <span aria-hidden="true">↑</span>
-            </Link>
+            </ScrollTopLink>
           </div>
         </div>
       </div>

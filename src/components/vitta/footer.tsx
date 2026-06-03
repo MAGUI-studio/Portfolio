@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ScrollTopLink } from "@/components/scroll-top-link";
 import { ArrowUpRight, Clock, EnvelopeSimple, MapPin } from "@phosphor-icons/react/ssr";
 
 import { brand, links, nav } from "./data";
@@ -128,13 +129,12 @@ export function VittaFooter() {
             |
           </span>
 
-          <Link
-            href="#inicio"
+          <ScrollTopLink
             className="inline-flex cursor-pointer items-center gap-1 text-white transition duration-300 hover:text-[#D7A98B] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D7A98B] focus-visible:ring-offset-2 focus-visible:ring-offset-[#27362D]"
           >
             Voltar ao topo
             <span aria-hidden="true">↑</span>
-          </Link>
+          </ScrollTopLink>
         </div>
       </div>
     </footer>

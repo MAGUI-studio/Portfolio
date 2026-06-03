@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ScrollTopLink } from "@/components/scroll-top-link";
 import {
   ArrowUpRight,
   Clock,
@@ -147,13 +148,12 @@ export function KromaFooter() {
             |
           </span>
 
-          <Link
-            href="#inicio"
+          <ScrollTopLink
             className="inline-flex cursor-pointer items-center gap-1 text-white transition duration-300 hover:text-[#FFBC4F] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1E1E1E]"
           >
             Voltar ao topo
             <span aria-hidden="true">↑</span>
-          </Link>
+          </ScrollTopLink>
         </div>
       </div>
     </footer>

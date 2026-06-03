@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ScrollTopLink } from "@/components/scroll-top-link";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -172,13 +173,12 @@ export function BitesFooter() {
             <span aria-hidden="true" className="text-white/20">
               |
             </span>
-            <Link
-              href="#inicio"
+            <ScrollTopLink
               className="inline-flex cursor-pointer items-center gap-1 text-white transition hover:text-[#FB5F00] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2 focus-visible:ring-offset-[#030401]"
             >
               Voltar ao topo
               <span aria-hidden="true">↑</span>
-            </Link>
+            </ScrollTopLink>
           </div>
         </div>
       </div>

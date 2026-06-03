@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ScrollTopLink } from "@/components/scroll-top-link";
 import { ArrowUpRight } from "@phosphor-icons/react/ssr";
 import { sayegImages, sayegNav, sayegWhatsapp } from "./data";
 
@@ -36,7 +37,7 @@ export function SayegFooter() {
           <div className="flex flex-wrap items-center gap-3">
             <span>Oferecido por <Link href="https://magui.studio" target="_blank" rel="noopener noreferrer" className="font-semibold text-white transition-colors hover:text-[#e4c9b9] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e4c9b9] focus-visible:ring-offset-4 focus-visible:ring-offset-[#202427]"><strong>MAGUI</strong><span className="text-[#0094C8]">.</span>studio</Link></span>
             <span aria-hidden="true" className="text-white/20">|</span>
-            <Link href="#inicio" className="text-white transition-colors hover:text-[#e4c9b9] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e4c9b9] focus-visible:ring-offset-4 focus-visible:ring-offset-[#202427]">Voltar ao topo ↑</Link>
+            <ScrollTopLink className="text-white transition-colors hover:text-[#e4c9b9] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#e4c9b9] focus-visible:ring-offset-4 focus-visible:ring-offset-[#202427]">Voltar ao topo ↑</ScrollTopLink>
           </div>
         </div>
       </div>
