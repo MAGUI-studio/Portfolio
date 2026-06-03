@@ -152,7 +152,7 @@ export const sections: SectionEntry[] = [
   },
   {
     index: "07",
-    slug: "orla-arquitetura",
+    slug: "sayeg-beauty-studio",
     aliases: ["landing-01-flagship-phone"],
     title: "Beatriz Sayeg",
     description:
@@ -174,7 +174,7 @@ export const sections: SectionEntry[] = [
       "Clinica veterinaria premium especializada em animais silvestres e exoticos.",
     category: "Landing Pages",
     cardImage: "/images/powervet/project-cover.png",
-    industry: "Saude",
+    industry: "Animais",
     projectType: "Clinica veterinaria especializada",
     goal: "Transmitir autoridade medica, acolhimento e estrutura para gerar agendamentos.",
     tags: ["Veterinaria", "Animais exoticos", "Agendamento"],

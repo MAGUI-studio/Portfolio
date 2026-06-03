@@ -18,3 +18,4 @@ When the user asks to replace, retheme, or transform an existing landing page in
 - Keep calls to action coherent with the project goal and connect them to the appropriate destination, such as WhatsApp or an internal section anchor.
 - Preserve existing repository conventions and keep as many components server-rendered as possible. Introduce `"use client"` only where interaction or animation requires it.
 - Validate responsive layout, links, image loading, and visual transitions after implementation.
+- Adjust slug on `src\components\sections\registry.ts` to match new project name
