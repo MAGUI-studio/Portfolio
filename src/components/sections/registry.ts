@@ -78,7 +78,7 @@ export const sections: SectionEntry[] = [
     description:
       "Marca premium de roupas fitness para homens e mulheres com tecnologia, performance e estilo.",
     category: "Landing Pages",
-    cardImage: "/images/pulse/project-cover.png",
+    cardImage: "/images/pulse/project-cover.webp",
     industry: "Moda",
     projectType: "Marca esportiva premium",
     goal: "Apresentar colecoes, tecnologia textil e compra assistida com visual editorial.",
@@ -94,7 +94,7 @@ export const sections: SectionEntry[] = [
     description:
       "Paineis solares, inversores, baterias e projetos completos para uso residencial, comercial e industrial.",
     category: "Landing Pages",
-    cardImage: "/images/kroma/project-cover.png",
+    cardImage: "/images/kroma/project-cover.webp",
     industry: "Tecnologia",
     projectType: "Solucoes solares",
     goal: "Explicar projetos completos de energia solar para residencias, empresas e industrias.",
@@ -110,7 +110,7 @@ export const sections: SectionEntry[] = [
     description:
       "Confeitaria artesanal com vitrine sazonal, encomendas e doces autorais.",
     category: "Landing Pages",
-    cardImage: "/images/lacreme/project-cover.png",
+    cardImage: "/images/lacreme/project-cover.webp",
     industry: "Gastronomia",
     projectType: "Confeitaria artesanal",
     goal: "Valorizar vitrine, encomendas e doces autorais com apelo sensorial.",
