@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, WhatsappLogo, X } from "@phosphor-icons/react";
 import { useState } from "react";
 import { shinobiFlavors, shinobiWhatsappHref } from "./data";
@@ -121,7 +122,7 @@ export function ShinobiOrderSection() {
               </div>
               
               {/* Botão WhatsApp Convertido para Glass */}
-              <a
+              <Link
                 href={shinobiWhatsappHref}
                 target="_blank"
                 rel="noreferrer"
@@ -136,7 +137,7 @@ export function ShinobiOrderSection() {
                   weight="bold"
                   className="relative z-10 transition-transform duration-300 group-hover:translate-x-1"
                 />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -175,7 +176,7 @@ export function ShinobiOrderSection() {
                   </p>
                 </div>
                 {/* Botão Kit Degustação Convertido para Glass */}
-                <a
+                <Link
                   href={shinobiTastingKitHref}
                   target="_blank"
                   rel="noreferrer"
@@ -183,7 +184,7 @@ export function ShinobiOrderSection() {
                 >
                   Quero o kit
                   <ArrowRight size={16} weight="bold" />
-                </a>
+                </Link>
               </div>
             </div>
           </article>
@@ -250,7 +251,7 @@ export function ShinobiOrderSection() {
                 </p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {/* Botão Esquerdo do Card: Convertido para Glass */}
-                  <a
+                  <Link
                     href={getFlavorWhatsappHref(flavor.name)}
                     target="_blank"
                     rel="noreferrer"
@@ -265,7 +266,7 @@ export function ShinobiOrderSection() {
                       weight="bold"
                       className="relative z-10 transition-transform duration-300 group-hover:translate-x-1"
                     />
-                  </a>
+                  </Link>
                   
                   {/* Botão Direito do Card: Convertido para Glass */}
                   <button

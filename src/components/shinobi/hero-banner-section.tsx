@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "@phosphor-icons/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function ShinobiHeroBannerSection() {
   return (
@@ -103,7 +104,7 @@ export function ShinobiHeroBannerSection() {
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
-            <a
+            <Link
               href="#sabores"
               className="btn-clip-glass-fill group/btn relative inline-flex items-center gap-3 border border-white/20 bg-black/20 backdrop-blur-md px-8 py-4 text-xs font-bold uppercase tracking-wider text-white transition-all duration-300 [font-family:var(--font-shinobi-display)] hover:border-white"
             >
@@ -115,16 +116,16 @@ export function ShinobiHeroBannerSection() {
                   weight="bold"
                 />
               </span>
-            </a>
+            </Link>
 
-            <a
+            <Link
               href="#pedido"
               className="btn-clip-glass-stroke group/btn relative inline-flex items-center gap-3 border border-white/10 bg-white/[0.02] backdrop-blur-md px-8 py-4 text-xs font-bold uppercase tracking-wider text-neutral-400 transition-all duration-300 [font-family:var(--font-shinobi-display)] hover:text-white hover:border-white/30"
             >
               <span className="relative z-10">
                 Pedir agora
               </span>
-            </a>
+            </Link>
           </div>
         </div>
 

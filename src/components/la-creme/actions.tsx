@@ -12,7 +12,7 @@ export function CTA({
   light?: boolean;
 }) {
   return (
-    <a
+    <Link
       href={href}
       className={
         light
@@ -22,7 +22,7 @@ export function CTA({
     >
       {children}
       <NotebookIcon size={20} aria-hidden="true" weight="duotone" />
-    </a>
+    </Link>
   );
 }
 

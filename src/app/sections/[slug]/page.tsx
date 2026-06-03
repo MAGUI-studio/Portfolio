@@ -25,10 +25,14 @@ export async function generateMetadata(
   return {
     title,
     description,
+    alternates: {
+      canonical: `/sections/${entry.slug}`,
+    },
     openGraph: {
       title,
       description,
       images: entry.cardImage ? [entry.cardImage] : undefined,
+      url: `/sections/${entry.slug}`,
       siteName: "MAGUI.studio",
       type: "website",
     },

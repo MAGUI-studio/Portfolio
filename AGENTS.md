@@ -19,3 +19,13 @@ When the user asks to replace, retheme, or transform an existing landing page in
 - Preserve existing repository conventions and keep as many components server-rendered as possible. Introduce `"use client"` only where interaction or animation requires it.
 - Validate responsive layout, links, image loading, and visual transitions after implementation.
 - Adjust slug on `src\components\sections\registry.ts` to match new project name
+
+## Portfolio project standards
+
+- Use `Link` from `next/link` for every navigation element and CTA link, including internal anchors, external URLs, and WhatsApp links. Do not render raw `<a>` tags in project pages or components.
+- Use `Image` from `next/image` for image assets. Do not render raw `<img>` tags. Provide useful `alt`, `sizes`, and stable dimensions or `fill` with a constrained parent.
+- Every project page must have SEO metadata through `generateMetadata` or the shared project metadata flow. Titles should follow `MAGUI.studio | <Project Name>`, and descriptions should use the project-specific registry data.
+- Every project page must render the shared `WhatsappButton` through the established wrapper, using the project-specific phone number and message. Do not reuse a generic WhatsApp message across all projects.
+- Keep project-specific WhatsApp data close to the project when available, and update the shared project WhatsApp mapping whenever a new project slug is added.
+- Maintain Open Graph metadata and `metadataBase` whenever SEO metadata is changed.
+- Preserve the footer pattern with `Oferecido por MAGUI.studio`, `Voltar ao topo`, and the shared scroll-to-top behavior.

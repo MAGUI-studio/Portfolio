@@ -41,7 +41,7 @@ export function LaCremeHeader() {
           atelier aberto de terça a sábado / retiradas com hora marcada
         </div>
 
-        <a
+        <Link
           href="#inicio"
           onClick={closeMenu}
           className="justify-self-start focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-4 lg:justify-self-center"
@@ -51,7 +51,7 @@ export function LaCremeHeader() {
           >
             La Crème
           </span>
-        </a>
+        </Link>
 
         <div className="hidden items-center gap-3 lg:flex lg:justify-self-end">
           <Link
@@ -101,13 +101,13 @@ export function LaCremeHeader() {
         <div className="mx-auto flex max-w-[1540px] items-center justify-between gap-6 overflow-x-auto px-5 py-3 md:px-8 lg:px-10">
           <nav className="flex min-w-max items-center gap-7 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#2b1714]">
             {nav.map((item) => (
-              <a
+              <Link
                 key={item.label}
                 href={item.href}
                 className="transition duration-300 hover:text-[#9d2d40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <p className="hidden min-w-max items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9d2d40] md:flex">
@@ -156,7 +156,7 @@ export function LaCremeHeader() {
 
               <nav className="grid p-3" aria-label="Menu principal mobile">
                 {nav.map((item, index) => (
-                  <a
+                  <Link
                     key={item.label}
                     ref={index === 0 ? firstLinkRef : undefined}
                     href={item.href}
@@ -176,26 +176,30 @@ export function LaCremeHeader() {
                       aria-hidden="true"
                       className="text-[#9d2d40] transition duration-300 group-hover:translate-x-1"
                     />
-                  </a>
+                  </Link>
                 ))}
               </nav>
 
               <div className="grid gap-3 border-t border-[#2b1714]/10 bg-[#FFFDFA] p-4">
-                <a
+                <Link
                   href={whatsapp}
                   onClick={closeMenu}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 rounded-full bg-[#2b1714] px-6 py-4 text-sm font-semibold text-white transition duration-300 hover:bg-[#9d2d40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2"
                 >
                   Pedir no WhatsApp
                   <ShoppingBag size={16} aria-hidden="true" />
-                </a>
-                <a
+                </Link>
+                <Link
                   href="https://www.instagram.com/"
                   onClick={closeMenu}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full border border-[#2b1714]/12 px-6 py-4 text-xs font-bold uppercase tracking-[0.18em] text-[#2b1714] transition duration-300 hover:border-[#9d2d40] hover:text-[#9d2d40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2"
                 >
                   Instagram
-                </a>
+                </Link>
               </div>
             </motion.div>
           </motion.div>

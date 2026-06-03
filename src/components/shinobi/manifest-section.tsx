@@ -2,6 +2,7 @@
 
 import { ArrowUpRight } from "@phosphor-icons/react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function ShinobiManifestoSection() {
   return (
@@ -69,7 +70,7 @@ export function ShinobiManifestoSection() {
             </p>
           </div>
 
-          <a
+          <Link
             href="https://wa.me/5500000000000?text=Oi%2C%20SHINOBI.%20Quero%20fazer%20um%20pedido."
             target="_blank"
             rel="noopener noreferrer"
@@ -79,7 +80,7 @@ export function ShinobiManifestoSection() {
               Encontrar Distribuidor
               <ArrowUpRight size={14} weight="bold" />
             </span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

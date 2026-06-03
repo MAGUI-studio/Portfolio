@@ -12,6 +12,7 @@ import {
   type PortfolioProject,
 } from "@/app/portfolio-projects";
 import { ProjectWhatsappButton } from "@/components/project-whatsapp-button";
+import { ScrollTopLink } from "@/components/scroll-top-link";
 import { sectionMap, visibleSections } from "@/components/sections/registry";
 
 interface HomePageProps {
@@ -44,9 +45,13 @@ export async function generateMetadata(
     return {
       title: defaultSeoTitle,
       description: defaultSeoDescription,
+      alternates: {
+        canonical: "/",
+      },
       openGraph: {
         title: defaultSeoTitle,
         description: defaultSeoDescription,
+        url: "/",
         siteName: "MAGUI.studio",
         type: "website",
       },
@@ -59,10 +64,14 @@ export async function generateMetadata(
   return {
     title,
     description,
+    alternates: {
+      canonical: `/sections/${activeEntry.slug}`,
+    },
     openGraph: {
       title,
       description,
       images: activeEntry.cardImage ? [activeEntry.cardImage] : undefined,
+      url: `/sections/${activeEntry.slug}`,
       siteName: "MAGUI.studio",
       type: "website",
     },
@@ -261,7 +270,17 @@ export default async function Home(props: HomePageProps) {
 
           <div className="pt-8 border-t border-black/5 flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center text-[11px] text-neutral-400 font-mono tracking-wider">
             <p>MAGUI.STUDIO</p>
-            <p>© {new Date().getFullYear()} — TODOS OS DIREITOS RESERVADOS.</p>
+            <div className="flex flex-wrap items-center gap-3">
+              <p>
+                © {new Date().getFullYear()} — TODOS OS DIREITOS RESERVADOS.
+              </p>
+              <span aria-hidden="true" className="text-neutral-300">
+                |
+              </span>
+              <ScrollTopLink className="text-neutral-500 transition-colors hover:text-[#0093C8]">
+                Voltar ao topo ↑
+              </ScrollTopLink>
+            </div>
           </div>
         </div>
       </footer>

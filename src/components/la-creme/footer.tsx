@@ -138,13 +138,13 @@ export function LaCremeFooter() {
             </p>
             <div className="mt-6 flex flex-col gap-3 text-xs font-medium">
               {nav.map((item) => (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   className="w-fit transition-colors duration-200 hover:text-[#ffd8df] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0094C8] focus-visible:ring-offset-2"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.div>
