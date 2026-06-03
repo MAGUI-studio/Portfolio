@@ -1,14 +1,14 @@
 export const bitesImages = {
-  atendimento: "/images/bites/atendimento.png",
-  combo: "/images/bites/cento-de-salgados-e-coca.png",
-  delivery: "/images/bites/delivery.png",
-  fachada: "/images/bites/fachada.png",
-  hero: "/images/bites/hero.png",
-  cardapio: "/images/bites/cardapio.png",
-  processo: "/images/bites/processo-fritadeira.png",
-  logo: "/images/bites/logo.png",
-  bolinha: "/images/bites/mini-bolinha-de-queijo.png",
-  coxinha: "/images/bites/mini-coxinha.png",
+  atendimento: "/images/bites/atendimento.webp",
+  combo: "/images/bites/cento-de-salgados-e-coca.webp",
+  delivery: "/images/bites/delivery.webp",
+  fachada: "/images/bites/fachada.webp",
+  hero: "/images/bites/hero.webp",
+  cardapio: "/images/bites/cardapio.webp",
+  processo: "/images/bites/processo-fritadeira.webp",
+  logo: "/images/bites/logo.webp",
+  bolinha: "/images/bites/mini-bolinha-de-queijo.webp",
+  coxinha: "/images/bites/mini-coxinha.webp",
 } as const;
 
 export const bitesWhatsapp =

@@ -142,7 +142,7 @@ export const sections: SectionEntry[] = [
     description:
       "Comfort food premium com salgados classicos, visual apetitoso e conveniencia delivery-first.",
     category: "Landing Pages",
-    cardImage: "/images/bites/project-cover.png",
+    cardImage: "/images/bites/project-cover.webp",
     industry: "Gastronomia",
     projectType: "Salgados premium",
     goal: "Transformar classicos fritos em uma experiencia moderna, crocante e desejavel.",

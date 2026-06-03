@@ -100,7 +100,7 @@ export default async function Home(props: HomePageProps) {
     <main className="min-h-screen w-full bg-[#FCFCFC] text-black antialiased selection:bg-black selection:text-white">
       <section className="w-full">
         <Image
-          src="/utils/page-banner.png"
+          src="/utils/page-banner.webp"
           alt="MAGUI.studio"
           width={2048}
           height={854}
