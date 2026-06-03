@@ -1,7 +1,6 @@
 import type { ComponentType } from "react";
 import Landing02NachoLibre from "@/components/sections/nacho-libre";
 import Landing03CosmeticoEssencial from "@/components/sections/vitta";
-import Landing04HotelRefugio from "@/components/sections/landing-04-hotel-refugio";
 import Landing05Pulse from "@/components/sections/pulse";
 import Landing06CafeAtelier from "@/components/sections/landing-06-cafe-atelier";
 import Landing07BancoPrivado from "@/components/sections/landing-07-banco-privado";
@@ -20,6 +19,7 @@ import Landing19LaboratorioFarmaceutico from "@/components/sections/landing-19-l
 import Landing20InfraestruturaPortuaria from "@/components/sections/landing-20-infraestrutura-portuaria";
 import Landing21Shinobi from "@/components/sections/shinobi";
 import SayegLanding from "@/components/sections/sayeg";
+import PowervetLanding from "@/components/sections/powervet";
 
 export type SectionEntry = {
   aliases?: string[];
@@ -127,12 +127,28 @@ export const sections: SectionEntry[] = [
       "Energetico dark com hero interativa, sabores coloridos e narrativa completa de marca.",
     category: "Landing Pages",
     cardImage: "/images/shinobi/project-cover.png",
- industry: "Gastronomia",
+    industry: "Gastronomia",
     projectType: "Energetico",
     goal: "Construir universo de marca, sabores e compra direta para um publico jovem.",
     tags: ["Lancamento", "Produto", "Marca conceitual"],
     visible: true,
     component: Landing21Shinobi,
+  },
+  {
+    index: "07",
+    slug: "bites",
+    aliases: ["landing-10-viagem-privada", "vector-advisory"],
+    title: "BITES",
+    description:
+      "Comfort food premium com salgados classicos, visual apetitoso e conveniencia delivery-first.",
+    category: "Landing Pages",
+    cardImage: "/images/bites/project-cover.png",
+    industry: "Gastronomia",
+    projectType: "Salgados premium",
+    goal: "Transformar classicos fritos em uma experiencia moderna, crocante e desejavel.",
+    tags: ["Comfort food", "Delivery", "Marca premium"],
+    visible: true,
+    component: BitesLanding,
   },
   {
     index: "07",
@@ -152,18 +168,18 @@ export const sections: SectionEntry[] = [
   },
   {
     index: "08",
-    slug: "serra-alta",
-    aliases: ["landing-04-hotel-refugio"],
-    title: "Serra Alta",
+    slug: "powervet",
+    title: "POWERVET",
     description:
-      "Hotel boutique com narrativa de hospitalidade e atmosfera de refugio.",
+      "Clinica veterinaria premium especializada em animais silvestres e exoticos.",
     category: "Landing Pages",
-    industry: "Hotelaria",
-    projectType: "Hotel boutique",
-    goal: "Traduzir hospedagem, conforto e destino em uma experiencia de reserva aspiracional.",
-    tags: ["Hospitalidade", "Reservas", "Destino"],
-    visible: false,
-    component: Landing04HotelRefugio,
+    cardImage: "/images/powervet/project-cover.png",
+    industry: "Saude",
+    projectType: "Clinica veterinaria especializada",
+    goal: "Transmitir autoridade medica, acolhimento e estrutura para gerar agendamentos.",
+    tags: ["Veterinaria", "Animais exoticos", "Agendamento"],
+    visible: true,
+    component: PowervetLanding,
   },
   {
     index: "09",
@@ -223,22 +239,7 @@ export const sections: SectionEntry[] = [
     visible: false,
     component: Landing09BagagemModular,
   },
-  {
-    index: "07",
-    slug: "bites",
-    aliases: ["landing-10-viagem-privada", "vector-advisory"],
-    title: "BITES",
-    description:
-      "Comfort food premium com salgados classicos, visual apetitoso e conveniencia delivery-first.",
-    category: "Landing Pages",
-    cardImage: "/images/bites/project-cover.png",
-    industry: "Gastronomia",
-    projectType: "Salgados premium",
-    goal: "Transformar classicos fritos em uma experiencia moderna, crocante e desejavel.",
-    tags: ["Comfort food", "Delivery", "Marca premium"],
-    visible: true,
-    component: BitesLanding,
-  },
+
   {
     index: "14",
     slug: "prisma-fellows",
