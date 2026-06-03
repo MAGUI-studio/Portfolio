@@ -158,7 +158,7 @@ export const sections: SectionEntry[] = [
     description:
       "Visagismo avancado e micropigmentacao personalizada com posicionamento de luxo.",
     category: "Landing Pages",
-    cardImage: "/images/sayeg/project-cover.png",
+    cardImage: "/images/sayeg/project-cover.webp",
     industry: "Saúde",
     projectType: "Especialista em visagismo",
     goal: "Apresentar autoridade, especialidades e atendimento personalizado para gerar agendamentos.",

@@ -1,13 +1,13 @@
 export const sayegImages = {
-  cover: "/images/sayeg/beatriz-sayeg-cover.png",
-  profile: "/images/sayeg/beatriz-sayeg-profile.png",
-  studio: "/images/sayeg/consultorio.png",
-  lips: "/images/sayeg/labio.png",
-  logoBlack: "/images/sayeg/logo-black.png",
-  logoWhite: "/images/sayeg/logo-white.png",
-  reception: "/images/sayeg/recepcao.png",
-  brows: "/images/sayeg/sobrancelha.png",
-  visagism: "/images/sayeg/visagismo.png",
+  cover: "/images/sayeg/beatriz-sayeg-cover.webp",
+  profile: "/images/sayeg/beatriz-sayeg-profile.webp",
+  studio: "/images/sayeg/consultorio.webp",
+  lips: "/images/sayeg/labio.webp",
+  logoBlack: "/images/sayeg/logo-black.webp",
+  logoWhite: "/images/sayeg/logo-white.webp",
+  reception: "/images/sayeg/recepcao.webp",
+  brows: "/images/sayeg/sobrancelha.webp",
+  visagism: "/images/sayeg/visagismo.webp",
 };
 
 export const sayegWhatsappNumber = "5500000000000";
