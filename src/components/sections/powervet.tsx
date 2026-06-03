@@ -16,7 +16,7 @@ import {
 export default function PowervetLanding() {
   return (
     <main
-      className={`${powervetText.className} ${powervetText.variable} ${powervetDisplay.variable} overflow-x-clip bg-[#F4F1EB] text-[#021C00] [&_h1]:font-[family-name:var(--font-powervet-display)] [&_h2]:font-[family-name:var(--font-powervet-display)] [&_h3]:font-[family-name:var(--font-powervet-display)]`}
+      className={`${powervetText.className} ${powervetText.variable} ${powervetDisplay.variable} overflow-x-clip bg-[#F4F1EB] text-[#021C00] [&_h1]:font-(family-name:--font-powervet-display) [&_h2]:font-(family-name:--font-powervet-display) [&_h3]:font-(family-name:--font-powervet-display)`}
     >
       <PowervetAnimationStyles />
       <div className="relative">
