@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { powervetImages } from "./data";
-import { Eyebrow } from "./ui";
+import { ActionLink, Eyebrow } from "./ui";
 
 const clinicSpaces = [
   {
@@ -51,10 +51,10 @@ export function PowervetStructureSection() {
       id="estrutura"
       className="relative overflow-hidden bg-[#021C00] px-5 py-24 text-white md:px-10 md:py-32 lg:px-14"
     >
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(221,214,200,.7),transparent)]" />
+
       <div className="pointer-events-none absolute -right-20 top-20 h-150 w-150 rounded-full bg-[#DDD6C8]/10 blur-3xl" />
 
-      <div className="relative w-full  pb-12">
+      <div className="relative w-full pb-12">
         <p className="pointer-events-none absolute -top-8 right-0 hidden text-8xl font-semibold leading-none text-white/[0.035] md:block lg:text-[160px] xl:text-[220px]">
           CLÍNICA
         </p>
@@ -66,11 +66,16 @@ export function PowervetStructureSection() {
             </h2>
           </div>
 
-          <p className="text-base leading-7 text-white/68">
-            Uma clínica-hospital para animais silvestres e exóticos: chegada
-            acolhedora, avaliação técnica, centro cirúrgico e recuperação
-            assistida.
-          </p>
+          <div>
+            <p className="text-base leading-7 text-white/68">
+              Uma clínica-hospital para animais silvestres e exóticos: chegada
+              acolhedora, avaliação técnica, centro cirúrgico e recuperação
+              assistida.
+            </p>
+            <div className="mt-7">
+              <ActionLink light>Tirar dúvidas sobre a estrutura</ActionLink>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -124,7 +129,7 @@ export function PowervetStructureSection() {
         </div>
       </div>
 
-      <div className="mt-6 grid gap-6  pt-8 lg:grid-cols-[0.28fr_0.72fr] lg:items-start">
+      <div className="mt-6 grid gap-6 pt-8 lg:grid-cols-[0.28fr_0.72fr] lg:items-start">
         <div>
           <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#DDD6C8]">
             Camadas de cuidado

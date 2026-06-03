@@ -10,8 +10,14 @@ export const sayegImages = {
   visagism: "/images/sayeg/visagismo.png",
 };
 
-export const sayegWhatsapp =
-  "https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Beatriz.%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20personalizada.";
+export const sayegWhatsappNumber = "5500000000000";
+
+export const sayegWhatsappMessage =
+  "Olá, Beatriz. Gostaria de agendar uma avaliação personalizada.";
+
+export const sayegWhatsapp = `https://wa.me/${sayegWhatsappNumber}?text=${encodeURIComponent(
+  sayegWhatsappMessage,
+)}`;
 
 export const sayegNav = [
   { label: "Beatriz", href: "#beatriz" },

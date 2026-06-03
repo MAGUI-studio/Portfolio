@@ -7,7 +7,7 @@ import {
 } from "@phosphor-icons/react/ssr";
 
 import { powervetImages } from "./data";
-import { Eyebrow } from "./ui";
+import { ActionLink, Eyebrow } from "./ui";
 
 const species = [
   {
@@ -76,7 +76,7 @@ export function PowervetSpeciesSection() {
       id="especialidades"
       className="relative overflow-hidden bg-[#F4F1EB] px-5 py-24 text-[#021C00] md:px-10 md:py-32 lg:px-14"
     >
-      <div className=" tracking-[-0.09em] pointer-events-none absolute top-10 right-10 hidden text-8xl font-semibold leading-none text-[#021C00]/[0.035] md:block lg:text-[160px] xl:text-[220px]">
+      <div className="pointer-events-none absolute top-10 right-10 hidden text-8xl font-semibold leading-none tracking-[-0.09em] text-[#021C00]/[0.035] md:block lg:text-[160px] xl:text-[220px]">
         FAUNA
       </div>
       <div className="relative w-full">
@@ -88,10 +88,16 @@ export function PowervetSpeciesSection() {
               <br />O cuidado também.
             </h2>
           </div>
-          <p className="text-base leading-7 text-[#365233] md:justify-self-end md:text-lg md:leading-8 lg:w-[76%]">
-            Cada espécie pede leitura clínica, manejo e protocolos próprios. A
-            POWERVET foi desenhada para atender essa diversidade com segurança.
-          </p>
+          <div className="md:justify-self-end lg:w-[76%]">
+            <p className="text-base leading-7 text-[#365233] md:text-lg md:leading-8">
+              Cada espécie pede leitura clínica, manejo e protocolos próprios. A
+              POWERVET foi desenhada para atender essa diversidade com
+              segurança.
+            </p>
+            <div className="mt-7">
+              <ActionLink>Confirmar atendimento da espécie</ActionLink>
+            </div>
+          </div>
         </div>
 
         <div className="mt-16 grid gap-3 md:grid-cols-2 lg:grid-cols-12 lg:auto-rows-[360px]">
@@ -150,6 +156,25 @@ export function PowervetSpeciesSection() {
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-18 grid gap-6 bg-[#021C00] p-6 text-white md:grid-cols-[0.62fr_0.38fr] md:items-center md:p-8">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#DDD6C8]">
+              Atendimento por espécie
+            </p>
+            <h3 className="mt-4 text-3xl font-semibold leading-tight tracking-[-0.06em] md:text-5xl">
+              Está em dúvida se o seu animal precisa ser atendido por um de
+              nossos especialistas?
+            </h3>
+            <p className="mt-4 text-sm leading-6 text-white/62 md:w-[76%]">
+              Envie a espécie, idade e sinais observados. A equipe orienta se o
+              caso pede avaliação clínica, manejo preventivo ou urgência.
+            </p>
+          </div>
+          <div className="md:justify-self-end">
+            <ActionLink light>Falar com a equipe</ActionLink>
+          </div>
         </div>
       </div>
     </section>

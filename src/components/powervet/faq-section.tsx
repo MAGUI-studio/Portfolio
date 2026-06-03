@@ -126,10 +126,10 @@ export function PowervetFaqSection() {
   return (
     <section
       id="duvidas"
-      className="relative overflow-hidden bg-[#DDD6C8] px-5 py-24 text-[#021C00] md:px-10 md:py-32 lg:px-14"
+      className="relative overflow-hidden bg-[#F4F1EB] px-5 py-24 text-[#021C00] md:px-10 md:py-32 lg:px-14"
     >
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-full bg-[linear-gradient(115deg,rgba(244,241,235,0.92),rgba(221,214,200,0.72)_44%,rgba(23,59,20,0.16))]" />
-      <div className="pointer-events-none absolute -right-8 top-10 hidden text-[140px] font-semibold leading-none tracking-[-0.12em] text-[#021C00]/[0.045] md:block lg:text-[210px]">
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-full bg-[linear-gradient(115deg,rgba(244,241,235,0.96),rgba(244,241,235,0.82)_48%,rgba(23,59,20,0.08))]" />
+      <div className="pointer-events-none absolute left-10 top-10 hidden text-[140px] font-semibold leading-none text-[#021C00]/4.5 md:block lg:text-[210px]">
         FAQ
       </div>
 
@@ -222,78 +222,69 @@ export function PowervetFaqSection() {
             ))}
           </div>
 
-          <motion.div layout className="mt-4 grid gap-3">
-            <AnimatePresence mode="popLayout">
-              {filteredQuestions.map((item, index) => {
-                const isOpen = activeQuestion === item.q;
+          <div className="mt-4 grid min-w-0 gap-3 overflow-hidden">
+            {filteredQuestions.map((item, index) => {
+              const isOpen = activeQuestion === item.q;
 
-                return (
-                  <motion.article
-                    layout
-                    key={item.q}
-                    initial={{ opacity: 0, y: 18 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -12 }}
-                    transition={{ duration: 0.28, ease: "easeOut" }}
-                    className={`overflow-hidden transition-colors duration-300 ${
-                      isOpen
-                        ? "bg-[#F4F1EB] shadow-[0_30px_90px_rgba(2,28,0,0.1)]"
-                        : "bg-[#F4F1EB]/62 hover:bg-[#F4F1EB]/90"
-                    }`}
+              return (
+                <article
+                  key={item.q}
+                  className={`min-w-0 overflow-hidden transition-colors duration-300 ${
+                    isOpen
+                      ? "bg-[#F4F1EB] shadow-[0_30px_90px_rgba(2,28,0,0.1)]"
+                      : "bg-[#F4F1EB]/62 hover:bg-[#F4F1EB]/90"
+                  }`}
+                >
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    onClick={() => setActiveQuestion(isOpen ? "" : item.q)}
+                    className="grid w-full min-w-0 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 px-5 py-5 text-left md:px-7 md:py-6"
                   >
-                    <button
-                      type="button"
-                      aria-expanded={isOpen}
-                      onClick={() =>
-                        setActiveQuestion(isOpen ? "" : item.q)
-                      }
-                      className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 px-5 py-5 text-left md:px-7 md:py-6"
+                    <span
+                      className={`flex size-10 shrink-0 items-center justify-center text-[10px] font-bold tracking-[0.18em] transition-colors duration-300 ${
+                        isOpen
+                          ? "bg-[#173B14] text-white"
+                          : "bg-[#DDD6C8] text-[#31502E]"
+                      }`}
                     >
-                      <span
-                        className={`flex size-10 items-center justify-center text-[10px] font-bold tracking-[0.18em] transition-colors duration-300 ${
-                          isOpen
-                            ? "bg-[#173B14] text-white"
-                            : "bg-[#DDD6C8] text-[#31502E]"
-                        }`}
-                      >
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <span className="text-xl font-semibold leading-tight tracking-[-0.052em] text-[#021C00] md:text-2xl">
-                        {item.q}
-                      </span>
-                      <CaretDown
-                        size={22}
-                        weight="thin"
-                        className={`text-[#173B14] transition-transform duration-300 ${
-                          isOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="min-w-0 text-xl font-semibold leading-tight tracking-[-0.052em] text-[#021C00] md:text-2xl">
+                      {item.q}
+                    </span>
+                    <CaretDown
+                      size={22}
+                      weight="thin"
+                      className={`shrink-0 text-[#173B14] transition-transform duration-300 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
 
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.32, ease: "easeInOut" }}
-                        >
-                          <div className="grid gap-5 border-t border-[#021C00]/10 px-5 pb-6 pt-5 md:grid-cols-[0.28fr_0.72fr] md:px-7 md:pb-7">
-                            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#31502E]/70">
-                              Resposta POWERVET
-                            </p>
-                            <p className="text-base leading-7 text-[#365233] md:text-lg md:leading-8">
-                              {item.a}
-                            </p>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </motion.article>
-                );
-              })}
-            </AnimatePresence>
-          </motion.div>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.32, ease: "easeInOut" }}
+                      >
+                        <div className="grid min-w-0 gap-5 border-t border-[#021C00]/10 px-5 pb-6 pt-5 md:grid-cols-[0.28fr_minmax(0,0.72fr)] md:px-7 md:pb-7">
+                          <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-[#31502E]/70">
+                            Resposta POWERVET
+                          </p>
+                          <p className="min-w-0 text-base leading-7 text-[#365233] md:text-lg md:leading-8">
+                            {item.a}
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </article>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

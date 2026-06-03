@@ -7,7 +7,8 @@ import { SayegHeroSection } from "../sayeg/hero-section";
 import { SayegMethodSection } from "../sayeg/method-section";
 import { SayegServicesSection } from "../sayeg/services-section";
 import { SayegStudioSection } from "../sayeg/studio-section";
-import { SayegWhatsappButton } from "../sayeg/whatsapp-button";
+import { sayegWhatsappMessage, sayegWhatsappNumber } from "../sayeg/data";
+import { WhatsappButton } from "../whatsapp-button";
 
 export default function SayegLanding() {
   return (
@@ -22,7 +23,10 @@ export default function SayegLanding() {
       <SayegStudioSection />
       <SayegClosingSection />
       <SayegFooter />
-      <SayegWhatsappButton />
+      <WhatsappButton
+        phoneNumber={sayegWhatsappNumber}
+        message={sayegWhatsappMessage}
+      />
     </main>
   );
 }

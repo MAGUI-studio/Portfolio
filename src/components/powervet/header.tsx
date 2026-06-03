@@ -31,7 +31,7 @@ export function PowervetHeader() {
           rel="noreferrer"
           className="group hidden items-center gap-2 border border-white/24 px-4 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-white transition-all duration-300 hover:bg-white hover:text-[#021C00] lg:inline-flex"
         >
-          Agendar consulta
+          WhatsApp
           <ArrowUpRight size={15} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </Link>
 
@@ -62,7 +62,7 @@ export function PowervetHeader() {
           ))}
         </nav>
         <Link href={powervetWhatsapp} target="_blank" rel="noreferrer" className="mt-14 inline-flex w-full items-center justify-center gap-2 bg-[#F4F1EB] px-5 py-4 text-sm font-bold uppercase tracking-[0.16em] text-[#021C00]">
-          Agendar consulta <ArrowUpRight size={16} />
+          Falar no WhatsApp <ArrowUpRight size={16} />
         </Link>
       </div>
     </header>

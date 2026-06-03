@@ -17,8 +17,14 @@ export const powervetImages = {
   turtles: "/images/powervet/tartarugas.png",
 };
 
-export const powervetWhatsapp =
-  "https://wa.me/5500000000000?text=Ol%C3%A1%2C%20POWERVET.%20Gostaria%20de%20agendar%20um%20atendimento.";
+export const powervetWhatsappNumber = "5500000000000";
+
+export const powervetWhatsappMessage =
+  "Olá, POWERVET. Gostaria de falar com a equipe sobre atendimento para meu animal.";
+
+export const powervetWhatsapp = `https://wa.me/${powervetWhatsappNumber}?text=${encodeURIComponent(
+  powervetWhatsappMessage,
+)}`;
 
 export const powervetNav = [
   { label: "Especialidades", href: "#especialidades" },

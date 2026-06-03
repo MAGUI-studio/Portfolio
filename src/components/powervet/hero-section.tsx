@@ -27,7 +27,7 @@ export function PowervetHeroSection() {
             Cuidado especializado para animais silvestres e exóticos, com estrutura clínica preparada e atenção individual para cada espécie.
           </p>
           <div className="powervet-rise powervet-rise-delay-2 mt-8 flex flex-wrap gap-3">
-            <ActionLink light>Agendar consulta</ActionLink>
+            <ActionLink light>Falar com a equipe</ActionLink>
             <ActionLink href="#especialidades">Conhecer a clínica</ActionLink>
           </div>
         </div>
