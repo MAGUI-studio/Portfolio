@@ -230,7 +230,7 @@ export default function PremiumLandingModel({
         <div className="grid gap-8 lg:grid-cols-[0.25fr_0.5fr_0.25fr]">
           <div className="border-t border-black/15 pt-6">
             <Kicker accent={accent}>arquitetura</Kicker>
-            <p className="mt-7 text-lg leading-8 text-black/58">Sistema de conteudo para vender criterio, nao volume.</p>
+            <p className="mt-7 text-lg leading-8 text-black/58">Sistema de conteudo para vender critério, nao volume.</p>
           </div>
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
@@ -265,7 +265,7 @@ export default function PremiumLandingModel({
             >
               <Image src={imageSrc} width={900} height={760} alt={`${name} detalhe ${offset + 1}`} className="h-[360px] w-full object-cover transition duration-700 hover:scale-[1.03]" />
               <figcaption className="p-6 text-sm leading-7 text-black/58">
-                Bloco visual com respiro editorial, ideal para produto, ambiente, equipe, processo ou evidencia tecnica.
+                Bloco visual com respiro editorial, ideal para produto, ambiente, equipe, processo ou evidencia técnica.
               </figcaption>
             </motion.figure>
           ))}

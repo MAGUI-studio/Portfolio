@@ -57,7 +57,7 @@ const prescriptions = [
   ["01", "Diagnosticar", "Historico, produtividade, solo e imagem definem zonas de manejo por talhao."],
   ["02", "Priorizar", "O sistema separa urgencia agronomica de ruido visual para focar recurso onde ha retorno."],
   ["03", "Prescrever", "Mapas acionaveis para fertilidade, irrigacao, defensivo, replantio ou colheita."],
-  ["04", "Comparar", "Resultado, custo por hectare e decisao tomada ficam registrados para a proxima safra."],
+  ["04", "Comparar", "Resultado, custo por hectare e decisão tomada ficam registrados para a proxima safra."],
 ];
 
 const cards = [
@@ -170,7 +170,7 @@ export default function Landing14AgritechPrecisao() {
               <div>
                 <p className="inline-flex items-center gap-3 bg-[#dff36d] px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#18230d]">
                   <Broadcast size={17} weight="bold" />
-                  Dados de campo para decisao por talhao
+                  Dados de campo para decisão por talhao
                 </p>
                 <h1 className="mt-16 max-w-5xl text-6xl font-semibold leading-[0.92] md:text-8xl lg:text-[116px]">
                   A fazenda precisa enxergar antes de agir.
@@ -317,7 +317,7 @@ export default function Landing14AgritechPrecisao() {
               </h2>
             </div>
             <p className="text-lg leading-8 text-[#46523a]/72">
-              A TerraMetria transforma leitura tecnica em arquivo de operacao, plano de manejo e indicador de retorno.
+              A TerraMetria transforma leitura técnica em arquivo de operacao, plano de manejo e indicador de retorno.
             </p>
           </div>
 
@@ -381,9 +381,9 @@ export default function Landing14AgritechPrecisao() {
         <div className="mx-auto grid max-w-[1540px] gap-6 md:grid-cols-4">
           {[
             { icon: MapTrifold, title: "Zonas", text: "Agrupe variabilidade em unidades de manejo acionaveis." },
-            { icon: Gauge, title: "Prioridade", text: "Separe alerta urgente de observacao para proxima visita." },
+            { icon: Gauge, title: "Prioridade", text: "Separe alerta urgente de observação para proxima visita." },
             { icon: Scan, title: "Campo", text: "Direcione equipe, amostra e maquina para o ponto certo." },
-            { icon: Crop, title: "Retorno", text: "Compare decisao, custo e produtividade por talhao." },
+            { icon: Crop, title: "Retorno", text: "Compare decisão, custo e produtividade por talhao." },
           ].map((item, index) => {
             const Icon = item.icon;
 
@@ -445,7 +445,7 @@ export default function Landing14AgritechPrecisao() {
               </span>
               <div>
                 <p className="text-xl font-semibold">TerraMetria</p>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-white/42">agritech de precisao</p>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-white/42">agritech de precisão</p>
               </div>
             </div>
             <p className="mt-8 max-w-sm text-sm leading-7 text-white/54">

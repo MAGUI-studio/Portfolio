@@ -123,7 +123,7 @@ export default function Landing04HotelRefugio() {
           <nav className="grid grid-cols-2 gap-3 rounded-[28px] bg-[#fbf7ef] p-3 shadow-[0_20px_80px_rgba(55,43,28,0.08)] md:grid-cols-4">
             {[
               ["Suítes", "#suites"],
-              ["Experiência", "#experiencia"],
+              ["Experiência", "#experiência"],
               ["Mesa", "#mesa"],
               ["Reservas", "#reservar"],
             ].map(([label, href]) => (
@@ -281,7 +281,7 @@ export default function Landing04HotelRefugio() {
         </div>
       </section>
 
-      <section id="experiencia" className="px-6 py-24 md:px-10">
+      <section id="experiência" className="px-6 py-24 md:px-10">
         <div className="grid gap-6 md:grid-cols-3">
           {reasons.map(({ icon: Icon, title, text }, index) => (
             <motion.article
@@ -512,7 +512,7 @@ export default function Landing04HotelRefugio() {
             <div className="grid content-between gap-8">
               <div className="grid gap-3 text-[#d8cdbd]">
                 <a className="transition-colors hover:text-white" href="#suites">Suítes</a>
-                <a className="transition-colors hover:text-white" href="#experiencia">Experiência</a>
+                <a className="transition-colors hover:text-white" href="#experiência">Experiência</a>
                 <a className="transition-colors hover:text-white" href="#mesa">Mesa</a>
                 <a className="transition-colors hover:text-white" href="#reservar">Reservas</a>
               </div>

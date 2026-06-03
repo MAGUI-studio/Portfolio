@@ -7,7 +7,7 @@ import { SayegImageReveal, SayegReveal } from "./motion";
 
 export function SayegStudioSection() {
   return (
-    <section id="espaco" className="relative bg-[#fafafa] px-5 pb-32 pt-20 md:px-10 md:pb-40 md:pt-28 lg:px-14 lg:pb-44 lg:pt-36">
+    <section id="espaço" className="relative bg-[#fafafa] px-5 pb-32 pt-20 md:px-10 md:pb-40 md:pt-28 lg:px-14 lg:pb-44 lg:pt-36">
       <div>
         <div className="grid gap-8 pt-5 lg:grid-cols-12">
           <SayegReveal className="pb-2 lg:col-span-4 lg:pt-16">

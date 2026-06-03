@@ -2,7 +2,7 @@ import type { ComponentType } from "react";
 import Landing02NachoLibre from "@/components/sections/nacho-libre";
 import Landing03CosmeticoEssencial from "@/components/sections/vitta";
 import Landing05Pulse from "@/components/sections/pulse";
-import Landing06CafeAtelier from "@/components/sections/landing-06-cafe-atelier";
+import FlowLanding from "@/components/sections/flow";
 import Landing07BancoPrivado from "@/components/sections/landing-07-banco-privado";
 import Landing08ResidenciaAutoral from "@/components/sections/landing-08-residencia-autoral";
 import Landing09BagagemModular from "@/components/sections/landing-09-bagagem-modular";
@@ -183,17 +183,18 @@ export const sections: SectionEntry[] = [
   },
   {
     index: "10",
-    slug: "brasa-studio",
-    aliases: ["landing-06-cafe-atelier"],
-    title: "Brasa Studio",
-    description: "Estúdio de branding com posicionamento, processo e casos.",
+    slug: "flow",
+    title: "FLOW",
+    description:
+      "Aquarismo marinho premium com equipamentos, corais, peixes ornamentais e orientação técnica.",
     category: "Landing Pages",
-    industry: "Criativo",
-    projectType: "Estúdio de branding",
-    goal: "Organizar posicionamento, serviços e casos para conquistar marcas em crescimento.",
-    tags: ["Branding", "Processo", "Cases"],
-    visible: false,
-    component: Landing06CafeAtelier,
+    cardImage: "/images/flow/project-cover.webp",
+    industry: "Aquarismo",
+    projectType: "Loja de aquarismo marinho",
+    goal: "Apresentar tecnologia, vida marinha e consultoria para montagem e evolução de reefs.",
+    tags: ["Aquarismo marinho", "Reef", "Corais"],
+    visible: true,
+    component: FlowLanding,
   },
   {
     index: "11",
@@ -272,7 +273,7 @@ export const sections: SectionEntry[] = [
   {
     index: "16",
     slug: "terrametria",
-    aliases: ["landing-14-agritech-precisao"],
+    aliases: ["landing-14-agritech-precisão"],
     title: "TerraMetria",
     description: "Agritech de precisão para fazendas orientadas por dados.",
     category: "Landing Pages",

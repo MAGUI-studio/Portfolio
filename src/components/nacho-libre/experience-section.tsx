@@ -51,7 +51,7 @@ export function NachoLibreExperienceSection() {
             <div className="inline-flex items-center gap-3 border-y border-[#E86A17] py-3 pr-5">
               <span className="h-2.5 w-2.5 bg-[#C62828]" />
               <p className="text-[11px] font-black uppercase tracking-[0.28em] text-[#E86A17]">
-                experiencia da casa
+                experiência da casa
               </p>
             </div>
 

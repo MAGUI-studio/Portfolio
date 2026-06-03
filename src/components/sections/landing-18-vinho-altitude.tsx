@@ -12,12 +12,12 @@ export default function Landing18VinhoAltitude() {
       eyebrow="vinicola boutique de clima frio"
       promise="Vinhos de altitude para mesas que preferem silencio a excesso."
       text="Vinicola boutique com producao limitada, visitas intimistas e narrativa territorial para consumidores, restaurantes e clubes de assinatura."
-      secondary="Terroir, safra e experiencia em uma presenca digital sobria."
+      secondary="Terroir, safra e experiência em uma presenca digital sobria."
       accent="#713245"
       background="#f0ecea"
       dark="#171012"
       icon={Wine}
-      nav={["Metodo", "Prova", "Contato"]}
+      nav={["Método", "Prova", "Contato"]}
       stats={[
         { value: "980m", label: "altitude media dos vinhedos de clima frio" },
         { value: "8k", label: "garrafas por safra com lotes limitados e numerados" },

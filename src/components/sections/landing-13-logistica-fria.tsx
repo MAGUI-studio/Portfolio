@@ -287,7 +287,7 @@ export default function Landing13LogisticaFria() {
             </div>
             <p className="max-w-3xl text-lg leading-8 text-[#314950]/72">
               Temperatura, porta, doca, bateria, rota e aceite deixam de ser dados soltos. A torre transforma leitura em
-              decisao operacional, com prioridade e responsavel.
+              decisão operacional, com prioridade e responsavel.
             </p>
           </div>
 

@@ -33,7 +33,7 @@ const images = {
 
 const nav = [
   { label: "Programa", href: "#programa" },
-  { label: "Metodo", href: "#metodo" },
+  { label: "Método", href: "#metodo" },
   { label: "Agenda", href: "#agenda" },
   { label: "Prova", href: "#prova" },
   { label: "Contato", href: "#contato" },
@@ -73,7 +73,7 @@ const curriculum = [
 const agenda = [
   { day: "Dia 01", title: "Diagnostico de lideranca", detail: "Mapeamento de pressao, contexto e decisoes que nao podem esperar." },
   { day: "Dia 02", title: "Laboratorio de casos", detail: "Discussao em grupos pequenos com dilemas reais e provocacao de mentores." },
-  { day: "Dia 03", title: "Mesa de decisao", detail: "Apresentacao da tese individual, feedback e plano de aplicacao." },
+  { day: "Dia 03", title: "Mesa de decisão", detail: "Apresentacao da tese individual, feedback e plano de aplicacao." },
 ];
 
 const outcomes = [
@@ -212,7 +212,7 @@ export default function Landing12EducacaoExecutiva() {
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#b5162d]">programa</p>
             <h2 className="mt-6 text-5xl font-semibold leading-none md:text-7xl">
-              Uma sala para pensar com precisao.
+              Uma sala para pensar com precisão.
             </h2>
             <p className="mt-8 max-w-md text-lg leading-8 text-[#3d4541]/72">
               O desenho troca volume por curadoria: menos participantes, mais contexto, mais friccao boa e mais
@@ -256,7 +256,7 @@ export default function Landing12EducacaoExecutiva() {
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#d7ff4f]">metodo</p>
               <h2 className="mt-6 text-5xl font-semibold leading-none md:text-7xl">
-                Teoria entra somente quando destrava decisao.
+                Teoria entra somente quando destrava decisão.
               </h2>
             </div>
             <figure className="relative min-h-[420px] overflow-hidden">
@@ -300,7 +300,7 @@ export default function Landing12EducacaoExecutiva() {
               className="object-cover"
             />
             <div className="absolute bottom-6 left-6 max-w-md bg-[#d7ff4f] p-6">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em]">laboratorio de decisao</p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em]">laboratorio de decisão</p>
               <p className="mt-6 text-3xl font-semibold leading-tight">
                 Cada participante sai com uma tese, nao com uma pasta esquecida.
               </p>
@@ -314,8 +314,8 @@ export default function Landing12EducacaoExecutiva() {
                 O material e curto porque o trabalho e profundo.
               </h2>
               <p className="mt-7 text-lg leading-8 text-[#3d4541]/72">
-                Leituras preparatorias, templates de decisao, perguntas de mentoria e um plano de aplicacao tornam a
-                experiencia usavel fora da sala.
+                Leituras preparatorias, templates de decisão, perguntas de mentoria e um plano de aplicacao tornam a
+                experiência usavel fora da sala.
               </p>
             </div>
           </div>
@@ -425,7 +425,7 @@ export default function Landing12EducacaoExecutiva() {
           </div>
           <div>
             <p className="text-lg leading-8 text-white/64">
-              Conte seu desafio atual, senioridade e disponibilidade. A equipe retorna com formato, criterios de entrada
+              Conte seu desafio atual, senioridade e disponibilidade. A equipe retorna com formato, critérios de entrada
               e proximas datas.
             </p>
             <div className="mt-8 flex flex-col gap-3">
@@ -453,7 +453,7 @@ export default function Landing12EducacaoExecutiva() {
               </div>
             </div>
             <p className="mt-8 max-w-sm text-sm leading-7 text-[#3d4541]/66">
-              Programas compactos para liderancas que precisam decidir, alinhar e comunicar com mais criterio.
+              Programas compactos para liderancas que precisam decidir, alinhar e comunicar com mais critério.
             </p>
           </div>
 

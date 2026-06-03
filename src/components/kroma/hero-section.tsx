@@ -87,7 +87,7 @@ export function KromaHeroSection() {
             },
             {
               num: "03",
-              title: "Homologacao tecnica",
+              title: "Homologacao técnica",
               desc: "Documentacao, aprovacoes e comissionamento ate o sistema entrar em operacao.",
             },
           ].map((item) => (

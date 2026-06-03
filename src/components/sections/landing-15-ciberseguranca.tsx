@@ -110,7 +110,7 @@ export default function Landing15Ciberseguranca() {
       <section id="inicio" className="relative min-h-[980px] px-5 py-10 md:px-8 md:py-14 lg:px-10">
         <Image
           src={images.hero}
-          alt="Tela com codigo e interface de seguranca"
+          alt="Tela com codigo e interface de segurança"
           fill
           priority
           sizes="100vw"
@@ -142,7 +142,7 @@ export default function Landing15Ciberseguranca() {
             <div className="mt-10 flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
               <p className="max-w-2xl text-xl leading-10 text-white/68">
                 Governanca, monitoramento e resposta a incidente para proteger dados, continuidade e reputacao sem
-                transformar seguranca em teatro de ferramenta.
+                transformar segurança em teatro de ferramenta.
               </p>
               <CTA>Comecar diagnostico</CTA>
             </div>

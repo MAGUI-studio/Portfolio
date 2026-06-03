@@ -30,14 +30,14 @@ const images = {
 
 const chapters = [
   ["01", "Escuta", "Entendemos ritmo, manias, limites, repertorio e o tipo de silencio que a viagem precisa ter."],
-  ["02", "Desenho", "Criamos uma arquitetura de dias com espaco livre, reservas certas e deslocamentos sem friccao."],
+  ["02", "Desenho", "Criamos uma arquitetura de dias com espaço livre, reservas certas e deslocamentos sem friccao."],
   ["03", "Bordo", "Entregamos um dossie claro, contatos ativos e suporte discreto enquanto a familia viaja."],
 ];
 
 const routes = [
   ["Patagonia privada", "lodge remoto, trilhas leves, chef local e voo sem conexao inutil"],
   ["Douro sem pressa", "vinicolas pequenas, motorista fixo, mesa de produtor e tarde livre"],
-  ["Amalfi por agua", "barco no horario certo, hotel discreto e almoco fora do circuito"],
+  ["Amalfi por água", "barco no horario certo, hotel discreto e almoco fora do circuito"],
   ["Marrakesh quieto", "riad silencioso, artesaos selecionados e jantar no terraco"],
 ];
 
@@ -100,7 +100,7 @@ export default function Landing09BagagemModular() {
 
           <nav className="flex flex-wrap gap-x-8 gap-y-3 text-sm text-[#5f5952]">
             {[
-              ["Metodo", "#metodo"],
+              ["Método", "#metodo"],
               ["Rotas", "#rotas"],
               ["Dossie", "#dossie"],
               ["Briefing", "#briefing"],
@@ -131,7 +131,7 @@ export default function Landing09BagagemModular() {
               <CTA>Desenhar minha viagem</CTA>
               <p className="text-xl leading-9 text-[#5f5952]">
                 Planejamos jornadas privadas para familias, casais e pequenos grupos que querem curadoria, silencio
-                operacional e uma agenda com espaco para mudar de ideia.
+                operacional e uma agenda com espaço para mudar de ideia.
               </p>
             </div>
           </motion.div>
@@ -176,7 +176,7 @@ export default function Landing09BagagemModular() {
             transition={{ duration: 0.8, ease }}
             className="font-serif text-[58px] leading-[0.94] tracking-tight md:text-[112px]"
           >
-            A viagem boa parece inevitavel depois que acontece. Antes disso, ela e desenho, corte e decisao.
+            A viagem boa parece inevitavel depois que acontece. Antes disso, ela e desenho, corte e decisão.
           </motion.p>
         </div>
       </section>
@@ -273,7 +273,7 @@ export default function Landing09BagagemModular() {
           </div>
           <div className="grid gap-8">
             <Image src={images.dinner} width={900} height={720} alt="Mesa reservada em restaurante" className="h-[296px] w-full object-cover" />
-            <Image src={images.boat} width={900} height={720} alt="Barco privado em agua clara" className="h-[296px] w-full object-cover" />
+            <Image src={images.boat} width={900} height={720} alt="Barco privado em água clara" className="h-[296px] w-full object-cover" />
           </div>
         </div>
       </section>
@@ -347,7 +347,7 @@ export default function Landing09BagagemModular() {
           <Image src={images.suite} width={1300} height={1500} alt="Suite silenciosa de hotel" className="h-[720px] w-full rounded-b-full object-cover" />
           <div className="flex flex-col justify-end gap-8 border-y border-[#cfc6b8] py-10">
             <p className="text-2xl leading-9 text-[#5f5952]">
-              Vista, ruido, andar, acesso, luz da manha e distancia do elevador entram na decisao antes da reserva.
+              Vista, ruido, andar, acesso, luz da manha e distancia do elevador entram na decisão antes da reserva.
             </p>
             <CTA>Definir preferencias</CTA>
           </div>

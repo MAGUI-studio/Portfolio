@@ -44,7 +44,7 @@ const banners = [
     image: pulseImages.casal04,
     eyebrow: "presenca pulse",
     title: "O essencial elevado.",
-    text: "Performance, estetica e disciplina em equilibrio para vestir dentro e fora do treino.",
+    text: "Performance, estetica e disciplina em equilíbrio para vestir dentro e fora do treino.",
     cta: "falar com a pulse",
     href: pulseWhatsapp,
   },

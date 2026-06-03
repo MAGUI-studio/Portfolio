@@ -17,7 +17,7 @@ export default function Landing20InfraestruturaPortuaria() {
       background="#edf0ef"
       dark="#0f1618"
       icon={Anchor}
-      nav={["Metodo", "Prova", "Contato"]}
+      nav={["Método", "Prova", "Contato"]}
       stats={[
         { value: "18%", label: "reducao potencial de espera com planejamento integrado de janelas" },
         { value: "4", label: "frentes criticas: berco, patio, gate e documentacao" },
@@ -31,7 +31,7 @@ export default function Landing20InfraestruturaPortuaria() {
         { title: "Rotina de campo", text: "Checklists e cadencia para diminuir dependencia de improviso." },
         { title: "Integração documental", text: "Dados e pendencias conectados ao fluxo operacional." },
         { title: "Gestao de risco", text: "Clima, atraso, indisponibilidade e fila tratados antes de virar crise." },
-        { title: "Governanca", text: "Dono claro para cada decisao e escalonamento." },
+        { title: "Governanca", text: "Dono claro para cada decisão e escalonamento." },
         { title: "Melhoria continua", text: "Ciclos curtos para testar ajustes e medir impacto." },
         { title: "Escala multiunidade", text: "Modelo replicavel para terminais, corredores e clientes." },
       ]}

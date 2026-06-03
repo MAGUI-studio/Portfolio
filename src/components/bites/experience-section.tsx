@@ -6,7 +6,7 @@ const experiencePoints = [
   {
     number: "01",
     title: "Atendimento direto",
-    text: "Pedido simples, equipe presente e uma experiencia leve do balcao ate a entrega.",
+    text: "Pedido simples, equipe presente e uma experiência leve do balcao ate a entrega.",
   },
   {
     number: "02",
@@ -16,7 +16,7 @@ const experiencePoints = [
   {
     number: "03",
     title: "Vontade de voltar",
-    text: "Sabor consistente e uma experiencia facil de repetir sempre que bater a fome.",
+    text: "Sabor consistente e uma experiência facil de repetir sempre que bater a fome.",
   },
 ] as const;
 

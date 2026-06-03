@@ -41,15 +41,15 @@ const projectWhatsappConfig: Record<string, ProjectWhatsappConfig> = {
       "Oi, Aura Estetica. Quero agendar uma avaliacao para conhecer os tratamentos.",
   },
   bites: parseWhatsappHref(bitesWhatsapp),
-  "brasa-studio": {
+  flow: {
     phoneNumber: defaultPhoneNumber,
     message:
-      "Oi, Brasa Studio. Quero conversar sobre um projeto de branding.",
+      "Oi, FLOW. Quero orientação para montar ou evoluir meu aquário marinho.",
   },
   "cifrasec": {
     phoneNumber: defaultPhoneNumber,
     message:
-      "Oi, CifraSec. Quero falar sobre seguranca digital para minha empresa.",
+      "Oi, CifraSec. Quero falar sobre segurança digital para minha empresa.",
   },
   "cume-vinhos": {
     phoneNumber: defaultPhoneNumber,
@@ -72,7 +72,7 @@ const projectWhatsappConfig: Record<string, ProjectWhatsappConfig> = {
   "norte-prive": {
     phoneNumber: defaultPhoneNumber,
     message:
-      "Oi, Norte Prive. Quero receber informacoes sobre a experiencia residencial.",
+      "Oi, Norte Prive. Quero receber informacoes sobre a experiência residencial.",
   },
   "novera-labs": {
     phoneNumber: defaultPhoneNumber,
@@ -92,7 +92,7 @@ const projectWhatsappConfig: Record<string, ProjectWhatsappConfig> = {
   "reforma-atelier": {
     phoneNumber: defaultPhoneNumber,
     message:
-      "Oi, Reforma Atelier. Quero falar sobre curadoria, reparo ou redesign de pecas.",
+      "Oi, Reforma Atelier. Quero falar sobre curadoria, reparo ou redesign de peças.",
   },
   "sayeg-beauty-studio": {
     phoneNumber: sayegWhatsappNumber,
@@ -102,7 +102,7 @@ const projectWhatsappConfig: Record<string, ProjectWhatsappConfig> = {
   "terrametria": {
     phoneNumber: defaultPhoneNumber,
     message:
-      "Oi, TerraMetria. Quero falar sobre agricultura de precisao e dados de campo.",
+      "Oi, TerraMetria. Quero falar sobre agricultura de precisão e dados de campo.",
   },
   vitta: parseWhatsappHref(vittaLinks.whatsapp),
 };

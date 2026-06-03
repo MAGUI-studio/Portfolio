@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MAGUI.studio | Landing pages premium para marcas digitais",
     description:
-      "Explore projetos de landing pages autorais com identidade visual, experiencia responsiva e desenvolvimento web de alto padrao.",
+      "Explore projetos de landing pages autorais com identidade visual, experiência responsiva e desenvolvimento web de alto padrao.",
     siteName: "MAGUI.studio",
     type: "website",
   },
