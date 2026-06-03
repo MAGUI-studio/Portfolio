@@ -7,11 +7,6 @@ import { PowervetHeroSection } from "../powervet/hero-section";
 import { PowervetSpeciesSection } from "../powervet/species-section";
 import { PowervetStructureSection } from "../powervet/structure-section";
 import { PowervetTeamServicesSection } from "../powervet/team-services-section";
-import { WhatsappButton } from "../whatsapp-button";
-import {
-  powervetWhatsappMessage,
-  powervetWhatsappNumber,
-} from "../powervet/data";
 
 export default function PowervetLanding() {
   return (
@@ -28,10 +23,6 @@ export default function PowervetLanding() {
       <PowervetTeamServicesSection />
       <PowervetFaqSection />
       <PowervetFooter />
-      <WhatsappButton
-        phoneNumber={powervetWhatsappNumber}
-        message={powervetWhatsappMessage}
-      />
     </main>
   );
 }

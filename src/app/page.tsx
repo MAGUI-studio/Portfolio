@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -10,20 +11,67 @@ import {
   PortfolioProjects,
   type PortfolioProject,
 } from "@/app/portfolio-projects";
+import { ProjectWhatsappButton } from "@/components/project-whatsapp-button";
 import { sectionMap, visibleSections } from "@/components/sections/registry";
 
 interface HomePageProps {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
 
+const defaultSeoTitle =
+  "MAGUI.studio | Landing pages premium para marcas digitais";
+const defaultSeoDescription =
+  "Portfolio de landing pages autorais criadas pela MAGUI.studio, com direcao visual, design responsivo e desenvolvimento web focado em conversao.";
+
+function getActiveSlug(
+  searchParams: Record<string, string | string[] | undefined>,
+) {
+  return typeof searchParams.project === "string"
+    ? searchParams.project
+    : typeof searchParams.section === "string"
+      ? searchParams.section
+      : undefined;
+}
+
+export async function generateMetadata(
+  props: HomePageProps,
+): Promise<Metadata> {
+  const searchParams = await props.searchParams;
+  const activeSlug = getActiveSlug(searchParams);
+  const activeEntry = activeSlug ? sectionMap[activeSlug] : undefined;
+
+  if (!activeEntry) {
+    return {
+      title: defaultSeoTitle,
+      description: defaultSeoDescription,
+      openGraph: {
+        title: defaultSeoTitle,
+        description: defaultSeoDescription,
+        siteName: "MAGUI.studio",
+        type: "website",
+      },
+    };
+  }
+
+  const title = `MAGUI.studio | ${activeEntry.title}`;
+  const description = `${activeEntry.description} Projeto de ${activeEntry.projectType.toLowerCase()} desenvolvido pela MAGUI.studio.`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      images: activeEntry.cardImage ? [activeEntry.cardImage] : undefined,
+      siteName: "MAGUI.studio",
+      type: "website",
+    },
+  };
+}
+
 export default async function Home(props: HomePageProps) {
   const searchParams = await props.searchParams;
-  const activeSlug =
-    typeof searchParams.project === "string"
-      ? searchParams.project
-      : typeof searchParams.section === "string"
-        ? searchParams.section
-        : undefined;
+  const activeSlug = getActiveSlug(searchParams);
 
   const activeEntry = activeSlug ? sectionMap[activeSlug] : undefined;
   const activeIndex = activeEntry
@@ -57,6 +105,10 @@ export default async function Home(props: HomePageProps) {
     return (
       <main className="min-h-screen w-full bg-[#FCFCFC]">
         <ActiveComponent />
+        <ProjectWhatsappButton
+          projectSlug={activeEntry.slug}
+          projectTitle={activeEntry.title}
+        />
         <nav
           aria-label="Navegação entre projetos"
           className="fixed inset-x-0 bottom-8 z-80 flex justify-center px-4 w-fit mx-auto"

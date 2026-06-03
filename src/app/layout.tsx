@@ -14,9 +14,17 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "MAGUI.studio - Portfólio de Design e Desenvolvimento Web",
+  metadataBase: new URL("https://magui.studio"),
+  title: "MAGUI.studio | Landing pages premium para marcas digitais",
   description:
-    "Coleção de landing pages completas com direção visual clean, minimalista e premium.",
+    "Portfolio de landing pages autorais criadas pela MAGUI.studio, com direcao visual, design responsivo e desenvolvimento web focado em conversao.",
+  openGraph: {
+    title: "MAGUI.studio | Landing pages premium para marcas digitais",
+    description:
+      "Explore projetos de landing pages autorais com identidade visual, experiencia responsiva e desenvolvimento web de alto padrao.",
+    siteName: "MAGUI.studio",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
