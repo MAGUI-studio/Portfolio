@@ -46,7 +46,7 @@ export const sections: SectionEntry[] = [
     description:
       "Restaurante mexicano moderno com tacos, burritos, nachos, drinks, rodizio e autoatendimento.",
     category: "Landing Pages",
-    cardImage: "/images/nacho-libre/project-cover.png",
+    cardImage: "/images/nacho-libre/project-cover.webp",
     industry: "Gastronomia",
     projectType: "Restaurante mexicano",
     goal: "Transformar cardapio, atendimento e atmosfera em uma experiencia digital vibrante.",
