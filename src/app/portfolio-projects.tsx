@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
   ArrowUpRight,
   MagnifyingGlass,
 } from "@phosphor-icons/react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export type PortfolioProject = {
   description: string;
@@ -25,8 +26,13 @@ type PortfolioProjectsProps = {
 };
 
 export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
-  const [query, setQuery] = useState("");
-  const [activeIndustry, setActiveIndustry] = useState("Todos");
+  const pathname = usePathname();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [query, setQuery] = useState(() => searchParams.get("q") ?? "");
+  const [activeIndustry, setActiveIndustry] = useState(
+    () => searchParams.get("industry") ?? "Todos",
+  );
 
   const industries = useMemo(
     () => [
@@ -35,13 +41,54 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
     ],
     [projects],
   );
+  const normalizedActiveIndustry = industries.includes(activeIndustry)
+    ? activeIndustry
+    : "Todos";
+
+  useEffect(() => {
+    setQuery(searchParams.get("q") ?? "");
+    setActiveIndustry(searchParams.get("industry") ?? "Todos");
+  }, [searchParams]);
+
+  function updateUrl(nextQuery: string, nextIndustry: string) {
+    const params = new URLSearchParams(searchParams.toString());
+    const trimmedQuery = nextQuery.trim();
+
+    if (trimmedQuery) {
+      params.set("q", nextQuery);
+    } else {
+      params.delete("q");
+    }
+
+    if (nextIndustry !== "Todos") {
+      params.set("industry", nextIndustry);
+    } else {
+      params.delete("industry");
+    }
+
+    const queryString = params.toString();
+    router.replace(queryString ? `${pathname}?${queryString}` : pathname, {
+      scroll: false,
+    });
+  }
+
+  function handleQueryChange(value: string) {
+    setQuery(value);
+    updateUrl(value, normalizedActiveIndustry);
+  }
+
+  function handleIndustryChange(industry: string) {
+    setActiveIndustry(industry);
+    updateUrl(query, industry);
+  }
 
   const filteredProjects = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
 
     return projects.filter((project) => {
       const matchesIndustry =
-        activeIndustry === "Todos" || project.industry === activeIndustry;
+        normalizedActiveIndustry === "Todos" ||
+        project.industry === normalizedActiveIndustry;
       const searchable = [
         project.title,
         project.description,
@@ -58,7 +105,7 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
         (!normalizedQuery || searchable.includes(normalizedQuery))
       );
     });
-  }, [activeIndustry, projects, query]);
+  }, [normalizedActiveIndustry, projects, query]);
 
   return (
     <section className="w-full px-6 md:px-12 lg:px-16 space-y-12 bg-[#FCFCFC]">
@@ -71,7 +118,7 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
           />
           <input
             value={query}
-            onChange={(event) => setQuery(event.target.value)}
+            onChange={(event) => handleQueryChange(event.target.value)}
             placeholder="Buscar projetos..."
             className="h-10 w-full border border-black/10 bg-white pl-9 pr-4 text-xs text-black outline-none transition rounded-md focus:border-black"
           />
@@ -82,9 +129,9 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
             <button
               key={industry}
               type="button"
-              onClick={() => setActiveIndustry(industry)}
+              onClick={() => handleIndustryChange(industry)}
               className={`h-8 px-3 text-xs font-medium transition rounded-md ${
-                activeIndustry === industry
+                normalizedActiveIndustry === industry
                   ? "bg-[#0093C8] text-white"
                   : "bg-white border border-black/5 text-black/60 hover:border-black/20"
               }`}
