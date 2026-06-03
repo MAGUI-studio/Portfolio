@@ -18,8 +18,8 @@ export function NachoLibreHeader() {
   }
 
   return (
-    <header className="relative z-30 border-b border-[#111111]/18 bg-[#E86A17] text-[#111111]">
-      <div className="mx-auto grid max-w-[1540px] grid-cols-[auto_1fr_auto] items-center gap-4 px-5 py-4 md:px-8 lg:grid-cols-[0.32fr_0.42fr_0.26fr] lg:px-10 lg:py-5">
+    <header className="absolute inset-x-0 top-0 z-30 bg-transparent text-[#111111]">
+      <div className="mx-auto max-w-400 grid grid-cols-[auto_1fr_auto] items-center gap-4 px-5 py-4 md:px-8 lg:grid-cols-[0.32fr_0.42fr_0.26fr] lg:px-10 lg:py-5">
         <Link
           href="#inicio"
           aria-label="Ir para o inicio da Nacho Libre"
@@ -36,7 +36,7 @@ export function NachoLibreHeader() {
         </Link>
 
         <nav
-          className="hidden justify-self-center border-x border-[#111111]/16 lg:flex"
+          className="hidden justify-self-center lg:flex"
           aria-label="Menu principal Nacho Libre"
         >
           {nachoLibreNav.map((item) => (
@@ -55,7 +55,7 @@ export function NachoLibreHeader() {
             href={nachoLibreWhatsapp}
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-3 bg-white px-5 py-4 text-[11px] font-black uppercase tracking-[0.2em] text-[#111111] transition hover:-translate-y-0.5 hover:bg-[#111111] hover:text-white"
+            className="group inline-flex items-center gap-3 bg-white px-5 py-4 text-[11px] font-black uppercase tracking-[0.2em] text-[#111111] transition hover:-translate-y-0.5 hover:bg-[#E86A17] hover:text-white"
           >
             Reservar
             <ArrowRight
@@ -77,7 +77,7 @@ export function NachoLibreHeader() {
         </button>
       </div>
 
-      <div className={`border-t border-[#111111]/16 lg:hidden ${isOpen ? "block" : "hidden"}`}>
+      <div className={`border-t border-white/16 bg-[#111111]/82 backdrop-blur-md lg:hidden ${isOpen ? "block" : "hidden"}`}>
         <div className="grid gap-3 px-5 py-5 md:px-8">
           <nav className="grid gap-2" aria-label="Menu mobile Nacho Libre">
             {nachoLibreNav.map((item) => (
@@ -98,7 +98,7 @@ export function NachoLibreHeader() {
             target="_blank"
             rel="noreferrer"
             onClick={closeMenu}
-            className="inline-flex items-center justify-center gap-3 bg-white px-6 py-5 text-[11px] font-black uppercase tracking-[0.22em] text-[#111111]"
+            className="inline-flex items-center justify-center gap-3 bg-[#E86A17] px-6 py-5 text-[11px] font-black uppercase tracking-[0.22em] text-white"
           >
             Reservar mesa
             <ArrowRight size={15} weight="bold" />

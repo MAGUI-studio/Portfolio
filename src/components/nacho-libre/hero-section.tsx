@@ -49,7 +49,7 @@ export function NachoLibreHeroSection() {
               href={nachoLibreWhatsapp}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center justify-center gap-4 bg-[#E86A17] px-8 py-5 text-sm font-black uppercase tracking-[0.2em] text-[#111111] transition-colors hover:bg-[#F0F0F0] focus:outline-none focus:ring-2 focus:ring-[#E86A17]"
+              className="group inline-flex items-center justify-center gap-4 bg-[#E86A17] px-8 py-5 text-sm font-black uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#F0F0F0] focus:outline-none focus:ring-2 focus:ring-[#E86A17]"
             >
               Reservar mesa
               <ArrowRight
