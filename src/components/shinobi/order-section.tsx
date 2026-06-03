@@ -92,7 +92,6 @@ export function ShinobiOrderSection() {
       `}} />
 
       <div className="mx-auto max-w-[1540px]">
-        {/* Seção Principal com Revelação via Clip-Path */}
         <div className="relative grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-stretch">
           
           {/* Card Esquerdo: Pedido Rápido */}
@@ -141,16 +140,14 @@ export function ShinobiOrderSection() {
             </div>
           </div>
 
-          {/* Card Direito: Kit Degustação */}
           <article className="animate-reveal-down group relative min-h-[520px] overflow-hidden bg-neutral-950">
             <Image
-              src="/images/shinobi/degustacao.png"
+              src="/images/shinobi/degustacao.webp"
               alt="Kit degustação SHINOBI com sabores variados"
               fill
               sizes="(min-width: 1024px) 60vw, 100vw"
               className="object-cover transition-all duration-1000 ease-out group-hover:scale-103 group-hover:opacity-80"
             />
-            {/* Vinheta minimalista escura */}
             <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/40 to-transparent" />
             <div className="absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-black to-transparent" />
 

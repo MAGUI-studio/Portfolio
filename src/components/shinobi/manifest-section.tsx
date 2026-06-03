@@ -30,7 +30,7 @@ export function ShinobiManifestoSection() {
 
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/shinobi/samurai.png"
+          src="/images/shinobi/samurai.webp"
           alt="Shinobi Ritual Atmosphere"
           fill
           priority

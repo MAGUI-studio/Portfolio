@@ -126,7 +126,7 @@ export const sections: SectionEntry[] = [
     description:
       "Energetico dark com hero interativa, sabores coloridos e narrativa completa de marca.",
     category: "Landing Pages",
-    cardImage: "/images/shinobi/project-cover.png",
+    cardImage: "/images/shinobi/project-cover.webp",
     industry: "Gastronomia",
     projectType: "Energetico",
     goal: "Construir universo de marca, sabores e compra direta para um publico jovem.",

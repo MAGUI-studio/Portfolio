@@ -11,8 +11,8 @@ export type ShinobiFlavor = {
 };
 
 export const shinobiBrand = {
-  logo: "/images/shinobi/logo.png",
-  icon: "/images/shinobi/logo_icon.png",
+  logo: "/images/shinobi/logo.webp",
+  icon: "/images/shinobi/logo_icon.webp",
 };
 
 export const shinobiWhatsappHref =
@@ -30,10 +30,10 @@ export const shinobiFlavors: ShinobiFlavor[] = [
     profile: "Cítrico e preciso",
     description: "Ataque fresco, crocante e limpo para manter a mente afiada.",
     accent: "#73b82b",
-    fundo: "/images/shinobi/bebidas/maca-verde/fundo.png",
-    lata: "/images/shinobi/bebidas/maca-verde/lata.png",
-    final: "/images/shinobi/bebidas/maca-verde/final.png",
-    rotulo: "/images/shinobi/bebidas/maca-verde/rotulo.png",
+    fundo: "/images/shinobi/bebidas/maca-verde/fundo.webp",
+    lata: "/images/shinobi/bebidas/maca-verde/lata.webp",
+    final: "/images/shinobi/bebidas/maca-verde/final.webp",
+    rotulo: "/images/shinobi/bebidas/maca-verde/rotulo.webp",
   },
   {
     slug: "morango",
@@ -42,10 +42,10 @@ export const shinobiFlavors: ShinobiFlavor[] = [
     description:
       "Perfil vermelho, intenso e fácil de beber sem perder atitude.",
     accent: "#e73543",
-    fundo: "/images/shinobi/bebidas/morango/fundo.png",
-    lata: "/images/shinobi/bebidas/morango/lata.png",
-    final: "/images/shinobi/bebidas/morango/final.png",
-    rotulo: "/images/shinobi/bebidas/morango/rotulo.png",
+    fundo: "/images/shinobi/bebidas/morango/fundo.webp",
+    lata: "/images/shinobi/bebidas/morango/lata.webp",
+    final: "/images/shinobi/bebidas/morango/final.webp",
+    rotulo: "/images/shinobi/bebidas/morango/rotulo.webp",
   },
   {
     slug: "abacaxi",
@@ -54,10 +54,10 @@ export const shinobiFlavors: ShinobiFlavor[] = [
     description:
       "Acidez brilhante, final doce e uma assinatura que corta o calor.",
     accent: "#d99d18",
-    fundo: "/images/shinobi/bebidas/abacaxi/fundo.png",
-    lata: "/images/shinobi/bebidas/abacaxi/lata.png",
-    final: "/images/shinobi/bebidas/abacaxi/final.png",
-    rotulo: "/images/shinobi/bebidas/abacaxi/rotulo.png",
+    fundo: "/images/shinobi/bebidas/abacaxi/fundo.webp",
+    lata: "/images/shinobi/bebidas/abacaxi/lata.webp",
+    final: "/images/shinobi/bebidas/abacaxi/final.webp",
+    rotulo: "/images/shinobi/bebidas/abacaxi/rotulo.webp",
   },
   {
     slug: "acai",
@@ -66,10 +66,10 @@ export const shinobiFlavors: ShinobiFlavor[] = [
     description:
       "Fruta escura, corpo cheio e presença forte para viradas longas.",
     accent: "#a733ca",
-    fundo: "/images/shinobi/bebidas/acai/fundo.png",
-    lata: "/images/shinobi/bebidas/acai/lata.png",
-    final: "/images/shinobi/bebidas/acai/final.png",
-    rotulo: "/images/shinobi/bebidas/acai/rotulo.png",
+    fundo: "/images/shinobi/bebidas/acai/fundo.webp",
+    lata: "/images/shinobi/bebidas/acai/lata.webp",
+    final: "/images/shinobi/bebidas/acai/final.webp",
+    rotulo: "/images/shinobi/bebidas/acai/rotulo.webp",
   },
 
   {
@@ -78,10 +78,10 @@ export const shinobiFlavors: ShinobiFlavor[] = [
     profile: "Gelado e explosivo",
     description: "Doce suculento, refrescância alta e energia de fim de tarde.",
     accent: "#db2028",
-    fundo: "/images/shinobi/bebidas/melancia/fundo.png",
-    lata: "/images/shinobi/bebidas/melancia/lata.png",
-    final: "/images/shinobi/bebidas/melancia/final.png",
-    rotulo: "/images/shinobi/bebidas/melancia/rotulo.png",
+    fundo: "/images/shinobi/bebidas/melancia/fundo.webp",
+    lata: "/images/shinobi/bebidas/melancia/lata.webp",
+    final: "/images/shinobi/bebidas/melancia/final.webp",
+    rotulo: "/images/shinobi/bebidas/melancia/rotulo.webp",
   },
   {
     slug: "pessego",
@@ -89,10 +89,10 @@ export const shinobiFlavors: ShinobiFlavor[] = [
     profile: "Maciez com impacto",
     description: "Aroma macio, fruta madura e um golpe final mais aveludado.",
     accent: "#e57418",
-    fundo: "/images/shinobi/bebidas/pessego/fundo.png",
-    lata: "/images/shinobi/bebidas/pessego/lata.png",
-    final: "/images/shinobi/bebidas/pessego/final.png",
-    rotulo: "/images/shinobi/bebidas/pessego/rotulo.png",
+    fundo: "/images/shinobi/bebidas/pessego/fundo.webp",
+    lata: "/images/shinobi/bebidas/pessego/lata.webp",
+    final: "/images/shinobi/bebidas/pessego/final.webp",
+    rotulo: "/images/shinobi/bebidas/pessego/rotulo.webp",
   },
 ];
 
