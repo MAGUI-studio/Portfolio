@@ -173,7 +173,7 @@ export const sections: SectionEntry[] = [
     description:
       "Clinica veterinaria premium especializada em animais silvestres e exoticos.",
     category: "Landing Pages",
-    cardImage: "/images/powervet/project-cover.png",
+    cardImage: "/images/powervet/project-cover.webp",
     industry: "Animais",
     projectType: "Clinica veterinaria especializada",
     goal: "Transmitir autoridade medica, acolhimento e estrutura para gerar agendamentos.",
