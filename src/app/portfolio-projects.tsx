@@ -61,7 +61,7 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
   }, [activeIndustry, projects, query]);
 
   return (
-    <section className="w-full px-6 pb-24 md:px-12 lg:px-16 space-y-12 bg-[#FCFCFC]">
+    <section className="w-full px-6 md:px-12 lg:px-16 space-y-12 bg-[#FCFCFC]">
       <div className="w-full flex flex-col gap-6 md:flex-row md:items-center md:justify-between border-b border-black/5 pb-8 pt-4">
         <label className="relative block w-full md:max-w-sm">
           <span className="sr-only">Buscar projetos</span>
@@ -137,8 +137,7 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
                   {project.description}
                 </p>
               </div>
-
-              {/* Tags Internas Discretas */}
+              
               <div className="flex flex-wrap gap-1 pt-1">
                 {project.tags.slice(0, 3).map((tag) => (
                   <span

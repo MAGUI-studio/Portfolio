@@ -114,7 +114,7 @@ export default async function Home(props: HomePageProps) {
         <PortfolioProjects projects={portfolioProjects} />
       </section>
 
-      <footer className="w-full mt-40 border-t border-black/10 bg-white pt-24 pb-12 px-6 md:px-12 lg:px-16">
+      <footer className="w-full mt-20 border-t border-black/10 bg-white pt-24 pb-12 px-6 md:px-12 lg:px-16">
         <div className="space-y-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div className="space-y-4">
