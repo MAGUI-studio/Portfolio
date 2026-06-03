@@ -79,7 +79,7 @@ export function ShinobiHeroBannerSection() {
       <div className="absolute inset-x-0 bottom-0 z-20 h-96 bg-linear-to-t from-black via-black/80 to-transparent" />
 
       <Image
-        src="/images/shinobi/logo_icon.webp"
+        src="/images/shinobi/logo-icon.webp"
         alt=""
         width={420}
         height={420}
