@@ -28,7 +28,7 @@ const journey = [
 
 export function ArcoExperienceSection() {
   return (
-    <section className="text-[#123A5C]">
+    <section className="bg-[#F8FCFE]  text-[#123A5C]">
       <div className="grid lg:grid-cols-[0.56fr_0.44fr]">
         <figure className="relative min-h-[520px] bg-[#D7EAF5] lg:min-h-[760px]">
           <Image
@@ -53,10 +53,9 @@ export function ArcoExperienceSection() {
             {journey.map(({ icon: Icon, title, text }) => (
               <article
                 key={title}
-                className="rounded-lg border border-[#1F5687]/10 bg-white p-5"
+                className="rounded-lg p-5"
               >
                 <div className="flex gap-4">
-                  <Icon size={26} className="mt-1 shrink-0 text-[#1F5687]" />
                   <div>
                     <h3 className="text-xl font-semibold">{title}</h3>
                     <p className="mt-2 leading-7 text-[#4A6477]">{text}</p>
@@ -91,7 +90,7 @@ export function ArcoExperienceSection() {
         ].map((item) => (
           <figure
             key={item.title}
-            className="relative min-h-[360px] overflow-hidden bg-[#D7EAF5]"
+            className="relative min-h-[360px] overflow-hidden"
           >
             <Image
               src={item.image}

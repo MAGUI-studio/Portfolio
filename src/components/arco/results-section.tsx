@@ -7,40 +7,54 @@ import { ActionLink, Eyebrow } from "./ui";
 const cases = [
   {
     title: "Alinhamento do sorriso",
-    text: "Evolucao de apinhamento com uso de aparelho e acompanhamento ortodontico.",
+    text: "Transformação gradual da posição dos dentes para proporcionar mais equilíbrio, conforto e confiança ao sorrir.",
     image: arcoImages.alignmentBeforeAfter,
-    alt: "Antes e atual de caso de apinhamento com uso de aparelho",
+    alt: "Antes e depois de tratamento ortodôntico para correção de apinhamento dental",
   },
   {
     title: "Clareamento dental",
-    text: "Conduta profissional para recuperar luminosidade e deixar o sorriso mais leve.",
+    text: "Recuperação da luminosidade natural dos dentes com um protocolo seguro e supervisionado.",
     image: arcoImages.whiteningBeforeAfter,
-    alt: "Antes e atual de dentes amarelados apos clareamento dental",
+    alt: "Antes e depois de clareamento dental realizado na ARCO",
   },
 ];
 
 export function ArcoResultsSection() {
   return (
-    <section id="resultados" className="bg-white px-5 py-20 text-[#123A5C] md:px-10 md:py-28 lg:px-14">
-      <div className="grid gap-10 lg:grid-cols-[0.44fr_0.56fr] lg:items-end">
+    <section
+      id="resultados"
+      className="bg-[#F8FCFE] px-5 py-20 text-[#123A5C] md:px-10 md:py-28 lg:px-14"
+    >
+      <div className="flex flex-col gap-5">
         <div>
           <Eyebrow>Resultados acompanhados</Eyebrow>
+
           <h2 className="mt-5 text-4xl font-semibold leading-tight md:text-6xl">
-            Transformacoes visiveis, conduzidas com criterio.
+            Mudanças que refletem cuidado, planejamento e confiança.
           </h2>
         </div>
-        <p className="max-w-3xl text-lg leading-8 text-[#4A6477]">
-          Os resultados acontecem melhor quando o plano e compreendido. A ARCO
-          acompanha cada etapa para que estetica, saude e funcao caminhem
-          juntas.
+
+        <p className="text-lg leading-8 text-[#4A6477]">
+          Cada resultado é construído ao longo de uma jornada planejada, com
+          acompanhamento próximo e decisões tomadas com segurança em cada etapa
+          do tratamento.
         </p>
       </div>
 
       <div className="mt-14 grid gap-5 lg:grid-cols-2">
         {cases.map((item) => (
-          <article key={item.title} className="overflow-hidden rounded-lg border border-[#1F5687]/10 bg-[#F8FCFE]">
-            <div className="relative h-[360px] md:h-[470px]">
-              <Image src={item.image} alt={item.alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+          <article
+            key={item.title}
+            className="overflow-hidden rounded-lg border border-[#1F5687]/10 bg-[#F8FCFE]"
+          >
+            <div className="relative h-90 md:h-130">
+              <Image
+                src={item.image}
+                alt={item.alt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
             <div className="grid gap-5 p-7 md:grid-cols-[0.42fr_0.58fr]">
               <h3 className="text-2xl font-semibold">{item.title}</h3>

@@ -1,5 +1,9 @@
 import Image from "next/image";
-import { ChatsCircle, FirstAidKit, MonitorPlay } from "@phosphor-icons/react/dist/ssr";
+import {
+  ChatsCircle,
+  FirstAidKit,
+  MonitorPlay,
+} from "@phosphor-icons/react/dist/ssr";
 
 import { arcoImages } from "./data";
 import { ActionLink, Eyebrow } from "./ui";
@@ -7,24 +11,27 @@ import { ActionLink, Eyebrow } from "./ui";
 const pillars = [
   {
     icon: ChatsCircle,
-    title: "Escuta antes da indicacao",
-    text: "Cada tratamento comeca entendendo rotina, historico, expectativas e prioridades reais do paciente.",
+    title: "Escuta e personalização",
+    text: "As decisões clínicas começam entendendo suas necessidades, expectativas e prioridades.",
   },
   {
     icon: MonitorPlay,
-    title: "Planejamento digital",
-    text: "Diagnostico moderno e visual para deixar objetivos, fases e possibilidades mais claros.",
+    title: "Tecnologia para planejar",
+    text: "Diagnóstico digital e planejamento preciso para oferecer mais clareza e segurança.",
   },
   {
     icon: FirstAidKit,
-    title: "Acompanhamento proximo",
-    text: "Condutas explicadas, retornos organizados e previsibilidade durante toda a jornada.",
+    title: "Cuidado contínuo",
+    text: "Acompanhamento próximo em cada fase para garantir conforto, previsibilidade e confiança.",
   },
 ];
 
 export function ArcoCareSection() {
   return (
-    <section id="clinica" className="bg-[#F8FCFE] px-5 py-20 text-[#123A5C] md:px-10 md:py-28 lg:px-14">
+    <section
+      id="clinica"
+      className="bg-[#F8FCFE] px-5 py-20 text-[#123A5C] md:px-10 md:py-28 lg:px-14"
+    >
       <div className="grid gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-end">
         <div>
           <Eyebrow>Nossa filosofia</Eyebrow>
@@ -34,8 +41,8 @@ export function ArcoCareSection() {
         </div>
         <p className="max-w-3xl text-lg leading-8 text-[#4A6477] md:text-xl md:leading-9">
           Um bom atendimento comeca ouvindo. Por isso, a ARCO planeja cada
-          tratamento de forma individual, com explicacoes claras, cuidado
-          genuino e foco em resultados duradouros.
+          tratamento de forma individual, com explicações claras, cuidado
+          genuíno e foco em resultados duradouros.
         </p>
       </div>
 
@@ -69,16 +76,19 @@ export function ArcoCareSection() {
           />
           <div className="mt-20">
             <h3 className="text-4xl font-semibold leading-tight md:text-6xl">
-              Um espaco pensado para conforto, seguranca e tranquilidade.
+              Um ambiente planejado para que você se sinta bem em cada etapa do
+              cuidado.
             </h3>
+
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/76">
-              Da recepcao a conclusao do tratamento, a estrutura da ARCO
-              acolhe o paciente com ambientes claros, equipamentos modernos e
-              uma equipe presente.
+              Espaços acolhedores, tecnologia atual e uma equipe atenta aos
+              detalhes criam uma experiência mais confortável, tranquila e
+              segura para o seu tratamento.
             </p>
+
             <div className="mt-8">
               <ActionLink href="#contato" light>
-                Conversar com a clinica
+                Conversar com a clínica
               </ActionLink>
             </div>
           </div>

@@ -23,11 +23,11 @@ export function ArcoFooter() {
           <div>
             <Eyebrow light>ARCO Odontologia</Eyebrow>
             <h2 className="mt-5 max-w-5xl text-4xl font-semibold leading-tight md:text-6xl lg:text-7xl">
-              Um sorriso pode mudar a forma como voce se ve e se conecta com o
+              Um sorriso pode mudar a forma como voce se vê e se conecta com o
               mundo.
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/72">
-              Agende uma avaliacao para entender prioridades, possibilidades e
+              Agende uma avaliação para entender prioridades, possibilidades e
               o melhor plano para o seu momento.
             </p>
           </div>

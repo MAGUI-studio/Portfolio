@@ -7,17 +7,17 @@ import { Eyebrow } from "./ui";
 const testimonials = [
   {
     name: "Isabela Lacerda",
-    text: "A equipe explicou cada etapa com calma. Senti seguranca desde a primeira avaliacao.",
+    text: "A atenção aos detalhes e a forma como tudo foi explicado me deram muita confiança para iniciar o tratamento.",
     image: arcoImages.avatarIsabela,
   },
   {
     name: "Lucas Ribeiro",
-    text: "O planejamento ficou muito claro e o acompanhamento fez toda diferenca no tratamento.",
+    text: "Em todas as consultas eu sabia exatamente qual era o próximo passo. Isso trouxe muita tranquilidade durante o processo.",
     image: arcoImages.avatarLucas,
   },
   {
     name: "Nicole Dias",
-    text: "Ambiente acolhedor, atendimento humano e resultado natural. Foi uma experiencia muito leve.",
+    text: "Além do resultado, o que mais me marcou foi o cuidado da equipe. A experiência inteira foi leve e acolhedora.",
     image: arcoImages.avatarNicole,
   },
 ];
@@ -34,7 +34,10 @@ export function ArcoTestimonialsSection() {
         </div>
         <div className="grid gap-5 md:grid-cols-3">
           {testimonials.map((item) => (
-            <article key={item.name} className="rounded-lg border border-[#1F5687]/10 bg-white p-6 shadow-[0_20px_60px_rgba(31,86,135,0.06)]">
+            <article
+              key={item.name}
+              className="rounded-lg border border-[#1F5687]/10 bg-white p-6 shadow-[0_20px_60px_rgba(31,86,135,0.06)]"
+            >
               <div className="flex gap-1 text-[#1F5687]" aria-hidden="true">
                 {[0, 1, 2, 3, 4].map((star) => (
                   <Star key={star} size={15} weight="fill" />

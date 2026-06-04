@@ -14,13 +14,13 @@ import { ActionLink, Eyebrow } from "./ui";
 const careSignals = [
   { icon: ShieldCheck, text: "Seguranca em cada etapa" },
   { icon: Heartbeat, text: "Cuidado sem pressa" },
-  { icon: CheckCircle, text: "Explicacoes transparentes" },
+  { icon: CheckCircle, text: "Explicações transparentes" },
 ];
 
 const processNotes = [
-  ["01", "Ouvir", "queixa, historia e objetivo"],
-  ["02", "Planejar", "fases claras e previsiveis"],
-  ["03", "Acompanhar", "retornos sem pressa"],
+  ["01", "Ouvir", "Queixa, historia e objetivo"],
+  ["02", "Planejar", "Fases claras e previsiveis"],
+  ["03", "Acompanhar", "Retornos sem pressa"],
 ];
 
 export function ArcoHeroSection() {
@@ -75,14 +75,23 @@ export function ArcoHeroSection() {
               className="h-full w-full object-cover object-center"
             />
 
-            <div className="absolute right-5 top-5 w-44 rounded-lg bg-white p-5 text-[#123A5C] shadow-[0_24px_70px_rgba(18,58,92,0.18)] md:w-48 lg:right-8 lg:top-8">
-              <Tooth size={29} className="text-[#1F5687]" />
-              <p className="mt-8 text-4xl font-semibold leading-none text-[#1F5687]">
-                8
-              </p>
-              <p className="mt-2 text-sm font-bold leading-5 text-[#4A6477]">
-                frentes de tratamento em um plano integrado.
-              </p>
+            <div className="absolute right-5 top-5 w-44 overflow-hidden rounded-lg bg-white p-5 text-[#123A5C] shadow-[0_24px_70px_rgba(18,58,92,0.18)] md:w-48 lg:right-8 lg:top-8">
+              <Tooth
+                size={140}
+                weight="fill"
+                className="absolute -right-8 -top-6 text-[#1F5687]/8"
+              />
+
+              <div className="relative z-10">
+                <p className="text-4xl font-semibold leading-none text-[#1F5687]">
+                  8
+                </p>
+
+                <p className="mt-2 text-sm font-bold leading-5 text-[#4A6477]">
+                  Tratamentos para cuidar da saúde, da função e da estética do
+                  sorriso.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -111,7 +120,7 @@ export function ArcoHeroSection() {
           className="group flex min-h-36 items-end justify-between bg-[#EAF5FB] p-6 text-[#123A5C] transition-colors hover:bg-[#DCECF5] lg:p-8"
         >
           <span className="max-w-36 text-sm font-bold leading-5">
-            Conheca a experiencia ARCO
+            Conheca a experiência ARCO
           </span>
           <ArrowDown
             size={22}

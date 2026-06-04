@@ -43,7 +43,7 @@ export function ArcoTreatmentsSection() {
   return (
     <section
       id="tratamentos"
-      className="bg-white px-5 py-20 text-[#123A5C] md:px-10 md:py-28 lg:px-14"
+      className="bg-[#F8FCFE]  px-5 py-20 text-[#123A5C] md:px-10 md:py-28 lg:px-14"
     >
       <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
         <div>
