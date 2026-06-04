@@ -3,16 +3,38 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, List, MapPin, X } from "@phosphor-icons/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { arcoImages, arcoNav, arcoWhatsapp } from "./data";
 
 export function ArcoHeader() {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    if (!isOpen) {
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
+
   return (
     <header className="relative z-40 w-full bg-white px-5 pt-4 text-[#123A5C] md:px-8 md:pt-5 lg:px-10">
-      <div className="relative z-60 mx-auto max-w-440 border-b border-[#1F5687]/14">
+      <div className="mx-auto max-w-440 border-b border-[#1F5687]/14">
         <div className="grid grid-cols-[1fr_auto] items-center gap-4 pb-4 md:pb-5 lg:grid-cols-[1fr_auto_1fr]">
           <div className="hidden items-center gap-3 text-xs font-bold uppercase text-[#1F5687] lg:flex">
             <MapPin size={18} />
@@ -94,47 +116,65 @@ export function ArcoHeader() {
         type="button"
         aria-label="Fechar menu"
         onClick={() => setIsOpen(false)}
-        className={`fixed inset-0 z-40 bg-[#123A5C]/22 transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 z-40 bg-[#071C2D]/82 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
           isOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
       />
 
       <div
-        className={`absolute inset-x-0 top-full z-50 px-5 pt-3 transition-all duration-300 md:px-8 lg:hidden ${
+        role="dialog"
+        aria-modal="true"
+        aria-label="Menu de navegacao"
+        aria-hidden={!isOpen}
+        className={`fixed inset-x-4 top-5 z-50 mx-auto max-w-xl transition-all duration-300 md:inset-x-8 lg:hidden ${
           isOpen
             ? "pointer-events-auto translate-y-0 opacity-100"
-            : "pointer-events-none -translate-y-3 opacity-0"
+            : "pointer-events-none -translate-y-5 opacity-0"
         }`}
       >
-        <div className="mx-auto max-w-440 overflow-hidden rounded-lg bg-[#123A5C] text-white shadow-[0_28px_80px_rgba(18,58,92,0.28)]">
-          <div className="border-b border-white/14 p-5">
+        <div className="max-h-[calc(100dvh-2.5rem)] overflow-y-auto rounded-lg bg-[#123A5C] text-white shadow-[0_32px_110px_rgba(0,0,0,0.42)]">
+          <div className="flex items-center justify-between border-b border-white/14 p-5">
+            <Image
+              src={arcoImages.logoWhite}
+              alt="ARCO Odontologia"
+              width={170}
+              height={52}
+              className="h-auto w-30"
+            />
+            <button
+              type="button"
+              aria-label="Fechar menu"
+              onClick={() => setIsOpen(false)}
+              className="rounded-lg border border-white/18 p-2.5 text-white transition-colors hover:bg-white/10"
+            >
+              <X size={22} />
+            </button>
+          </div>
+
+          <div className="border-b border-white/14 px-5 py-6">
             <p className="text-xs font-bold uppercase text-[#B8D9EA]">
               Navegacao
             </p>
-            <p className="mt-3 max-w-xs text-sm leading-6 text-white/62">
+            <p className="mt-3 max-w-sm text-base leading-7 text-white/66">
               Cuidado proximo, diagnostico digital e um plano feito para voce.
             </p>
           </div>
 
-          <nav className="grid grid-cols-2">
+          <nav className="grid">
             {arcoNav.map((item, index) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="group border-b border-r border-white/12 p-5 transition-colors hover:bg-white/8"
+                className="group flex items-center justify-between border-b border-white/12 px-5 py-5 transition-colors hover:bg-white/8"
               >
-                <span className="text-xs font-bold text-[#B8D9EA]">
-                  0{index + 1}
-                </span>
-                <span className="mt-5 block text-lg font-semibold">
-                  {item.label}
-                </span>
+                <span className="text-xl font-semibold">{item.label}</span>
+                <span className="text-xs font-bold text-[#B8D9EA]">0{index + 1}</span>
               </Link>
             ))}
           </nav>
 
-          <div className="grid gap-3 p-4 sm:grid-cols-[1fr_auto]">
+          <div className="grid gap-3 p-5">
             <Link
               href={arcoWhatsapp}
               target="_blank"
@@ -147,7 +187,7 @@ export function ArcoHeader() {
             <Link
               href="#clinica"
               onClick={() => setIsOpen(false)}
-              className="inline-flex items-center justify-center rounded-lg border border-white/20 px-5 py-4 text-sm font-bold text-white"
+              className="inline-flex items-center justify-center rounded-lg border border-white/20 px-5 py-4 text-sm font-bold text-white transition-colors hover:bg-white/8"
             >
               Conhecer a ARCO
             </Link>
