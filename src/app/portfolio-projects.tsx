@@ -108,8 +108,22 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
   }, [normalizedActiveIndustry, projects, query]);
 
   return (
-    <section className="w-full px-6 md:px-12 lg:px-16 space-y-12 bg-[#FCFCFC]">
-      <div className="w-full flex flex-col gap-6 md:flex-row md:items-center md:justify-between border-b border-black/5 pb-8 pt-4">
+    <section id="projetos" className="w-full space-y-12 bg-[#FCFCFC] px-6 md:px-12 lg:px-16">
+      <div className="flex flex-col gap-5 border-b border-black/10 pb-8">
+        <p className="text-xs font-semibold uppercase text-[#0093C8]">
+          Portfolio
+        </p>
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <h2 className="text-4xl font-light leading-none text-black md:text-5xl">
+            Projetos selecionados
+          </h2>
+          <p className="text-sm text-neutral-500">
+            {projects.length} projetos para explorar
+          </p>
+        </div>
+      </div>
+
+      <div className="w-full flex flex-col gap-6 md:flex-row md:items-center md:justify-between border-b border-black/5 pb-8">
         <label className="relative block w-full md:max-w-sm">
           <span className="sr-only">Buscar projetos</span>
           <MagnifyingGlass

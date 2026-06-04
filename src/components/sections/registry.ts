@@ -200,7 +200,7 @@ export const sections: SectionEntry[] = [
     index: "11",
     slug: "arco-odontologia",
     aliases: ["aura-estetica", "landing-07-banco-privado"],
-    title: "ARCO Odontologia",
+    title: "ARCO",
     description:
       "Clinica odontologica moderna com diagnostico digital, cuidado humano e tratamentos personalizados.",
     category: "Landing Pages",

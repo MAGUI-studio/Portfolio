@@ -11,6 +11,7 @@ import {
   PortfolioProjects,
   type PortfolioProject,
 } from "@/app/portfolio-projects";
+import { FeaturedProjects } from "@/app/featured-projects";
 import { ProjectWhatsappButton } from "@/components/project-whatsapp-button";
 import { ScrollTopLink } from "@/components/scroll-top-link";
 import { sectionMap, visibleSections } from "@/components/sections/registry";
@@ -23,6 +24,11 @@ const defaultSeoTitle =
   "MAGUI.studio | Landing pages premium para marcas digitais";
 const defaultSeoDescription =
   "Portfolio de landing pages autorais criadas pela MAGUI.studio, com direcao visual, design responsivo e desenvolvimento web focado em conversao.";
+const featuredProjectSlugs = new Set([
+  "powervet",
+  "flow",
+  "arco-odontologia",
+]);
 
 function getActiveSlug(
   searchParams: Record<string, string | string[] | undefined>,
@@ -109,6 +115,12 @@ export default async function Home(props: HomePageProps) {
       title: section.title,
     }),
   );
+  const featuredProjects = portfolioProjects.filter((project) =>
+    featuredProjectSlugs.has(project.slug),
+  );
+  const regularProjects = portfolioProjects.filter(
+    (project) => !featuredProjectSlugs.has(project.slug),
+  );
 
   if (activeEntry && ActiveComponent) {
     return (
@@ -171,9 +183,9 @@ export default async function Home(props: HomePageProps) {
         />
       </section>
 
-      <section className="w-full">
-        <PortfolioProjects projects={portfolioProjects} />
-      </section>
+      <FeaturedProjects projects={featuredProjects} />
+
+      <PortfolioProjects projects={regularProjects} />
 
       <footer className="w-full mt-20 border-t border-black/10 bg-white pt-24 pb-12 px-6 md:px-12 lg:px-16">
         <div className="space-y-20">
