@@ -3,7 +3,6 @@ import Landing02NachoLibre from "@/components/sections/nacho-libre";
 import Landing03CosmeticoEssencial from "@/components/sections/vitta";
 import Landing05Pulse from "@/components/sections/pulse";
 import FlowLanding from "@/components/sections/flow";
-import Landing07BancoPrivado from "@/components/sections/landing-07-banco-privado";
 import Landing08ResidenciaAutoral from "@/components/sections/landing-08-residencia-autoral";
 import Landing09BagagemModular from "@/components/sections/landing-09-bagagem-modular";
 import BitesLanding from "@/components/sections/bites";
@@ -20,6 +19,7 @@ import Landing20InfraestruturaPortuaria from "@/components/sections/landing-20-i
 import Landing21Shinobi from "@/components/sections/shinobi";
 import SayegLanding from "@/components/sections/sayeg";
 import PowervetLanding from "@/components/sections/powervet";
+import ArcoLanding from "@/components/sections/arco";
 
 export type SectionEntry = {
   aliases?: string[];
@@ -198,17 +198,19 @@ export const sections: SectionEntry[] = [
   },
   {
     index: "11",
-    slug: "aura-estetica",
-    aliases: ["landing-07-banco-privado"],
-    title: "Aura Estética",
-    description: "Clínica de estética avançada com protocolos, jornada e FAQ.",
+    slug: "arco-odontologia",
+    aliases: ["aura-estetica", "landing-07-banco-privado"],
+    title: "ARCO Odontologia",
+    description:
+      "Clinica odontologica moderna com diagnostico digital, cuidado humano e tratamentos personalizados.",
     category: "Landing Pages",
+    cardImage: "/images/arco/project-cover.webp",
     industry: "Saúde",
-    projectType: "Clínica de estética",
-    goal: "Gerar percepção premium e esclarecer tratamentos antes do agendamento.",
-    tags: ["Estética", "FAQ", "Agendamento"],
-    visible: false,
-    component: Landing07BancoPrivado,
+    projectType: "Clinica odontologica",
+    goal: "Comunicar cuidado humano, tecnologia e tratamentos odontologicos para gerar agendamentos.",
+    tags: ["Odontologia", "Sorriso", "Agendamento"],
+    visible: true,
+    component: ArcoLanding,
   },
   {
     index: "12",

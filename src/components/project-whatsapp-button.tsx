@@ -1,4 +1,5 @@
 import { WhatsappButton } from "@/components/whatsapp-button";
+import { arcoWhatsappMessage, arcoWhatsappNumber } from "@/components/arco/data";
 import { bitesWhatsapp } from "@/components/bites/data";
 import { whatsapp as laCremeWhatsapp } from "@/components/la-creme/data";
 import { whatsappHref as kromaWhatsapp } from "@/components/kroma/data";
@@ -35,10 +36,9 @@ const projectWhatsappConfig: Record<string, ProjectWhatsappConfig> = {
     message:
       "Oi, Atlas Living. Quero receber informacoes sobre o empreendimento.",
   },
-  "aura-estetica": {
-    phoneNumber: defaultPhoneNumber,
-    message:
-      "Oi, Aura Estetica. Quero agendar uma avaliacao para conhecer os tratamentos.",
+  "arco-odontologia": {
+    phoneNumber: arcoWhatsappNumber,
+    message: arcoWhatsappMessage,
   },
   bites: parseWhatsappHref(bitesWhatsapp),
   flow: {
