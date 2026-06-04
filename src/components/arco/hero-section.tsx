@@ -27,16 +27,16 @@ export function ArcoHeroSection() {
   return (
     <section id="inicio" className="overflow-hidden bg-white text-[#123A5C]">
       <div className="relative bg-[#DCECF5]">
-        <div className="grid items-stretch md:grid-cols-[0.48fr_0.52fr]">
-          <div className="flex min-h-[590px] flex-col justify-between bg-[#123A5C] p-6 text-white md:min-h-[700px] md:p-10 lg:min-h-[740px] lg:p-14">
+        <div className="grid items-stretch xl:grid-cols-[0.48fr_0.52fr]">
+          <div className="flex flex-col justify-between bg-[#123A5C] p-6 text-white sm:p-8 md:p-10 xl:min-h-[720px] xl:p-12 2xl:p-14">
             <div className="arco-rise">
               <Eyebrow light>Odontologia humana e moderna</Eyebrow>
-              <h1 className="mt-5 text-4xl font-semibold leading-[1.03] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[88px]">
+              <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.03] sm:text-5xl md:text-6xl xl:text-[64px] 2xl:text-[76px]">
                 Sorrisos que conectam, cuidado que transforma.
               </h1>
             </div>
 
-            <div className="arco-rise arco-rise-delay-2 mt-8 md:mt-12">
+            <div className="arco-rise arco-rise-delay-2 mt-12">
               <p className="max-w-xl text-base leading-7 text-white/78 md:text-lg md:leading-8">
                 Tecnologia, planejamento personalizado e acolhimento para
                 entregar tratamentos previsiveis, claros e feitos para cada
@@ -52,7 +52,7 @@ export function ArcoHeroSection() {
                 </Link>
               </div>
 
-              <div className="mt-8 grid gap-3 border-t border-white/18 pt-6 sm:grid-cols-3">
+              <div className="mt-8 grid gap-4 border-t border-white/18 pt-6 sm:grid-cols-3 xl:grid-cols-1 2xl:grid-cols-3">
                 {careSignals.map(({ icon: Icon, text }) => (
                   <div key={text} className="flex items-center gap-3">
                     <Icon size={22} className="shrink-0 text-[#B8D9EA]" />
@@ -65,17 +65,17 @@ export function ArcoHeroSection() {
             </div>
           </div>
 
-          <div className="relative h-[430px] self-stretch bg-[#DCECF5] md:h-full md:min-h-[700px] lg:min-h-[740px]">
+          <div className="relative h-[420px] self-stretch overflow-hidden bg-[#DCECF5] sm:h-[500px] md:h-[580px] xl:h-auto xl:min-h-[720px]">
             <Image
               src={arcoImages.hero}
               alt="Paciente sorrindo na ARCO Odontologia"
               fill
               priority
-              sizes="(max-width: 768px) 100vw, 52vw"
-              className="h-full w-full object-cover object-center"
+              sizes="(max-width: 1279px) 100vw, 52vw"
+              className="object-cover object-center"
             />
 
-            <div className="absolute right-5 top-5 w-44 overflow-hidden rounded-lg bg-white p-5 text-[#123A5C] shadow-[0_24px_70px_rgba(18,58,92,0.18)] md:w-48 lg:right-8 lg:top-8">
+            <div className="absolute right-5 top-5 w-44 overflow-hidden rounded-lg bg-white p-5 text-[#123A5C] shadow-[0_24px_70px_rgba(18,58,92,0.18)] sm:w-52 md:right-8 md:top-8">
               <Tooth
                 size={140}
                 weight="fill"
