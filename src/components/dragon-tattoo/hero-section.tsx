@@ -14,54 +14,81 @@ export function DragonTattooHeroSection() {
   return (
     <section
       id="inicio"
-      className="overflow-hidden bg-[#F0F0F0] text-[#080706]"
+      className="relative overflow-hidden bg-[#080706] text-[#F4F0E8]"
     >
-      <div className="2xl:grid 2xl:grid-cols-2">
-        <div className="flex flex-col">
-          <div className="px-5 md:px-10 lg:px-14 pb-10">
-            <div className="flex items-center gap-5 justify-between w-full  py-10">
-              <Link
-                href="#inicio"
-                aria-label="Ir para o inicio da Dragon Tattoo"
-                className="inline-flex shrink-0 items-center"
-              >
-                <Image
-                  src={dragonTattooImages.logoBlack}
-                  alt="Dragon Tattoo"
-                  width={744}
-                  height={405}
-                  className="h-auto w-32 md:w-38"
-                />
-              </Link>
+      <div className="absolute inset-0">
+        <Image
+          src={dragonTattooImages.heroImage}
+          alt="Dragon Tattoo"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-linear-to-r from-[#080706] via-transparent to-[#080706]/10" />
+        <div className="absolute inset-x-0 bottom-0 h-48 bg-linear-to-t from-[#080706] to-transparent" />
+      </div>
 
-              <nav className="hidden items-center gap-1 lg:flex">
-                {dragonTattooNav.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="rounded-full px-4 py-3 text-[11px] font-extrabold uppercase tracking-[0.14em] text-black"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
+      <div className="relative z-10 px-5 md:px-10 lg:px-14">
+        <header className="flex items-center justify-between py-6">
+          <Link href="#inicio" aria-label="Ir para o início da Dragon Tattoo">
+            <Image
+              src={dragonTattooImages.logoBlack}
+              alt="Dragon Tattoo"
+              width={744}
+              height={405}
+              className="h-auto w-32 brightness-0 invert md:w-40"
+            />
+          </Link>
+
+          <nav className="hidden items-center gap-1 lg:flex">
+            {dragonTattooNav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="px-4 py-3 text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#F4F0E8]/64 transition hover:text-[#F4F0E8]"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <Link
+            href={dragonTattooWhatsapp}
+            className="hidden items-center gap-3 border border-[#F4F0E8]/18 px-5 py-3 text-[10px] font-black uppercase tracking-[0.22em] transition hover:border-[#9B7430] hover:text-[#9B7430] md:inline-flex"
+          >
+            Orçamento
+            <ArrowUpRight size={14} weight="bold" />
+          </Link>
+        </header>
+
+        <div className="grid min-h-[720px] items-end pb-10 pt-20 md:min-h-[760px] md:pb-14 lg:min-h-[820px] lg:grid-cols-[0.72fr_0.28fr] lg:gap-10 lg:pb-16">
+          <div>
+            <div className="mb-8 flex items-center gap-4">
+              <span className="h-px w-14 bg-[#9B7430]" />
+              <span className="text-[10px] font-black uppercase tracking-[0.34em] text-[#9B7430]">
+                Japanese Tattoo Studio
+              </span>
             </div>
 
-            <h1 className="mt-10 text-7xl font-black uppercase leading-[0.76] tracking-[-0.08em] md:text-[7rem] lg:text-[8rem] xl:text-[9rem]">
-              Arte
+            <h1 className="text-[4.2rem] font-black uppercase leading-[0.82] tracking-[-0.075em] md:text-[7.4rem] ">
+              O oriental
               <br />
-              Oriental
+              levado a sério.
             </h1>
 
-            <p className="mt-8  text-lg leading-8 text-[#080706]/58">
-              Dragões, samurais, máscaras, flores, ondas e serpentes
-              transformados em composições permanentes de alto impacto visual.
-            </p>
+            <div className="mt-8 max-w-3xl border-l border-[#9B7430] pl-5 md:mt-10 md:pl-7">
+              <p className="text-lg leading-8 text-[#F4F0E8]/72 md:text-xl md:leading-9">
+                Tatuagens orientais autorais com dragões, samurais, máscaras de
+                oni, serpentes, flores e ondas — criadas para acompanhar o corpo
+                com presença, equilíbrio e permanência.
+              </p>
+            </div>
 
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href={dragonTattooWhatsapp}
-                className="group inline-flex items-center justify-center gap-3 bg-[#080706] px-7 py-4 text-[11px] font-black uppercase tracking-[0.22em] text-[#F4F0E8] transition hover:bg-[#9B7430]"
+                className="group inline-flex items-center justify-center gap-3 bg-[#F4F0E8] px-7 py-4 text-[11px] font-black uppercase tracking-[0.22em] text-[#080706] transition hover:bg-[#9B7430] hover:text-[#F4F0E8]"
               >
                 Iniciar projeto
                 <ArrowUpRight
@@ -73,39 +100,54 @@ export function DragonTattooHeroSection() {
 
               <Link
                 href="#portfolio"
-                className="inline-flex items-center justify-center gap-3 border border-[#080706]/15 px-7 py-4 text-[11px] font-black uppercase tracking-[0.22em] transition hover:border-[#9B7430] hover:text-[#9B7430]"
+                className="inline-flex items-center justify-center gap-3 border border-[#F4F0E8]/20 px-7 py-4 text-[11px] font-black uppercase tracking-[0.22em] transition hover:border-[#9B7430] hover:text-[#9B7430]"
               >
                 Ver portfólio
                 <ArrowDown size={16} weight="bold" />
               </Link>
             </div>
           </div>
-        </div>
 
-        <div className="relative h-[600px] md:h-[720px]">
-          <Image
-            src={dragonTattooImages.heroImage}
-            alt="Dragon Tattoo"
-            fill
-            priority
-            sizes="(max-width: 1024px) 100vw, 52vw"
-            className="object-cover"
-          />
-
-          <div className="absolute right-5 top-5 bg-[#F0F0F0] px-5 py-3 md:right-10 md:top-10">
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#9B7430]">
-              Japanese Tattoo Studio
-            </p>
+          <div className="mt-12 hidden self-end lg:block">
+            <div className="border-t border-[#F4F0E8]/14">
+              {[
+                ["01", "Oriental autoral"],
+                ["02", "Grandes fechamentos"],
+                ["03", "Desenho anatômico"],
+              ].map(([number, label]) => (
+                <div
+                  key={number}
+                  className="grid grid-cols-[56px_1fr] border-b border-[#F4F0E8]/14 py-5"
+                >
+                  <span className="text-[10px] font-black uppercase tracking-[0.28em] text-[#9B7430]">
+                    {number}
+                  </span>
+                  <span className="text-sm font-bold uppercase tracking-[0.1em] text-[#F4F0E8]/78">
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="absolute bottom-0 left-0 bg-[#F0F0F0] p-6 md:p-8">
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] text-[#9B7430]">
-              Especialidade
-            </p>
-
-            <p className="mt-4 max-w-sm text-xl font-bold leading-tight">
-              Grandes composições orientais com foco em anatomia e longevidade.
-            </p>
+          <div className="mt-12 grid border-y border-[#F4F0E8]/12 sm:grid-cols-3 lg:hidden">
+            {[
+              ["01", "Oriental autoral"],
+              ["02", "Grandes fechamentos"],
+              ["03", "Desenho anatômico"],
+            ].map(([number, label]) => (
+              <div
+                key={number}
+                className="border-[#F4F0E8]/12 py-5 sm:border-r sm:px-5 last:sm:border-r-0"
+              >
+                <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#9B7430]">
+                  {number}
+                </p>
+                <p className="mt-2 text-sm font-bold uppercase tracking-[0.08em] text-[#F4F0E8]/82">
+                  {label}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
