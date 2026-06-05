@@ -24,16 +24,40 @@ export const dragonTattooImages = {
 
 export const dragonTattooPhoneNumber = "5500000000000";
 
-export const dragonTattooWhatsappMessage =
-  "Ola, Dragon Tattoo. Quero conversar sobre um projeto de tatuagem oriental personalizada.";
+export function createDragonTattooWhatsappHref(message: string) {
+  return `https://wa.me/${dragonTattooPhoneNumber}?text=${encodeURIComponent(
+    message,
+  )}`;
+}
 
-export const dragonTattooWhatsapp = `https://wa.me/${dragonTattooPhoneNumber}?text=${encodeURIComponent(
+export const dragonTattooWhatsappMessage =
+  "Ola, Dragon Tattoo. Quero um orcamento para uma tatuagem oriental personalizada.";
+
+export const dragonTattooScheduleMessage =
+  "Ola, Dragon Tattoo. Quero marcar um horario para conversar sobre minha tatuagem.";
+
+export const dragonTattooVisitMessage =
+  "Ola, Dragon Tattoo. Quero agendar uma visita ao estudio.";
+
+export const dragonTattooBudgetWhatsapp = createDragonTattooWhatsappHref(
   dragonTattooWhatsappMessage,
-)}`;
+);
+
+export const dragonTattooScheduleWhatsapp = createDragonTattooWhatsappHref(
+  dragonTattooScheduleMessage,
+);
+
+export const dragonTattooVisitWhatsapp = createDragonTattooWhatsappHref(
+  dragonTattooVisitMessage,
+);
+
+export const dragonTattooWhatsapp = dragonTattooBudgetWhatsapp;
 
 export const dragonTattooNav = [
+  { label: "Metodo", href: "#metodo" },
+  { label: "Especialidades", href: "#especialidades" },
+  { label: "Portfolio", href: "#portfolio" },
   { label: "Estudio", href: "#estudio" },
-  { label: "Galeria", href: "#portfolio" },
   { label: "Contato", href: "#contato" },
 ];
 

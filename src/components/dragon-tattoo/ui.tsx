@@ -41,7 +41,7 @@ export function ActionLink({
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noreferrer" : undefined}
-      className={`group inline-flex min-h-13 items-center justify-center gap-3 rounded-full px-6 py-4 text-xs font-extrabold uppercase tracking-[0.12em] transition-all duration-300 hover:-translate-y-0.5 ${
+      className={`group inline-flex items-center justify-center gap-3 rounded-full px-6 py-4 text-xs font-extrabold uppercase tracking-[0.12em] transition-all duration-300 hover:-translate-y-0.5 ${
         light
           ? "bg-[#F4F1EA] text-[#0D0D0D] hover:bg-white"
           : "bg-[#0D0D0D] text-[#F4F1EA] hover:bg-[#2A2A2A]"

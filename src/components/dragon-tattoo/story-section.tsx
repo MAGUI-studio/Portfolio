@@ -1,118 +1,142 @@
-"use client";
-
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 
-import { dragonTattooImages } from "./data";
+import { dragonTattooBudgetWhatsapp, dragonTattooImages } from "./data";
 
 const methodItems = [
   {
     number: "01",
     title: "Briefing visual",
-    desc: "Referências, região do corpo, escala e intenção da peça são definidos antes do desenho.",
+    desc: "Referencias, regiao do corpo, escala e intencao da peca sao definidos antes do desenho.",
   },
   {
     number: "02",
-    title: "Estudo de fluxo",
-    desc: "A composição é pensada para acompanhar músculo, movimento e leitura natural da pele.",
+    title: "Fluxo anatomico",
+    desc: "A composicao acompanha musculo, movimento e a leitura natural da pele em repouso ou acao.",
   },
   {
     number: "03",
     title: "Prova de decalque",
-    desc: "O encaixe é testado no corpo para ajustar proporção, respiro e impacto visual.",
+    desc: "O encaixe e testado no corpo para ajustar proporcao, respiro, impacto visual e continuidade.",
   },
   {
     number: "04",
-    title: "Execução por etapas",
-    desc: "Linha, contraste, sombra e fechamento são trabalhados com controle técnico e consistência.",
+    title: "Sessao por etapas",
+    desc: "Linha, contraste, sombra e fechamento sao trabalhados com controle tecnico e consistencia.",
   },
 ];
 
 export function DragonTattooStorySection() {
   return (
     <section
-      id="estudio"
-      className="relative overflow-hidden bg-[#F0F0F0] text-[#080706]"
+      id="metodo"
+      className="relative overflow-hidden bg-[#090706] py-24 text-[#F4F0E8] md:py-32"
     >
-      <div className="px-5 py-24 md:px-10 md:py-32 lg:px-14">
-        <div className="grid gap-14 lg:grid-cols-[0.36fr_0.64fr] lg:items-end">
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#D6A858]/70 to-transparent" />
+
+      <div className="mx-auto max-w-[1720px] px-5 md:px-10 lg:px-14">
+        <div className="grid gap-10 lg:grid-cols-[0.42fr_0.58fr] lg:items-end">
           <div>
-            <p className="text-[10px] font-black uppercase tracking-[0.36em] text-[#9B7430]">
-              O método Dragon
+            <p className="text-[10px] font-black uppercase tracking-[0.32em] text-[#D6A858]">
+              Metodo Dragon
             </p>
 
-            <h2 className="mt-6 text-6xl font-black uppercase leading-[0.78] tracking-[-0.08em] md:text-8xl lg:text-[7rem]">
-              Da ideia
-              <br />
-              ao corpo
+            <h2 className="mt-6 max-w-3xl text-5xl font-black uppercase leading-[0.9] md:text-7xl lg:text-8xl">
+              A tatuagem nasce antes da agulha.
             </h2>
           </div>
 
-          <p className="max-w-3xl text-2xl leading-10 text-[#080706]/64 md:text-4xl md:leading-[1.15]">
-            A tatuagem oriental precisa nascer junto da anatomia. Cada decisão
-            de desenho, escala e contraste existe para a peça funcionar na pele.
+          <p className="max-w-3xl text-xl leading-9 text-[#F4F0E8]/66 md:text-3xl md:leading-[1.22] lg:ml-auto">
+            O oriental exige ritmo, narrativa e respeito ao corpo. Cada linha e
+            planejada para a peca continuar forte quando vista de perto, em
+            movimento e a distancia.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-[0.58fr_0.42fr]">
-          <div className="relative min-h-[620px] overflow-hidden bg-[#080706]">
-            <Image
-              src={dragonTattooImages.dragonBack}
-              alt="Tatuagem oriental nas costas"
-              fill
-              sizes="(max-width: 1024px) 100vw, 58vw"
-              className="object-cover"
-            />
+        <div className="mt-16 grid gap-8 lg:grid-cols-[0.38fr_0.62fr] lg:items-stretch">
+          <div className="flex flex-col justify-between border-y border-[#F4F0E8]/12">
+            <div>
+              {methodItems.map((item) => (
+                <article
+                  key={item.number}
+                  className="grid gap-5 border-b border-[#F4F0E8]/12 py-7 md:grid-cols-[72px_1fr] last:border-b-0"
+                >
+                  <span className="text-[10px] font-black uppercase tracking-[0.26em] text-[#D6A858]">
+                    {item.number}
+                  </span>
 
-            <div className="absolute left-5 top-5 bg-[#F0F0F0] px-5 py-3 text-[10px] font-black uppercase tracking-[0.28em] text-[#080706] md:left-8 md:top-8">
-              Anatomy first
+                  <div>
+                    <h3 className="text-2xl font-black uppercase leading-none md:text-3xl">
+                      {item.title}
+                    </h3>
+                    <p className="mt-4 text-sm leading-7 text-[#F4F0E8]/56">
+                      {item.desc}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            <div className="border-t border-[#F4F0E8]/12 py-7">
+              <Link
+                href={dragonTattooBudgetWhatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center justify-center gap-3 bg-[#F4F0E8] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#080706] transition hover:bg-white"
+              >
+                Conversar sobre meu desenho
+                <ArrowUpRight
+                  size={16}
+                  weight="bold"
+                  className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </Link>
             </div>
           </div>
 
-          <div className="grid gap-6">
-            <div className="relative min-h-[280px] overflow-hidden bg-[#080706]">
+          <div className="grid gap-5 md:grid-cols-[0.64fr_0.36fr]">
+            <div className="dragon-photo-wrap relative h-[520px] overflow-hidden border border-[#F4F0E8]/12 bg-[#111] md:h-[720px]">
               <Image
-                src={dragonTattooImages.decal}
-                alt="Aplicação de decalque para tatuagem oriental"
+                src={dragonTattooImages.dragonBack}
+                alt="Mateus Silva tatuando um dragao oriental nas costas"
                 fill
-                sizes="(max-width: 1024px) 100vw, 42vw"
-                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="dragon-photo object-cover"
               />
-
-              <div className="absolute inset-0 bg-[#080706]/16" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#090706]/78 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 max-w-md border-t border-r border-[#F4F0E8]/14 bg-[#090706]/84 p-6 backdrop-blur md:p-8">
+                <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#D6A858]">
+                  Anatomy first
+                </p>
+                <p className="mt-4 text-xl font-black uppercase leading-tight md:text-2xl">
+                  Composicao feita para respirar junto com a musculatura.
+                </p>
+              </div>
             </div>
 
-            <div className="bg-[#080706] p-7 text-[#F4F0E8] md:p-10">
-              <p className="text-[10px] font-black uppercase tracking-[0.34em] text-[#D6B36A]">
-                Padrão Dragon
-              </p>
+            <div className="grid gap-5">
+              <div className="dragon-photo-wrap relative h-[300px] overflow-hidden border border-[#F4F0E8]/12 bg-[#111] md:h-[420px]">
+                <Image
+                  src={dragonTattooImages.decal}
+                  alt="Aplicacao de decalque para tatuagem oriental"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 24vw"
+                  className="dragon-photo object-cover"
+                />
+              </div>
 
-              <p className="mt-5 text-xl leading-9 text-[#F4F0E8]/70 md:text-2xl">
-                Não é sobre preencher espaço. É sobre construir uma peça com
-                presença, leitura e permanência.
-              </p>
+              <div className="border border-[#F4F0E8]/14 bg-[#F4F0E8]/6 p-7">
+                <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#D6A858]">
+                  Padrao Dragon
+                </p>
+                <p className="mt-5 text-lg leading-8 text-[#F4F0E8]/72">
+                  Nao e sobre preencher espaco. E sobre construir uma peca com
+                  presenca, leitura e permanencia.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div className="mt-6 grid border-t border-[#080706]/14 lg:grid-cols-4">
-          {methodItems.map((item) => (
-            <article
-              key={item.number}
-              className="group border-b border-[#080706]/14 py-8 lg:border-r lg:px-7 last:lg:border-r-0"
-            >
-              <span className="text-[10px] font-black uppercase tracking-[0.32em] text-[#9B7430]">
-                {item.number}
-              </span>
-
-              <h3 className="mt-14 text-3xl font-black uppercase leading-none tracking-[-0.04em] md:text-4xl">
-                {item.title}
-              </h3>
-
-              <p className="mt-5 text-sm leading-7 text-[#080706]/56">
-                {item.desc}
-              </p>
-            </article>
-          ))}
         </div>
       </div>
     </section>
