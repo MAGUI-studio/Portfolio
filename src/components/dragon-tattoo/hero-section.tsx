@@ -11,7 +11,7 @@ import {
 const heroSignals = [
   ["01", "Oriental autoral"],
   ["02", "Grandes fechamentos"],
-  ["03", "Fluxo anatomico"],
+  ["03", "Fluxo anatômico"],
 ];
 
 export function DragonTattooHeroSection() {
@@ -23,13 +23,13 @@ export function DragonTattooHeroSection() {
       <div className="absolute inset-0">
         <Image
           src={dragonTattooImages.heroImage}
-          alt="Mateus Silva e Stephanie Souza no estudio Dragon Tattoo"
+          alt="Mateus Silva e Stephanie Souza no estúdio Dragon Tattoo"
           fill
           preload
           sizes="100vw"
           className="object-cover object-[56%_center]"
         />
-        <div className="absolute inset-0 bg-linear-to-r from-[#070604] via-[#070604]/70 to-[#070604]/12" />
+        <div className="absolute inset-0 bg-linear-to-r from-[#070604] via-transparent to-[#070604]/12" />
         <div className="absolute inset-0 bg-linear-to-t from-[#070604] via-transparent to-[#070604]/54" />
       </div>
 
@@ -39,19 +39,19 @@ export function DragonTattooHeroSection() {
             <div className="mb-7 flex items-center gap-4">
               <span className="h-px w-14 bg-[#F4F0E8]/45" />
               <span className="text-[10px] font-black uppercase tracking-[0.28em] text-[#D6A858]">
-                Japanese tattoo studio
+                Japanese Tattoo Studio
               </span>
             </div>
 
             <h1 className="max-w-5xl text-5xl font-black uppercase leading-[0.88] sm:text-6xl md:text-7xl lg:text-[5.9rem] xl:text-[6.5rem] 2xl:text-[7.3rem]">
-              Oriental levado a serio.
+              Oriental levado a sério.
             </h1>
 
             <div className="mt-8 max-w-3xl border-l border-[#D6A858] pl-5 md:mt-10 md:pl-7">
               <p className="text-base leading-8 text-[#F4F0E8]/74 md:text-xl md:leading-9">
-                Tatuagens orientais autorais com dragoes, samurais, mascaras
+                Tatuagens orientais autorais com dragões, samurais, máscaras
                 Oni, serpentes, flores e ondas, criadas para acompanhar o corpo
-                com presenca, equilibrio e permanencia.
+                com presença, equilíbrio e permanência.
               </p>
             </div>
 
@@ -62,7 +62,7 @@ export function DragonTattooHeroSection() {
                 rel="noreferrer"
                 className="group inline-flex items-center justify-center gap-3 bg-[#F4F0E8] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#080706] transition hover:bg-white"
               >
-                Pedir orcamento
+                Pedir orçamento
                 <ArrowUpRight
                   size={16}
                   weight="bold"
@@ -76,7 +76,7 @@ export function DragonTattooHeroSection() {
                 rel="noreferrer"
                 className="group inline-flex items-center justify-center gap-3 border border-[#F4F0E8]/22 px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] transition hover:border-[#F4F0E8] hover:text-white"
               >
-                Marcar horario
+                Marcar horário
                 <ArrowUpRight
                   size={16}
                   weight="bold"
@@ -88,7 +88,7 @@ export function DragonTattooHeroSection() {
                 href="#portfolio"
                 className="inline-flex items-center justify-center gap-3 px-2 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#F4F0E8]/70 transition hover:text-[#D6A858]"
               >
-                Ver portfolio
+                Ver portfólio
                 <ArrowDown size={16} weight="bold" />
               </Link>
             </div>
@@ -97,14 +97,14 @@ export function DragonTattooHeroSection() {
           <div className="dragon-fade dragon-fade-delay hidden self-end lg:block">
             <div className="border-l border-[#F4F0E8]/14 pl-8">
               <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#D6A858]">
-                Studio code
+                Studio Code
               </p>
               <p className="mt-5 text-2xl font-black uppercase leading-none">
                 Desenho primeiro. Pele sempre.
               </p>
               <p className="mt-5 text-sm leading-7 text-[#F4F0E8]/62">
-                Cada projeto nasce de uma conversa sobre simbolo, escala,
-                anatomia e tempo de execucao.
+                Cada projeto nasce de uma conversa sobre símbolo, escala,
+                anatomia e tempo de execução.
               </p>
             </div>
           </div>

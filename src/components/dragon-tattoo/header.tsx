@@ -77,7 +77,7 @@ export function DragonTattooHeader() {
               rel="noreferrer"
               className="hidden h-[68px] items-center gap-3 px-5 text-[10px] font-black uppercase tracking-[0.18em] text-[#F4F0E8]/78 transition hover:text-[#F4F0E8] md:h-[78px] xl:inline-flex"
             >
-              Orcamento
+              Orçamento
               <ArrowUpRight size={14} weight="bold" />
             </Link>
 
@@ -177,7 +177,7 @@ export function DragonTattooHeader() {
               onClick={closeMenu}
               className="inline-flex items-center justify-center gap-3 bg-[#F4F0E8] px-5 py-4 text-center text-[11px] font-black uppercase tracking-[0.16em] text-[#080706] transition hover:bg-white"
             >
-              Pedir orcamento
+              Pedir orçamento
               <ArrowUpRight size={15} weight="bold" />
             </Link>
 
@@ -188,7 +188,7 @@ export function DragonTattooHeader() {
               onClick={closeMenu}
               className="inline-flex items-center justify-center gap-3 px-5 py-4 text-center text-[11px] font-black uppercase tracking-[0.16em] transition hover:text-white"
             >
-              Marcar horario
+              Marcar horário
               <ArrowUpRight size={15} weight="bold" />
             </Link>
           </div>

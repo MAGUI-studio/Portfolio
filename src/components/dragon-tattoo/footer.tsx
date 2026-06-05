@@ -29,14 +29,14 @@ export function DragonTattooFooter() {
             />
 
             <h2 className="mt-12 max-w-5xl text-5xl font-black uppercase leading-[0.9] md:text-7xl lg:text-8xl">
-              Seu projeto comeca em conversa.
+              Seu projeto começa em conversa.
             </h2>
           </div>
 
           <div className="max-w-md lg:ml-auto">
             <p className="text-lg leading-8 text-[#F4F0E8]/62">
-              Traga uma referencia, uma ideia ou apenas o conceito. A partir
-              disso, construimos uma composicao oriental autoral para a sua
+              Traga uma referência, uma ideia ou apenas o conceito. A partir
+              disso, construímos uma composição oriental autoral para a sua
               anatomia.
             </p>
 
@@ -47,7 +47,7 @@ export function DragonTattooFooter() {
                 rel="noreferrer"
                 className="group inline-flex items-center justify-center gap-3 bg-[#F4F0E8] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#080706] transition hover:bg-white"
               >
-                Solicitar orcamento
+                Solicitar orçamento
                 <ArrowUpRight
                   size={16}
                   weight="bold"
@@ -61,7 +61,7 @@ export function DragonTattooFooter() {
                 rel="noreferrer"
                 className="group inline-flex items-center justify-center gap-3 border border-[#F4F0E8]/18 px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] transition hover:border-[#F4F0E8] hover:text-white"
               >
-                Marcar horario
+                Marcar horário
                 <ArrowUpRight
                   size={16}
                   weight="bold"
@@ -87,7 +87,7 @@ export function DragonTattooFooter() {
 
           <div className="flex flex-col gap-3 text-[10px] font-black uppercase tracking-[0.22em] text-[#F4F0E8]/42 md:flex-row md:justify-end md:gap-10">
             <p>Atendimento sob consulta</p>
-            <p>Sao Jose dos Campos, SP</p>
+            <p>São José dos Campos, SP</p>
           </div>
         </div>
 

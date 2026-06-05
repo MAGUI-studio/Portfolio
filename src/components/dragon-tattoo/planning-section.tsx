@@ -8,38 +8,38 @@ import {
 
 const planningPoints = [
   {
-    title: "Simbolo",
-    text: "Dragao, Oni, Koi, samurai, flores ou ondas precisam ter intencao. O desenho parte do significado, nao do excesso.",
+    title: "Símbolo",
+    text: "Dragão, Oni, Koi, samurai, flores ou ondas precisam ter intenção. O desenho parte do significado, não do excesso.",
   },
   {
     title: "Corpo",
-    text: "A area escolhida muda ritmo, escala e leitura. Costas, braco, perna e peito pedem composicoes diferentes.",
+    text: "A área escolhida muda ritmo, escala e leitura. Costas, braço, perna e peito pedem composições diferentes.",
   },
   {
     title: "Tempo",
-    text: "Projetos grandes sao construidos por etapas, com desenho, decalque, linha, sombra e acabamento planejados.",
+    text: "Projetos grandes são construídos por etapas, com desenho, decalque, linha, sombra e acabamento planejados.",
   },
 ];
 
 export function DragonTattooPlanningSection() {
   return (
-    <section className="bg-[#F0F0F0] py-24 text-[#090706] md:py-32">
+    <section className="bg-[#F0F0F0] pb-24 text-[#090706]">
       <div className="mx-auto max-w-[1720px] px-5 md:px-10 lg:px-14">
-        <div className="grid gap-10 border-y border-[#090706]/14 py-12 lg:grid-cols-[0.58fr_0.42fr] lg:items-end">
+        <div className="grid gap-10  py-12 lg:grid-cols-2 lg:items-end">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.32em] text-[#9B7430]">
               Antes do desenho
             </p>
 
             <h2 className="mt-6 max-w-5xl text-5xl font-black uppercase leading-[0.9] md:text-7xl lg:text-8xl">
-              Uma peca forte comeca com criterio.
+              Uma peça forte começa com critério.
             </h2>
           </div>
 
           <div className="max-w-2xl lg:ml-auto">
-            <p className="text-xl leading-9 text-[#090706]/64 md:text-3xl md:leading-[1.2]">
-              O melhor projeto nao nasce de uma imagem pronta. Ele nasce da
-              conversa certa: o que voce quer carregar, onde a peca vive no
+            <p className="text-xl leading-9 md:text-3xl md:leading-[1.2]">
+              O melhor projeto não nasce de uma imagem pronta. Ele nasce da
+              conversa certa: o que você quer carregar, onde a peça vive no
               corpo e quanto impacto ela precisa ter.
             </p>
           </div>
@@ -68,9 +68,9 @@ export function DragonTattooPlanningSection() {
 
         <div className="grid gap-8 pt-10 lg:grid-cols-[1fr_auto] lg:items-center">
           <p className="max-w-3xl text-lg leading-8 text-[#090706]/62">
-            Se voce ainda nao sabe exatamente o desenho, tudo bem. A primeira
-            conversa serve para transformar referencia, historia e area do corpo
-            em uma direcao visual possivel.
+            Se você ainda não sabe exatamente o desenho, tudo bem. A primeira
+            conversa serve para transformar referência, história e área do corpo
+            em uma direção visual possível.
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row">
@@ -80,7 +80,7 @@ export function DragonTattooPlanningSection() {
               rel="noreferrer"
               className="group inline-flex items-center justify-center gap-3 bg-[#D6A858] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#090706] transition hover:bg-[#C7953C]"
             >
-              Enviar referencia
+              Enviar referência
               <ArrowUpRight
                 size={16}
                 weight="bold"

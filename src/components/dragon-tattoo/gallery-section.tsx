@@ -7,7 +7,7 @@ import { dragonTattooImages, dragonTattooScheduleWhatsapp } from "./data";
 const tattooGallery = [
   {
     src: dragonTattooImages.gallery01,
-    alt: "Tatuagem oriental realizada no estudio Dragon Tattoo",
+    alt: "Tatuagem oriental realizada no estúdio Dragon Tattoo",
   },
   {
     src: dragonTattooImages.gallery02,
@@ -19,7 +19,7 @@ const tattooGallery = [
   },
   {
     src: dragonTattooImages.gallery04,
-    alt: "Tatuagem oriental finalizada no estudio",
+    alt: "Tatuagem oriental finalizada no estúdio",
   },
 ];
 
@@ -30,10 +30,10 @@ export function DragonTattooGallerySection() {
       className="relative overflow-hidden bg-[#070604] py-24 text-[#F4F0E8] md:py-32"
     >
       <div className="mx-auto max-w-[1720px] px-5 md:px-10 lg:px-14">
-        <div className="mb-16 grid gap-10 lg:grid-cols-[0.5fr_0.5fr] lg:items-end">
+        <div className="mb-16 grid gap-10 lg:grid-cols-2 lg:items-end">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.32em] text-[#D6A858]">
-              Portfolio
+              Portfólio
             </p>
 
             <h2 className="mt-6 max-w-3xl text-5xl font-black uppercase leading-[0.9] md:text-7xl lg:text-8xl">
@@ -42,9 +42,9 @@ export function DragonTattooGallerySection() {
           </div>
 
           <div className="max-w-xl lg:ml-auto">
-            <p className="text-lg leading-8 text-[#F4F0E8]/62 md:text-xl md:leading-9">
-              Projetos executados no estudio. Cada composicao foi construida
-              para funcionar na anatomia especifica de quem a carrega.
+            <p className="text-lg leading-8 text-white md:text-xl md:leading-9">
+              Projetos executados no estúdio. Cada composição foi construída
+              para funcionar na anatomia específica de quem a carrega.
             </p>
 
             <Link
@@ -90,11 +90,11 @@ export function DragonTattooGallerySection() {
           <div className="flex h-[300px] items-end border border-[#F4F0E8]/12 bg-[#F4F0E8]/6 p-7 lg:col-span-5 lg:row-span-1 lg:h-full">
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#D6A858]">
-                Permanencia
+                Permanência
               </p>
 
               <p className="mt-5 max-w-md text-3xl font-black uppercase leading-tight">
-                Grandes escalas orientais pensadas para durar decadas.
+                Grandes escalas orientais pensadas para durar décadas.
               </p>
             </div>
           </div>
