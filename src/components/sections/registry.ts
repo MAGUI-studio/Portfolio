@@ -3,7 +3,6 @@ import Landing02NachoLibre from "@/components/sections/nacho-libre";
 import Landing03CosmeticoEssencial from "@/components/sections/vitta";
 import Landing05Pulse from "@/components/sections/pulse";
 import FlowLanding from "@/components/sections/flow";
-import Landing08ResidenciaAutoral from "@/components/sections/landing-08-residencia-autoral";
 import Landing09BagagemModular from "@/components/sections/landing-09-bagagem-modular";
 import BitesLanding from "@/components/sections/bites";
 import Landing11EnergiaSolarIndustrial from "@/components/sections/kroma";
@@ -20,6 +19,7 @@ import Landing21Shinobi from "@/components/sections/shinobi";
 import SayegLanding from "@/components/sections/sayeg";
 import PowervetLanding from "@/components/sections/powervet";
 import ArcoLanding from "@/components/sections/arco";
+import DragonTattooLanding from "@/components/sections/dragon-tattoo";
 
 export type SectionEntry = {
   aliases?: string[];
@@ -214,18 +214,19 @@ export const sections: SectionEntry[] = [
   },
   {
     index: "12",
-    slug: "atlas-living",
-    aliases: ["landing-08-residencia-autoral"],
-    title: "Atlas Living",
+    slug: "dragon-tattoo",
+    aliases: ["atlas-living", "landing-08-residencia-autoral"],
+    title: "Dragon Tattoo",
     description:
-      "Incorporadora de alto padrão com produto, processo e lançamento.",
+      "Estudio premium especializado em tatuagens orientais e japonesas autorais.",
     category: "Landing Pages",
-    industry: "Imobiliário",
-    projectType: "Incorporadora",
-    goal: "Apresentar lançamento, diferenciais e jornada de compra para alto padrão.",
-    tags: ["Lançamento", "Empreendimento", "Alto padrão"],
-    visible: false,
-    component: Landing08ResidenciaAutoral,
+    cardImage: "/images/dragon-tattoo/project-cover.webp",
+    industry: "Arte e tatuagem",
+    projectType: "Estudio de tatuagem oriental",
+    goal: "Comunicar exclusividade, tradicao oriental e excelencia tecnica para gerar consultas qualificadas.",
+    tags: ["Tatuagem oriental", "Arte japonesa", "Projetos autorais"],
+    visible: true,
+    component: DragonTattooLanding,
   },
   {
     index: "13",

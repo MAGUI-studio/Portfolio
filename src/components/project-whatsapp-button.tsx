@@ -1,6 +1,7 @@
 import { WhatsappButton } from "@/components/whatsapp-button";
 import { arcoWhatsappMessage, arcoWhatsappNumber } from "@/components/arco/data";
 import { bitesWhatsapp } from "@/components/bites/data";
+import { dragonTattooWhatsappMessage, dragonTattooPhoneNumber } from "@/components/dragon-tattoo/data";
 import { whatsapp as laCremeWhatsapp } from "@/components/la-creme/data";
 import { whatsappHref as kromaWhatsapp } from "@/components/kroma/data";
 import { nachoLibreWhatsapp } from "@/components/nacho-libre/data";
@@ -60,6 +61,10 @@ const projectWhatsappConfig: Record<string, ProjectWhatsappConfig> = {
     phoneNumber: defaultPhoneNumber,
     message:
       "Oi, Doca Norte. Quero entender melhor a solucao para operacao portuaria.",
+  },
+  "dragon-tattoo": {
+    phoneNumber: dragonTattooPhoneNumber,
+    message: dragonTattooWhatsappMessage,
   },
   kroma: parseWhatsappHref(kromaWhatsapp),
   "la-creme": parseWhatsappHref(laCremeWhatsapp),
