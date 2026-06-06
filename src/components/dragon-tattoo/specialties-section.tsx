@@ -16,7 +16,7 @@ export function DragonTattooSpecialtiesSection() {
       className="relative -mt-12 overflow-hidden bg-[#ffffff] pt-32 pb-32 text-[#090706] [clip-path:polygon(-1px_4rem,101%_0,101%_calc(100%_-_4rem),-1px_100%)] md:pt-36 md:pb-36"
     >
       <div className="relative mx-auto max-w-[1720px] px-5 md:px-10 lg:px-14">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
+        <div className="dragon-reveal grid gap-10 lg:grid-cols-2 lg:items-end">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.32em] text-[#9B7430]">
               Especialidades
@@ -38,7 +38,7 @@ export function DragonTattooSpecialtiesSection() {
               href={dragonTattooBudgetWhatsapp}
               target="_blank"
               rel="noreferrer"
-              className="group mt-8 inline-flex items-center justify-center gap-3 bg-[#D6A858] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#090706] transition hover:bg-[#C7953C]"
+              className="dragon-cta group mt-8 inline-flex items-center justify-center gap-3 bg-[#D6A858] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#090706] transition hover:bg-[#C7953C]"
             >
               Pedir orçamento do projeto
               <ArrowUpRight
@@ -50,7 +50,7 @@ export function DragonTattooSpecialtiesSection() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-5 lg:grid-cols-[0.54fr_0.46fr]">
+        <div className="dragon-reveal-late mt-16 grid gap-5 lg:grid-cols-[0.54fr_0.46fr]">
           <div className="dragon-photo-wrap relative h-140 overflow-hidden bg-[#090706] md:h-193">
             <Image
               src={dragonTattooImages.oniBack}
@@ -62,14 +62,14 @@ export function DragonTattooSpecialtiesSection() {
           </div>
 
           <div className="grid gap-5">
-            <div className="bg-[#090706] p-6 text-[#F4F0E8] flex  items-center justify-center">
+            <div className="dragon-hover-panel flex items-center justify-center bg-[#090706] p-6 text-[#F4F0E8]">
               <div className="grid gap-2 md:grid-cols-2">
                 {specialties.map((item, index) => (
                   <div
                     key={item}
-                    className="grid grid-cols-[38px_1fr] items-start border-b border-[#F4F0E8]/12 py-4"
+                    className="dragon-hover-panel grid grid-cols-[38px_1fr] items-start border-b border-[#F4F0E8]/12 py-4"
                   >
-                    <span className="text-[10px] font-black tracking-[0.18em] text-[#D6A858]">
+                    <span className="dragon-number text-[10px] font-black tracking-[0.18em] text-[#D6A858]">
                       {String(index + 1).padStart(2, "0")}
                     </span>
                     <span className="text-sm font-bold uppercase leading-6 text-[#F4F0E8]/76">
@@ -109,10 +109,7 @@ export function DragonTattooSpecialtiesSection() {
 
         <div className="mt-5 grid  md:grid-cols-2 lg:grid-cols-4">
           {projectFormats.map(([title, text]) => (
-            <article
-              key={title}
-              className="p-8 text-center"
-            >
+            <article key={title} className="p-8 text-center">
               <h3 className="text-2xl font-black uppercase leading-none md:text-3xl">
                 {title}
               </h3>

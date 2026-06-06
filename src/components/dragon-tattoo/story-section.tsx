@@ -36,7 +36,7 @@ export function DragonTattooStorySection() {
       <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-[#D6A858]/70 to-transparent" />
 
       <div className="mx-auto max-w-[1720px] px-5 md:px-10 lg:px-14">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-end">
+        <div className="dragon-reveal grid gap-10 lg:grid-cols-2 lg:items-end">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.32em] text-[#D6A858]">
               Método Dragon
@@ -60,9 +60,9 @@ export function DragonTattooStorySection() {
               {methodItems.map((item) => (
                 <article
                   key={item.number}
-                  className="grid gap-5 border-b border-[#F4F0E8]/12 py-7 md:grid-cols-[72px_1fr] last:border-b-0"
+                  className="dragon-hover-panel grid gap-5 border-b border-[#F4F0E8]/12 py-7 md:grid-cols-[72px_1fr] last:border-b-0"
                 >
-                  <span className="text-[10px] font-black uppercase tracking-[0.26em] text-[#D6A858]">
+                  <span className="dragon-number text-[10px] font-black uppercase tracking-[0.26em] text-[#D6A858]">
                     {item.number}
                   </span>
 
@@ -83,7 +83,7 @@ export function DragonTattooStorySection() {
                 href={dragonTattooBudgetWhatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center w-full justify-center gap-3 bg-[#F4F0E8] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#080706] transition hover:bg-white"
+                className="dragon-cta group inline-flex w-full items-center justify-center gap-3 bg-[#F4F0E8] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#080706] transition hover:bg-white"
               >
                 Conversar sobre meu desenho
                 <ArrowUpRight
@@ -95,7 +95,7 @@ export function DragonTattooStorySection() {
             </div>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="dragon-reveal-late grid gap-5 md:grid-cols-2">
             <div className="grid gap-5">
               <div className="dragon-photo-wrap relative h-[520px] overflow-hidden md:h-[720px]">
                 <Image

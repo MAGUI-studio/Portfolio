@@ -45,7 +45,7 @@ export function DragonTattooFooter() {
                 href={dragonTattooBudgetWhatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center justify-center gap-3 bg-[#F4F0E8] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#080706] transition hover:bg-white"
+                className="dragon-cta group inline-flex items-center justify-center gap-3 bg-[#F4F0E8] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#080706] transition hover:bg-white"
               >
                 Solicitar orçamento
                 <ArrowUpRight
@@ -59,7 +59,7 @@ export function DragonTattooFooter() {
                 href={dragonTattooScheduleWhatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center justify-center gap-3 border border-[#F4F0E8]/18 px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] transition hover:border-[#F4F0E8] hover:text-white"
+                className="dragon-cta group inline-flex items-center justify-center gap-3 border border-[#F4F0E8]/18 px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] transition hover:border-[#F4F0E8] hover:text-white"
               >
                 Marcar horário
                 <ArrowUpRight
@@ -78,7 +78,7 @@ export function DragonTattooFooter() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[10px] font-black uppercase tracking-[0.24em] text-[#F4F0E8]/52 transition hover:text-[#D6A858]"
+                className="dragon-text-link text-[10px] font-black uppercase tracking-[0.24em] text-[#F4F0E8]/52 transition hover:text-[#D6A858]"
               >
                 {item.label}
               </Link>
@@ -104,7 +104,7 @@ export function DragonTattooFooter() {
                 href="https://magui.studio"
                 target="_blank"
                 rel="noreferrer"
-                className="text-[#F4F0E8] transition hover:text-[#D6A858]"
+                className="dragon-text-link text-[#F4F0E8] transition hover:text-[#D6A858]"
               >
                 MAGUI.studio
               </Link>
@@ -112,7 +112,7 @@ export function DragonTattooFooter() {
 
             <span className="hidden h-3 w-px bg-[#F4F0E8]/18 md:block" />
 
-            <ScrollTopLink className="cursor-pointer text-[#F4F0E8] transition hover:text-[#D6A858]">
+            <ScrollTopLink className="dragon-text-link cursor-pointer text-[#F4F0E8] transition hover:text-[#D6A858]">
               Voltar ao topo
             </ScrollTopLink>
           </div>

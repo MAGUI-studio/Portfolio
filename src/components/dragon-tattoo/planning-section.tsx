@@ -25,7 +25,7 @@ export function DragonTattooPlanningSection() {
   return (
     <section className="relative -mt-20 overflow-hidden bg-[#ffffff] pt-28 pb-32 text-[#090706] [clip-path:polygon(-1px_4rem,101%_0,101%_calc(100%_-_4rem),-1px_100%)] md:pt-32 md:pb-36">
       <div className="mx-auto max-w-[1720px] px-5 md:px-10 lg:px-14">
-        <div className="grid gap-10  py-12 lg:grid-cols-2 lg:items-end">
+        <div className="dragon-reveal grid gap-10 py-12 lg:grid-cols-2 lg:items-end">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.32em] text-[#9B7430]">
               Antes do desenho
@@ -49,9 +49,9 @@ export function DragonTattooPlanningSection() {
           {planningPoints.map((item, index) => (
             <article
               key={item.title}
-              className="border-t border-[#090706]/14 py-8 lg:border-r lg:px-8 last:lg:border-r-0"
+              className="dragon-hover-panel border-t border-[#090706]/14 py-8 lg:border-r lg:px-8 last:lg:border-r-0"
             >
-              <span className="text-[10px] font-black uppercase tracking-[0.26em] text-[#9B7430]">
+              <span className="dragon-number text-[10px] font-black uppercase tracking-[0.26em] text-[#9B7430]">
                 0{index + 1}
               </span>
 
@@ -66,7 +66,7 @@ export function DragonTattooPlanningSection() {
           ))}
         </div>
 
-        <div className="grid gap-8 pt-10 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div className="dragon-reveal-late grid gap-8 pt-10 lg:grid-cols-[1fr_auto] lg:items-center">
           <p className="max-w-3xl text-lg leading-8 text-[#090706]/62">
             Se você ainda não sabe exatamente o desenho, tudo bem. A primeira
             conversa serve para transformar referência, história e área do corpo
@@ -78,7 +78,7 @@ export function DragonTattooPlanningSection() {
               href={dragonTattooBudgetWhatsapp}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center justify-center gap-3 bg-[#D6A858] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#090706] transition hover:bg-[#C7953C]"
+              className="dragon-cta group inline-flex items-center justify-center gap-3 bg-[#D6A858] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#090706] transition hover:bg-[#C7953C]"
             >
               Enviar referência
               <ArrowUpRight
@@ -92,7 +92,7 @@ export function DragonTattooPlanningSection() {
               href={dragonTattooScheduleWhatsapp}
               target="_blank"
               rel="noreferrer"
-              className="group inline-flex items-center justify-center gap-3 px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#090706] transition hover:text-[#9B7430]"
+              className="dragon-text-link group inline-flex items-center justify-center gap-3 px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#090706] transition hover:text-[#9B7430]"
             >
               Marcar conversa
               <ArrowUpRight

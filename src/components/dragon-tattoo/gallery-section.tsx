@@ -30,7 +30,7 @@ export function DragonTattooGallerySection() {
       className="relative overflow-hidden bg-[#070604] py-24 text-[#F4F0E8] md:py-32"
     >
       <div className="mx-auto max-w-[1720px] px-5 md:px-10 lg:px-14">
-        <div className="mb-16 grid gap-10 lg:grid-cols-2 lg:items-end">
+        <div className="dragon-reveal mb-16 grid gap-10 lg:grid-cols-2 lg:items-end">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.32em] text-[#D6A858]">
               Portfólio
@@ -51,7 +51,7 @@ export function DragonTattooGallerySection() {
               href={dragonTattooScheduleWhatsapp}
               target="_blank"
               rel="noreferrer"
-              className="group mt-8 inline-flex items-center justify-center gap-3 border border-[#F4F0E8]/22 px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#F4F0E8] transition hover:bg-[#F4F0E8] hover:text-[#080706]"
+              className="dragon-cta group mt-8 inline-flex items-center justify-center gap-3 border border-[#F4F0E8]/22 px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#F4F0E8] transition hover:bg-[#F4F0E8] hover:text-[#080706]"
             >
               Ver disponibilidade
               <ArrowUpRight
@@ -63,7 +63,7 @@ export function DragonTattooGallerySection() {
           </div>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-12 lg:grid-rows-[210px_210px_210px_210px]">
+        <div className="dragon-reveal-late grid gap-5 lg:grid-cols-12 lg:grid-rows-[210px_210px_210px_210px]">
           <div className="dragon-photo-wrap relative h-[420px] overflow-hidden border border-[#F4F0E8]/12 bg-[#111] lg:col-span-7 lg:row-span-3 lg:h-full">
             <Image
               src={tattooGallery[0].src}
@@ -87,7 +87,7 @@ export function DragonTattooGallerySection() {
             />
           </div>
 
-          <div className="flex h-[300px] items-end border border-[#F4F0E8]/12 bg-[#F4F0E8]/6 p-7 lg:col-span-5 lg:row-span-1 lg:h-full">
+          <div className="dragon-hover-panel flex h-[300px] items-end border border-[#F4F0E8]/12 bg-[#F4F0E8]/6 p-7 lg:col-span-5 lg:row-span-1 lg:h-full">
             <div>
               <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#D6A858]">
                 Permanência

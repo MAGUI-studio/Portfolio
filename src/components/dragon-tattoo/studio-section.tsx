@@ -6,7 +6,6 @@ import {
   dragonTattooImages,
   dragonTattooScheduleWhatsapp,
   dragonTattooVisitWhatsapp,
-  values,
 } from "./data";
 
 const studioPhotos = [
@@ -31,7 +30,7 @@ export function DragonTattooStudioSection() {
       className="relative overflow-hidden bg-[#090706] pt-24 text-[#F4F0E8]"
     >
       <div className="mx-auto max-w-[1720px] px-5 md:px-10 lg:px-14">
-        <div className="grid gap-10 pb-14 lg:grid-cols-[0.54fr_0.46fr] lg:items-end">
+        <div className="dragon-reveal grid gap-10 pb-14 lg:grid-cols-[0.54fr_0.46fr] lg:items-end">
           <div>
             <p className="text-[10px] font-black uppercase tracking-[0.32em] text-[#D6A858]">
               O estúdio
@@ -54,7 +53,7 @@ export function DragonTattooStudioSection() {
                 href={dragonTattooVisitWhatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center justify-center gap-3 bg-[#F4F0E8] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#080706] transition hover:bg-white"
+                className="dragon-cta group inline-flex items-center justify-center gap-3 bg-[#F4F0E8] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#080706] transition hover:bg-white"
               >
                 Agendar visita
                 <ArrowUpRight
@@ -68,7 +67,7 @@ export function DragonTattooStudioSection() {
                 href={dragonTattooScheduleWhatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center justify-center gap-3 border border-[#F4F0E8]/18 px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] transition hover:border-[#F4F0E8] hover:text-white"
+                className="dragon-cta group inline-flex items-center justify-center gap-3 border border-[#F4F0E8]/18 px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] transition hover:border-[#F4F0E8] hover:text-white"
               >
                 Marcar horário
                 <ArrowUpRight
@@ -81,9 +80,9 @@ export function DragonTattooStudioSection() {
           </div>
         </div>
 
-        <div className="mt-8 grid gap-5 lg:grid-cols-[0.28fr_0.44fr_0.28fr]">
+        <div className="dragon-reveal-late mt-8 grid gap-5 lg:grid-cols-[0.28fr_0.44fr_0.28fr]">
           <div className="grid gap-5">
-            <div className="border border-[#F4F0E8]/12 p-6">
+            <div className="dragon-hover-panel border border-[#F4F0E8]/12 p-6">
               <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#D6A858]">
                 Chegada
               </p>
@@ -124,7 +123,7 @@ export function DragonTattooStudioSection() {
               />
             </div>
 
-            <div className="border border-[#F4F0E8]/12 p-6">
+            <div className="dragon-hover-panel border border-[#F4F0E8]/12 p-6">
               <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#D6A858]">
                 Experiência
               </p>

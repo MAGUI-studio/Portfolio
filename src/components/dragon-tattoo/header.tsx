@@ -42,7 +42,7 @@ export function DragonTattooHeader() {
           <Link
             href="#inicio"
             aria-label="Dragon Tattoo, voltar ao inicio"
-            className="flex h-[68px] items-center px-4 transition-opacity hover:opacity-75 md:h-[78px] md:px-6"
+            className="dragon-logo-hover flex h-[68px] items-center px-4 transition-opacity hover:opacity-75 md:h-[78px] md:px-6"
             onClick={closeMenu}
           >
             <Image
@@ -63,7 +63,7 @@ export function DragonTattooHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex h-full items-center px-4 text-[10px] font-black uppercase tracking-[0.18em] text-[#F4F0E8]/62 transition hover:text-[#F4F0E8]"
+                className="dragon-header-link flex h-full items-center px-4 text-[10px] font-black uppercase tracking-[0.18em] text-[#F4F0E8]/62 transition hover:text-[#F4F0E8]"
               >
                 {item.label}
               </Link>
@@ -75,7 +75,7 @@ export function DragonTattooHeader() {
               href={dragonTattooBudgetWhatsapp}
               target="_blank"
               rel="noreferrer"
-              className="hidden h-[68px] items-center gap-3 px-5 text-[10px] font-black uppercase tracking-[0.18em] text-[#F4F0E8]/78 transition hover:text-[#F4F0E8] md:h-[78px] xl:inline-flex"
+              className="dragon-header-link hidden h-[68px] items-center gap-3 px-5 text-[10px] font-black uppercase tracking-[0.18em] text-[#F4F0E8]/78 transition hover:text-[#F4F0E8] md:h-[78px] xl:inline-flex"
             >
               Orçamento
               <ArrowUpRight size={14} weight="bold" />
@@ -85,7 +85,7 @@ export function DragonTattooHeader() {
               href={dragonTattooScheduleWhatsapp}
               target="_blank"
               rel="noreferrer"
-              className="hidden h-[68px] items-center gap-3 px-5 text-[10px] font-black uppercase tracking-[0.18em] text-[#F4F0E8] transition hover:text-white md:h-[78px] lg:inline-flex"
+              className="dragon-header-link hidden h-[68px] items-center gap-3 px-5 text-[10px] font-black uppercase tracking-[0.18em] text-[#F4F0E8] transition hover:text-white md:h-[78px] lg:inline-flex"
             >
               Agendar
               <ArrowUpRight size={14} weight="bold" />
@@ -157,12 +157,12 @@ export function DragonTattooHeader() {
                 key={item.href}
                 href={item.href}
                 onClick={closeMenu}
-                className="group flex items-center justify-between py-6 transition hover:text-[#F4F0E8]/72"
+                className="dragon-hover-panel group flex items-center justify-between py-6 transition hover:text-[#F4F0E8]/72"
               >
                 <span className="text-4xl font-black uppercase leading-none sm:text-5xl">
                   {item.label}
                 </span>
-                <span className="text-[10px] font-black tracking-[0.22em] text-[#D6A858]">
+                <span className="dragon-number text-[10px] font-black tracking-[0.22em] text-[#D6A858]">
                   0{index + 1}
                 </span>
               </Link>
@@ -175,7 +175,7 @@ export function DragonTattooHeader() {
               target="_blank"
               rel="noreferrer"
               onClick={closeMenu}
-              className="inline-flex items-center justify-center gap-3 bg-[#F4F0E8] px-5 py-4 text-center text-[11px] font-black uppercase tracking-[0.16em] text-[#080706] transition hover:bg-white"
+              className="dragon-cta inline-flex items-center justify-center gap-3 bg-[#F4F0E8] px-5 py-4 text-center text-[11px] font-black uppercase tracking-[0.16em] text-[#080706] transition hover:bg-white"
             >
               Pedir orçamento
               <ArrowUpRight size={15} weight="bold" />
@@ -186,7 +186,7 @@ export function DragonTattooHeader() {
               target="_blank"
               rel="noreferrer"
               onClick={closeMenu}
-              className="inline-flex items-center justify-center gap-3 px-5 py-4 text-center text-[11px] font-black uppercase tracking-[0.16em] transition hover:text-white"
+              className="dragon-text-link inline-flex items-center justify-center gap-3 px-5 py-4 text-center text-[11px] font-black uppercase tracking-[0.16em] transition hover:text-white"
             >
               Marcar horário
               <ArrowUpRight size={15} weight="bold" />

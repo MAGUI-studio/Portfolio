@@ -8,12 +8,6 @@ import {
   dragonTattooScheduleWhatsapp,
 } from "./data";
 
-const heroSignals = [
-  ["01", "Oriental autoral"],
-  ["02", "Grandes fechamentos"],
-  ["03", "Fluxo anatômico"],
-];
-
 export function DragonTattooHeroSection() {
   return (
     <section
@@ -60,7 +54,7 @@ export function DragonTattooHeroSection() {
                 href={dragonTattooBudgetWhatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center justify-center gap-3 bg-[#F4F0E8] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#080706] transition hover:bg-white"
+                className="dragon-cta group inline-flex items-center justify-center gap-3 bg-[#F4F0E8] px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#080706] transition hover:bg-white"
               >
                 Pedir orçamento
                 <ArrowUpRight
@@ -74,7 +68,7 @@ export function DragonTattooHeroSection() {
                 href={dragonTattooScheduleWhatsapp}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center justify-center gap-3 border border-[#F4F0E8]/22 px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] transition hover:border-[#F4F0E8] hover:text-white"
+                className="dragon-cta group inline-flex items-center justify-center gap-3 border border-[#F4F0E8]/22 px-7 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] transition hover:border-[#F4F0E8] hover:text-white"
               >
                 Marcar horário
                 <ArrowUpRight
@@ -86,7 +80,7 @@ export function DragonTattooHeroSection() {
 
               <Link
                 href="#portfolio"
-                className="inline-flex items-center justify-center gap-3 px-2 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#F4F0E8]/70 transition hover:text-[#D6A858]"
+                className="dragon-text-link inline-flex items-center justify-center gap-3 px-2 py-4 text-center text-[11px] font-black uppercase tracking-[0.18em] text-[#F4F0E8]/70 transition hover:text-[#D6A858]"
               >
                 Ver portfólio
                 <ArrowDown size={16} weight="bold" />
@@ -95,7 +89,7 @@ export function DragonTattooHeroSection() {
           </div>
 
           <div className="dragon-fade dragon-fade-delay hidden self-end lg:block">
-            <div className="border-l border-[#F4F0E8]/14 pl-8">
+            <div className="dragon-hover-panel border-l border-[#F4F0E8]/14 pl-8">
               <p className="text-[10px] font-black uppercase tracking-[0.28em] text-[#D6A858]">
                 Studio Code
               </p>
@@ -108,22 +102,6 @@ export function DragonTattooHeroSection() {
               </p>
             </div>
           </div>
-        </div>
-
-        <div className="mt-12 grid border-y border-[#F4F0E8]/12 md:grid-cols-3 lg:max-w-5xl">
-          {heroSignals.map(([number, label]) => (
-            <div
-              key={number}
-              className="grid grid-cols-[48px_1fr] items-center gap-4 border-b border-[#F4F0E8]/12 py-5 md:border-b-0 md:border-r md:px-5 last:md:border-r-0"
-            >
-              <span className="text-[10px] font-black uppercase tracking-[0.24em] text-[#D6A858]">
-                {number}
-              </span>
-              <span className="text-sm font-black uppercase tracking-[0.12em] text-[#F4F0E8]/78">
-                {label}
-              </span>
-            </div>
-          ))}
         </div>
       </div>
     </section>
