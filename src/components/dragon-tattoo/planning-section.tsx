@@ -23,7 +23,7 @@ const planningPoints = [
 
 export function DragonTattooPlanningSection() {
   return (
-    <section className="relative -mt-20 overflow-hidden bg-[#F0F0F0] pt-28 pb-32 text-[#090706] [clip-path:polygon(0_4rem,100%_0,100%_calc(100%_-_4rem),0_100%)] md:pt-32 md:pb-36">
+    <section className="relative -mt-20 overflow-hidden bg-[#ffffff] pt-28 pb-32 text-[#090706] [clip-path:polygon(-1px_4rem,101%_0,101%_calc(100%_-_4rem),-1px_100%)] md:pt-32 md:pb-36">
       <div className="mx-auto max-w-[1720px] px-5 md:px-10 lg:px-14">
         <div className="grid gap-10  py-12 lg:grid-cols-2 lg:items-end">
           <div>
