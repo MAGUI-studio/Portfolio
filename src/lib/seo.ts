@@ -4,7 +4,7 @@ import type { SectionEntry } from "@/components/sections/registry";
 
 export const siteConfig = {
   name: "MAGUI.studio",
-  url: "https://magui.studio",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio.magui.studio",
   title: "MAGUI.studio | Landing pages premium para marcas digitais",
   description:
     "Portfólio de landing pages autorais criadas pela MAGUI.studio, com direção visual, design responsivo e desenvolvimento web focado em conversão.",

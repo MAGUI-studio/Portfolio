@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 import { visibleSections } from "@/components/sections/registry";
+import { siteConfig } from "@/lib/seo";
 
-const siteUrl = "https://magui.studio";
+const siteUrl = siteConfig.url;
 const lastModified = new Date();
 
 export default function sitemap(): MetadataRoute.Sitemap {
