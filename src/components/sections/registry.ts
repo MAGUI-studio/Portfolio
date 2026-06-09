@@ -3,7 +3,6 @@ import Landing02NachoLibre from "@/components/sections/nacho-libre";
 import Landing03CosmeticoEssencial from "@/components/sections/vitta";
 import Landing05Pulse from "@/components/sections/pulse";
 import FlowLanding from "@/components/sections/flow";
-import Landing09BagagemModular from "@/components/sections/landing-09-bagagem-modular";
 import BitesLanding from "@/components/sections/bites";
 import Landing11EnergiaSolarIndustrial from "@/components/sections/kroma";
 import Landing12EducacaoExecutiva from "@/components/sections/landing-12-educacao-executiva";
@@ -20,6 +19,7 @@ import SayegLanding from "@/components/sections/sayeg";
 import PowervetLanding from "@/components/sections/powervet";
 import ArcoLanding from "@/components/sections/arco";
 import DragonTattooLanding from "@/components/sections/dragon-tattoo";
+import HavenLanding from "@/components/sections/haven";
 
 export type SectionEntry = {
   aliases?: string[];
@@ -230,18 +230,18 @@ export const sections: SectionEntry[] = [
   },
   {
     index: "13",
-    slug: "norte-prive",
-    aliases: ["landing-09-bagagem-modular"],
-    title: "Norte Prive",
+    slug: "haven",
+    title: "HAVEN",
     description:
-      "Agência de viagens privadas com curadoria e operação completa.",
+      "Espaco especializado em cortes de cabelo e cuidados pessoais para pessoas autistas e neurodivergentes.",
     category: "Landing Pages",
-    industry: "Turismo",
-    projectType: "Viagens privadas",
-    goal: "Transmitir curadoria, segurança e exclusividade para viagens sob medida.",
-    tags: ["Viagens", "Luxo", "Curadoria"],
-    visible: false,
-    component: Landing09BagagemModular,
+    cardImage: "/images/haven/project-cover.webp",
+    industry: "Cuidados pessoais",
+    projectType: "Espaco inclusivo de beleza",
+    goal: "Comunicar acolhimento, previsibilidade e atendimento humanizado para gerar confianca e agendamentos.",
+    tags: ["Inclusao", "Autismo", "Atendimento humanizado"],
+    visible: true,
+    component: HavenLanding,
   },
   {
     index: "14",
@@ -370,3 +370,4 @@ export const sectionMap = Object.fromEntries(
     ...(section.aliases ?? []).map((alias) => [alias, section]),
   ]),
 ) as Record<string, SectionEntry>;
+

@@ -1,11 +1,18 @@
 import { WhatsappButton } from "@/components/whatsapp-button";
 import { arcoWhatsappMessage, arcoWhatsappNumber } from "@/components/arco/data";
 import { bitesWhatsapp } from "@/components/bites/data";
-import { dragonTattooWhatsappMessage, dragonTattooPhoneNumber } from "@/components/dragon-tattoo/data";
+import {
+  dragonTattooPhoneNumber,
+  dragonTattooWhatsappMessage,
+} from "@/components/dragon-tattoo/data";
+import { havenWhatsappMessage, havenWhatsappNumber } from "@/components/haven/data";
 import { whatsapp as laCremeWhatsapp } from "@/components/la-creme/data";
 import { whatsappHref as kromaWhatsapp } from "@/components/kroma/data";
 import { nachoLibreWhatsapp } from "@/components/nacho-libre/data";
-import { powervetWhatsappMessage, powervetWhatsappNumber } from "@/components/powervet/data";
+import {
+  powervetWhatsappMessage,
+  powervetWhatsappNumber,
+} from "@/components/powervet/data";
 import { pulseWhatsapp } from "@/components/pulse/data";
 import { sayegWhatsappMessage, sayegWhatsappNumber } from "@/components/sayeg/data";
 import { shinobiWhatsappHref } from "@/components/shinobi/data";
@@ -45,12 +52,12 @@ const projectWhatsappConfig: Record<string, ProjectWhatsappConfig> = {
   flow: {
     phoneNumber: defaultPhoneNumber,
     message:
-      "Oi, FLOW. Quero orientação para montar ou evoluir meu aquário marinho.",
+      "Oi, FLOW. Quero orientacao para montar ou evoluir meu aquario marinho.",
   },
   "cifrasec": {
     phoneNumber: defaultPhoneNumber,
     message:
-      "Oi, CifraSec. Quero falar sobre segurança digital para minha empresa.",
+      "Oi, CifraSec. Quero falar sobre seguranca digital para minha empresa.",
   },
   "cume-vinhos": {
     phoneNumber: defaultPhoneNumber,
@@ -66,6 +73,10 @@ const projectWhatsappConfig: Record<string, ProjectWhatsappConfig> = {
     phoneNumber: dragonTattooPhoneNumber,
     message: dragonTattooWhatsappMessage,
   },
+  haven: {
+    phoneNumber: havenWhatsappNumber,
+    message: havenWhatsappMessage,
+  },
   kroma: parseWhatsappHref(kromaWhatsapp),
   "la-creme": parseWhatsappHref(laCremeWhatsapp),
   "nacho-libre": parseWhatsappHref(nachoLibreWhatsapp),
@@ -73,11 +84,6 @@ const projectWhatsappConfig: Record<string, ProjectWhatsappConfig> = {
     phoneNumber: defaultPhoneNumber,
     message:
       "Oi, Nivela Cold. Quero falar sobre logistica fria para minha operacao.",
-  },
-  "norte-prive": {
-    phoneNumber: defaultPhoneNumber,
-    message:
-      "Oi, Norte Prive. Quero receber informacoes sobre a experiência residencial.",
   },
   "novera-labs": {
     phoneNumber: defaultPhoneNumber,
@@ -97,7 +103,7 @@ const projectWhatsappConfig: Record<string, ProjectWhatsappConfig> = {
   "reforma-atelier": {
     phoneNumber: defaultPhoneNumber,
     message:
-      "Oi, Reforma Atelier. Quero falar sobre curadoria, reparo ou redesign de peças.",
+      "Oi, Reforma Atelier. Quero falar sobre curadoria, reparo ou redesign de pecas.",
   },
   "sayeg-beauty-studio": {
     phoneNumber: sayegWhatsappNumber,
@@ -107,7 +113,7 @@ const projectWhatsappConfig: Record<string, ProjectWhatsappConfig> = {
   "terrametria": {
     phoneNumber: defaultPhoneNumber,
     message:
-      "Oi, TerraMetria. Quero falar sobre agricultura de precisão e dados de campo.",
+      "Oi, TerraMetria. Quero falar sobre agricultura de precisao e dados de campo.",
   },
   vitta: parseWhatsappHref(vittaLinks.whatsapp),
 };
