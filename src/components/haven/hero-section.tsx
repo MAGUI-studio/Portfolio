@@ -54,7 +54,7 @@ export function HavenHeroSection() {
                 href={havenWhatsappHref}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center gap-3 bg-[#14283D] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[#607768]"
+                className="group inline-flex items-center gap-3 bg-[#14283D] px-6 py-4 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#1F446A]"
               >
                 Agendar atendimento
                 <ArrowUpRight
@@ -63,8 +63,8 @@ export function HavenHeroSection() {
                 />
               </Link>
               <Link
-                href="#processo"
-                className="inline-flex items-center gap-3 border border-white/18 px-6 py-4 text-sm font-semibold text-white transition hover:bg-white/10"
+                href="#atendimentos"
+                className="inline-flex items-center gap-3 border border-white/18 px-6 py-4 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-white/10"
               >
                 Como funciona
               </Link>
@@ -94,7 +94,7 @@ export function HavenHeroSection() {
         <HavenReveal delay={0.24} className="mt-16 flex justify-end">
           <Link
             href="#sobre"
-            className="inline-flex items-center gap-3 text-sm font-medium text-white/72 transition hover:text-white"
+            className="inline-flex items-center gap-3 text-sm font-medium text-white/72 transition duration-300 hover:translate-y-0.5 hover:text-white"
           >
             Explorar a pagina
             <ArrowDown size={16} />

@@ -7,14 +7,14 @@ export function HavenTeamSection() {
   return (
     <section className="bg-[#f5f5f5] py-24 text-[#14283D] md:py-28">
       <div className="grid gap-12 xl:grid-cols-2 xl:items-center">
-        <HavenImageReveal className="relative max-w-4xl overflow-hidden rounded-r-full bg-[#D8E1D6]">
+        <HavenImageReveal className="relative max-w-4xl overflow-hidden rounded-r-full bg-[#D8E1D6] transition-transform duration-500 hover:-translate-y-1">
           <Image
             src={havenImages.equipe}
             alt="Equipe da Haven reunida"
             width={1600}
             height={1200}
             sizes="(min-width: 1280px) 34vw, 100vw"
-            className="aspect-[1.02] w-full object-cover"
+            className="aspect-[1.02] w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
           />
         </HavenImageReveal>
 
@@ -59,14 +59,14 @@ export function HavenTeamSection() {
           </HavenReveal>
         </div>
 
-        <HavenImageReveal className="relative max-w-4xl overflow-hidden rounded-l-full bg-[#D8E1D6]">
+        <HavenImageReveal className="relative max-w-4xl overflow-hidden rounded-l-full bg-[#D8E1D6] transition-transform duration-500 hover:-translate-y-1">
           <Image
             src={havenImages.fachada}
             alt="Fachada da Haven"
             width={1600}
             height={1200}
             sizes="(min-width: 1280px) 34vw, 100vw"
-            className="aspect-[1.02] w-full object-cover"
+            className="aspect-[1.02] w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
           />
         </HavenImageReveal>
       </div>

@@ -36,7 +36,7 @@ export function HavenVisitSection() {
             href={havenWhatsappHref}
             target="_blank"
             rel="noreferrer"
-            className="mt-8 inline-flex items-center gap-3 bg-[#14283D] px-6 py-4 text-sm font-semibold text-white transition hover:bg-[#607768]"
+            className="mt-8 inline-flex items-center gap-3 bg-[#14283D] px-6 py-4 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-[#1F446A]"
           >
             Agendar visita
             <ArrowUpRight size={16} />
@@ -44,7 +44,7 @@ export function HavenVisitSection() {
         </HavenReveal>
 
         <HavenImageReveal className="justify-self-end">
-          <div className="max-w-sm overflow-hidden rounded-[2rem] bg-white text-[#14283D] shadow-[0_24px_80px_rgba(0,0,0,0.16)]">
+          <div className="max-w-sm overflow-hidden rounded-[2rem] bg-white text-[#14283D] shadow-[0_24px_80px_rgba(0,0,0,0.16)] transition-transform duration-300 hover:-translate-y-1">
             <Image
               src={havenImages.localizacao}
               alt="Localizacao da Haven"

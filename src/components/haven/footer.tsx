@@ -26,7 +26,7 @@ export function HavenFooter() {
             href={havenWhatsappHref}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex w-fit items-center gap-2 rounded-full border border-white/18 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/16"
+            className="inline-flex w-fit items-center gap-2 rounded-full border border-white/18 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1F446A]"
           >
             Falar com a Haven
             <ArrowUpRight size={15} />
@@ -83,13 +83,13 @@ export function HavenFooter() {
                 href="https://magui.studio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-white hover:text-[#EEF2EC]"
+                className="font-semibold text-white hover:text-[#C9D8EA]"
               >
                 MAGUI.studio
               </Link>
             </span>
             <span className="text-white/24">|</span>
-            <ScrollTopLink className="text-white transition-colors hover:text-[#EEF2EC]">
+            <ScrollTopLink className="text-white transition-colors hover:text-[#C9D8EA]">
               Voltar ao topo
             </ScrollTopLink>
           </div>

@@ -43,7 +43,7 @@ export function HavenHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium transition hover:text-[#D6E1D4]"
+                className="text-sm font-medium transition opacity-90 hover:opacity-100"
               >
                 {item.label}
               </Link>
@@ -55,7 +55,7 @@ export function HavenHeader() {
               href={havenWhatsappHref}
               target="_blank"
               rel="noreferrer"
-              className="hidden items-center gap-2 text-sm font-semibold text-white transition hover:text-[#D6E1D4] md:inline-flex"
+              className="hidden items-center gap-2 text-sm font-semibold text-white transition opacity-90 hover:opacity-100 md:inline-flex"
             >
               Agendar
               <ArrowUpRight size={16} />

@@ -24,7 +24,7 @@ export function HavenTestimonialsSection() {
             <HavenImageReveal
               key={item.name}
               delay={index * 0.06}
-              className="overflow-hidden rounded-[2rem] bg-white"
+              className="overflow-hidden rounded-[2rem] bg-white transition-transform duration-300 hover:-translate-y-1"
             >
               <Image
                 src={item.image}
@@ -32,7 +32,7 @@ export function HavenTestimonialsSection() {
                 width={900}
                 height={900}
                 sizes="(min-width: 1024px) 24vw, 100vw"
-                className="aspect-[0.96] w-full object-cover"
+                className="aspect-[0.96] w-full object-cover transition-transform duration-700 hover:scale-[1.03]"
               />
               <div className="grid gap-4 p-5">
                 <p className="text-lg leading-8 text-[#14283D]/76">

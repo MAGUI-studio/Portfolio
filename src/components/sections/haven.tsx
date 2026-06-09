@@ -1,8 +1,10 @@
 import { HavenBrandSection } from "@/components/haven/brand-section";
+import { HavenFaqSection } from "@/components/haven/faq-section";
 import { HavenFooter } from "@/components/haven/footer";
 import { havenDisplay, havenText } from "@/components/haven/fonts";
 import { HavenHeader } from "@/components/haven/header";
 import { HavenHeroSection } from "@/components/haven/hero-section";
+import { HavenMarqueeSection } from "@/components/haven/marquee-section";
 import { HavenServicesSection } from "@/components/haven/services-section";
 import { HavenTeamSection } from "@/components/haven/team-section";
 import { HavenTestimonialsSection } from "@/components/haven/testimonials-section";
@@ -15,10 +17,12 @@ export default function HavenLanding() {
     >
       <HavenHeader />
       <HavenHeroSection />
+      <HavenMarqueeSection />
       <HavenBrandSection />
       <HavenTeamSection />
       <HavenServicesSection />
       <HavenTestimonialsSection />
+      <HavenFaqSection />
       <HavenVisitSection />
       <HavenFooter />
     </main>

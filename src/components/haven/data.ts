@@ -32,8 +32,8 @@ export const havenWhatsappHref = `https://wa.me/${havenWhatsappNumber}?text=${en
 export const havenNav = [
   { label: "Sobre", href: "#sobre" },
   { label: "Atendimentos", href: "#atendimentos" },
-  { label: "Espaco", href: "#espaco" },
   { label: "Depoimentos", href: "#depoimentos" },
+  { label: "FAQ", href: "#faq" },
   { label: "Visita", href: "#visita" },
 ];
 
