@@ -51,7 +51,7 @@ export function HavenVisitSection() {
               width={1200}
               height={860}
               sizes="(min-width: 1280px) 22vw, 100vw"
-              className="aspect-[1.12] w-full object-cover"
+              className="aspect-video w-full object-cover"
             />
             <div className="p-5">
               <div className="flex items-center gap-3 text-[#14283D]">
