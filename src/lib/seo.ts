@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 
 import type { SectionEntry } from "@/components/sections/registry";
 
@@ -74,13 +75,30 @@ export function sanitizeText(value: string) {
   );
 }
 
-export function absoluteUrl(path = "/") {
-  return new URL(path, siteConfig.url).toString();
+export function absoluteUrl(path = "/", baseUrl = siteConfig.url) {
+  return new URL(path, baseUrl).toString();
 }
 
-export function buildDefaultMetadata(): Metadata {
+export async function getRequestSiteUrl() {
+  const headerStore = await headers();
+  const forwardedProto = headerStore.get("x-forwarded-proto");
+  const forwardedHost = headerStore.get("x-forwarded-host");
+  const host = headerStore.get("host");
+  const resolvedHost = forwardedHost ?? host;
+
+  if (!resolvedHost) {
+    return siteConfig.url;
+  }
+
+  const protocol =
+    forwardedProto ?? (resolvedHost.includes("localhost") ? "http" : "https");
+
+  return `${protocol}://${resolvedHost}`;
+}
+
+export function buildDefaultMetadata(baseUrl = siteConfig.url): Metadata {
   return {
-    metadataBase: new URL(siteConfig.url),
+    metadataBase: new URL(baseUrl),
     title: siteConfig.title,
     description: siteConfig.description,
     applicationName: siteConfig.name,
@@ -105,7 +123,7 @@ export function buildDefaultMetadata(): Metadata {
     openGraph: {
       title: siteConfig.title,
       description: siteConfig.description,
-      url: siteConfig.url,
+      url: baseUrl,
       siteName: siteConfig.name,
       locale: siteConfig.locale,
       type: "website",
@@ -125,11 +143,14 @@ export function buildDefaultMetadata(): Metadata {
   };
 }
 
-export function buildProjectMetadata(entry: SectionEntry): Metadata {
-  const title = `MAGUI.studio | ${sanitizeText(entry.title)}`;
-  const description = sanitizeText(
-    `${entry.description} Projeto de ${entry.projectType.toLowerCase()} desenvolvido pela MAGUI.studio.`,
+export function buildProjectMetadata(
+  entry: SectionEntry,
+  baseUrl = siteConfig.url,
+): Metadata {
+  const title = sanitizeText(
+    entry.seoTitle ?? `${entry.title} | ${entry.projectType} | MAGUI.studio`,
   );
+  const description = sanitizeText(entry.seoDescription ?? entry.description);
 
   return {
     title,
@@ -142,12 +163,12 @@ export function buildProjectMetadata(entry: SectionEntry): Metadata {
       ...entry.tags.map(sanitizeText),
     ],
     alternates: {
-      canonical: `/sections/${entry.slug}`,
+      canonical: absoluteUrl(`/projetos/${entry.slug}`, baseUrl),
     },
     openGraph: {
       title,
       description,
-      url: `/sections/${entry.slug}`,
+      url: absoluteUrl(`/projetos/${entry.slug}`, baseUrl),
       siteName: siteConfig.name,
       locale: siteConfig.locale,
       type: "website",
@@ -178,13 +199,13 @@ export function buildProjectMetadata(entry: SectionEntry): Metadata {
   };
 }
 
-export function createOrganizationJsonLd() {
+export function createOrganizationJsonLd(baseUrl = siteConfig.url) {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: siteConfig.name,
-    url: siteConfig.url,
-    logo: absoluteUrl("/favicon.ico"),
+    url: baseUrl,
+    logo: absoluteUrl("/favicon.ico", baseUrl),
     description: siteConfig.description,
     sameAs: [
       "https://www.instagram.com/_magui.studio",
@@ -193,12 +214,15 @@ export function createOrganizationJsonLd() {
   };
 }
 
-export function createPortfolioJsonLd(entries: SectionEntry[]) {
+export function createPortfolioJsonLd(
+  entries: SectionEntry[],
+  baseUrl = siteConfig.url,
+) {
   return {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: siteConfig.title,
-    url: siteConfig.url,
+    url: baseUrl,
     description: siteConfig.description,
     mainEntity: {
       "@type": "ItemList",
@@ -206,30 +230,35 @@ export function createPortfolioJsonLd(entries: SectionEntry[]) {
         "@type": "ListItem",
         position: index + 1,
         name: sanitizeText(entry.title),
-        url: absoluteUrl(`/sections/${entry.slug}`),
+        url: absoluteUrl(`/projetos/${entry.slug}`, baseUrl),
       })),
     },
   };
 }
 
-export function createProjectJsonLd(entry: SectionEntry) {
+export function createProjectJsonLd(
+  entry: SectionEntry,
+  baseUrl = siteConfig.url,
+) {
   return {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
     name: sanitizeText(entry.title),
     headline: sanitizeText(entry.title),
-    description: sanitizeText(entry.description),
-    url: absoluteUrl(`/sections/${entry.slug}`),
-    image: entry.cardImage ? [absoluteUrl(entry.cardImage)] : undefined,
+    description: sanitizeText(entry.seoDescription ?? entry.description),
+    url: absoluteUrl(`/projetos/${entry.slug}`, baseUrl),
+    image: entry.cardImage
+      ? [absoluteUrl(entry.cardImage, baseUrl)]
+      : undefined,
     creator: {
       "@type": "Organization",
       name: siteConfig.name,
-      url: siteConfig.url,
+      url: baseUrl,
     },
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
-      url: siteConfig.url,
+      url: baseUrl,
     },
     about: [
       sanitizeText(entry.projectType),
@@ -240,7 +269,10 @@ export function createProjectJsonLd(entry: SectionEntry) {
   };
 }
 
-export function createBreadcrumbJsonLd(entry: SectionEntry) {
+export function createBreadcrumbJsonLd(
+  entry: SectionEntry,
+  baseUrl = siteConfig.url,
+) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -249,13 +281,13 @@ export function createBreadcrumbJsonLd(entry: SectionEntry) {
         "@type": "ListItem",
         position: 1,
         name: siteConfig.name,
-        item: siteConfig.url,
+        item: baseUrl,
       },
       {
         "@type": "ListItem",
         position: 2,
         name: sanitizeText(entry.title),
-        item: absoluteUrl(`/sections/${entry.slug}`),
+        item: absoluteUrl(`/projetos/${entry.slug}`, baseUrl),
       },
     ],
   };

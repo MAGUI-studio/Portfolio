@@ -161,7 +161,7 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
           {filteredProjects.map((project) => (
             <Link
               key={project.slug}
-              href={`/?project=${project.slug}`}
+              href={`/projetos/${project.slug}`}
               className="group flex flex-col space-y-3"
             >
               <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg bg-neutral-100">

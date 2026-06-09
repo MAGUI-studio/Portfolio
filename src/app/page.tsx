@@ -1,26 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  ArrowLeft,
-  ArrowRight,
-  X,
-  ArrowUpRight,
-} from "@phosphor-icons/react/dist/ssr";
+import { redirect } from "next/navigation";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import {
   PortfolioProjects,
   type PortfolioProject,
 } from "@/app/portfolio-projects";
 import { FeaturedProjects } from "@/app/featured-projects";
-import { ProjectWhatsappButton } from "@/components/project-whatsapp-button";
 import { ScrollTopLink } from "@/components/scroll-top-link";
 import { sectionMap, visibleSections } from "@/components/sections/registry";
 import {
   buildProjectMetadata,
-  createBreadcrumbJsonLd,
   createOrganizationJsonLd,
   createPortfolioJsonLd,
-  createProjectJsonLd,
+  getRequestSiteUrl,
   siteConfig,
 } from "@/lib/seo";
 
@@ -50,6 +44,7 @@ export async function generateMetadata(
   const searchParams = await props.searchParams;
   const activeSlug = getActiveSlug(searchParams);
   const activeEntry = activeSlug ? sectionMap[activeSlug] : undefined;
+  const baseUrl = await getRequestSiteUrl();
 
   if (!activeEntry) {
     return {
@@ -62,26 +57,19 @@ export async function generateMetadata(
     };
   }
 
-  return buildProjectMetadata(activeEntry);
+  return buildProjectMetadata(activeEntry, baseUrl);
 }
 
 export default async function Home(props: HomePageProps) {
   const searchParams = await props.searchParams;
   const activeSlug = getActiveSlug(searchParams);
+  const baseUrl = await getRequestSiteUrl();
 
   const activeEntry = activeSlug ? sectionMap[activeSlug] : undefined;
-  const activeIndex = activeEntry
-    ? visibleSections.findIndex((section) => section.slug === activeEntry.slug)
-    : -1;
-  const navigationIndex = activeIndex >= 0 ? activeIndex : 0;
 
-  const previousEntry =
-    visibleSections[
-      (navigationIndex - 1 + visibleSections.length) % visibleSections.length
-    ];
-  const nextEntry =
-    visibleSections[(navigationIndex + 1) % visibleSections.length];
-  const ActiveComponent = activeEntry?.component ?? null;
+  if (activeEntry) {
+    redirect(`/projetos/${activeEntry.slug}`);
+  }
 
   const portfolioProjects: PortfolioProject[] = visibleSections.map(
     (section) => ({
@@ -103,88 +91,20 @@ export default async function Home(props: HomePageProps) {
     (project) => !featuredProjectSlugs.has(project.slug),
   );
 
-  if (activeEntry && ActiveComponent) {
-    return (
-      <main className="min-h-screen w-full bg-[#FCFCFC]">
-        <script
-          type="application/ld+json"
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(createOrganizationJsonLd()),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(createProjectJsonLd(activeEntry)),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(createBreadcrumbJsonLd(activeEntry)),
-          }}
-        />
-        <ActiveComponent />
-        <ProjectWhatsappButton
-          projectSlug={activeEntry.slug}
-          projectTitle={activeEntry.title}
-        />
-        <nav
-          aria-label="Navegação entre projetos"
-          className="fixed inset-x-0 bottom-8 z-80 flex justify-center px-4 w-fit mx-auto"
-        >
-          <div className="flex items-center gap-1 border border-black/10 bg-white px-3 py-2 rounded-lg shadow-sm">
-            <Link
-              href={`/?project=${previousEntry.slug}`}
-              scroll
-              title={`Anterior: ${previousEntry.title}`}
-              className="inline-flex size-7 items-center justify-center rounded-md text-black hover:bg-neutral-50 transition-colors"
-            >
-              <ArrowLeft size={14} weight="bold" />
-            </Link>
-
-            <Link
-              href={`/?project=${nextEntry.slug}`}
-              scroll
-              title={`Próximo: ${nextEntry.title}`}
-              className="inline-flex size-7 items-center justify-center rounded-md text-black hover:bg-neutral-50 transition-colors"
-            >
-              <ArrowRight size={14} weight="bold" />
-            </Link>
-
-            <span className="mx-2 h-4 w-px bg-black/10" aria-hidden="true" />
-
-            <Link
-              href="/"
-              scroll={false}
-              title="Voltar ao portfólio"
-              className="inline-flex size-7 items-center justify-center rounded-md text-black hover:bg-neutral-50 hover:text-red-500 transition-colors"
-            >
-              <X size={14} weight="bold" />
-            </Link>
-          </div>
-        </nav>
-      </main>
-    );
-  }
-
   return (
     <main className="min-h-screen w-full bg-[#FCFCFC] text-black antialiased selection:bg-black selection:text-white">
       <script
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(createOrganizationJsonLd()),
+          __html: JSON.stringify(createOrganizationJsonLd(baseUrl)),
         }}
       />
       <script
         type="application/ld+json"
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(createPortfolioJsonLd(visibleSections)),
+          __html: JSON.stringify(createPortfolioJsonLd(visibleSections, baseUrl)),
         }}
       />
       <section className="w-full">

@@ -31,6 +31,8 @@ export type SectionEntry = {
   index: string;
   industry: string;
   projectType: string;
+  seoDescription?: string;
+  seoTitle?: string;
   slug: string;
   tags: string[];
   title: string;
@@ -49,6 +51,9 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/nacho-libre/project-cover.webp",
     industry: "Gastronomia",
     projectType: "Restaurante mexicano",
+    seoTitle: "Nacho Libre | Restaurante mexicano moderno | MAGUI.studio",
+    seoDescription:
+      "Landing page do Nacho Libre com tacos, burritos, nachos, drinks, rodízio e uma experiência digital vibrante para restaurante mexicano.",
     goal: "Transformar cardápio, atendimento e atmosfera em uma experiência digital vibrante.",
     tags: ["Cardápio", "Pedidos", "Experiência de marca"],
     visible: true,
@@ -65,6 +70,9 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/vitta/project-cover.webp",
     industry: "Saúde",
     projectType: "Clínica de pele e estética",
+    seoTitle: "VITTA | Clínica de estética e pele | MAGUI.studio",
+    seoDescription:
+      "Landing page da VITTA para clínica de estética, com foco em saúde da pele, protocolos personalizados e posicionamento de autoridade.",
     goal: "Comunicar confiança, cuidado e protocolos personalizados para consultas de alto valor.",
     tags: ["Clínica", "Tratamentos", "Autoridade"],
     visible: true,
@@ -81,6 +89,9 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/pulse/project-cover.webp",
     industry: "Serviços",
     projectType: "Marca esportiva premium",
+    seoTitle: "Pulse | Moda fitness premium | MAGUI.studio",
+    seoDescription:
+      "Landing page da Pulse para marca fitness premium, unindo tecnologia, performance, estilo e visual editorial voltado à conversão.",
     goal: "Apresentar coleções, tecnologia têxtil e compra assistida com visual editorial.",
     tags: ["Lookbook", "E-commerce", "Performance"],
     visible: true,
@@ -97,6 +108,9 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/kroma/project-cover.webp",
     industry: "Serviços",
     projectType: "Soluções solares",
+    seoTitle: "Kroma | Energia solar sob medida | MAGUI.studio",
+    seoDescription:
+      "Landing page da Kroma para energia solar, com painéis, inversores, baterias e projetos completos para uso residencial, comercial e industrial.",
     goal: "Explicar projetos completos de energia solar para residências, empresas e indústrias.",
     tags: ["Energia solar", "B2B", "Sustentabilidade"],
     visible: true,
@@ -113,6 +127,9 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/lacreme/project-cover.webp",
     industry: "Gastronomia",
     projectType: "Confeitaria artesanal",
+    seoTitle: "La Crème | Confeitaria artesanal | MAGUI.studio",
+    seoDescription:
+      "Landing page da La Crème para confeitaria artesanal, valorizando vitrine sazonal, encomendas e doces autorais com apelo sensorial.",
     goal: "Valorizar vitrine, encomendas e doces autorais com apelo sensorial.",
     tags: ["Confeitaria", "Encomendas", "Produtos autorais"],
     visible: true,
@@ -129,6 +146,9 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/shinobi/project-cover.webp",
     industry: "Gastronomia",
     projectType: "Energético",
+    seoTitle: "SHINOBI | Energético dark e marca autoral | MAGUI.studio",
+    seoDescription:
+      "Landing page da SHINOBI para energético dark, com hero interativa, sabores marcantes e construção completa de universo de marca.",
     goal: "Construir universo de marca, sabores e compra direta para um público jovem.",
     tags: ["Lançamento", "Produto", "Marca conceitual"],
     visible: true,
@@ -145,6 +165,9 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/bites/project-cover.webp",
     industry: "Gastronomia",
     projectType: "Salgados premium",
+    seoTitle: "BITES | Comfort food premium delivery-first | MAGUI.studio",
+    seoDescription:
+      "Landing page da BITES para salgados premium, com comfort food, visual apetitoso e proposta moderna focada em delivery e marca.",
     goal: "Transformar clássicos fritos em uma experiência moderna, crocante e desejável.",
     tags: ["Comfort food", "Delivery", "Marca premium"],
     visible: true,
@@ -161,6 +184,9 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/sayeg/project-cover.webp",
     industry: "Saúde",
     projectType: "Especialista em visagismo",
+    seoTitle: "Beatriz Sayeg | Visagismo e micropigmentação | MAGUI.studio",
+    seoDescription:
+      "Landing page de Beatriz Sayeg para visagismo avançado e micropigmentação personalizada, com posicionamento de luxo e foco em agendamentos.",
     goal: "Apresentar autoridade, especialidades e atendimento personalizado para gerar agendamentos.",
     tags: ["Visagismo", "Micropigmentação", "Marca pessoal"],
     visible: true,
@@ -176,6 +202,9 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/powervet/project-cover.webp",
     industry: "Saúde",
     projectType: "Clínica veterinária especializada",
+    seoTitle: "POWERVET | Clínica veterinária de exóticos | MAGUI.studio",
+    seoDescription:
+      "Landing page da POWERVET para clínica veterinária premium, especializada em animais silvestres e exóticos, com foco em autoridade e acolhimento.",
     goal: "Transmitir autoridade médica, acolhimento e estrutura para gerar agendamentos.",
     tags: ["Veterinária", "Animais exóticos", "Agendamento"],
     visible: true,
@@ -191,6 +220,9 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/flow/project-cover.webp",
     industry: "Serviços",
     projectType: "Loja de aquarismo marinho",
+    seoTitle: "FLOW | Aquarismo marinho premium | MAGUI.studio",
+    seoDescription:
+      "Landing page da FLOW para aquarismo marinho premium, com corais, peixes ornamentais, equipamentos e consultoria especializada.",
     goal: "Apresentar tecnologia, vida marinha e consultoria para montagem e evolução de reefs.",
     tags: ["Aquarismo marinho", "Reef", "Corais"],
     visible: true,
@@ -207,6 +239,9 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/arco/project-cover.webp",
     industry: "Saúde",
     projectType: "Clinica odontologica",
+    seoTitle: "ARCO | Clínica odontológica moderna | MAGUI.studio",
+    seoDescription:
+      "Landing page da ARCO para clínica odontológica, com diagnóstico digital, cuidado humano e tratamentos personalizados para gerar agendamentos.",
     goal: "Comunicar cuidado humano, tecnologia e tratamentos odontologicos para gerar agendamentos.",
     tags: ["Odontologia", "Sorriso", "Agendamento"],
     visible: true,
@@ -223,6 +258,9 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/dragon-tattoo/project-cover.webp",
     industry: "Serviços",
     projectType: "Estudio de tatuagem oriental",
+    seoTitle: "Dragon Tattoo | Tatuagem oriental autoral | MAGUI.studio",
+    seoDescription:
+      "Landing page da Dragon Tattoo para estúdio premium de tatuagem oriental e japonesa autoral, com foco em exclusividade e consultas qualificadas.",
     goal: "Comunicar exclusividade, tradicao oriental e excelencia tecnica para gerar consultas qualificadas.",
     tags: ["Tatuagem oriental", "Arte japonesa", "Projetos autorais"],
     visible: true,
@@ -238,6 +276,9 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/haven/project-cover.webp",
     industry: "Serviços",
     projectType: "Espaco inclusivo de beleza",
+    seoTitle: "HAVEN | Espaço inclusivo de beleza | MAGUI.studio",
+    seoDescription:
+      "Landing page da HAVEN para cortes de cabelo e cuidados pessoais com acolhimento, previsibilidade e atendimento humanizado para neurodivergentes.",
     goal: "Comunicar acolhimento, previsibilidade e atendimento humanizado para gerar confianca e agendamentos.",
     tags: ["Inclusao", "Autismo", "Atendimento humanizado"],
     visible: true,

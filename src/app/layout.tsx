@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
-import { buildDefaultMetadata } from "@/lib/seo";
+import { buildDefaultMetadata, getRequestSiteUrl } from "@/lib/seo";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -14,7 +14,10 @@ const cormorant = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
-export const metadata: Metadata = buildDefaultMetadata();
+export async function generateMetadata(): Promise<Metadata> {
+  const baseUrl = await getRequestSiteUrl();
+  return buildDefaultMetadata(baseUrl);
+}
 
 export default function RootLayout({
   children,

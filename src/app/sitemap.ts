@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     ...visibleSections.map((section) => ({
-      url: `${siteUrl}/sections/${section.slug}`,
+      url: `${siteUrl}/projetos/${section.slug}`,
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.8,

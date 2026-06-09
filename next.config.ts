@@ -24,6 +24,15 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: "/sections/:slug",
+        destination: "/projetos/:slug",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

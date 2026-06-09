@@ -72,7 +72,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
         <div className="grid lg:grid-cols-[0.62fr_0.38fr]">
           <Link
             key={`${activeProject.slug}-image`}
-            href={`/?project=${activeProject.slug}`}
+            href={`/projetos/${activeProject.slug}`}
             className="group relative aspect-[4/3] overflow-hidden bg-neutral-100 sm:aspect-[16/10] lg:min-h-[600px] lg:aspect-auto"
           >
             <Image
@@ -133,7 +133,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
               </div>
 
               <Link
-                href={`/?project=${activeProject.slug}`}
+                href={`/projetos/${activeProject.slug}`}
                 className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-black"
               >
                 Abrir projeto
