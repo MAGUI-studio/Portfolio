@@ -1,6 +1,3 @@
-import Image from "next/image";
-
-import { havenImages } from "./data";
 import { HavenReveal } from "./motion";
 
 export function HavenBrandSection() {
@@ -14,17 +11,8 @@ export function HavenBrandSection() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#14283D]">
             Sobre
           </p>
-          <div className="mt-6">
-            <Image
-              src={havenImages.simbolo}
-              alt="Simbolo da Haven"
-              width={42}
-              height={42}
-              className="h-10 w-10"
-            />
-          </div>
           <h2 className="mt-7 max-w-sm text-5xl leading-[0.9] tracking-tight md:text-7xl">
-            O que e a Haven.
+            O que é a Haven.
           </h2>
         </HavenReveal>
 
@@ -34,15 +22,15 @@ export function HavenBrandSection() {
             className="grid gap-7 text-base leading-8 text-[#14283D]/70 md:grid-cols-2"
           >
             <p>
-              A Haven e um espaco especializado em cortes de cabelo e cuidados
+              A Haven é um espaço especializado em cortes de cabelo e cuidados
               pessoais para pessoas autistas e neurodivergentes. Mais do que um
-              salao ou barbearia, fomos criados para acolher cada pessoa com mais
+              salão ou barbearia, fomos criados para acolher cada pessoa com mais
               previsibilidade, respeito e calma.
             </p>
             <p>
-              Partimos da compreensao de que esse momento pode ser dificil para
-              muitas familias. Por isso, cada detalhe do atendimento foi pensado
-              para transformar o cuidado pessoal em uma experiencia mais segura,
+              Partimos da compreensão de que esse momento pode ser difícil para
+              muitas famílias. Por isso, cada detalhe do atendimento foi pensado
+              para transformar o cuidado pessoal em uma experiência mais segura,
               leve e positiva.
             </p>
           </HavenReveal>
@@ -55,7 +43,7 @@ export function HavenBrandSection() {
               <h3 className="text-2xl">Como atendemos</h3>
               <p className="mt-4 text-sm leading-7 text-[#14283D]/66">
                 Trabalhamos com atendimento individualizado, escuta ativa e
-                adaptacao ao ritmo de cada pessoa.
+                adaptação ao ritmo de cada pessoa.
               </p>
             </HavenReveal>
 
@@ -65,7 +53,7 @@ export function HavenBrandSection() {
             >
               <h3 className="text-2xl">Como trabalhamos</h3>
               <p className="mt-4 text-sm leading-7 text-[#14283D]/66">
-                Conduzimos tudo com comunicacao clara, preparacao previa e um
+                Conduzimos tudo com comunicação clara, preparação prévia e um
                 ambiente com menor sobrecarga sensorial.
               </p>
             </HavenReveal>
@@ -77,7 +65,7 @@ export function HavenBrandSection() {
               <h3 className="text-2xl">No que acreditamos</h3>
               <p className="mt-4 text-sm leading-7 text-[#14283D]/66">
                 Acreditamos que o cuidado com a pessoa vem antes do procedimento,
-                sempre com empatia, paciencia e acolhimento.
+                sempre com empatia, paciência e acolhimento.
               </p>
             </HavenReveal>
           </div>

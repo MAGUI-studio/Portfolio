@@ -19,7 +19,7 @@ export function HavenFooter() {
             className="h-auto w-24 md:w-26"
           />
           <p className="max-w-sm text-sm leading-6 text-white/78">
-            Um espaco de cuidado pessoal acolhedor, previsivel e respeitoso para
+            Um espaço de cuidado pessoal acolhedor, previsível e respeitoso para
             pessoas autistas e neurodivergentes.
           </p>
           <Link
@@ -35,7 +35,7 @@ export function HavenFooter() {
 
         <div>
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/58">
-            Navegacao
+            Navegação
           </p>
           <div className="mt-4 grid gap-2 text-sm text-white/82">
             {havenNav.map((item) => (
@@ -55,7 +55,7 @@ export function HavenFooter() {
             Atendimento
           </p>
           <div className="mt-4 grid gap-2 text-sm leading-6 text-white/78">
-            <p>Criancas</p>
+            <p>Crianças</p>
             <p>Adolescentes</p>
             <p>Adultos</p>
           </div>

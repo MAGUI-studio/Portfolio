@@ -20,8 +20,8 @@ export function HavenServicesSection() {
             </h3>
           </div>
           <p className="max-w-xs text-sm leading-7 text-white/76">
-            Explicamos o processo, ouvimos a familia e ajustamos a experiencia
-            para reduzir tensao desde a chegada.
+            Explicamos o processo, ouvimos a família e ajustamos a experiência
+            para reduzir tensão desde a chegada.
           </p>
         </HavenReveal>
 

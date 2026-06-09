@@ -40,35 +40,35 @@ export const havenNav = [
 export const havenHighlights = [
   "Cortes masculinos, femininos e infantis",
   "Atendimento especializado para pessoas autistas",
-  "Acolhimento para outras neurodivergencias",
-  "Adaptacao sensorial durante os procedimentos",
+  "Acolhimento para outras neurodivergências",
+  "Adaptação sensorial durante os procedimentos",
   "Atendimento individualizado e sem pressa",
-  "Preparacao previa para criancas e adolescentes",
+  "Preparação prévia para crianças e adolescentes",
 ];
 
 export const havenValues = [
   {
     title: "Respeito",
-    text: "Cada pessoa possui necessidades, limites e formas unicas de se comunicar.",
+    text: "Cada pessoa possui necessidades, limites e formas únicas de se comunicar.",
   },
   {
     title: "Empatia",
-    text: "Compreender antes de agir, com atencao real ao que cada cliente precisa.",
+    text: "Compreender antes de agir, com atenção real ao que cada cliente precisa.",
   },
   {
-    title: "Inclusao",
-    text: "Criar um espaco acessivel para criancas, adolescentes e adultos.",
+    title: "Inclusão",
+    text: "Criar um espaço acessível para crianças, adolescentes e adultos.",
   },
   {
-    title: "Paciencia",
+    title: "Paciência",
     text: "O tempo de cada pessoa deve ser respeitado em todas as etapas.",
   },
   {
     title: "Acolhimento",
-    text: "Fazer com que clientes e familias se sintam seguros desde o primeiro contato.",
+    text: "Fazer com que clientes e famílias se sintam seguros desde o primeiro contato.",
   },
   {
-    title: "Humanizacao",
+    title: "Humanização",
     text: "O cuidado com a pessoa vem antes do procedimento.",
   },
 ];
@@ -76,47 +76,47 @@ export const havenValues = [
 export const havenJourney = [
   {
     step: "01",
-    title: "Explicacao previa",
-    text: "A profissional apresenta o atendimento para a mae e a crianca, criando previsibilidade antes do corte com mais calma e clareza.",
+    title: "Explicação prévia",
+    text: "A profissional apresenta o atendimento para a mãe e a criança, criando previsibilidade antes do corte, com mais calma e clareza.",
     image: havenImages.procedimentoMenina,
-    alt: "Funcionaria da Haven explicando o procedimento para mae de menina autista",
+    alt: "Funcionária da Haven explicando o procedimento para mãe de menina autista",
   },
   {
     step: "02",
-    title: "Alinhamento com a familia",
-    text: "A equipe explica o que vai acontecer, escuta preocupacoes da mae e ajusta o atendimento para reduzir tensao e excesso sensorial.",
+    title: "Alinhamento com a família",
+    text: "A equipe explica o que vai acontecer, escuta as preocupações da mãe e ajusta o atendimento para reduzir tensão e excesso sensorial.",
     image: havenImages.procedimentoMenino,
-    alt: "Funcionario da Haven explicando o procedimento para mae de menino autista",
+    alt: "Funcionário da Haven explicando o procedimento para mãe de menino autista",
   },
   {
     step: "03",
     title: "Conversa com adolescentes",
-    text: "A comunicacao tambem respeita a autonomia de adolescentes, envolvendo a familia sem tirar o protagonismo de quem sera atendido.",
+    text: "A comunicação também respeita a autonomia de adolescentes, envolvendo a família sem tirar o protagonismo de quem será atendido.",
     image: havenImages.procedimentoAdolescente,
-    alt: "Funcionario da Haven explicando o procedimento para mae e filho adolescente",
+    alt: "Funcionário da Haven explicando o procedimento para mãe e filho adolescente",
   },
 ];
 
 export const havenTestimonials = [
   {
     name: "Adriana Santos",
-    role: "Mae",
+    role: "Mãe",
     quote:
       "Pela primeira vez, meu filho conseguiu passar pelo corte com tranquilidade. Tudo foi explicado com calma e respeito.",
     image: havenImages.testemunhoAdriana,
   },
   {
     name: "Marcele Silva",
-    role: "Mae",
+    role: "Mãe",
     quote:
-      "A Haven entende que cada pessoa tem um tempo. Isso muda completamente a experiencia da familia.",
+      "A Haven entende que cada pessoa tem um tempo. Isso muda completamente a experiência da família.",
     image: havenImages.testemunhoMarcele,
   },
   {
     name: "Rodrigo Gomes",
     role: "Pai",
     quote:
-      "Nao e so sobre cortar o cabelo. E sobre chegar, ser recebido com cuidado e sair com mais confianca.",
+      "Não é só sobre cortar o cabelo. É sobre chegar, ser recebido com cuidado e sair com mais confiança.",
     image: havenImages.testemunhoRodrigo,
   },
 ];

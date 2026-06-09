@@ -26,7 +26,7 @@ export function HavenHeader() {
   return (
     <>
       <header className="absolute inset-x-0 top-0 z-60">
-        <div className="mx-auto flex max-w-440 items-center justify-between px-5 pt-5 md:px-8 lg:px-10 lg:pt-7">
+        <div className="flex items-center justify-between px-5 pt-5 md:px-8 lg:px-10 lg:pt-7">
           <Link href="#inicio" aria-label="Ir para o inicio da Haven">
             <Image
               src={havenImages.logoWhite}

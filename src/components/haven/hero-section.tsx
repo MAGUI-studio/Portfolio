@@ -25,14 +25,14 @@ export function HavenHeroSection() {
         <div className="grid gap-16 lg:grid-cols-[0.18fr_0.58fr_0.24fr] lg:items-end">
           <HavenReveal className="hidden lg:flex lg:h-full lg:items-end">
             <p className="[writing-mode:vertical-rl] rotate-180 text-[10px] font-semibold uppercase tracking-[0.34em] text-white/68">
-              Espaco especializado em cuidado pessoal
+              Espaço especializado em cuidado pessoal
             </p>
           </HavenReveal>
 
           <div>
             <HavenReveal>
               <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-white/72">
-                Salao e barbearia inclusivos
+                Salão e barbearia inclusivos
               </span>
               <h1 className="mt-6 max-w-4xl text-5xl leading-[0.84] tracking-tight md:text-7xl lg:text-[98px]">
                 Cortes com
@@ -43,7 +43,7 @@ export function HavenHeroSection() {
 
             <HavenReveal delay={0.08} className="mt-8 max-w-xl">
               <p className="text-lg leading-8 text-white/78 md:text-xl">
-                Um espaco especializado em cortes de cabelo e cuidados pessoais
+                Um espaço especializado em cortes de cabelo e cuidados pessoais
                 para pessoas autistas e neurodivergentes, com acolhimento,
                 previsibilidade e respeito.
               </p>
@@ -80,7 +80,7 @@ export function HavenHeroSection() {
                 Haven
               </p>
               <p className="mt-3 text-2xl leading-tight">
-                Um salao pensado para que esse momento seja mais leve para toda a familia.
+                Um salão pensado para que esse momento seja mais leve para toda a família.
               </p>
             </div>
             <div className="grid gap-3 text-sm leading-6 text-white/66">
@@ -96,7 +96,7 @@ export function HavenHeroSection() {
             href="#sobre"
             className="inline-flex items-center gap-3 text-sm font-medium text-white/72 transition duration-300 hover:translate-y-0.5 hover:text-white"
           >
-            Explorar a pagina
+            Explorar a página
             <ArrowDown size={16} />
           </Link>
         </HavenReveal>

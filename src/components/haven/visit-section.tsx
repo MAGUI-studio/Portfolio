@@ -13,7 +13,7 @@ export function HavenVisitSection() {
     >
       <Image
         src={havenImages.footer}
-        alt="Funcionaria da Haven conversando com uma crianca"
+        alt="Funcionária da Haven conversando com uma criança"
         fill
         sizes="100vw"
         className="object-cover"
@@ -26,11 +26,11 @@ export function HavenVisitSection() {
             Visita
           </p>
           <h2 className="mt-7 max-w-xl text-5xl leading-[0.9] tracking-tight md:text-7xl lg:text-8xl">
-            Agende uma visita e conheca a HAVEN
+            Agende uma visita e conheça a HAVEN
           </h2>
           <p className="mt-6 max-w-lg text-base leading-8 text-white/76">
-            Conheca o espaco, fale com a equipe e entenda como o atendimento
-            pode ser adaptado para sua familia.
+            Conheça o espaço, fale com a equipe e entenda como o atendimento
+            pode ser adaptado para sua família.
           </p>
           <Link
             href={havenWhatsappHref}
@@ -44,10 +44,10 @@ export function HavenVisitSection() {
         </HavenReveal>
 
         <HavenImageReveal className="justify-self-end">
-          <div className="max-w-sm overflow-hidden rounded-[2rem] bg-white text-[#14283D] shadow-[0_24px_80px_rgba(0,0,0,0.16)] transition-transform duration-300 hover:-translate-y-1">
+          <div className="w-full overflow-hidden rounded-[2rem] bg-white text-[#14283D] shadow-[0_24px_80px_rgba(0,0,0,0.16)] transition-transform duration-300 hover:-translate-y-1 xl:w-[24rem]">
             <Image
               src={havenImages.localizacao}
-              alt="Localizacao da Haven"
+              alt="Localização da Haven"
               width={1200}
               height={860}
               sizes="(min-width: 1280px) 22vw, 100vw"
@@ -57,12 +57,12 @@ export function HavenVisitSection() {
               <div className="flex items-center gap-3 text-[#14283D]">
                 <MapPin size={18} weight="fill" />
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em]">
-                  Localizacao
+                  Localização
                 </p>
               </div>
               <p className="mt-4 text-sm leading-7 text-[#14283D]/68">
-                Um espaco pensado para transmitir conforto desde a chegada, com
-                uma atmosfera mais calma e acolhedora para toda a familia.
+                Um espaço pensado para transmitir conforto desde a chegada, com
+                uma atmosfera mais calma e acolhedora para toda a família.
               </p>
             </div>
           </div>
