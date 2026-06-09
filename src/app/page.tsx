@@ -15,15 +15,19 @@ import { FeaturedProjects } from "@/app/featured-projects";
 import { ProjectWhatsappButton } from "@/components/project-whatsapp-button";
 import { ScrollTopLink } from "@/components/scroll-top-link";
 import { sectionMap, visibleSections } from "@/components/sections/registry";
+import {
+  buildProjectMetadata,
+  createBreadcrumbJsonLd,
+  createOrganizationJsonLd,
+  createPortfolioJsonLd,
+  createProjectJsonLd,
+  siteConfig,
+} from "@/lib/seo";
 
 interface HomePageProps {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }
 
-const defaultSeoTitle =
-  "MAGUI.studio | Landing pages premium para marcas digitais";
-const defaultSeoDescription =
-  "Portfolio de landing pages autorais criadas pela MAGUI.studio, com direcao visual, design responsivo e desenvolvimento web focado em conversao.";
 const featuredProjectSlugs = new Set([
   "powervet",
   "flow",
@@ -49,39 +53,16 @@ export async function generateMetadata(
 
   if (!activeEntry) {
     return {
-      title: defaultSeoTitle,
-      description: defaultSeoDescription,
+      title: siteConfig.title,
+      description: siteConfig.description,
+      keywords: [...siteConfig.keywords, "portfólio", "projetos web"],
       alternates: {
         canonical: "/",
-      },
-      openGraph: {
-        title: defaultSeoTitle,
-        description: defaultSeoDescription,
-        url: "/",
-        siteName: "MAGUI.studio",
-        type: "website",
       },
     };
   }
 
-  const title = `MAGUI.studio | ${activeEntry.title}`;
-  const description = `${activeEntry.description} Projeto de ${activeEntry.projectType.toLowerCase()} desenvolvido pela MAGUI.studio.`;
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `/sections/${activeEntry.slug}`,
-    },
-    openGraph: {
-      title,
-      description,
-      images: activeEntry.cardImage ? [activeEntry.cardImage] : undefined,
-      url: `/sections/${activeEntry.slug}`,
-      siteName: "MAGUI.studio",
-      type: "website",
-    },
-  };
+  return buildProjectMetadata(activeEntry);
 }
 
 export default async function Home(props: HomePageProps) {
@@ -125,6 +106,27 @@ export default async function Home(props: HomePageProps) {
   if (activeEntry && ActiveComponent) {
     return (
       <main className="min-h-screen w-full bg-[#FCFCFC]">
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(createOrganizationJsonLd()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(createProjectJsonLd(activeEntry)),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(createBreadcrumbJsonLd(activeEntry)),
+          }}
+        />
         <ActiveComponent />
         <ProjectWhatsappButton
           projectSlug={activeEntry.slug}
@@ -171,6 +173,20 @@ export default async function Home(props: HomePageProps) {
 
   return (
     <main className="min-h-screen w-full bg-[#FCFCFC] text-black antialiased selection:bg-black selection:text-white">
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(createOrganizationJsonLd()),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(createPortfolioJsonLd(visibleSections)),
+        }}
+      />
       <section className="w-full">
         <Image
           src="/utils/page-banner.webp"

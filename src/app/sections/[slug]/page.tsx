@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProjectWhatsappButton } from "@/components/project-whatsapp-button";
 import { sectionMap, sections } from "@/components/sections/registry";
+import {
+  buildProjectMetadata,
+  createBreadcrumbJsonLd,
+  createProjectJsonLd,
+  sanitizeText,
+} from "@/lib/seo";
 
 export function generateStaticParams() {
   return sections.map((section) => ({ slug: section.slug }));
@@ -15,28 +21,11 @@ export async function generateMetadata(
 
   if (!entry) {
     return {
-      title: "MAGUI.studio | Projeto nao encontrado",
+      title: "MAGUI.studio | Projeto não encontrado",
     };
   }
 
-  const title = `MAGUI.studio | ${entry.title}`;
-  const description = `${entry.description} Projeto de ${entry.projectType.toLowerCase()} desenvolvido pela MAGUI.studio.`;
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: `/sections/${entry.slug}`,
-    },
-    openGraph: {
-      title,
-      description,
-      images: entry.cardImage ? [entry.cardImage] : undefined,
-      url: `/sections/${entry.slug}`,
-      siteName: "MAGUI.studio",
-      type: "website",
-    },
-  };
+  return buildProjectMetadata(entry);
 }
 
 export default async function SectionPage(props: PageProps<"/sections/[slug]">) {
@@ -51,8 +40,25 @@ export default async function SectionPage(props: PageProps<"/sections/[slug]">) 
 
   return (
     <main className="bg-[var(--canvas)]">
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(createProjectJsonLd(entry)),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(createBreadcrumbJsonLd(entry)),
+        }}
+      />
       <SectionComponent />
-      <ProjectWhatsappButton projectSlug={entry.slug} projectTitle={entry.title} />
+      <ProjectWhatsappButton
+        projectSlug={entry.slug}
+        projectTitle={sanitizeText(entry.title)}
+      />
     </main>
   );
 }
