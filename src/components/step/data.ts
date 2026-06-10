@@ -11,7 +11,7 @@ export const stepImages = {
   background: "/images/step/bg-image.png",
   logoBlack: "/images/step/logo-black.webp",
   logoWhite: "/images/step/logo-white.webp",
-  hero: "/images/step/hero-par-de-tenis-jordan.webp",
+  hero: "/images/step/hero-par-de-tenis.webp",
   studio: "/images/step/ambiente-da-step.webp",
   before: "/images/step/tenis-antes-da-limpeza.webp",
   after: "/images/step/tenis-depois-da-limpeza.webp",
