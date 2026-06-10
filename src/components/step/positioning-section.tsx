@@ -1,69 +1,109 @@
 import Link from "next/link";
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowRight,
+  Crosshair,
+  Medal,
+  ShieldCheck,
+} from "@phosphor-icons/react/dist/ssr";
 
 import { stepPillars, stepServices } from "./data";
+
+const pillarIcons = [Crosshair, ShieldCheck, Medal] as const;
 
 export function StepPositioningSection() {
   return (
     <section
       id="posicionamento"
-      className="bg-[#F8F8F8] px-5 py-20 text-[#0A0A0A] md:px-8 md:py-24 lg:px-10"
+      className="bg-[#FAFAFA] px-5 py-20 text-[#0A0A0A] md:px-8 md:py-24 lg:px-10"
     >
-      <div className="grid w-full gap-10 lg:grid-cols-[0.42fr_0.58fr]">
-        <div className="rounded-[32px] bg-[#0A0A0A] p-8 text-white md:p-10">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/46">
-            O que é a STEP
-          </p>
-          <h2 className="mt-6 text-4xl leading-[0.95] md:text-6xl">
-            A STEP não é uma lavanderia.
-          </h2>
-          <p className="mt-6 text-base leading-8 text-white/68">
-            A STEP é um estúdio técnico de manutenção de sneakers. A marca
-            nasceu para atender pessoas que enxergam seus tênis como peças de
-            valor financeiro, emocional ou cultural.
-          </p>
-          <div className="mt-10 h-px bg-white/10" />
-          <p className="mt-10 text-sm uppercase tracking-[0.22em] text-white/44">
-            Precisão. Conservação. Processo. Engenharia aplicada. Resultado.
-          </p>
+      <div className="mx-auto grid w-full max-w-440 gap-6 xl:grid-cols-[minmax(0,0.38fr)_minmax(0,0.62fr)] xl:items-start">
+        <div className="xl:sticky xl:top-24">
+          <div className="rounded-[32px] bg-[#0A0A0A] p-8 text-white shadow-[0_24px_70px_rgba(10,10,10,0.08)] md:p-10">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-white/46">
+              O que é a STEP
+            </p>
+            <h2 className="mt-6 max-w-xl text-4xl leading-[0.95] md:text-6xl">
+              A STEP não é uma lavanderia.
+            </h2>
+            <p className="mt-6 max-w-lg text-base leading-8 text-white/68">
+              A STEP é um estúdio técnico de manutenção de sneakers. A marca
+              nasceu para atender pessoas que enxergam seus tênis como peças de
+              valor financeiro, emocional ou cultural.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-2">
+              {[
+                "Precisão",
+                "Conservação",
+                "Processo",
+                "Resultado",
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="inline-flex rounded-full border border-white/10 bg-white/6 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/56"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div className="grid gap-5">
-          <div className="grid gap-5 md:grid-cols-3">
-            {stepPillars.map((pillar) => (
-              <article
-                key={pillar.title}
-                className="rounded-[28px] border border-[#0A0A0A]/10 bg-white p-6"
-              >
-                <span className="inline-flex rounded-full bg-[#D9D9D9] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#2B2B2B]">
-                  STEP
-                </span>
-                <h3 className="mt-6 text-2xl leading-tight">{pillar.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-[#2B2B2B]">
-                  {pillar.text}
-                </p>
-              </article>
-            ))}
+        <div className="grid gap-6">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {stepPillars.map((pillar, index) => {
+              const Icon = pillarIcons[index] ?? Crosshair;
+
+              return (
+                <article
+                  key={pillar.title}
+                  className="group relative min-h-[280px] overflow-hidden rounded-[28px] border border-[#0A0A0A]/10 bg-white p-6 transition-transform duration-300 hover:-translate-y-1"
+                >
+                  <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,#0A0A0A,rgba(10,10,10,0.14))]" />
+                  <div className="absolute -right-6 top-5 text-[#0A0A0A]/6 transition-colors duration-300 group-hover:text-[#0A0A0A]/10">
+                    <Icon size={112} weight="thin" />
+                  </div>
+
+                  <div className="relative z-10 flex h-full flex-col">
+                    <span className="inline-flex w-fit rounded-full border border-[#0A0A0A]/8 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#2B2B2B]/62">
+                      Pilar {index + 1}
+                    </span>
+                    <h3 className="mt-6 max-w-[16rem] text-2xl leading-tight">
+                      {pillar.title}
+                    </h3>
+                    <p className="mt-4 max-w-[17rem] text-sm leading-7 text-[#2B2B2B]">
+                      {pillar.text}
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
           </div>
 
-          <div className="rounded-[28px] border border-[#0A0A0A]/10 bg-[linear-gradient(135deg,#FFFFFF,#EFEFEF)] p-6 md:p-8">
-            <div className="grid gap-8 md:grid-cols-[0.48fr_0.52fr]">
-              <div>
+          <div className="rounded-[28px] p-6 md:p-8 lg:p-10">
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] lg:items-start">
+              <div className="max-w-md">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#2B2B2B]/58">
                   Frente de atuação
                 </p>
                 <h3 className="mt-4 text-3xl leading-tight md:text-4xl">
                   Cuidado para uso, acervo e restauração visual.
                 </h3>
+                <p className="mt-5 text-sm leading-7 text-[#2B2B2B]/82">
+                  A experiência da STEP é desenhada para transmitir critério,
+                  segurança e domínio técnico em cada etapa do serviço.
+                </p>
               </div>
 
               <div className="grid gap-3">
-                {stepServices.map((service) => (
+                {stepServices.map((service, index) => (
                   <div
                     key={service}
-                    className="flex items-start gap-3 rounded-[20px] border border-[#0A0A0A]/8 bg-[#F8F8F8] px-4 py-4"
+                    className="flex items-start gap-4 rounded-[20px] border border-[#0A0A0A]/8 bg-[#F8F8F8] px-4 py-4 md:px-5"
                   >
-                    <span className="mt-1 size-2 shrink-0 rounded-full bg-[#0A0A0A]" />
+                    <span className="inline-flex min-w-8 justify-center text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2B2B2B]/46">
+                      0{index + 1}
+                    </span>
                     <p className="text-sm leading-7 text-[#2B2B2B]">
                       {service}
                     </p>

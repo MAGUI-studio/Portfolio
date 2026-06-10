@@ -2,6 +2,7 @@ import { StepFooter } from "@/components/step/footer";
 import { stepDisplay, stepText } from "@/components/step/fonts";
 import { StepHeader } from "@/components/step/header";
 import { StepHeroSection } from "@/components/step/hero-section";
+import { StepMarqueeSection } from "@/components/step/marquee-section";
 import { StepPositioningSection } from "@/components/step/positioning-section";
 import { StepProcessSection } from "@/components/step/process-section";
 import { StepStudioSection } from "@/components/step/studio-section";
@@ -15,6 +16,7 @@ export default function StepLanding() {
       <StepHeader />
       <StepHeroSection />
       <StepPositioningSection />
+      <StepMarqueeSection />
       <StepProcessSection />
       <StepTransformationSection />
       <StepStudioSection />

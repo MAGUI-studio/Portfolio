@@ -77,7 +77,7 @@ export function BeforeAfterSlider({
 
   return (
     <div className="overflow-hidden rounded-[32px] border border-white/10 bg-[#111111]">
-      <div className="flex items-center justify-between border-b border-white/10 px-6 py-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/48">
+      <div className="flex items-center justify-between px-6 py-4 text-[11px] font-semibold uppercase tracking-[0.24em] text-white/48">
         <span>Antes</span>
         <span>Depois</span>
       </div>
@@ -130,13 +130,11 @@ export function BeforeAfterSlider({
           style={{ left: `calc(${position}% - 1px)` }}
         >
           <div className="relative h-full w-px bg-white/90">
-            <div className="absolute left-1/2 top-1/2 flex size-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/16 bg-[#0A0A0A]/92 text-white shadow-[0_12px_30px_rgba(0,0,0,0.35)] backdrop-blur">
+            <div className="absolute left-1/2 top-1/2 flex size-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full  bg-[#0A0A0A]/92 text-white shadow-[0_12px_30px_rgba(0,0,0,0.35)] backdrop-blur">
               <ArrowsHorizontal size={20} weight="bold" />
             </div>
           </div>
         </div>
-
-        <div className="pointer-events-none absolute inset-x-6 bottom-8 z-10 h-px bg-white/24" />
       </div>
     </div>
   );

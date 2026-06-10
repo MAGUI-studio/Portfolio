@@ -25,7 +25,7 @@ export function StepStudioSection() {
 
         <div
           id="contato"
-          className="rounded-[34px] border border-[#0A0A0A]/10 bg-white p-8 md:p-10"
+          className="rounded-[34px] p-8 md:p-10"
         >
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#2B2B2B]/58">
             Estúdio e contato
