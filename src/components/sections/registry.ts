@@ -5,7 +5,6 @@ import Landing05Pulse from "@/components/sections/pulse";
 import FlowLanding from "@/components/sections/flow";
 import BitesLanding from "@/components/sections/bites";
 import Landing11EnergiaSolarIndustrial from "@/components/sections/kroma";
-import Landing12EducacaoExecutiva from "@/components/sections/landing-12-educacao-executiva";
 import Landing13LogisticaFria from "@/components/sections/landing-13-logistica-fria";
 import Landing14AgritechPrecisao from "@/components/sections/landing-14-agritech-precisao";
 import Landing15Ciberseguranca from "@/components/sections/landing-15-ciberseguranca";
@@ -20,6 +19,7 @@ import PowervetLanding from "@/components/sections/powervet";
 import ArcoLanding from "@/components/sections/arco";
 import DragonTattooLanding from "@/components/sections/dragon-tattoo";
 import HavenLanding from "@/components/sections/haven";
+import StepLanding from "@/components/sections/step";
 
 export type SectionEntry = {
   aliases?: string[];
@@ -286,18 +286,22 @@ export const sections: SectionEntry[] = [
   },
   {
     index: "14",
-    slug: "prisma-fellows",
-    aliases: ["landing-12-educacao-executiva"],
-    title: "Prisma Fellows",
+    slug: "step",
+    aliases: ["prisma-fellows", "landing-12-educacao-executiva"],
+    title: "STEP",
     description:
-      "Educação executiva para lideranças seniores e programas aplicados.",
+      "Estúdio técnico de sneaker care para manutenção, higienização, restauração e conservação de sneakers premium.",
     category: "Landing Pages",
-    industry: "Educação",
-    projectType: "Educação executiva",
-    goal: "Apresentar programas, autoridade acadêmica e aplicação prática para lideranças.",
-    tags: ["Cursos", "Liderança", "B2B"],
-    visible: false,
-    component: Landing12EducacaoExecutiva,
+    cardImage: "/images/step/project-cover.webp",
+    industry: "Serviços",
+    projectType: "Sneaker care premium",
+    seoTitle: "MAGUI.studio | STEP",
+    seoDescription:
+      "Landing page da STEP para um estúdio técnico de sneaker care, com foco em preservação, processo, restauração visual e posicionamento premium.",
+    goal: "Comunicar precisão técnica, conservação e resultado premium para sneakers de valor.",
+    tags: ["Sneaker care", "Restauração", "Premium"],
+    visible: true,
+    component: StepLanding,
   },
   {
     index: "15",

@@ -16,6 +16,7 @@ import {
 import { pulseWhatsapp } from "@/components/pulse/data";
 import { sayegWhatsappMessage, sayegWhatsappNumber } from "@/components/sayeg/data";
 import { shinobiWhatsappHref } from "@/components/shinobi/data";
+import { stepWhatsappMessage, stepWhatsappNumber } from "@/components/step/data";
 import { links as vittaLinks } from "@/components/vitta/data";
 
 type ProjectWhatsappConfig = {
@@ -94,10 +95,9 @@ const projectWhatsappConfig: Record<string, ProjectWhatsappConfig> = {
     phoneNumber: powervetWhatsappNumber,
     message: powervetWhatsappMessage,
   },
-  "prisma-fellows": {
-    phoneNumber: defaultPhoneNumber,
-    message:
-      "Oi, Prisma Fellows. Quero saber mais sobre a formacao executiva.",
+  step: {
+    phoneNumber: stepWhatsappNumber,
+    message: stepWhatsappMessage,
   },
   pulse: parseWhatsappHref(pulseWhatsapp),
   "reforma-atelier": {

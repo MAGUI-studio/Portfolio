@@ -29,3 +29,4 @@ When the user asks to replace, retheme, or transform an existing landing page in
 - Keep project-specific WhatsApp data close to the project when available, and update the shared project WhatsApp mapping whenever a new project slug is added.
 - Maintain Open Graph metadata and `metadataBase` whenever SEO metadata is changed.
 - Preserve the footer pattern with `Oferecido por MAGUI.studio`, `Voltar ao topo`, and the shared scroll-to-top behavior.
+- Sempre escrever todos os textos em português do Brasil com gramática totalmente correta, prestando atenção constante à acentuação, à pontuação, à concordância e à clareza em todos os projetos atuais e futuros.
