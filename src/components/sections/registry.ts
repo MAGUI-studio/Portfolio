@@ -271,11 +271,11 @@ export const sections: SectionEntry[] = [
     slug: "haven",
     title: "HAVEN",
     description:
-      "Espaco especializado em cortes de cabelo e cuidados pessoais para pessoas autistas e neurodivergentes.",
+      "Espaço especializado em cortes de cabelo e cuidados pessoais para pessoas autistas e neurodivergentes.",
     category: "Landing Pages",
     cardImage: "/images/haven/project-cover.webp",
     industry: "Serviços",
-    projectType: "Espaco inclusivo de beleza",
+    projectType: "Espaço inclusivo de beleza",
     seoTitle: "HAVEN | Espaço inclusivo de beleza | MAGUI.studio",
     seoDescription:
       "Landing page da HAVEN para cortes de cabelo e cuidados pessoais com acolhimento, previsibilidade e atendimento humanizado para neurodivergentes.",
@@ -295,7 +295,7 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/step/project-cover.webp",
     industry: "Serviços",
     projectType: "Sneaker care premium",
-    seoTitle: "MAGUI.studio | STEP",
+    seoTitle: "MAGUI.studio | Sneaker care studio | STEP",
     seoDescription:
       "Landing page da STEP para um estúdio técnico de sneaker care, com foco em preservação, processo, restauração visual e posicionamento premium.",
     goal: "Comunicar precisão técnica, conservação e resultado premium para sneakers de valor.",
