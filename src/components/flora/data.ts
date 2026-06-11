@@ -45,7 +45,7 @@ export const floraCollections = [
     title: "Folhagens esculturais",
     text: "Espécies que transformam salas, halls e escritórios em ambientes vivos e sofisticados.",
     image: floraImages.raphis,
-    alt: "Palmeira raphis em destaque no garden center Flora",
+    alt: "Palmeira-ráfis em destaque no garden center Flora",
   },
   {
     title: "Espécies tropicais",
@@ -125,43 +125,5 @@ export const floraProcessSteps = [
     eyebrow: "03",
     title: "Você leva uma escolha mais clara",
     text: "O resultado é uma compra com mais confiança, coerência visual e continuidade no cuidado.",
-  },
-] as const;
-
-export const floraAudiences = [
-  "Apartamentos que precisam de vida sem perder sofisticação.",
-  "Casas que pedem composições naturais e presença botânica.",
-  "Escritórios, recepções e ambientes de trabalho mais acolhedores.",
-  "Arquitetos e designers que buscam curadoria vegetal para seus projetos.",
-] as const;
-
-export const floraDifferentials = [
-  "Curadoria refinada em vez de escolha genérica.",
-  "Atendimento próximo, com orientação real de composição.",
-  "Leitura de decoração, proporção e atmosfera.",
-  "Experiência de compra mais calma, sensorial e inspiradora.",
-] as const;
-
-export const floraTestimonials = [
-  {
-    name: "Marina A.",
-    role: "Cliente Flora",
-    quote:
-      "A Flora não me vendeu só plantas. Me ajudou a construir um apartamento mais vivo, elegante e acolhedor.",
-    image: floraImages.testimonial01,
-  },
-  {
-    name: "Eduardo R.",
-    role: "Arquiteto parceiro",
-    quote:
-      "A curadoria é impecável. Tudo parece pensado para dialogar com interiores contemporâneos, não apenas para preencher espaços.",
-    image: floraImages.testimonial02,
-  },
-  {
-    name: "Luciana M.",
-    role: "Cliente Flora",
-    quote:
-      "Entrar na loja é como entrar em uma estufa moderna. A experiência inspira e dá vontade de levar mais natureza para casa.",
-    image: floraImages.testimonial03,
   },
 ] as const;

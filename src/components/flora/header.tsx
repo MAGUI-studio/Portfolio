@@ -21,19 +21,28 @@ export function FloraHeader() {
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
     return () => {
       document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
     };
   }, [isOpen]);
 
   return (
     <>
-      <header className="absolute inset-x-0 top-0 z-60 px-5 pt-5 text-white md:px-8 md:pt-7 lg:px-10 w-full max-w-400 mx-auto">
+      <header className="absolute inset-x-0 top-0 z-60 w-full px-5 pt-5 text-white md:px-8 md:pt-7 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: -18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.75, ease }}
-          className="flex w-full items-center justify-between gap-4"
+          className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-4"
         >
           <Link href="#inicio" aria-label="Ir para o início da Flora">
             <Image

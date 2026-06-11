@@ -20,11 +20,13 @@ export function FloraMarqueeSection() {
 
         .flora-marquee-track {
           animation: flora-marquee 28s linear infinite;
+          will-change: transform;
         }
 
         @media (prefers-reduced-motion: reduce) {
           .flora-marquee-track {
             animation: none !important;
+            transform: translateX(0) !important;
           }
         }
       `}</style>

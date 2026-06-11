@@ -18,13 +18,13 @@ export function FloraCultivationSection() {
       <div className="absolute inset-0 z-0">
         <Image
           src={floraImages.caretaker}
-          alt="Fundo decorativo"
+          alt="Profissional cuidando das plantas na Flora"
           fill
           priority
-          className="object-cover brightness-[0.3] object-top"
+          className="object-cover object-top brightness-[0.3]"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(25,29,20,0.9)_0%,rgba(25,29,20,0.62)_42%,rgba(25,29,20,0.34)_70%,rgba(25,29,20,0.72)_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(244,240,232,0.16),transparent_24%),linear-gradient(180deg,rgba(0,0,0,0.12),rgba(0,0,0,0.36))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_16%_18%,rgba(244,240,232,0.16),transparent_24%),linear-gradient(180deg,rgba(0,0,0,0.12),rgba(0,0,0,0.36))]" />
       </div>
 
       <div className="relative z-10">

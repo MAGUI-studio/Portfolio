@@ -49,7 +49,7 @@ export function FloraExperienceSection() {
             </figure>
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(27,34,21,0.04),rgba(27,34,21,0.48))]" />
             <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-              <div className="rounded-[32px] bg-white/10 px-6 py-6 backdrop-blur-md text-white  md:w-[58%]">
+              <div className="rounded-[32px] bg-white/10 px-6 py-6 text-white backdrop-blur-md md:w-[58%]">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em]">
                   Sensação da marca
                 </p>

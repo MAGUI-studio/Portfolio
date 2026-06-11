@@ -7,9 +7,7 @@ import { FloraImageReveal, FloraReveal } from "./motion";
 
 export function FloraLocationSection() {
   return (
-    <section
-      className="relative overflow-hidden px-5 py-24 text-white md:px-8 md:py-28 lg:px-10"
-    >
+    <section className="relative overflow-hidden px-5 py-24 text-white md:px-8 md:py-28 lg:px-10">
       <Image
         src={floraImages.attendant}
         alt="Atendimento da Flora no garden center"

@@ -22,9 +22,9 @@ export default function FloraLanding() {
       <FloraCollectionsSection />
       <FloraServicesSection />
       <FloraCultivationSection />
+      <FloraExperienceSection />
       <FloraProcessSection />
       <FloraTestimonialsSection />
-      <FloraExperienceSection />
       <FloraLocationSection />
       <FloraFooter />
     </main>
