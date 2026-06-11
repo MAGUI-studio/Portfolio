@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import type { ComponentProps, ReactNode } from "react";
+import type { ComponentProps, MouseEvent, ReactNode } from "react";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -75,14 +75,83 @@ type HoverLinkProps = ComponentProps<typeof Link> & {
   children: ReactNode;
 };
 
+type SectionLinkProps = HoverLinkProps;
+
+function handleInternalSectionClick(
+  event: MouseEvent<HTMLAnchorElement>,
+  href: ComponentProps<typeof Link>["href"],
+) {
+  if (typeof href !== "string" || !href.startsWith("#")) {
+    return;
+  }
+
+  event.preventDefault();
+
+  const targetId = href.slice(1);
+  const target = document.getElementById(targetId);
+  const nextUrl = `${window.location.pathname}${window.location.search}`;
+
+  window.history.replaceState(null, "", nextUrl);
+
+  if (target) {
+    const top = target.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({ top, behavior: "smooth" });
+    return;
+  }
+
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+export function FloraSectionLink({
+  children,
+  onClick,
+  href,
+  className,
+  ...props
+}: SectionLinkProps) {
+  return (
+    <Link
+      {...props}
+      href={href}
+      className={className}
+      onClick={(event) => {
+        onClick?.(event);
+
+        if (event.defaultPrevented) {
+          return;
+        }
+
+        handleInternalSectionClick(event, href);
+      }}
+    >
+      {children}
+    </Link>
+  );
+}
+
 export function FloraHoverLink({
   children,
   className,
+  onClick,
+  href,
   ...props
 }: HoverLinkProps) {
   return (
     <motion.div whileHover={{ y: -2 }} transition={{ duration: 0.26, ease }}>
-      <Link {...props} className={className}>
+      <Link
+        {...props}
+        href={href}
+        className={className}
+        onClick={(event) => {
+          onClick?.(event);
+
+          if (event.defaultPrevented) {
+            return;
+          }
+
+          handleInternalSectionClick(event, href);
+        }}
+      >
         {children}
       </Link>
     </motion.div>

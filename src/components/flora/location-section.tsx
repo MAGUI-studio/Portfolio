@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight, MapPin } from "@phosphor-icons/react/dist/ssr";
 
 import { floraImages, floraWhatsappHref } from "./data";
-import { FloraImageReveal, FloraReveal } from "./motion";
+import { FloraImageReveal, FloraReveal, FloraSectionLink } from "./motion";
 
 export function FloraLocationSection() {
   return (
@@ -43,12 +43,12 @@ export function FloraLocationSection() {
               <ArrowUpRight size={16} />
             </Link>
 
-            <Link
+            <FloraSectionLink
               href="#inicio"
               className="inline-flex items-center justify-center rounded-full bg-white/10 px-6 py-4 text-sm font-semibold text-white backdrop-blur-md transition duration-300 hover:bg-white/16"
             >
               Voltar ao início
-            </Link>
+            </FloraSectionLink>
           </div>
         </FloraReveal>
 

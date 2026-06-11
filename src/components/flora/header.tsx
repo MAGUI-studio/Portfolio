@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 import { floraImages, floraNav, floraWhatsappHref } from "./data";
+import { FloraSectionLink } from "./motion";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -44,7 +45,7 @@ export function FloraHeader() {
           transition={{ duration: 0.75, ease }}
           className="mx-auto flex w-full max-w-[1440px] items-center justify-between gap-4"
         >
-          <Link href="#inicio" aria-label="Ir para o início da Flora">
+          <FloraSectionLink href="#inicio" aria-label="Ir para o início da Flora">
             <Image
               src={floraImages.logoWhite}
               alt="Flora"
@@ -52,7 +53,7 @@ export function FloraHeader() {
               height={42}
               className="h-auto w-24 drop-shadow-[0_12px_22px_rgba(0,0,0,0.28)] md:w-28"
             />
-          </Link>
+          </FloraSectionLink>
 
           <nav className="hidden items-center gap-7 lg:flex">
             {floraNav.map((item) => (
@@ -61,12 +62,12 @@ export function FloraHeader() {
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.24, ease }}
               >
-                <Link
+                <FloraSectionLink
                   href={item.href}
                   className="text-sm font-medium tracking-[0.08em] text-white/82 transition-colors hover:text-white"
                 >
                   {item.label}
-                </Link>
+                </FloraSectionLink>
               </motion.div>
             ))}
           </nav>
@@ -146,7 +147,7 @@ export function FloraHeader() {
                     exit={{ opacity: 0, x: 12 }}
                     transition={{ duration: 0.28, delay: index * 0.04, ease }}
                   >
-                    <Link
+                    <FloraSectionLink
                       href={item.href}
                       onClick={() => setIsOpen(false)}
                       className="flex items-center justify-between rounded-[26px] bg-white/8 px-5 py-4 backdrop-blur-sm"
@@ -160,7 +161,7 @@ export function FloraHeader() {
                         </span>
                       </div>
                       <ArrowUpRight size={18} className="text-white/46" />
-                    </Link>
+                    </FloraSectionLink>
                   </motion.div>
                 ))}
               </nav>

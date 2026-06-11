@@ -147,10 +147,17 @@ export function buildProjectMetadata(
   entry: SectionEntry,
   baseUrl = siteConfig.url,
 ): Metadata {
-  const title = sanitizeText(
-    entry.seoTitle ?? `${entry.title} | ${entry.projectType} | MAGUI.studio`,
-  );
-  const description = sanitizeText(entry.seoDescription ?? entry.description);
+  const fallbackTitle = `${entry.title} | ${entry.projectType} | MAGUI.studio`;
+  const fallbackDescription = entry.seoDescription ?? entry.description;
+
+  const title =
+    entry.slug === "flora"
+      ? "Flora | Garden center premium | MAGUI.studio"
+      : sanitizeText(entry.seoTitle ?? fallbackTitle);
+  const description =
+    entry.slug === "flora"
+      ? "Garden center premium com plantas ornamentais, vasos, curadoria para interiores e decoracao natural para ambientes sofisticados."
+      : sanitizeText(fallbackDescription);
 
   return {
     title,

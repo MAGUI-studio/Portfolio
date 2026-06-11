@@ -10,6 +10,7 @@ import {
 import { ScrollTopLink } from "@/components/scroll-top-link";
 
 import { floraImages, floraNav, floraWhatsappHref } from "./data";
+import { FloraSectionLink } from "./motion";
 
 const socialLinks = [
   { href: floraWhatsappHref, label: "WhatsApp", icon: WhatsappLogo },
@@ -56,13 +57,13 @@ export function FloraFooter() {
         <div className="grid gap-8">
           <div className="grid gap-3 sm:grid-cols-2">
             {floraNav.map((item) => (
-              <Link
+              <FloraSectionLink
                 key={item.href}
                 href={item.href}
                 className="text-lg text-white/72 transition duration-300 hover:translate-x-1 hover:text-white"
               >
                 {item.label}
-              </Link>
+              </FloraSectionLink>
             ))}
           </div>
 

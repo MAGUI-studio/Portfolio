@@ -330,7 +330,8 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/flora/project-cover.webp",
     industry: "Varejo",
     projectType: "Garden center premium",
-    seoTitle: "MAGUI.studio | Flora",
+    seoTitle:
+      "MAGUI.studio | Flora | Garden center premium com plantas ornamentais, vasos e decoração natural",
     seoDescription:
       "Landing page da Flora para um garden center premium, com foco em plantas ornamentais, espécies tropicais, vasos, arquitetura verde e bem-estar.",
     goal: "Inspirar ambientes vivos e sofisticados através de plantas, curadoria e experiências de cultivo.",
