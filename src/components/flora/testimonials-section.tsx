@@ -5,12 +5,12 @@ import { FloraImageReveal, FloraReveal } from "./motion";
 
 const testimonialImages = [
   {
-    src: floraImages.testimonial01,
-    alt: "Depoimento visual de cliente da Flora sobre a experiência com a marca",
-  },
-  {
     src: floraImages.testimonial02,
     alt: "Depoimento visual de arquiteto parceiro da Flora",
+  },
+  {
+    src: floraImages.testimonial01,
+    alt: "Depoimento visual de cliente da Flora sobre a experiência com a marca",
   },
   {
     src: floraImages.testimonial03,

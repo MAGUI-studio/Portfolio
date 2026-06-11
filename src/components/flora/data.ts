@@ -88,6 +88,60 @@ export const floraCultivationSteps = [
   },
 ] as const;
 
+export const floraServices = [
+  {
+    title: "Curadoria para interiores",
+    text: "Indicações pensadas para luz, rotina, escala do ambiente e estilo de decoração.",
+  },
+  {
+    title: "Composição com vasos e alturas",
+    text: "Combinações que equilibram textura, presença visual e leitura arquitetônica do espaço.",
+  },
+  {
+    title: "Apoio para presentes e ocasiões",
+    text: "Sugestões com mais intenção estética para quem quer presentear com naturalidade e elegância.",
+  },
+] as const;
+
+export const floraServiceHighlights = [
+  "Espécies ornamentais e tropicais",
+  "Vasos, suportes e acabamentos",
+  "Soluções para apartamentos e casas",
+  "Leitura de ambiente com olhar decorativo",
+] as const;
+
+export const floraProcessSteps = [
+  {
+    eyebrow: "01",
+    title: "Você apresenta o ambiente",
+    text: "A equipe entende o espaço, a luminosidade, a rotina e a intenção estética da escolha.",
+  },
+  {
+    eyebrow: "02",
+    title: "A Flora orienta a composição",
+    text: "Espécies, vasos e proporções são sugeridos para criar uma solução mais segura e harmônica.",
+  },
+  {
+    eyebrow: "03",
+    title: "Você leva uma escolha mais clara",
+    text: "O resultado é uma compra com mais confiança, coerência visual e continuidade no cuidado.",
+  },
+] as const;
+
+export const floraAudiences = [
+  "Apartamentos que precisam de vida sem perder sofisticação.",
+  "Casas que pedem composições naturais e presença botânica.",
+  "Escritórios, recepções e ambientes de trabalho mais acolhedores.",
+  "Arquitetos e designers que buscam curadoria vegetal para seus projetos.",
+] as const;
+
+export const floraDifferentials = [
+  "Curadoria refinada em vez de escolha genérica.",
+  "Atendimento próximo, com orientação real de composição.",
+  "Leitura de decoração, proporção e atmosfera.",
+  "Experiência de compra mais calma, sensorial e inspiradora.",
+] as const;
+
 export const floraTestimonials = [
   {
     name: "Marina A.",

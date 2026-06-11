@@ -7,6 +7,8 @@ import { FloraHeader } from "@/components/flora/header";
 import { FloraHeroSection } from "@/components/flora/hero-section";
 import { FloraLocationSection } from "@/components/flora/location-section";
 import { FloraMarqueeSection } from "@/components/flora/marquee-section";
+import { FloraProcessSection } from "@/components/flora/process-section";
+import { FloraServicesSection } from "@/components/flora/services-section";
 import { FloraTestimonialsSection } from "@/components/flora/testimonials-section";
 
 export default function FloraLanding() {
@@ -18,9 +20,11 @@ export default function FloraLanding() {
       <FloraHeroSection />
       <FloraMarqueeSection />
       <FloraCollectionsSection />
+      <FloraServicesSection />
       <FloraCultivationSection />
-      <FloraExperienceSection />
+      <FloraProcessSection />
       <FloraTestimonialsSection />
+      <FloraExperienceSection />
       <FloraLocationSection />
       <FloraFooter />
     </main>
