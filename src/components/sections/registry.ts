@@ -18,6 +18,7 @@ import SayegLanding from "@/components/sections/sayeg";
 import PowervetLanding from "@/components/sections/powervet";
 import ArcoLanding from "@/components/sections/arco";
 import DragonTattooLanding from "@/components/sections/dragon-tattoo";
+import FloraLanding from "@/components/sections/flora";
 import HavenLanding from "@/components/sections/haven";
 import StepLanding from "@/components/sections/step";
 
@@ -317,6 +318,25 @@ export const sections: SectionEntry[] = [
     tags: ["SLA", "Rastreabilidade", "Operação"],
     visible: false,
     component: Landing13LogisticaFria,
+  },
+  {
+    index: "15",
+    slug: "flora",
+    aliases: ["nivela-cold", "landing-13-logistica-fria"],
+    title: "Flora",
+    description:
+      "Garden center premium com plantas ornamentais, espécies tropicais, vasos e decoração natural.",
+    category: "Landing Pages",
+    cardImage: "/images/flora/project-cover.webp",
+    industry: "Varejo",
+    projectType: "Garden center premium",
+    seoTitle: "MAGUI.studio | Flora",
+    seoDescription:
+      "Landing page da Flora para um garden center premium, com foco em plantas ornamentais, espécies tropicais, vasos, arquitetura verde e bem-estar.",
+    goal: "Inspirar ambientes vivos e sofisticados através de plantas, curadoria e experiências de cultivo.",
+    tags: ["Plantas ornamentais", "Garden center", "Decoração natural"],
+    visible: true,
+    component: FloraLanding,
   },
   {
     index: "16",

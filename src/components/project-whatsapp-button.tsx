@@ -5,6 +5,10 @@ import {
   dragonTattooPhoneNumber,
   dragonTattooWhatsappMessage,
 } from "@/components/dragon-tattoo/data";
+import {
+  floraWhatsappMessage,
+  floraWhatsappNumber,
+} from "@/components/flora/data";
 import { havenWhatsappMessage, havenWhatsappNumber } from "@/components/haven/data";
 import { whatsapp as laCremeWhatsapp } from "@/components/la-creme/data";
 import { whatsappHref as kromaWhatsapp } from "@/components/kroma/data";
@@ -55,6 +59,10 @@ const projectWhatsappConfig: Record<string, ProjectWhatsappConfig> = {
     message:
       "Oi, FLOW. Quero orientacao para montar ou evoluir meu aquario marinho.",
   },
+  flora: {
+    phoneNumber: floraWhatsappNumber,
+    message: floraWhatsappMessage,
+  },
   "cifrasec": {
     phoneNumber: defaultPhoneNumber,
     message:
@@ -81,11 +89,6 @@ const projectWhatsappConfig: Record<string, ProjectWhatsappConfig> = {
   kroma: parseWhatsappHref(kromaWhatsapp),
   "la-creme": parseWhatsappHref(laCremeWhatsapp),
   "nacho-libre": parseWhatsappHref(nachoLibreWhatsapp),
-  "nivela-cold": {
-    phoneNumber: defaultPhoneNumber,
-    message:
-      "Oi, Nivela Cold. Quero falar sobre logistica fria para minha operacao.",
-  },
   "novera-labs": {
     phoneNumber: defaultPhoneNumber,
     message:
