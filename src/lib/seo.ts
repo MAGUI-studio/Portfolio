@@ -9,7 +9,7 @@ export const siteConfig = {
   title: "MAGUI.studio | Portfólio de landing pages premium",
   description:
     "Portfólio da MAGUI.studio com landing pages premium, direção visual autoral, design responsivo e desenvolvimento focado em conversão.",
-  ogImage: "/utils/page-banner.webp",
+  ogImage: "/utils/og-image.webp",
   locale: "pt_BR",
   keywords: [
     "landing page",
