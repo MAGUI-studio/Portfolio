@@ -11,6 +11,7 @@ import HeroSection from "../cazetv/hero-section";
 import FixturesFilter from "../cazetv/fixtures-filter";
 import FixtureCard from "../cazetv/fixture-card";
 import GroupTables from "../cazetv/group-tables";
+import Bracket from "../cazetv/bracket";
 import Footer from "../cazetv/footer";
 import { Calendar } from "@phosphor-icons/react";
 
@@ -78,7 +79,7 @@ const stageTranslations: Record<string, string> = {
 };
 
 export default function CazeTVLanding() {
-  const [activeTab, setActiveTab] = useState<"jogos" | "grupos">("jogos");
+  const [activeTab, setActiveTab] = useState<"jogos" | "grupos" | "chaveamento">("jogos");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedStage, setSelectedStage] = useState("all");
   const [selectedGroup, setSelectedGroup] = useState("all");
@@ -232,6 +233,16 @@ export default function CazeTVLanding() {
             >
               Tabela de Grupos
             </button>
+            <button
+              onClick={() => setActiveTab("chaveamento")}
+              className={`pb-4 text-sm font-black uppercase tracking-wider transition duration-200 border-b-2 ${
+                activeTab === "chaveamento"
+                  ? "border-orange-500 text-white"
+                  : "border-transparent text-zinc-500 hover:text-zinc-300"
+              }`}
+            >
+              Chaveamento Mata-Mata
+            </button>
           </div>
         </div>
       </div>
@@ -316,9 +327,13 @@ export default function CazeTVLanding() {
               )}
             </div>
           </>
-        ) : (
+        ) : activeTab === "grupos" ? (
           <div className="mt-4">
             <GroupTables teamIsoCodes={teamIsoCodes} />
+          </div>
+        ) : (
+          <div className="mt-4">
+            <Bracket fixtures={fixtures} teamIsoCodes={teamIsoCodes} />
           </div>
         )}
       </section>

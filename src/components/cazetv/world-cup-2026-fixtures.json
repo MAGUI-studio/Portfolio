@@ -695,25 +695,25 @@
       "homeScore": 3,
       "awayScore": 1,
       "events": [
-         {
+        {
           "tipo": "gol",
           "minuto": "90+12'",
           "autor": "Marko ARNAUTOVIC",
           "time": "casa"
         },
-         {
+        {
           "tipo": "gol_contra",
           "minuto": "76'",
           "autor": "YAZAN ALARAB",
           "time": "casa"
         },
-         {
+        {
           "tipo": "gol",
           "minuto": "20'",
           "autor": "Romano SCHMID",
           "time": "casa"
         },
-         {
+        {
           "tipo": "gol",
           "minuto": "50'",
           "autor": "ALI OLWAN",
@@ -757,37 +757,37 @@
       "homeScore": 4,
       "awayScore": 2,
       "events": [
-         {
+        {
           "tipo": "gol",
           "minuto": "12'",
           "autor": "Harry KANE",
           "time": "casa"
         },
-         {
+        {
           "tipo": "gol",
           "minuto": "42'",
           "autor": "Harry KANE",
           "time": "casa"
         },
-         {
+        {
           "tipo": "gol",
           "minuto": "47'",
           "autor": "Jude BELLINGHAM",
           "time": "casa"
         },
-         {
+        {
           "tipo": "gol",
           "minuto": "85'",
           "autor": "Marcus RASHFORD",
           "time": "casa"
         },
-         {
+        {
           "tipo": "gol",
           "minuto": "45+5'",
           "autor": "Petar Musa",
           "time": "fora"
         },
-         {
+        {
           "tipo": "gol",
           "minuto": "36'",
           "autor": "Martin BATURINA",
@@ -855,7 +855,7 @@
           "autor": "Luis DIAZ",
           "time": "fora"
         },
-         {
+        {
           "tipo": "gol",
           "minuto": "90+9'",
           "autor": "Jaminton CAMPAZ",
@@ -1604,7 +1604,7 @@
       "stadium": "NRG Stadium",
       "hostCity": "houston",
       "matchUrl": "https://www.youtube.com/watch?v=vTnBwT_hN5o",
-      "homeScore": 4,
+      "homeScore": 5,
       "awayScore": 0,
       "events": [
         {
@@ -1629,6 +1629,12 @@
           "tipo": "gol_contra",
           "minuto": "60'",
           "autor": "Abdukodir KHUSANOV",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "87'",
+          "autor": "RAFAEL LEAO",
           "time": "casa"
         }
       ]
