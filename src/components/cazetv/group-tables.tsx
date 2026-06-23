@@ -6,9 +6,10 @@ import { groupsStandings, GroupStandingTeam } from "./groups-data";
 
 interface GroupTablesProps {
   teamIsoCodes: Record<string, string>;
+  onTeamClick?: (teamName: string) => void;
 }
 
-export default function GroupTables({ teamIsoCodes }: GroupTablesProps) {
+export default function GroupTables({ teamIsoCodes, onTeamClick }: GroupTablesProps) {
   const renderFlag = (teamName: string) => {
     if (teamName === "Inglaterra") {
       return (
@@ -207,12 +208,15 @@ export default function GroupTables({ teamIsoCodes }: GroupTablesProps) {
 
                       {/* Team Flag + Name */}
                       <td className="py-3 px-2 font-bold text-white">
-                        <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => onTeamClick?.(team.team)}
+                          className="flex items-center gap-2 hover:text-orange-500 transition duration-150 text-left focus:outline-none"
+                        >
                           {renderFlag(team.team)}
                           <span className="truncate max-w-[120px] sm:max-w-none">
                             {displayTeamName}
                           </span>
-                        </div>
+                        </button>
                       </td>
 
                       {/* Points */}

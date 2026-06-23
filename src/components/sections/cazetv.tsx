@@ -14,6 +14,7 @@ import FixturesFilter from "../cazetv/fixtures-filter";
 import FixtureCard from "../cazetv/fixture-card";
 import GroupTables from "../cazetv/group-tables";
 import Bracket from "../cazetv/bracket";
+import BrazilWidget from "../cazetv/brazil-widget";
 import Footer from "../cazetv/footer";
 import { Calendar, X, ArrowSquareOut, Warning } from "@phosphor-icons/react";
 
@@ -213,6 +214,23 @@ export default function CazeTVLanding() {
     }, 200);
   };
 
+  const handleTeamClick = (teamName: string) => {
+    if (!teamName || teamName.startsWith("Vencedor") || teamName.startsWith("Perdedor") || teamName.startsWith("1º") || teamName.startsWith("2º") || teamName.startsWith("3º")) return;
+    setSearchTerm(teamName);
+    setSelectedStage("all");
+    setSelectedGroup("all");
+    handleTabChange("jogos");
+    
+    if (typeof window !== "undefined") {
+      setTimeout(() => {
+        const filtersSection = document.getElementById("jogos-filters");
+        if (filtersSection) {
+          filtersSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  };
+
   // Extrair todos os grupos únicos presentes na fase de grupos
   const groups = Array.from(
     new Set(
@@ -382,18 +400,27 @@ export default function CazeTVLanding() {
       <section className="mx-auto w-full px-4 py-8 sm:px-6 lg:px-8 flex-grow">
         {activeTab === "jogos" ? (
           <>
-            {/* Filters */}
-            <FixturesFilter
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-              selectedStage={selectedStage}
-              setSelectedStage={setSelectedStage}
-              selectedGroup={selectedGroup}
-              setSelectedGroup={setSelectedGroup}
-              groups={groups}
-              stageTranslations={stageTranslations}
-              handleClearFilters={handleClearFilters}
+            {/* Brazil Special Widget */}
+            <BrazilWidget
+              fixtures={fixtures}
+              teamIsoCodes={teamIsoCodes}
+              onShowDetails={handleShowDetails}
             />
+
+            {/* Filters Section Anchor */}
+            <div id="jogos-filters">
+              <FixturesFilter
+                searchTerm={searchTerm}
+                setSearchTerm={setSearchTerm}
+                selectedStage={selectedStage}
+                setSelectedStage={setSelectedStage}
+                selectedGroup={selectedGroup}
+                setSelectedGroup={setSelectedGroup}
+                groups={groups}
+                stageTranslations={stageTranslations}
+                handleClearFilters={handleClearFilters}
+              />
+            </div>
 
             {/* Match Fixtures List */}
             <div className="mt-8">
@@ -431,6 +458,7 @@ export default function CazeTVLanding() {
                               stageTranslations={stageTranslations}
                               teamIsoCodes={teamIsoCodes}
                               onShowDetails={handleShowDetails}
+                              onTeamClick={handleTeamClick}
                             />
                           ))}
                         </div>
@@ -461,7 +489,7 @@ export default function CazeTVLanding() {
           </>
         ) : activeTab === "grupos" ? (
           <div className="mt-4">
-            <GroupTables teamIsoCodes={teamIsoCodes} />
+            <GroupTables teamIsoCodes={teamIsoCodes} onTeamClick={handleTeamClick} />
           </div>
         ) : (
           <div className="mt-4">

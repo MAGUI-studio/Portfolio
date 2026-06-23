@@ -30,6 +30,7 @@ interface FixtureCardProps {
   stageTranslations: Record<string, string>;
   teamIsoCodes: Record<string, string>;
   onShowDetails: (matchNumber: number) => void;
+  onTeamClick?: (teamName: string) => void;
 }
 
 export default function FixtureCard({
@@ -37,6 +38,7 @@ export default function FixtureCard({
   stageTranslations,
   teamIsoCodes,
   onShowDetails,
+  onTeamClick,
 }: FixtureCardProps) {
   const stageLabel = stageTranslations[fixture.stage] || fixture.stage;
   const hasScore = typeof fixture.homeScore === "number" && typeof fixture.awayScore === "number";
@@ -138,12 +140,15 @@ export default function FixtureCard({
       {/* Match core layout (Vertical columns) */}
       <div className="grid grid-cols-3 items-center gap-2 py-3 select-none">
         {/* Home Team */}
-        <div className="flex flex-col items-center text-center gap-2">
+        <button
+          onClick={() => onTeamClick?.(fixture.homeTeam)}
+          className="flex flex-col items-center text-center gap-2 group/team cursor-pointer outline-none border-0 bg-transparent focus:outline-none"
+        >
           {renderFlag(fixture.homeTeam)}
-          <span className="text-xs md:text-sm font-black text-white line-clamp-2 leading-tight">
+          <span className="text-xs md:text-sm font-black text-white line-clamp-2 leading-tight group-hover/team:text-orange-500 transition duration-150">
             {fixture.homeTeam || "A Definir"}
           </span>
-        </div>
+        </button>
 
         {/* Versus or Scoreboard Divider */}
         <div className="flex flex-col items-center justify-center">
@@ -181,12 +186,15 @@ export default function FixtureCard({
         </div>
 
         {/* Away Team */}
-        <div className="flex flex-col items-center text-center gap-2">
+        <button
+          onClick={() => onTeamClick?.(fixture.awayTeam)}
+          className="flex flex-col items-center text-center gap-2 group/team cursor-pointer outline-none border-0 bg-transparent focus:outline-none"
+        >
           {renderFlag(fixture.awayTeam)}
-          <span className="text-xs md:text-sm font-black text-white line-clamp-2 leading-tight">
+          <span className="text-xs md:text-sm font-black text-white line-clamp-2 leading-tight group-hover/team:text-orange-500 transition duration-150">
             {fixture.awayTeam || "A Definir"}
           </span>
-        </div>
+        </button>
       </div>
 
       {/* View details button */}
