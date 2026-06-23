@@ -29,9 +29,10 @@ interface Fixture {
 interface BracketProps {
   fixtures: Fixture[];
   teamIsoCodes: Record<string, string>;
+  onShowDetails: (matchNumber: number) => void;
 }
 
-export default function Bracket({ fixtures, teamIsoCodes }: BracketProps) {
+export default function Bracket({ fixtures, teamIsoCodes, onShowDetails }: BracketProps) {
   const [activeMobileRound, setActiveMobileRound] = useState<string>("round-of-32");
 
   // Custom stage translations
@@ -65,7 +66,7 @@ export default function Bracket({ fixtures, teamIsoCodes }: BracketProps) {
       "3º do Grupo E": "Equador",
       "1º do Grupo F": "Holanda",
       "2º do Grupo F": "Japão",
-      "3º do Grupo F": "Suécia",
+      "3º do Grupo F": "Suícia",
       "1º do Grupo G": "Egito",
       "2º do Grupo G": "Irã",
       "3º do Grupo G": "Bélgica",
@@ -161,9 +162,10 @@ export default function Bracket({ fixtures, teamIsoCodes }: BracketProps) {
     const hasScore = typeof match.homeScore === "number" && typeof match.awayScore === "number";
 
     return (
-      <div
+      <button
         key={match.matchNumber}
-        className={`group relative rounded-xl border border-zinc-900 bg-zinc-950/60 p-3 shadow-lg select-none hover:border-zinc-800 transition duration-200 ${
+        onClick={() => onShowDetails(match.matchNumber)}
+        className={`group relative text-left rounded-xl border border-zinc-900 bg-zinc-950/60 p-3 shadow-lg select-none hover:border-orange-500 hover:bg-zinc-900/40 transition duration-200 focus:outline-none ${
           isCompact ? "w-full" : "w-60"
         }`}
       >
@@ -205,7 +207,7 @@ export default function Bracket({ fixtures, teamIsoCodes }: BracketProps) {
             )}
           </div>
         </div>
-      </div>
+      </button>
     );
   };
 

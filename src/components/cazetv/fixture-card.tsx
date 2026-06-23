@@ -1,10 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import ReactCountryFlag from "react-country-flag";
-import Link from "next/link";
 import Image from "next/image";
-import { Calendar, MapPin, ArrowSquareOut } from "@phosphor-icons/react";
 
 interface MatchEvent {
   tipo: string;
@@ -33,32 +29,37 @@ interface FixtureCardProps {
   fixture: Fixture;
   stageTranslations: Record<string, string>;
   teamIsoCodes: Record<string, string>;
+  onShowDetails: (matchNumber: number) => void;
 }
 
 export default function FixtureCard({
   fixture,
   stageTranslations,
-  teamIsoCodes
+  teamIsoCodes,
+  onShowDetails,
 }: FixtureCardProps) {
-  const [showDetails, setShowDetails] = useState(false);
   const stageLabel = stageTranslations[fixture.stage] || fixture.stage;
-  
-  const formatMatchDateTime = (utcString: string) => {
-    try {
-      const dateObj = new Date(utcString);
-      return dateObj.toLocaleDateString("pt-BR", {
-        day: "2-digit",
-        month: "2-digit",
-        hour: "2-digit",
-        minute: "2-digit",
-        timeZone: "America/Sao_Paulo"
-      }) + " (Brasília)";
-    } catch {
-      return utcString;
-    }
-  };
+  const hasScore = typeof fixture.homeScore === "number" && typeof fixture.awayScore === "number";
+
+  // Check if the match is live now
+  const now = new Date();
+  const kickoff = new Date(fixture.kickoffUtc);
+  const endTime = new Date(kickoff.getTime() + 2 * 60 * 60 * 1000); // 2 hours duration
+  const isLiveNow = now >= kickoff && now <= endTime;
 
   const renderFlag = (teamName: string) => {
+    if (!teamName || teamName.startsWith("Vencedor") || teamName.startsWith("Perdedor") || teamName.startsWith("1º") || teamName.startsWith("2º") || teamName.startsWith("3º")) {
+      return (
+        <div className="relative w-20 h-12 md:w-24 md:h-16 overflow-hidden rounded-xl shrink-0 bg-zinc-900 border border-zinc-800/80">
+          <Image
+            src="/utils/placeholder.svg"
+            alt="A definir"
+            fill
+            className="object-cover opacity-30"
+          />
+        </div>
+      );
+    }
     if (teamName === "Inglaterra") {
       return (
         <div className="relative w-20 h-12 md:w-24 md:h-16 overflow-hidden rounded-xl shrink-0 border border-zinc-800 bg-zinc-900">
@@ -90,15 +91,12 @@ export default function FixtureCard({
     if (isoCode) {
       return (
         <div className="relative w-20 h-12 md:w-24 md:h-16 overflow-hidden rounded-xl shrink-0 border border-zinc-800 bg-zinc-900">
-          <ReactCountryFlag
-            countryCode={isoCode}
-            svg
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover"
-            }}
-            title={teamName}
+          <Image
+            src={`https://flagcdn.com/${isoCode.toLowerCase()}.svg`}
+            alt={teamName}
+            fill
+            className="object-cover"
+            unoptimized
           />
         </div>
       );
@@ -115,82 +113,6 @@ export default function FixtureCard({
       </div>
     );
   };
-
-  const hasScore = typeof fixture.homeScore === "number" && typeof fixture.awayScore === "number";
-
-  // Check if the match is live now
-  const now = new Date();
-  const kickoff = new Date(fixture.kickoffUtc);
-  const endTime = new Date(kickoff.getTime() + 2 * 60 * 60 * 1000); // 2 hours duration
-  const isLiveNow = now >= kickoff && now <= endTime;
-
-  const renderDetailsContent = (isLiveMatch = false, showButton = true) => (
-    <div className="flex flex-col gap-4 w-full">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 w-full">
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] sm:text-xs text-zinc-450 flex-grow min-w-0">
-          <div className="flex items-center gap-1.5 shrink-0">
-            <Calendar size={13} className="text-zinc-500 shrink-0" />
-            <span className="font-semibold">{formatMatchDateTime(fixture.kickoffUtc)}</span>
-          </div>
-          <span className="text-zinc-800 shrink-0">•</span>
-          <div className="flex items-center gap-1.5 text-zinc-500 min-w-0">
-            <MapPin size={13} className="text-zinc-650 shrink-0" />
-            <span className="truncate">
-              {fixture.stadium} • {fixture.hostCity.replace("-", " ")}
-            </span>
-          </div>
-        </div>
-
-        {showButton && fixture.matchUrl && (
-          <Link
-            href={fixture.matchUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`group/btn inline-flex items-center justify-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-black uppercase tracking-wider text-white transition-colors duration-200 w-full sm:w-auto shrink-0 ${
-              isLiveMatch ? "bg-orange-600 hover:bg-orange-500" : "bg-zinc-950/80 border border-zinc-900 hover:bg-zinc-900"
-            }`}
-          >
-            {isLiveMatch ? "Assistir" : "Ver partida"}
-            <ArrowSquareOut size={13} className="transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-          </Link>
-        )}
-      </div>
-
-      {fixture.events && fixture.events.length > 0 && (
-        <div className="mt-2 pt-3 border-t border-zinc-900/60 flex flex-col gap-2.5 text-xs text-zinc-400">
-          {fixture.events.map((event, idx) => {
-            const isHome = event.time === "casa";
-            return (
-              <div key={idx} className={`flex items-center gap-2 ${isHome ? "justify-start text-left" : "justify-end text-right"}`}>
-                {isHome && (
-                  <>
-                    {event.tipo === "gol" && <span className="text-sm">⚽</span>}
-                    {event.tipo === "gol_contra" && <span className="text-sm text-red-500">⚽</span>}
-                    {event.tipo === "cartao_amarelo" && <span className="text-xs text-yellow-500">🟨</span>}
-                    {event.tipo === "cartao_vermelho" && <span className="text-xs text-red-500">🟥</span>}
-                    <span className="text-zinc-300 font-semibold">
-                      {event.autor} <span className="text-zinc-500 text-[10px]">({event.minuto}){event.tipo === "gol_contra" && " (GC)"}</span>
-                    </span>
-                  </>
-                )}
-                {!isHome && (
-                  <>
-                    <span className="text-zinc-300 font-semibold">
-                      {event.autor} <span className="text-zinc-550 text-[10px]">({event.minuto}){event.tipo === "gol_contra" && " (GC)"}</span>
-                    </span>
-                    {event.tipo === "gol" && <span className="text-sm">⚽</span>}
-                    {event.tipo === "gol_contra" && <span className="text-sm text-red-500">⚽</span>}
-                    {event.tipo === "cartao_amarelo" && <span className="text-xs text-yellow-500">🟨</span>}
-                    {event.tipo === "cartao_vermelho" && <span className="text-xs text-red-500">🟥</span>}
-                  </>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      )}
-    </div>
-  );
 
   return (
     <div className="group flex flex-col justify-between rounded-2xl bg-zinc-900/20 p-5 hover:bg-zinc-900/30 transition duration-300">
@@ -214,7 +136,7 @@ export default function FixtureCard({
       </div>
 
       {/* Match core layout (Vertical columns) */}
-      <div className="grid grid-cols-3 items-center gap-2 py-3">
+      <div className="grid grid-cols-3 items-center gap-2 py-3 select-none">
         {/* Home Team */}
         <div className="flex flex-col items-center text-center gap-2">
           {renderFlag(fixture.homeTeam)}
@@ -267,32 +189,13 @@ export default function FixtureCard({
         </div>
       </div>
 
-      {/* Collapsible area with transition */}
-      {isLiveNow ? (
-        <div className="overflow-hidden mt-5 pt-4">
-          {renderDetailsContent(true, true)}
-        </div>
-      ) : hasScore ? (
-        <>
-          <div
-            className={`overflow-hidden transition-all duration-[400ms] ease-in-out ${
-              showDetails ? "max-h-[250px] opacity-100 mt-5 pt-4" : "max-h-0 opacity-0"
-            }`}
-          >
-            {renderDetailsContent(false, true)}
-          </div>
-          <button
-            onClick={() => setShowDetails(!showDetails)}
-            className="mt-4 text-[9px] font-black uppercase tracking-widest text-zinc-500 hover:text-zinc-350 transition duration-200 w-full text-center py-1.5"
-          >
-            {showDetails ? "Ocultar Detalhes ↑" : "Exibir Detalhes ↓"}
-          </button>
-        </>
-      ) : (
-        <div className="overflow-hidden mt-5 pt-4">
-          {renderDetailsContent(false, false)}
-        </div>
-      )}
+      {/* View details button */}
+      <button
+        onClick={() => onShowDetails(fixture.matchNumber)}
+        className="mt-4 w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-zinc-900/30 text-[10px] font-black uppercase tracking-widest text-zinc-400 hover:text-white hover:bg-zinc-900/60 transition duration-200 outline-none border-0"
+      >
+        Ver Detalhes
+      </button>
     </div>
   );
 }
