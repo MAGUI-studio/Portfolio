@@ -113,10 +113,10 @@ const projectWhatsappConfig: Record<string, ProjectWhatsappConfig> = {
     message: sayegWhatsappMessage,
   },
   shinobi: parseWhatsappHref(shinobiWhatsappHref),
-  "terrametria": {
+  "cazetv": {
     phoneNumber: defaultPhoneNumber,
     message:
-      "Oi, TerraMetria. Quero falar sobre agricultura de precisao e dados de campo.",
+      "Oi, CazéTV! Quero falar sobre transmissões e parcerias.",
   },
   vitta: parseWhatsappHref(vittaLinks.whatsapp),
 };

@@ -6,7 +6,7 @@ import FlowLanding from "@/components/sections/flow";
 import BitesLanding from "@/components/sections/bites";
 import Landing11EnergiaSolarIndustrial from "@/components/sections/kroma";
 import Landing13LogisticaFria from "@/components/sections/landing-13-logistica-fria";
-import Landing14AgritechPrecisao from "@/components/sections/landing-14-agritech-precisao";
+import CazeTVLanding from "@/components/sections/cazetv";
 import Landing15Ciberseguranca from "@/components/sections/landing-15-ciberseguranca";
 import Landing16ConfeitariaLaCreme from "@/components/sections/la-creme";
 import Landing17ModaCircular from "@/components/sections/landing-17-moda-circular";
@@ -341,17 +341,16 @@ export const sections: SectionEntry[] = [
   },
   {
     index: "16",
-    slug: "terrametria",
-    aliases: ["landing-14-agritech-precisão"],
-    title: "TerraMetria",
-    description: "Agritech de precisão para fazendas orientadas por dados.",
+    slug: "cazetv",
+    title: "CazéTV",
+    description: "Canal de transmissão esportiva e entretenimento digital.",
     category: "Landing Pages",
-    industry: "Agronegócio",
-    projectType: "Agritech",
-    goal: "Mostrar inteligência de dados, previsibilidade e ganho produtivo no campo.",
-    tags: ["Dados", "Produtividade", "SaaS"],
-    visible: false,
-    component: Landing14AgritechPrecisao,
+    industry: "Mídia & Entretenimento",
+    projectType: "Canal de streaming",
+    goal: "Engajar fãs com transmissões esportivas ao vivo e entretenimento.",
+    tags: ["Streaming", "Esportes", "Entretenimento"],
+    visible: true,
+    component: CazeTVLanding,
   },
   {
     index: "17",
