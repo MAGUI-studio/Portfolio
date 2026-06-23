@@ -179,7 +179,7 @@ export default function HeroSection({
           {/* LEFT */}
           <div className="relative z-10 xl:col-span-2 lg:max-w-5xl flex flex-col items-center justify-center">
             <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-zinc-800 bg-zinc-950 px-4 py-2">
-              <div className="h-2 w-2 rounded-full bg-red-500" />
+              <div className="h-2 w-2 rounded-full bg-green-500" />
 
               <span className="text-[11px] font-bold uppercase tracking-[0.3em] text-zinc-400">
                 Cobertura Completa

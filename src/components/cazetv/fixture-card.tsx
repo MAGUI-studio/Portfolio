@@ -165,21 +165,21 @@ export default function FixtureCard({
                 {isHome && (
                   <>
                     {event.tipo === "gol" && <span className="text-sm">⚽</span>}
-                    {event.tipo === "gol_contra" && <span className="text-xs text-red-500">⚽ (contra)</span>}
+                    {event.tipo === "gol_contra" && <span className="text-sm text-red-500">⚽</span>}
                     {event.tipo === "cartao_amarelo" && <span className="text-xs text-yellow-500">🟨</span>}
                     {event.tipo === "cartao_vermelho" && <span className="text-xs text-red-500">🟥</span>}
                     <span className="text-zinc-300 font-semibold">
-                      {event.autor} <span className="text-zinc-500 text-[10px]">({event.minuto})</span>
+                      {event.autor} <span className="text-zinc-500 text-[10px]">({event.minuto}){event.tipo === "gol_contra" && " (GC)"}</span>
                     </span>
                   </>
                 )}
                 {!isHome && (
                   <>
                     <span className="text-zinc-300 font-semibold">
-                      {event.autor} <span className="text-zinc-550 text-[10px]">({event.minuto})</span>
+                      {event.autor} <span className="text-zinc-550 text-[10px]">({event.minuto}){event.tipo === "gol_contra" && " (GC)"}</span>
                     </span>
                     {event.tipo === "gol" && <span className="text-sm">⚽</span>}
-                    {event.tipo === "gol_contra" && <span className="text-xs text-red-500">⚽ (contra)</span>}
+                    {event.tipo === "gol_contra" && <span className="text-sm text-red-500">⚽</span>}
                     {event.tipo === "cartao_amarelo" && <span className="text-xs text-yellow-500">🟨</span>}
                     {event.tipo === "cartao_vermelho" && <span className="text-xs text-red-500">🟥</span>}
                   </>

@@ -10,7 +10,9 @@ import Header from "../cazetv/header";
 import HeroSection from "../cazetv/hero-section";
 import FixturesFilter from "../cazetv/fixtures-filter";
 import FixtureCard from "../cazetv/fixture-card";
+import GroupTables from "../cazetv/group-tables";
 import Footer from "../cazetv/footer";
+import { Calendar } from "@phosphor-icons/react";
 
 // Mapeamento das seleções para seus respectivos códigos ISO de 2 letras
 const teamIsoCodes: Record<string, string> = {
@@ -76,6 +78,7 @@ const stageTranslations: Record<string, string> = {
 };
 
 export default function CazeTVLanding() {
+  const [activeTab, setActiveTab] = useState<"jogos" | "grupos">("jogos");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedStage, setSelectedStage] = useState("all");
   const [selectedGroup, setSelectedGroup] = useState("all");
@@ -112,6 +115,34 @@ export default function CazeTVLanding() {
     return matchesSearch && matchesStage && matchesGroup;
   });
 
+  // Group matches by date to break visual repetition
+  const fixturesByDate: Record<string, typeof fixtures> = {};
+  filteredFixtures.slice(0, visibleCount).forEach((fixture) => {
+    const d = fixture.date;
+    if (!fixturesByDate[d]) {
+      fixturesByDate[d] = [];
+    }
+    fixturesByDate[d].push(fixture);
+  });
+
+  const formatGroupHeaderDate = (dateStr: string) => {
+    try {
+      const parts = dateStr.split("-");
+      const date = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]));
+      const options: Intl.DateTimeFormatOptions = {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      };
+      const formatted = date.toLocaleDateString("pt-BR", options);
+      // Capitalize first letter
+      return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+    } catch {
+      return dateStr;
+    }
+  };
+
   // Reset pagination count on search/filter changes
   useEffect(() => {
     setVisibleCount(12);
@@ -122,7 +153,7 @@ export default function CazeTVLanding() {
     const observer = new IntersectionObserver(
       (entries) => {
         const target = entries[0];
-        if (target.isIntersecting && visibleCount < filteredFixtures.length && !isLoadingMore) {
+        if (target.isIntersecting && visibleCount < filteredFixtures.length && !isLoadingMore && activeTab === "jogos") {
           setIsLoadingMore(true);
           setTimeout(() => {
             setVisibleCount((prev) => prev + 12);
@@ -143,7 +174,7 @@ export default function CazeTVLanding() {
         observer.unobserve(currentLoader);
       }
     };
-  }, [visibleCount, filteredFixtures.length, isLoadingMore]);
+  }, [visibleCount, filteredFixtures.length, isLoadingMore, activeTab]);
 
   const handleClearFilters = () => {
     setSearchTerm("");
@@ -177,68 +208,119 @@ export default function CazeTVLanding() {
         teamIsoCodes={teamIsoCodes}
       />
 
+      {/* Navigation Tabs */}
+      <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 mt-10">
+        <div className="flex items-center justify-center border-b border-zinc-900">
+          <div className="flex gap-8">
+            <button
+              onClick={() => setActiveTab("jogos")}
+              className={`pb-4 text-sm font-black uppercase tracking-wider transition duration-200 border-b-2 ${
+                activeTab === "jogos"
+                  ? "border-orange-500 text-white"
+                  : "border-transparent text-zinc-500 hover:text-zinc-300"
+              }`}
+            >
+              Calendário de Jogos
+            </button>
+            <button
+              onClick={() => setActiveTab("grupos")}
+              className={`pb-4 text-sm font-black uppercase tracking-wider transition duration-200 border-b-2 ${
+                activeTab === "grupos"
+                  ? "border-orange-500 text-white"
+                  : "border-transparent text-zinc-500 hover:text-zinc-300"
+              }`}
+            >
+              Tabela de Grupos
+            </button>
+          </div>
+        </div>
+      </div>
+
       {/* Main Content & Filters */}
       <section className="mx-auto w-full px-4 py-8 sm:px-6 lg:px-8 flex-grow">
-        {/* Filters */}
-        <FixturesFilter
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-          selectedStage={selectedStage}
-          setSelectedStage={setSelectedStage}
-          selectedGroup={selectedGroup}
-          setSelectedGroup={setSelectedGroup}
-          groups={groups}
-          stageTranslations={stageTranslations}
-          handleClearFilters={handleClearFilters}
-        />
+        {activeTab === "jogos" ? (
+          <>
+            {/* Filters */}
+            <FixturesFilter
+              searchTerm={searchTerm}
+              setSearchTerm={setSearchTerm}
+              selectedStage={selectedStage}
+              setSelectedStage={setSelectedStage}
+              selectedGroup={selectedGroup}
+              setSelectedGroup={setSelectedGroup}
+              groups={groups}
+              stageTranslations={stageTranslations}
+              handleClearFilters={handleClearFilters}
+            />
 
-        {/* Match Fixtures List */}
-        <div className="mt-8">
-          {filteredFixtures.length === 0 ? (
-            <div className="mt-12 text-center rounded-xl border border-dashed border-zinc-800 py-16 px-4">
-              <span className="text-3xl">📭</span>
-              <h3 className="mt-4 text-lg font-bold text-white">Nenhum confronto correspondente</h3>
-              <p className="mt-2 text-sm text-zinc-400">Experimente alterar as opções de filtros ou a busca.</p>
-              <button
-                onClick={handleClearFilters}
-                className="mt-6 rounded-lg bg-orange-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-orange-500"
-              >
-                Limpar Todos os Filtros
-              </button>
-            </div>
-          ) : (
-            <>
-              <div className="mt-6 grid gap-6 grid-cols-1 md:grid-cols-2">
-                {filteredFixtures.slice(0, visibleCount).map((fixture) => (
-                  <FixtureCard
-                    key={fixture.matchNumber}
-                    fixture={fixture}
-                    stageTranslations={stageTranslations}
-                    teamIsoCodes={teamIsoCodes}
-                  />
-                ))}
-              </div>
-
-              {/* Lazy Loading Trigger element */}
-              {visibleCount < filteredFixtures.length && (
-                <div ref={loaderRef} className="flex flex-col items-center justify-center py-12 mt-6">
-                  {isLoadingMore ? (
-                    <div className="flex flex-col items-center gap-3">
-                      <div className="h-6 w-6 animate-spin rounded-full border-2 border-zinc-800 border-t-orange-500" />
-                      <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">
-                        Carregando mais partidas...
-                      </span>
-                    </div>
-                  ) : (
-                    <span className="text-[10px] font-black uppercase tracking-widest text-zinc-600">
-                      Carregando mais...
-                    </span>
-                  )}
+            {/* Match Fixtures List */}
+            <div className="mt-8">
+              {filteredFixtures.length === 0 ? (
+                <div className="mt-12 text-center rounded-xl border border-dashed border-zinc-800 py-16 px-4">
+                  <span className="text-3xl">📭</span>
+                  <h3 className="mt-4 text-lg font-bold text-white">Nenhum confronto correspondente</h3>
+                  <p className="mt-2 text-sm text-zinc-400">Experimente alterar as opções de filtros ou a busca.</p>
+                  <button
+                    onClick={handleClearFilters}
+                    className="mt-6 rounded-lg bg-orange-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-orange-500"
+                  >
+                    Limpar Todos os Filtros
+                  </button>
                 </div>
+              ) : (
+                <>
+                  <div className="mt-6 flex flex-col gap-1">
+                    {Object.entries(fixturesByDate).map(([dateStr, matchesForDate]) => (
+                      <div key={dateStr} className="mb-10 last:mb-0">
+                        <div className="flex items-center gap-2 mb-5 border-b border-zinc-900 pb-3">
+                          <Calendar size={14} className="text-orange-500 shadow-[0_0_8px_rgba(234,88,12,0.4)] shrink-0 animate-pulse" />
+                          <h3 className="text-[11px] font-black uppercase tracking-widest text-zinc-400">
+                            {formatGroupHeaderDate(dateStr)}
+                          </h3>
+                          <span className="text-[9px] font-bold text-zinc-600 uppercase ml-auto">
+                            {matchesForDate.length} {matchesForDate.length === 1 ? "partida" : "partidas"}
+                          </span>
+                        </div>
+                        <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+                          {matchesForDate.map((fixture) => (
+                            <FixtureCard
+                              key={fixture.matchNumber}
+                              fixture={fixture}
+                              stageTranslations={stageTranslations}
+                              teamIsoCodes={teamIsoCodes}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Lazy Loading Trigger element */}
+                  {visibleCount < filteredFixtures.length && (
+                    <div ref={loaderRef} className="flex flex-col items-center justify-center py-12 mt-6">
+                      {isLoadingMore ? (
+                        <div className="flex flex-col items-center gap-3">
+                          <div className="h-6 w-6 animate-spin rounded-full border-2 border-zinc-800 border-t-orange-500" />
+                          <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">
+                            Carregando mais partidas...
+                          </span>
+                        </div>
+                      ) : (
+                        <span className="text-[10px] font-black uppercase tracking-widest text-zinc-600">
+                          Carregando mais...
+                        </span>
+                      )}
+                    </div>
+                  )}
+                </>
               )}
-            </>
-          )}
-        </div>
+            </div>
+          </>
+        ) : (
+          <div className="mt-4">
+            <GroupTables teamIsoCodes={teamIsoCodes} />
+          </div>
+        )}
       </section>
 
       {/* Footer */}

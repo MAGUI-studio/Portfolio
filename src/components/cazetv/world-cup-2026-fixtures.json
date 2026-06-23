@@ -1604,7 +1604,7 @@
       "stadium": "NRG Stadium",
       "hostCity": "houston",
       "matchUrl": "https://www.youtube.com/watch?v=vTnBwT_hN5o",
-      "homeScore": 3,
+      "homeScore": 4,
       "awayScore": 0,
       "events": [
         {
@@ -1623,6 +1623,12 @@
           "tipo": "gol",
           "minuto": "39'",
           "autor": "CRISTIANO RONALDO",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol_contra",
+          "minuto": "60'",
+          "autor": "Abdukodir KHUSANOV",
           "time": "casa"
         }
       ]
