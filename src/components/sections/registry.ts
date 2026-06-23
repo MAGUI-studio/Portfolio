@@ -328,7 +328,7 @@ export const sections: SectionEntry[] = [
       "Garden center premium com plantas ornamentais, espécies tropicais, vasos e decoração natural.",
     category: "Landing Pages",
     cardImage: "/images/flora/project-cover.webp",
-    industry: "Varejo",
+    industry: "Serviços",
     projectType: "Garden center premium",
     seoTitle:
       "MAGUI.studio | Flora | Garden center premium com plantas ornamentais, vasos e decoração natural",
@@ -345,6 +345,7 @@ export const sections: SectionEntry[] = [
     title: "CazéTV",
     description: "Canal de transmissão esportiva e entretenimento digital.",
     category: "Landing Pages",
+    cardImage: "/images/cazetv/project-cover.webp",
     industry: "Mídia & Entretenimento",
     projectType: "Canal de streaming",
     goal: "Engajar fãs com transmissões esportivas ao vivo e entretenimento.",
@@ -435,4 +436,3 @@ export const sectionMap = Object.fromEntries(
     ...(section.aliases ?? []).map((alias) => [alias, section]),
   ]),
 ) as Record<string, SectionEntry>;
-
