@@ -13,12 +13,12 @@ export default function CurtainLoader() {
     // Start curtain slide up after the logo assembly animation completes
     const animTimeout = setTimeout(() => {
       setStage("animating");
-    }, 2200);
+    }, 2000);
 
     const hideTimeout = setTimeout(() => {
       setStage("hidden");
       document.body.style.overflow = "unset";
-    }, 3200);
+    }, 3000);
 
     return () => {
       clearTimeout(animTimeout);
@@ -36,14 +36,14 @@ export default function CurtainLoader() {
           __html: `
             @keyframes cazeIconBounce {
               0% {
-                transform: scale(0) rotate(-10deg);
+                transform: scale(0) rotate(-15deg);
                 opacity: 0;
               }
-              60% {
-                transform: scale(1.15) rotate(5deg);
+              50% {
+                transform: scale(1.1) rotate(5deg);
               }
-              80% {
-                transform: scale(0.95) rotate(-2deg);
+              75% {
+                transform: scale(0.97) rotate(-2deg);
               }
               100% {
                 transform: scale(1) rotate(0deg);
@@ -55,34 +55,34 @@ export default function CurtainLoader() {
               0% {
                 width: 0;
                 opacity: 0;
-                transform: scaleX(0.1);
-                margin-left: -20px;
+                transform: scaleX(0.2);
+                margin-left: -35px;
               }
-              40% {
-                opacity: 0.5;
+              30% {
+                opacity: 0.7;
               }
               70% {
-                width: 170px;
-                transform: scaleX(1.15);
-                margin-left: 12px;
+                width: 140px;
+                transform: scaleX(1.1);
+                margin-left: 2px;
               }
               85% {
-                transform: scaleX(0.95);
+                transform: scaleX(0.97);
               }
               100% {
-                width: 160px;
+                width: 130px;
                 opacity: 1;
                 transform: scaleX(1);
-                margin-left: 12px;
+                margin-left: 2px;
               }
             }
 
             .animate-caze-icon {
-              animation: cazeIconBounce 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+              animation: cazeIconBounce 0.7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
             }
 
             .animate-caze-text {
-              animation: cazeTextReveal 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.6s forwards;
+              animation: cazeTextReveal 0.8s cubic-bezier(0.25, 1, 0.5, 1) 0.5s forwards;
               overflow: hidden;
               display: flex;
               align-items: center;
@@ -97,26 +97,26 @@ export default function CurtainLoader() {
         }`}
       >
         <div className="flex items-center justify-center">
-          {/* Icon */}
-          <div className="relative w-20 h-20 md:w-24 md:h-24 opacity-0 animate-caze-icon z-10">
+          {/* Icon - Larger size */}
+          <div className="relative w-28 h-28 md:w-32 md:h-32 opacity-0 animate-caze-icon z-10">
             <Image
               src="/images/cazetv/icone-caze-tv.webp"
               alt="CazéTV Icon"
               fill
-              sizes="(max-width: 768px) 80px, 96px"
+              sizes="(max-width: 768px) 112px, 128px"
               className="object-contain"
               priority
             />
           </div>
 
-          {/* Text wrapper with animated reveal from within/behind the icon */}
-          <div className="animate-caze-text opacity-0 w-0 h-16 md:h-20 relative">
-            <div className="relative w-[160px] h-full">
+          {/* Text wrapper - Sitting closer and tighter to the icon */}
+          <div className="animate-caze-text opacity-0 w-0 h-20 md:h-24 relative">
+            <div className="relative w-[130px] h-full">
               <Image
                 src="/images/cazetv/texto-caze-tv-branco.webp"
                 alt="CazéTV Text"
                 fill
-                sizes="160px"
+                sizes="130px"
                 className="object-contain"
                 priority
               />

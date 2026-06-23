@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { X } from "@phosphor-icons/react";
+import { useState, useEffect, useRef } from "react";
 import { cazetvDisplay, cazetvText } from "../cazetv/fonts";
 import fixturesData from "../cazetv/world-cup-2026-fixtures.json";
 
@@ -44,7 +43,7 @@ const teamIsoCodes: Record<string, string> = {
   "Coreia do Sul": "KR",
   "México": "MX",
   "Marrocos": "MA",
-  "Países Baixos": "NL",
+  "Holanda": "NL",
   "Nova Zelândia": "NZ",
   "Noruega": "NO",
   "Panamá": "PA",
@@ -72,7 +71,7 @@ const stageTranslations: Record<string, string> = {
   "round-of-16": "Oitavas de Final",
   "quarter-finals": "Quartas de Final",
   "semi-finals": "Semifinais",
-  "third-place-playoff": "Disputa de 3º Lugar",
+  "third-place": "Disputa de 3º Lugar",
   "final": "Grande Final"
 };
 
@@ -80,6 +79,11 @@ export default function CazeTVLanding() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedStage, setSelectedStage] = useState("all");
   const [selectedGroup, setSelectedGroup] = useState("all");
+
+  // Infinite Scroll / Lazy Load states
+  const [visibleCount, setVisibleCount] = useState(12);
+  const [isLoadingMore, setIsLoadingMore] = useState(false);
+  const loaderRef = useRef<HTMLDivElement>(null);
 
   const { fixtures } = fixturesData;
 
@@ -107,6 +111,39 @@ export default function CazeTVLanding() {
 
     return matchesSearch && matchesStage && matchesGroup;
   });
+
+  // Reset pagination count on search/filter changes
+  useEffect(() => {
+    setVisibleCount(12);
+  }, [searchTerm, selectedStage, selectedGroup]);
+
+  // Observer intersection to trigger show more
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const target = entries[0];
+        if (target.isIntersecting && visibleCount < filteredFixtures.length && !isLoadingMore) {
+          setIsLoadingMore(true);
+          setTimeout(() => {
+            setVisibleCount((prev) => prev + 12);
+            setIsLoadingMore(false);
+          }, 700);
+        }
+      },
+      { threshold: 0.1, rootMargin: "100px" }
+    );
+
+    const currentLoader = loaderRef.current;
+    if (currentLoader) {
+      observer.observe(currentLoader);
+    }
+
+    return () => {
+      if (currentLoader) {
+        observer.unobserve(currentLoader);
+      }
+    };
+  }, [visibleCount, filteredFixtures.length, isLoadingMore]);
 
   const handleClearFilters = () => {
     setSearchTerm("");
@@ -157,12 +194,6 @@ export default function CazeTVLanding() {
 
         {/* Match Fixtures List */}
         <div className="mt-8">
-          <div className="flex items-center justify-between">
-            <h2 className="text-xl font-bold uppercase tracking-wide text-white">
-              Confrontos Encontrados ({filteredFixtures.length})
-            </h2>
-          </div>
-
           {filteredFixtures.length === 0 ? (
             <div className="mt-12 text-center rounded-xl border border-dashed border-zinc-800 py-16 px-4">
               <span className="text-3xl">📭</span>
@@ -176,16 +207,36 @@ export default function CazeTVLanding() {
               </button>
             </div>
           ) : (
-            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredFixtures.map((fixture) => (
-                <FixtureCard
-                  key={fixture.matchNumber}
-                  fixture={fixture}
-                  stageTranslations={stageTranslations}
-                  teamIsoCodes={teamIsoCodes}
-                />
-              ))}
-            </div>
+            <>
+              <div className="mt-6 grid gap-6 grid-cols-1 md:grid-cols-2">
+                {filteredFixtures.slice(0, visibleCount).map((fixture) => (
+                  <FixtureCard
+                    key={fixture.matchNumber}
+                    fixture={fixture}
+                    stageTranslations={stageTranslations}
+                    teamIsoCodes={teamIsoCodes}
+                  />
+                ))}
+              </div>
+
+              {/* Lazy Loading Trigger element */}
+              {visibleCount < filteredFixtures.length && (
+                <div ref={loaderRef} className="flex flex-col items-center justify-center py-12 mt-6">
+                  {isLoadingMore ? (
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="h-6 w-6 animate-spin rounded-full border-2 border-zinc-800 border-t-orange-500" />
+                      <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">
+                        Carregando mais partidas...
+                      </span>
+                    </div>
+                  ) : (
+                    <span className="text-[10px] font-black uppercase tracking-widest text-zinc-600">
+                      Carregando mais...
+                    </span>
+                  )}
+                </div>
+              )}
+            </>
           )}
         </div>
       </section>

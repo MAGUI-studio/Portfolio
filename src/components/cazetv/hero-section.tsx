@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import ReactCountryFlag from "react-country-flag";
+import { ArrowSquareOut } from "@phosphor-icons/react";
 
 interface Fixture {
   matchNumber: number;
@@ -96,12 +98,39 @@ export default function HeroSection({
   }, [fixtures]);
 
   const renderFlag = (teamName: string, sizeClass = "w-20 md:w-40 h-auto") => {
+    if (teamName === "Inglaterra") {
+      return (
+        <div className={`relative ${sizeClass} overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900 aspect-[3/2]`}>
+          <Image
+            src="https://flagcdn.com/gb-eng.svg"
+            alt="Inglaterra"
+            fill
+            className="object-cover"
+            unoptimized
+          />
+        </div>
+      );
+    }
+    if (teamName === "Escócia") {
+      return (
+        <div className={`relative ${sizeClass} overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900 aspect-[3/2]`}>
+          <Image
+            src="https://flagcdn.com/gb-sct.svg"
+            alt="Escócia"
+            fill
+            className="object-cover"
+            unoptimized
+          />
+        </div>
+      );
+    }
+
     const isoCode = teamIsoCodes[teamName];
 
     if (!isoCode) {
       return (
         <div
-          className={`flex ${sizeClass} items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900`}
+          className={`flex ${sizeClass} items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900 aspect-[3/2]`}
         >
           🏆
         </div>
@@ -110,7 +139,7 @@ export default function HeroSection({
 
     return (
       <div
-        className={`relative ${sizeClass} overflow-hidden rounded-xl border border-zinc-800`}
+        className={`relative ${sizeClass} overflow-hidden rounded-xl border border-zinc-800 aspect-[3/2]`}
       >
         <ReactCountryFlag
           countryCode={isoCode}
@@ -253,6 +282,20 @@ export default function HeroSection({
                           <span className="text-sm font-black uppercase tracking-[0.2em] text-red-500">
                             Ao Vivo
                           </span>
+                        </div>
+                      )}
+
+                      {currentMatch.matchUrl && (
+                        <div className="mt-4 w-full">
+                          <Link
+                            href={currentMatch.matchUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group/btn inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-orange-600 px-5 py-2.5 text-xs font-black uppercase tracking-wider text-white transition-colors duration-200 hover:bg-orange-500"
+                          >
+                            Assistir
+                            <ArrowSquareOut size={13} className="transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                          </Link>
                         </div>
                       )}
                     </div>

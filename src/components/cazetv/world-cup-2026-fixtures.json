@@ -7,11 +7,7 @@
     "edition": "2026 FIFA World Cup",
     "startDate": "2026-06-11",
     "endDate": "2026-07-19",
-    "hosts": [
-      "Estados Unidos",
-      "Canadá",
-      "México"
-    ],
+    "hosts": ["Estados Unidos", "Canadá", "México"],
     "totalTeams": 48,
     "totalMatches": 104
   },
@@ -26,7 +22,41 @@
       "awayTeam": "África do Sul",
       "stadium": "Estadio Azteca",
       "hostCity": "mexico-city",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/mexico-vs-south-africa-2026-06-11"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/mexico-vs-south-africa-2026-06-11",
+      "homeScore": 2,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "9'",
+          "autor": "Julian QUINONES",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "67'",
+          "autor": "Raul JIMENEZ",
+          "time": "casa"
+        },
+        {
+          "tipo": "cartao_vermelho",
+          "minuto": "90'+2'",
+          "autor": "Cesar MONTES",
+          "time": "casa"
+        },
+        {
+          "tipo": "cartao_vermelho",
+          "minuto": "49'",
+          "autor": "Sphephelo SITHOLE",
+          "time": "fora"
+        },
+        {
+          "tipo": "cartao_vermelho",
+          "minuto": "84'",
+          "autor": "Themba ZWANE",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 2,
@@ -38,7 +68,29 @@
       "awayTeam": "Tchéquia",
       "stadium": "Estadio Akron",
       "hostCity": "guadalajara",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/korea-republic-vs-czechia-2026-06-11"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/korea-republic-vs-czechia-2026-06-11",
+      "homeScore": 2,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "67'",
+          "autor": "HWANG Inbeom",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "80'",
+          "autor": "OH Hyeongyu",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "59'",
+          "autor": "Ladislav KREJCI",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 3,
@@ -50,7 +102,23 @@
       "awayTeam": "Bósnia e Herzegovina",
       "stadium": "BMO Field",
       "hostCity": "toronto",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/canada-vs-bosnia-and-herzegovina-2026-06-12"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/canada-vs-bosnia-and-herzegovina-2026-06-12",
+      "homeScore": 1,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "21'",
+          "autor": "Jovo LUKIC",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "78'",
+          "autor": "Cyle LARIN",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 4,
@@ -62,7 +130,41 @@
       "awayTeam": "Paraguai",
       "stadium": "SoFi Stadium",
       "hostCity": "los-angeles",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/united-states-vs-paraguay-2026-06-12"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/united-states-vs-paraguay-2026-06-12",
+      "homeScore": 4,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol_contra",
+          "minuto": "7'",
+          "autor": "Damian BOBADILLA",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "31'",
+          "autor": "Folarin BALOGUN",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "45'+5'",
+          "autor": "Folarin BALOGUN",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "73'",
+          "autor": "MAURICIO",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+8'",
+          "autor": "Giovanni REYNA",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 5,
@@ -74,7 +176,17 @@
       "awayTeam": "Escócia",
       "stadium": "Gillette Stadium",
       "hostCity": "boston",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/haiti-vs-scotland-2026-06-13"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/haiti-vs-scotland-2026-06-13",
+      "homeScore": 0,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "28'",
+          "autor": "John McGinn",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 6,
@@ -86,7 +198,23 @@
       "awayTeam": "Turquia",
       "stadium": "BC Place",
       "hostCity": "vancouver",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/australia-vs-turkiye-2026-06-13"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/australia-vs-turkiye-2026-06-13",
+      "homeScore": 2,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "27'",
+          "autor": "Nestory IRANKUNDA",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "75'",
+          "autor": "Connor METCALFE",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 7,
@@ -98,7 +226,23 @@
       "awayTeam": "Marrocos",
       "stadium": "MetLife Stadium",
       "hostCity": "new-york",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/brazil-vs-morocco-2026-06-13"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/brazil-vs-morocco-2026-06-13",
+      "homeScore": 1,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "21'",
+          "autor": "Ismael SAIBARI",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "32'",
+          "autor": "VINICIUS JUNIOR",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 8,
@@ -110,7 +254,23 @@
       "awayTeam": "Suíça",
       "stadium": "Levi's Stadium",
       "hostCity": "san-francisco",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/qatar-vs-switzerland-2026-06-13"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/qatar-vs-switzerland-2026-06-13",
+      "homeScore": 1,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "17'",
+          "autor": "Breel EMBOLO",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol_contra",
+          "minuto": "90'+4'",
+          "autor": "Miro MUHEIM",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 9,
@@ -122,7 +282,17 @@
       "awayTeam": "Equador",
       "stadium": "Lincoln Financial Field",
       "hostCity": "philadelphia",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/cote-divoire-vs-ecuador-2026-06-14"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/cote-divoire-vs-ecuador-2026-06-14",
+      "homeScore": 1,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "90'",
+          "autor": "Amad DIALLO",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 10,
@@ -134,7 +304,59 @@
       "awayTeam": "Curaçao",
       "stadium": "NRG Stadium",
       "hostCity": "houston",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/germany-vs-curacao-2026-06-14"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/germany-vs-curacao-2026-06-14",
+      "homeScore": 7,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "6'",
+          "autor": "Felix NMECHA",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "21'",
+          "autor": "Livano COMENENCIA",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "38'",
+          "autor": "Nico SCHLOTTERBECK",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "45'+5'",
+          "autor": "Kai HAVERTZ",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "47'",
+          "autor": "Jamal MUSIALA",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "68'",
+          "autor": "Nathaniel BROWN",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "78'",
+          "autor": "Deniz UNDAV",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "88'",
+          "autor": "Kai HAVERTZ",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 11,
@@ -142,11 +364,39 @@
       "kickoffUtc": "2026-06-14T20:00:00Z",
       "stage": "group-stage",
       "group": "F",
-      "homeTeam": "Países Baixos",
+      "homeTeam": "Holanda",
       "awayTeam": "Japão",
       "stadium": "AT&T Stadium",
       "hostCity": "dallas",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/netherlands-vs-japan-2026-06-14"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/netherlands-vs-japan-2026-06-14",
+      "homeScore": 2,
+      "awayScore": 2,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "50'",
+          "autor": "Virgil VAN DIJK",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "57'",
+          "autor": "Keito Nakamura",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "64'",
+          "autor": "Crysencio SUMMERVILLE",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "88'",
+          "autor": "Daichi KAMADA",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 12,
@@ -158,7 +408,47 @@
       "awayTeam": "Tunísia",
       "stadium": "Estadio BBVA",
       "hostCity": "monterrey",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/sweden-vs-tunisia-2026-06-14"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/sweden-vs-tunisia-2026-06-14",
+      "homeScore": 5,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "7'",
+          "autor": "Yasin AYARI",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "30'",
+          "autor": "Alexander Isak",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "43'",
+          "autor": "Omar Rekik",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "59'",
+          "autor": "Viktor GYOKERES",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "84'",
+          "autor": "Mattias SVANBERG",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+6'",
+          "autor": "Yasin AYARI",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 13,
@@ -170,7 +460,23 @@
       "awayTeam": "Uruguai",
       "stadium": "Hard Rock Stadium",
       "hostCity": "miami",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/saudi-arabia-vs-uruguay-2026-06-15"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/saudi-arabia-vs-uruguay-2026-06-15",
+      "homeScore": 1,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "41'",
+          "autor": "Abdulelah ALAMRI",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "80'",
+          "autor": "Maxi ARAUJO",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 14,
@@ -182,7 +488,10 @@
       "awayTeam": "Cabo Verde",
       "stadium": "Mercedes-Benz Stadium",
       "hostCity": "atlanta",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/spain-vs-cabo-verde-2026-06-15"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/spain-vs-cabo-verde-2026-06-15",
+      "homeScore": 0,
+      "awayScore": 0,
+      "events": []
     },
     {
       "matchNumber": 15,
@@ -194,7 +503,35 @@
       "awayTeam": "Nova Zelândia",
       "stadium": "SoFi Stadium",
       "hostCity": "los-angeles",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/ir-iran-vs-new-zealand-2026-06-15"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/ir-iran-vs-new-zealand-2026-06-15",
+      "homeScore": 2,
+      "awayScore": 2,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "7'",
+          "autor": "Elijah JUST",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "32'",
+          "autor": "Ramin REZAEIAN",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "54'",
+          "autor": "Elijah JUST",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "64'",
+          "autor": "Mohammad MOHEBBI",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 16,
@@ -206,7 +543,23 @@
       "awayTeam": "Egito",
       "stadium": "Lumen Field",
       "hostCity": "seattle",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/belgium-vs-egypt-2026-06-15"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/belgium-vs-egypt-2026-06-15",
+      "homeScore": 1,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "19'",
+          "autor": "EMAM ASHOUR",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol_contra",
+          "minuto": "66'",
+          "autor": "MOHAMED HANY",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 17,
@@ -218,7 +571,35 @@
       "awayTeam": "Senegal",
       "stadium": "MetLife Stadium",
       "hostCity": "new-york",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/france-vs-senegal-2026-06-16"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/france-vs-senegal-2026-06-16",
+      "homeScore": 3,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "90+6'",
+          "autor": "Kylian MBAPPE",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "82'",
+          "autor": "Bradley BARCOLA",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "66'",
+          "autor": "Kylian MBAPPE",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90+5'",
+          "autor": "Ibrahim MBAYE",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 18,
@@ -230,7 +611,41 @@
       "awayTeam": "Noruega",
       "stadium": "Gillette Stadium",
       "hostCity": "boston",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/iraq-vs-norway-2026-06-16"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/iraq-vs-norway-2026-06-16",
+      "homeScore": 1,
+      "awayScore": 4,
+      "events": [
+        {
+          "tipo": "gol_contra",
+          "minuto": "90+6'",
+          "autor": "AYMEN HUSSEIN",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "76'",
+          "autor": "Leo OSTIGARD",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "43'",
+          "autor": "Erling HAALAND",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "29'",
+          "autor": "Erling HAALAND",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "39'",
+          "autor": "AYMEN HUSSEIN",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 19,
@@ -242,7 +657,29 @@
       "awayTeam": "Argélia",
       "stadium": "Arrowhead Stadium",
       "hostCity": "kansas-city",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/argentina-vs-algeria-2026-06-16"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/argentina-vs-algeria-2026-06-16",
+      "homeScore": 3,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "17'",
+          "autor": "Lionel MESSI",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "60'",
+          "autor": "Lionel MESSI",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "76'",
+          "autor": "Lionel MESSI",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 20,
@@ -254,7 +691,35 @@
       "awayTeam": "Jordânia",
       "stadium": "Levi's Stadium",
       "hostCity": "san-francisco",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/austria-vs-jordan-2026-06-16"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/austria-vs-jordan-2026-06-16",
+      "homeScore": 3,
+      "awayScore": 1,
+      "events": [
+         {
+          "tipo": "gol",
+          "minuto": "90+12'",
+          "autor": "Marko ARNAUTOVIC",
+          "time": "casa"
+        },
+         {
+          "tipo": "gol_contra",
+          "minuto": "76'",
+          "autor": "YAZAN ALARAB",
+          "time": "casa"
+        },
+         {
+          "tipo": "gol",
+          "minuto": "20'",
+          "autor": "Romano SCHMID",
+          "time": "casa"
+        },
+         {
+          "tipo": "gol",
+          "minuto": "50'",
+          "autor": "ALI OLWAN",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 21,
@@ -266,7 +731,17 @@
       "awayTeam": "Panamá",
       "stadium": "BMO Field",
       "hostCity": "toronto",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/ghana-vs-panama-2026-06-17"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/ghana-vs-panama-2026-06-17",
+      "homeScore": 1,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "90+5'",
+          "autor": "Caleb YIRENKYI",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 22,
@@ -278,7 +753,47 @@
       "awayTeam": "Croácia",
       "stadium": "AT&T Stadium",
       "hostCity": "dallas",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/england-vs-croatia-2026-06-17"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/england-vs-croatia-2026-06-17",
+      "homeScore": 4,
+      "awayScore": 2,
+      "events": [
+         {
+          "tipo": "gol",
+          "minuto": "12'",
+          "autor": "Harry KANE",
+          "time": "casa"
+        },
+         {
+          "tipo": "gol",
+          "minuto": "42'",
+          "autor": "Harry KANE",
+          "time": "casa"
+        },
+         {
+          "tipo": "gol",
+          "minuto": "47'",
+          "autor": "Jude BELLINGHAM",
+          "time": "casa"
+        },
+         {
+          "tipo": "gol",
+          "minuto": "85'",
+          "autor": "Marcus RASHFORD",
+          "time": "casa"
+        },
+         {
+          "tipo": "gol",
+          "minuto": "45+5'",
+          "autor": "Petar Musa",
+          "time": "fora"
+        },
+         {
+          "tipo": "gol",
+          "minuto": "36'",
+          "autor": "Martin BATURINA",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 23,
@@ -290,7 +805,23 @@
       "awayTeam": "RD Congo",
       "stadium": "NRG Stadium",
       "hostCity": "houston",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/portugal-vs-congo-dr-2026-06-17"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/portugal-vs-congo-dr-2026-06-17",
+      "homeScore": 1,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "6'",
+          "autor": "JOAO NEVES",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "45+5'",
+          "autor": "Yoane WISSA",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 24,
@@ -302,7 +833,35 @@
       "awayTeam": "Colômbia",
       "stadium": "Estadio Azteca",
       "hostCity": "mexico-city",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/uzbekistan-vs-colombia-2026-06-17"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/uzbekistan-vs-colombia-2026-06-17",
+      "homeScore": 1,
+      "awayScore": 3,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "60'",
+          "autor": "Abbosbek FAYZULLAEV",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "40'",
+          "autor": "Daniel MUNOZ",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "65'",
+          "autor": "Luis DIAZ",
+          "time": "fora"
+        },
+         {
+          "tipo": "gol",
+          "minuto": "90+9'",
+          "autor": "Jaminton CAMPAZ",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 25,
@@ -314,7 +873,23 @@
       "awayTeam": "África do Sul",
       "stadium": "Mercedes-Benz Stadium",
       "hostCity": "atlanta",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/czechia-vs-south-africa-2026-06-18"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/czechia-vs-south-africa-2026-06-18",
+      "homeScore": 1,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "6'",
+          "autor": "Michal SADILEK",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "83' (J)",
+          "autor": "Teboho MOKOENA",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 26,
@@ -326,7 +901,47 @@
       "awayTeam": "Bósnia e Herzegovina",
       "stadium": "SoFi Stadium",
       "hostCity": "los-angeles",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/switzerland-vs-bosnia-and-herzegovina-2026-06-18"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/switzerland-vs-bosnia-and-herzegovina-2026-06-18",
+      "homeScore": 4,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "74'",
+          "autor": "Johan MANZAMBI",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "84'",
+          "autor": "Ruben VARGAS",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'",
+          "autor": "Johan MANZAMBI",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+7' (J)",
+          "autor": "Granit XHAKA",
+          "time": "casa"
+        },
+        {
+          "tipo": "cartao_vermelho",
+          "minuto": "80'",
+          "autor": "Tarik MUHAREMOVIC",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+3'",
+          "autor": "Ermin MAHMIC",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 27,
@@ -338,7 +953,59 @@
       "awayTeam": "Catar",
       "stadium": "BC Place",
       "hostCity": "vancouver",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/canada-vs-qatar-2026-06-18"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/canada-vs-qatar-2026-06-18",
+      "homeScore": 6,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "16'",
+          "autor": "Cyle LARIN",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "29'",
+          "autor": "Jonathan DAVID",
+          "time": "casa"
+        },
+        {
+          "tipo": "cartao_vermelho",
+          "minuto": "33'",
+          "autor": "HOMAM AHMED",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "45'+3'",
+          "autor": "Jonathan DAVID",
+          "time": "casa"
+        },
+        {
+          "tipo": "cartao_vermelho",
+          "minuto": "51'",
+          "autor": "ASSIM MADIBO",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "64'",
+          "autor": "Nathan SALIBA",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol_contra",
+          "minuto": "75'",
+          "autor": "MOHAMED MANAI",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+2'",
+          "autor": "Jonathan DAVID",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 28,
@@ -350,7 +1017,17 @@
       "awayTeam": "Coreia do Sul",
       "stadium": "Estadio Akron",
       "hostCity": "guadalajara",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/mexico-vs-korea-republic-2026-06-18"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/mexico-vs-korea-republic-2026-06-18",
+      "homeScore": 1,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "50'",
+          "autor": "Luis ROMO",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 29,
@@ -362,7 +1039,29 @@
       "awayTeam": "Haiti",
       "stadium": "Lincoln Financial Field",
       "hostCity": "philadelphia",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/brazil-vs-haiti-2026-06-19"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/brazil-vs-haiti-2026-06-19",
+      "homeScore": 3,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "23'",
+          "autor": "MATHEUS CUNHA",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "36'",
+          "autor": "MATHEUS CUNHA",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "45'+3'",
+          "autor": "VINICIUS JUNIOR",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 30,
@@ -374,7 +1073,17 @@
       "awayTeam": "Marrocos",
       "stadium": "Gillette Stadium",
       "hostCity": "boston",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/scotland-vs-morocco-2026-06-19"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/scotland-vs-morocco-2026-06-19",
+      "homeScore": 0,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "2'",
+          "autor": "Ismael SAIBARI",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 31,
@@ -386,7 +1095,23 @@
       "awayTeam": "Paraguai",
       "stadium": "Levi's Stadium",
       "hostCity": "san-francisco",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/turkiye-vs-paraguay-2026-06-19"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/turkiye-vs-paraguay-2026-06-19",
+      "homeScore": 0,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "2'",
+          "autor": "Matias GALARZA",
+          "time": "fora"
+        },
+        {
+          "tipo": "cartao_vermelho",
+          "minuto": "45'+3'",
+          "autor": "Miguel ALMIRON",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 32,
@@ -398,7 +1123,23 @@
       "awayTeam": "Austrália",
       "stadium": "Lumen Field",
       "hostCity": "seattle",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/united-states-vs-australia-2026-06-19"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/united-states-vs-australia-2026-06-19",
+      "homeScore": 2,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol_contra",
+          "minuto": "11'",
+          "autor": "Cameron BURGESS",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "43'",
+          "autor": "Alex FREEMAN",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 33,
@@ -410,7 +1151,29 @@
       "awayTeam": "Costa do Marfim",
       "stadium": "BMO Field",
       "hostCity": "toronto",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/germany-vs-cote-divoire-2026-06-20"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/germany-vs-cote-divoire-2026-06-20",
+      "homeScore": 2,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "30'",
+          "autor": "Franck KESSIE",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "68'",
+          "autor": "Deniz UNDAV",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+4'",
+          "autor": "Deniz UNDAV",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 34,
@@ -422,7 +1185,9 @@
       "awayTeam": "Curaçao",
       "stadium": "Arrowhead Stadium",
       "hostCity": "kansas-city",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/ecuador-vs-curacao-2026-06-20"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/ecuador-vs-curacao-2026-06-20",
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "matchNumber": 35,
@@ -430,11 +1195,51 @@
       "kickoffUtc": "2026-06-20T17:00:00Z",
       "stage": "group-stage",
       "group": "F",
-      "homeTeam": "Países Baixos",
+      "homeTeam": "Holanda",
       "awayTeam": "Suécia",
       "stadium": "NRG Stadium",
       "hostCity": "houston",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/netherlands-vs-sweden-2026-06-20"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/netherlands-vs-sweden-2026-06-20",
+      "homeScore": 5,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "5'",
+          "autor": "Brian BROBBEY",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "17'",
+          "autor": "Brian BROBBEY",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "47'",
+          "autor": "Cody GAKPO",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "54'",
+          "autor": "Cody GAKPO",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "59'",
+          "autor": "Anthony ELANGA",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "89'",
+          "autor": "Crysencio SUMMERVILLE",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 36,
@@ -446,7 +1251,35 @@
       "awayTeam": "Japão",
       "stadium": "Estadio BBVA",
       "hostCity": "monterrey",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/tunisia-vs-japan-2026-06-20"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/tunisia-vs-japan-2026-06-20",
+      "homeScore": 0,
+      "awayScore": 4,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "4'",
+          "autor": "Daichi KAMADA",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "31'",
+          "autor": "Ayase UEDA",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "69'",
+          "autor": "Junya ITO",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "83'",
+          "autor": "Ayase UEDA",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 37,
@@ -458,7 +1291,35 @@
       "awayTeam": "Cabo Verde",
       "stadium": "Hard Rock Stadium",
       "hostCity": "miami",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/uruguay-vs-cabo-verde-2026-06-21"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/uruguay-vs-cabo-verde-2026-06-21",
+      "homeScore": 2,
+      "awayScore": 2,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "21'",
+          "autor": "KEVIN PINA",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "44'",
+          "autor": "Maxi ARAUJO",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "45'+6'",
+          "autor": "Agustin CANOBBIO",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "61'",
+          "autor": "HELIO VARELA",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 38,
@@ -470,7 +1331,35 @@
       "awayTeam": "Arábia Saudita",
       "stadium": "Mercedes-Benz Stadium",
       "hostCity": "atlanta",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/spain-vs-saudi-arabia-2026-06-21"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/spain-vs-saudi-arabia-2026-06-21",
+      "homeScore": 4,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "10'",
+          "autor": "Lamine YAMAL",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "21'",
+          "autor": "Mikel OYARZABAL",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "24'",
+          "autor": "Mikel OYARZABAL",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol_contra",
+          "minuto": "49'",
+          "autor": "HASSAN ALTAMBAKTI",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 39,
@@ -479,10 +1368,20 @@
       "stage": "group-stage",
       "group": "G",
       "homeTeam": "Bélgica",
-      "awayTeam": "Irã",
+      "awayTeam": "RI do Irã",
       "stadium": "SoFi Stadium",
       "hostCity": "los-angeles",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/belgium-vs-ir-iran-2026-06-21"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/belgium-vs-ir-iran-2026-06-21",
+      "homeScore": 0,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "cartao_vermelho",
+          "minuto": "66'",
+          "autor": "Nathan NGOY",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 40,
@@ -494,7 +1393,35 @@
       "awayTeam": "Egito",
       "stadium": "BC Place",
       "hostCity": "vancouver",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/new-zealand-vs-egypt-2026-06-21"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/new-zealand-vs-egypt-2026-06-21",
+      "homeScore": 1,
+      "awayScore": 3,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "15'",
+          "autor": "Finn SURMAN",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "58'",
+          "autor": "MOSTAFA ZICO",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "67'",
+          "autor": "MOHAMED SALAH",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "82'",
+          "autor": "TREZEGUET",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 41,
@@ -506,7 +1433,41 @@
       "awayTeam": "Senegal",
       "stadium": "MetLife Stadium",
       "hostCity": "new-york",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/norway-vs-senegal-2026-06-22"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/norway-vs-senegal-2026-06-22",
+      "homeScore": 3,
+      "awayScore": 2,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "43'",
+          "autor": "Marcus HOLMGREN PEDERSEN",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "48'",
+          "autor": "Erling HAALAND",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "53'",
+          "autor": "Ismaila SARR",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "58'",
+          "autor": "Erling HAALAND",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+3'",
+          "autor": "Ismaila SARR",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 42,
@@ -518,7 +1479,29 @@
       "awayTeam": "Iraque",
       "stadium": "Lincoln Financial Field",
       "hostCity": "philadelphia",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/france-vs-iraq-2026-06-22"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/france-vs-iraq-2026-06-22",
+      "homeScore": 3,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "14'",
+          "autor": "Kylian MBAPPE",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "54'",
+          "autor": "Kylian MBAPPE",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "66'",
+          "autor": "Ousmane DEMBELE",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 43,
@@ -530,7 +1513,23 @@
       "awayTeam": "Áustria",
       "stadium": "AT&T Stadium",
       "hostCity": "dallas",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/argentina-vs-austria-2026-06-22"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/argentina-vs-austria-2026-06-22",
+      "homeScore": 2,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "38'",
+          "autor": "Lionel MESSI",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+5'",
+          "autor": "Lionel MESSI",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 44,
@@ -542,7 +1541,29 @@
       "awayTeam": "Argélia",
       "stadium": "Levi's Stadium",
       "hostCity": "san-francisco",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/jordan-vs-algeria-2026-06-22"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/jordan-vs-algeria-2026-06-22",
+      "homeScore": 1,
+      "awayScore": 2,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "36'",
+          "autor": "NIZAR ALRASHDAN",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "69'",
+          "autor": "Nadhir BENBOUALI",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "82'",
+          "autor": "Amine GOUIRI",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 45,
@@ -554,7 +1575,9 @@
       "awayTeam": "Gana",
       "stadium": "Gillette Stadium",
       "hostCity": "boston",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/england-vs-ghana-2026-06-23"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/england-vs-ghana-2026-06-23",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 46,
@@ -566,7 +1589,9 @@
       "awayTeam": "Croácia",
       "stadium": "BMO Field",
       "hostCity": "toronto",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/panama-vs-croatia-2026-06-23"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/panama-vs-croatia-2026-06-23",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 47,
@@ -578,7 +1603,29 @@
       "awayTeam": "Uzbequistão",
       "stadium": "NRG Stadium",
       "hostCity": "houston",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/portugal-vs-uzbekistan-2026-06-23"
+      "matchUrl": "https://www.youtube.com/watch?v=vTnBwT_hN5o",
+      "homeScore": 3,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "6'",
+          "autor": "CRISTIANO RONALDO",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "17'",
+          "autor": "NUNO MENDES",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "39'",
+          "autor": "CRISTIANO RONALDO",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 48,
@@ -590,7 +1637,9 @@
       "awayTeam": "RD Congo",
       "stadium": "Estadio Akron",
       "hostCity": "guadalajara",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/colombia-vs-congo-dr-2026-06-23"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/colombia-vs-congo-dr-2026-06-23",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 49,
@@ -602,7 +1651,9 @@
       "awayTeam": "Brasil",
       "stadium": "Hard Rock Stadium",
       "hostCity": "miami",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/scotland-vs-brazil-2026-06-24"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/scotland-vs-brazil-2026-06-24",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 50,
@@ -614,7 +1665,9 @@
       "awayTeam": "Haiti",
       "stadium": "Mercedes-Benz Stadium",
       "hostCity": "atlanta",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/morocco-vs-haiti-2026-06-24"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/morocco-vs-haiti-2026-06-24",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 51,
@@ -626,7 +1679,9 @@
       "awayTeam": "Canadá",
       "stadium": "BC Place",
       "hostCity": "vancouver",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/switzerland-vs-canada-2026-06-24"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/switzerland-vs-canada-2026-06-24",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 52,
@@ -638,7 +1693,9 @@
       "awayTeam": "Catar",
       "stadium": "Lumen Field",
       "hostCity": "seattle",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/bosnia-and-herzegovina-vs-qatar-2026-06-24"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/bosnia-and-herzegovina-vs-qatar-2026-06-24",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 53,
@@ -650,7 +1707,9 @@
       "awayTeam": "México",
       "stadium": "Estadio Azteca",
       "hostCity": "mexico-city",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/czechia-vs-mexico-2026-06-24"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/czechia-vs-mexico-2026-06-24",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 54,
@@ -662,7 +1721,9 @@
       "awayTeam": "Coreia do Sul",
       "stadium": "Estadio BBVA",
       "hostCity": "monterrey",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/south-africa-vs-korea-republic-2026-06-24"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/south-africa-vs-korea-republic-2026-06-24",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 55,
@@ -674,7 +1735,9 @@
       "awayTeam": "Costa do Marfim",
       "stadium": "Lincoln Financial Field",
       "hostCity": "philadelphia",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/curacao-vs-cote-divoire-2026-06-25"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/curacao-vs-cote-divoire-2026-06-25",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 56,
@@ -686,7 +1749,9 @@
       "awayTeam": "Alemanha",
       "stadium": "MetLife Stadium",
       "hostCity": "new-york",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/ecuador-vs-germany-2026-06-25"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/ecuador-vs-germany-2026-06-25",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 57,
@@ -698,7 +1763,9 @@
       "awayTeam": "Suécia",
       "stadium": "AT&T Stadium",
       "hostCity": "dallas",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/japan-vs-sweden-2026-06-25"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/japan-vs-sweden-2026-06-25",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 58,
@@ -707,10 +1774,12 @@
       "stage": "group-stage",
       "group": "F",
       "homeTeam": "Tunísia",
-      "awayTeam": "Países Baixos",
+      "awayTeam": "Holanda",
       "stadium": "Arrowhead Stadium",
       "hostCity": "kansas-city",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/tunisia-vs-netherlands-2026-06-25"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/tunisia-vs-netherlands-2026-06-25",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 59,
@@ -722,7 +1791,9 @@
       "awayTeam": "Estados Unidos",
       "stadium": "SoFi Stadium",
       "hostCity": "los-angeles",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/turkiye-vs-united-states-2026-06-25"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/turkiye-vs-united-states-2026-06-25",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 60,
@@ -734,7 +1805,9 @@
       "awayTeam": "Austrália",
       "stadium": "Levi's Stadium",
       "hostCity": "san-francisco",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/paraguay-vs-australia-2026-06-25"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/paraguay-vs-australia-2026-06-25",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 61,
@@ -746,7 +1819,9 @@
       "awayTeam": "França",
       "stadium": "Gillette Stadium",
       "hostCity": "boston",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/norway-vs-france-2026-06-26"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/norway-vs-france-2026-06-26",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 62,
@@ -758,7 +1833,9 @@
       "awayTeam": "Iraque",
       "stadium": "BMO Field",
       "hostCity": "toronto",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/senegal-vs-iraq-2026-06-26"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/senegal-vs-iraq-2026-06-26",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 63,
@@ -770,7 +1847,9 @@
       "awayTeam": "Irã",
       "stadium": "Lumen Field",
       "hostCity": "seattle",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/egypt-vs-ir-iran-2026-06-26"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/egypt-vs-ir-iran-2026-06-26",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 64,
@@ -782,7 +1861,9 @@
       "awayTeam": "Bélgica",
       "stadium": "BC Place",
       "hostCity": "vancouver",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/new-zealand-vs-belgium-2026-06-26"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/new-zealand-vs-belgium-2026-06-26",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 65,
@@ -794,7 +1875,9 @@
       "awayTeam": "Arábia Saudita",
       "stadium": "NRG Stadium",
       "hostCity": "houston",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/cabo-verde-vs-saudi-arabia-2026-06-26"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/cabo-verde-vs-saudi-arabia-2026-06-26",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 66,
@@ -806,7 +1889,9 @@
       "awayTeam": "Espanha",
       "stadium": "Estadio Akron",
       "hostCity": "guadalajara",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/uruguay-vs-spain-2026-06-26"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/uruguay-vs-spain-2026-06-26",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 67,
@@ -818,7 +1903,9 @@
       "awayTeam": "Inglaterra",
       "stadium": "MetLife Stadium",
       "hostCity": "new-york",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/panama-vs-england-2026-06-27"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/panama-vs-england-2026-06-27",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 68,
@@ -830,7 +1917,9 @@
       "awayTeam": "Gana",
       "stadium": "Lincoln Financial Field",
       "hostCity": "philadelphia",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/croatia-vs-ghana-2026-06-27"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/croatia-vs-ghana-2026-06-27",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 69,
@@ -842,7 +1931,9 @@
       "awayTeam": "Áustria",
       "stadium": "Arrowhead Stadium",
       "hostCity": "kansas-city",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/algeria-vs-austria-2026-06-27"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/algeria-vs-austria-2026-06-27",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 70,
@@ -854,7 +1945,9 @@
       "awayTeam": "Argentina",
       "stadium": "AT&T Stadium",
       "hostCity": "dallas",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/jordan-vs-argentina-2026-06-27"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/jordan-vs-argentina-2026-06-27",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 71,
@@ -866,7 +1959,9 @@
       "awayTeam": "Portugal",
       "stadium": "Hard Rock Stadium",
       "hostCity": "miami",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/colombia-vs-portugal-2026-06-27"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/colombia-vs-portugal-2026-06-27",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 72,
@@ -878,7 +1973,9 @@
       "awayTeam": "Uzbequistão",
       "stadium": "Mercedes-Benz Stadium",
       "hostCity": "atlanta",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/congo-dr-vs-uzbekistan-2026-06-27"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/congo-dr-vs-uzbekistan-2026-06-27",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 73,
@@ -890,7 +1987,9 @@
       "awayTeam": "2º do Grupo B",
       "stadium": "SoFi Stadium",
       "hostCity": "los-angeles",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-a-runners-up-vs-group-b-runners-up-2026-06-28"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-a-runners-up-vs-group-b-runners-up-2026-06-28",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 74,
@@ -902,7 +2001,9 @@
       "awayTeam": "3º do Grupo A/B/C/D/F",
       "stadium": "Gillette Stadium",
       "hostCity": "boston",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-e-winners-vs-group-a-b-c-d-f-third-place-2026-06-29"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-e-winners-vs-group-a-b-c-d-f-third-place-2026-06-29",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 75,
@@ -914,7 +2015,9 @@
       "awayTeam": "2º do Grupo C",
       "stadium": "Estadio BBVA",
       "hostCity": "monterrey",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-f-winners-vs-group-c-runners-up-2026-06-29"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-f-winners-vs-group-c-runners-up-2026-06-29",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 76,
@@ -926,7 +2029,9 @@
       "awayTeam": "2º do Grupo F",
       "stadium": "NRG Stadium",
       "hostCity": "houston",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-c-winners-vs-group-f-runners-up-2026-06-29"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-c-winners-vs-group-f-runners-up-2026-06-29",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 77,
@@ -938,7 +2043,9 @@
       "awayTeam": "3º do Grupo C/D/F/G/H",
       "stadium": "MetLife Stadium",
       "hostCity": "new-york",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-i-winners-vs-group-c-d-f-g-h-third-place-2026-06-30"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-i-winners-vs-group-c-d-f-g-h-third-place-2026-06-30",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 78,
@@ -950,7 +2057,9 @@
       "awayTeam": "2º do Grupo I",
       "stadium": "AT&T Stadium",
       "hostCity": "dallas",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-e-runners-up-vs-group-i-runners-up-2026-06-30"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-e-runners-up-vs-group-i-runners-up-2026-06-30",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 79,
@@ -962,7 +2071,9 @@
       "awayTeam": "3º do Grupo C/E/F/H/I",
       "stadium": "Estadio Azteca",
       "hostCity": "mexico-city",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-a-winners-vs-group-c-e-f-h-i-third-place-2026-06-30"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-a-winners-vs-group-c-e-f-h-i-third-place-2026-06-30",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 80,
@@ -974,7 +2085,9 @@
       "awayTeam": "3º do Grupo E/H/I/J/K",
       "stadium": "Mercedes-Benz Stadium",
       "hostCity": "atlanta",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-l-winners-vs-group-e-h-i-j-k-third-place-2026-07-01"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-l-winners-vs-group-e-h-i-j-k-third-place-2026-07-01",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 81,
@@ -986,7 +2099,9 @@
       "awayTeam": "3º do Grupo B/E/F/I/J",
       "stadium": "Levi's Stadium",
       "hostCity": "san-francisco",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-d-winners-vs-group-b-e-f-i-j-third-place-2026-07-01"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-d-winners-vs-group-b-e-f-i-j-third-place-2026-07-01",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 82,
@@ -998,7 +2113,9 @@
       "awayTeam": "3º do Grupo A/E/H/I/J",
       "stadium": "Lumen Field",
       "hostCity": "seattle",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-g-winners-vs-group-a-e-h-i-j-third-place-2026-07-01"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-g-winners-vs-group-a-e-h-i-j-third-place-2026-07-01",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 83,
@@ -1010,7 +2127,9 @@
       "awayTeam": "2º do Grupo L",
       "stadium": "BMO Field",
       "hostCity": "toronto",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-k-runners-up-vs-group-l-runners-up-2026-07-02"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-k-runners-up-vs-group-l-runners-up-2026-07-02",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 84,
@@ -1022,7 +2141,9 @@
       "awayTeam": "2º do Grupo J",
       "stadium": "SoFi Stadium",
       "hostCity": "los-angeles",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-h-winners-vs-group-j-runners-up-2026-07-02"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-h-winners-vs-group-j-runners-up-2026-07-02",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 85,
@@ -1034,7 +2155,9 @@
       "awayTeam": "3º do Grupo E/F/G/I/J",
       "stadium": "BC Place",
       "hostCity": "vancouver",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-b-winners-vs-group-e-f-g-i-j-third-place-2026-07-02"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-b-winners-vs-group-e-f-g-i-j-third-place-2026-07-02",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 86,
@@ -1046,7 +2169,9 @@
       "awayTeam": "2º do Grupo H",
       "stadium": "Hard Rock Stadium",
       "hostCity": "miami",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-j-winners-vs-group-h-runners-up-2026-07-03"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-j-winners-vs-group-h-runners-up-2026-07-03",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 87,
@@ -1058,7 +2183,9 @@
       "awayTeam": "3º do Grupo D/E/I/J/L",
       "stadium": "Arrowhead Stadium",
       "hostCity": "kansas-city",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-k-winners-vs-group-d-e-i-j-l-third-place-2026-07-03"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-k-winners-vs-group-d-e-i-j-l-third-place-2026-07-03",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 88,
@@ -1070,7 +2197,9 @@
       "awayTeam": "2º do Grupo G",
       "stadium": "AT&T Stadium",
       "hostCity": "dallas",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-d-runners-up-vs-group-g-runners-up-2026-07-03"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/group-d-runners-up-vs-group-g-runners-up-2026-07-03",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 89,
@@ -1082,7 +2211,9 @@
       "awayTeam": "Vencedor Jogo 77",
       "stadium": "Lincoln Financial Field",
       "hostCity": "philadelphia",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-74-vs-winner-match-77-2026-07-04"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-74-vs-winner-match-77-2026-07-04",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 90,
@@ -1094,7 +2225,9 @@
       "awayTeam": "Vencedor Jogo 75",
       "stadium": "NRG Stadium",
       "hostCity": "houston",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-73-vs-winner-match-75-2026-07-04"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-73-vs-winner-match-75-2026-07-04",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 91,
@@ -1106,7 +2239,9 @@
       "awayTeam": "Vencedor Jogo 78",
       "stadium": "MetLife Stadium",
       "hostCity": "new-york",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-76-vs-winner-match-78-2026-07-05"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-76-vs-winner-match-78-2026-07-05",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 92,
@@ -1118,7 +2253,9 @@
       "awayTeam": "Vencedor Jogo 80",
       "stadium": "Estadio Azteca",
       "hostCity": "mexico-city",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-79-vs-winner-match-80-2026-07-05"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-79-vs-winner-match-80-2026-07-05",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 93,
@@ -1130,7 +2267,9 @@
       "awayTeam": "Vencedor Jogo 84",
       "stadium": "AT&T Stadium",
       "hostCity": "dallas",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-83-vs-winner-match-84-2026-07-06"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-83-vs-winner-match-84-2026-07-06",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 94,
@@ -1142,7 +2281,9 @@
       "awayTeam": "Vencedor Jogo 82",
       "stadium": "Lumen Field",
       "hostCity": "seattle",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-81-vs-winner-match-82-2026-07-06"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-81-vs-winner-match-82-2026-07-06",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 95,
@@ -1154,7 +2295,9 @@
       "awayTeam": "Vencedor Jogo 88",
       "stadium": "Mercedes-Benz Stadium",
       "hostCity": "atlanta",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-86-vs-winner-match-88-2026-07-07"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-86-vs-winner-match-88-2026-07-07",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 96,
@@ -1166,7 +2309,9 @@
       "awayTeam": "Vencedor Jogo 87",
       "stadium": "BC Place",
       "hostCity": "vancouver",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-85-vs-winner-match-87-2026-07-07"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-85-vs-winner-match-87-2026-07-07",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 97,
@@ -1178,7 +2323,9 @@
       "awayTeam": "Vencedor Jogo 90",
       "stadium": "Gillette Stadium",
       "hostCity": "boston",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-89-vs-winner-match-90-2026-07-09"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-89-vs-winner-match-90-2026-07-09",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 98,
@@ -1190,7 +2337,9 @@
       "awayTeam": "Vencedor Jogo 94",
       "stadium": "SoFi Stadium",
       "hostCity": "los-angeles",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-93-vs-winner-match-94-2026-07-10"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-93-vs-winner-match-94-2026-07-10",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 99,
@@ -1202,7 +2351,9 @@
       "awayTeam": "Vencedor Jogo 92",
       "stadium": "Hard Rock Stadium",
       "hostCity": "miami",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-91-vs-winner-match-92-2026-07-11"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-91-vs-winner-match-92-2026-07-11",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 100,
@@ -1214,7 +2365,9 @@
       "awayTeam": "Vencedor Jogo 96",
       "stadium": "Arrowhead Stadium",
       "hostCity": "kansas-city",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-95-vs-winner-match-96-2026-07-11"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-95-vs-winner-match-96-2026-07-11",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 101,
@@ -1226,7 +2379,9 @@
       "awayTeam": "Vencedor Jogo 98",
       "stadium": "AT&T Stadium",
       "hostCity": "dallas",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-97-vs-winner-match-98-2026-07-14"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-97-vs-winner-match-98-2026-07-14",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 102,
@@ -1238,7 +2393,9 @@
       "awayTeam": "Vencedor Jogo 100",
       "stadium": "Mercedes-Benz Stadium",
       "hostCity": "atlanta",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-99-vs-winner-match-100-2026-07-15"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-99-vs-winner-match-100-2026-07-15",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 103,
@@ -1250,7 +2407,9 @@
       "awayTeam": "Perdedor Jogo 102",
       "stadium": "Hard Rock Stadium",
       "hostCity": "miami",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/loser-match-101-vs-loser-match-102-2026-07-18"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/loser-match-101-vs-loser-match-102-2026-07-18",
+      "homeScore": null,
+      "awayScore": null
     },
     {
       "matchNumber": 104,
@@ -1262,7 +2421,9 @@
       "awayTeam": "Vencedor Jogo 102",
       "stadium": "MetLife Stadium",
       "hostCity": "new-york",
-      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-101-vs-winner-match-102-2026-07-19"
+      "matchUrl": "https://www.thestatsapi.com/world-cup/matches/winner-match-101-vs-winner-match-102-2026-07-19",
+      "homeScore": null,
+      "awayScore": null
     }
   ]
 }

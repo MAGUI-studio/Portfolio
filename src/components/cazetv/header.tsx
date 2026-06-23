@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -65,7 +66,12 @@ export default function Header() {
           <span className="hidden text-[10px] font-bold uppercase tracking-widest text-zinc-400 sm:inline-block">
             Transmissão Oficial
           </span>
-          <div className="relative h-6 w-20 sm:h-7 sm:w-24">
+          <Link
+            href="https://www.youtube.com/@CazeTV"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative h-6 w-20 sm:h-7 sm:w-24 block hover:opacity-80 transition duration-200"
+          >
             <Image
               src="/images/cazetv/logo-youtube.webp"
               alt="YouTube Logo"
@@ -74,7 +80,7 @@ export default function Header() {
               className="object-contain"
               priority
             />
-          </div>
+          </Link>
         </div>
       </div>
 

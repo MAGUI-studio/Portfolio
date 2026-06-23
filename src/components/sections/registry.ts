@@ -349,7 +349,7 @@ export const sections: SectionEntry[] = [
     projectType: "Canal de streaming",
     goal: "Engajar fãs com transmissões esportivas ao vivo e entretenimento.",
     tags: ["Streaming", "Esportes", "Entretenimento"],
-    visible: false,
+    visible: true,
     component: CazeTVLanding,
   },
   {
