@@ -382,12 +382,12 @@ export default function CazeTVLanding() {
       />
 
       {/* Navigation Tabs */}
-      <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 mt-10">
-        <div className="flex items-center justify-center border-b border-zinc-900">
-          <div className="flex gap-8">
+      <div className="mx-auto w-full px-0 sm:px-6 lg:px-8 mt-10">
+        <div className="border-b border-zinc-900 overflow-x-auto scrollbar-none">
+          <div className="flex gap-6 md:gap-8 justify-start md:justify-center min-w-max px-4 md:px-0">
             <button
               onClick={() => handleTabChange("jogos")}
-              className={`pb-4 text-sm font-black uppercase tracking-wider transition duration-200 border-b-2 ${
+              className={`pb-4 text-sm font-black uppercase tracking-wider transition duration-200 border-b-2 whitespace-nowrap ${
                 activeTab === "jogos"
                   ? "border-orange-500 text-white"
                   : "border-transparent text-zinc-500 hover:text-zinc-300"
@@ -397,7 +397,7 @@ export default function CazeTVLanding() {
             </button>
             <button
               onClick={() => handleTabChange("grupos")}
-              className={`pb-4 text-sm font-black uppercase tracking-wider transition duration-200 border-b-2 ${
+              className={`pb-4 text-sm font-black uppercase tracking-wider transition duration-200 border-b-2 whitespace-nowrap ${
                 activeTab === "grupos"
                   ? "border-orange-500 text-white"
                   : "border-transparent text-zinc-500 hover:text-zinc-300"
@@ -407,7 +407,7 @@ export default function CazeTVLanding() {
             </button>
             <button
               onClick={() => handleTabChange("chaveamento")}
-              className={`pb-4 text-sm font-black uppercase tracking-wider transition duration-200 border-b-2 ${
+              className={`pb-4 text-sm font-black uppercase tracking-wider transition duration-200 border-b-2 whitespace-nowrap ${
                 activeTab === "chaveamento"
                   ? "border-orange-500 text-white"
                   : "border-transparent text-zinc-500 hover:text-zinc-300"
@@ -417,7 +417,7 @@ export default function CazeTVLanding() {
             </button>
             <button
               onClick={() => handleTabChange("estatisticas")}
-              className={`pb-4 text-sm font-black uppercase tracking-wider transition duration-200 border-b-2 ${
+              className={`pb-4 text-sm font-black uppercase tracking-wider transition duration-200 border-b-2 whitespace-nowrap ${
                 activeTab === "estatisticas"
                   ? "border-orange-500 text-white"
                   : "border-transparent text-zinc-500 hover:text-zinc-300"

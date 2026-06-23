@@ -336,6 +336,10 @@ export default function StatsTab({ fixtures, teamIsoCodes, onTeamClick }: StatsT
                       <span className="absolute -top-7 opacity-0 group-hover:opacity-100 transition-opacity duration-250 bg-zinc-950 border border-zinc-900 text-[10px] font-black text-orange-500 px-2 py-0.5 rounded-lg shadow-2xl whitespace-nowrap z-25">
                         {count} {count === 1 ? "gol" : "gols"}
                       </span>
+                      {/* Mobile count label */}
+                      <span className="text-[10px] font-mono font-black text-orange-500 mb-1 md:hidden select-none">
+                        {count}
+                      </span>
                       {/* Bar */}
                       <div 
                         style={{ height: `${Math.max(pct, 5)}%` }} 
