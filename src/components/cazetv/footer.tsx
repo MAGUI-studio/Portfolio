@@ -49,6 +49,39 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Sources & Credits Section */}
+        <div className="flex flex-col gap-2.5 mt-8 pb-6 border-b border-zinc-900/60 text-xs">
+          <span className="font-black text-zinc-400 uppercase tracking-wider text-[9px]">Fontes de Informações e Dados Referenciados:</span>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-zinc-500">
+            <Link
+              href="https://www.thestatsapi.com/world-cup"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-orange-500 transition duration-200 font-semibold"
+            >
+              The Stats API (World Cup Data) ↗
+            </Link>
+            <span className="text-zinc-800 hidden sm:inline">•</span>
+            <Link
+              href="https://www.fifa.com/pt/tournaments/mens/worldcup"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-orange-500 transition duration-200 font-semibold"
+            >
+              FIFA World Cup Hub ↗
+            </Link>
+            <span className="text-zinc-800 hidden sm:inline">•</span>
+            <Link
+              href="https://www.instagram.com/cazetv/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-orange-500 transition duration-200 font-semibold"
+            >
+              Instagram Oficial CazéTV ↗
+            </Link>
+          </div>
+        </div>
+
         {/* Legal Disclaimer Box */}
         <div className="mt-8 rounded-2xl bg-zinc-900/10 border border-zinc-900/50 p-6 text-[10px] text-zinc-500 leading-relaxed">
           <p className="font-extrabold uppercase text-zinc-300 mb-2 tracking-wider flex items-center gap-1.5">
