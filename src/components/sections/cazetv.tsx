@@ -15,6 +15,7 @@ import FixtureCard from "../cazetv/fixture-card";
 import GroupTables from "../cazetv/group-tables";
 import Bracket from "../cazetv/bracket";
 import BrazilWidget from "../cazetv/brazil-widget";
+import StatsTab from "../cazetv/stats-tab";
 import Footer from "../cazetv/footer";
 import { Calendar, X, ArrowSquareOut, Warning } from "@phosphor-icons/react";
 
@@ -105,15 +106,32 @@ const stageTranslations: Record<string, string> = {
 };
 
 export default function CazeTVLanding() {
-  const [activeTab, setActiveTab] = useState<"jogos" | "grupos" | "chaveamento">("jogos");
+  const [activeTab, setActiveTab] = useState<"jogos" | "grupos" | "chaveamento" | "estatisticas">("jogos");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedStage, setSelectedStage] = useState("all");
   const [selectedGroup, setSelectedGroup] = useState("all");
+  const [matchStateFilter, setMatchStateFilter] = useState<"all" | "completed" | "upcoming">("all");
   const [selectedMatchNumber, setSelectedMatchNumber] = useState<number | null>(null);
 
   // States for smooth modal opening/closing animations
   const [renderedMatch, setRenderedMatch] = useState<Fixture | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Lock body scroll when drawer/modal is open to prevent double scrollbars
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      if (isModalOpen) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
+      }
+    }
+    return () => {
+      if (typeof window !== "undefined") {
+        document.body.style.overflow = "";
+      }
+    };
+  }, [isModalOpen]);
 
   // Infinite Scroll / Lazy Load states
   const [visibleCount, setVisibleCount] = useState(12);
@@ -129,7 +147,7 @@ export default function CazeTVLanding() {
       const tabParam = params.get("tab");
       const matchParam = params.get("match");
       
-      if (tabParam === "jogos" || tabParam === "grupos" || tabParam === "chaveamento") {
+      if (tabParam === "jogos" || tabParam === "grupos" || tabParam === "chaveamento" || tabParam === "estatisticas") {
         setActiveTab(tabParam);
       }
       if (matchParam) {
@@ -149,7 +167,7 @@ export default function CazeTVLanding() {
         const currentTab = currentParams.get("tab");
         const currentMatchId = currentParams.get("match");
 
-        if (currentTab === "jogos" || currentTab === "grupos" || currentTab === "chaveamento") {
+        if (currentTab === "jogos" || currentTab === "grupos" || currentTab === "chaveamento" || currentTab === "estatisticas") {
           setActiveTab(currentTab);
         }
 
@@ -177,7 +195,7 @@ export default function CazeTVLanding() {
     }
   }, [fixtures]);
 
-  const handleTabChange = (newTab: "jogos" | "grupos" | "chaveamento") => {
+  const handleTabChange = (newTab: "jogos" | "grupos" | "chaveamento" | "estatisticas") => {
     setActiveTab(newTab);
     if (typeof window !== "undefined") {
       const url = new URL(window.location.href);
@@ -211,7 +229,7 @@ export default function CazeTVLanding() {
     setTimeout(() => {
       setSelectedMatchNumber(null);
       setRenderedMatch(null);
-    }, 200);
+    }, 300);
   };
 
   const handleTeamClick = (teamName: string) => {
@@ -252,8 +270,12 @@ export default function CazeTVLanding() {
 
     const matchesStage = selectedStage === "all" || fixture.stage === selectedStage;
     const matchesGroup = selectedGroup === "all" || fixture.group === selectedGroup;
+    const matchesState =
+      matchStateFilter === "all" ||
+      (matchStateFilter === "completed" && typeof fixture.homeScore === "number" && typeof fixture.awayScore === "number") ||
+      (matchStateFilter === "upcoming" && (fixture.homeScore === null || fixture.awayScore === null));
 
-    return matchesSearch && matchesStage && matchesGroup;
+    return matchesSearch && matchesStage && matchesGroup && matchesState;
   });
 
   // Group matches by date to break visual repetition
@@ -287,7 +309,7 @@ export default function CazeTVLanding() {
   // Reset pagination count on search/filter changes
   useEffect(() => {
     setVisibleCount(12);
-  }, [searchTerm, selectedStage, selectedGroup]);
+  }, [searchTerm, selectedStage, selectedGroup, matchStateFilter]);
 
   // Observer intersection to trigger show more
   useEffect(() => {
@@ -321,6 +343,7 @@ export default function CazeTVLanding() {
     setSearchTerm("");
     setSelectedStage("all");
     setSelectedGroup("all");
+    setMatchStateFilter("all");
   };
 
   return (
@@ -336,11 +359,11 @@ export default function CazeTVLanding() {
           <div className="flex items-center gap-2">
             <Warning size={16} className="shrink-0 text-orange-500 animate-pulse" />
             <strong className="uppercase font-black text-orange-500 tracking-wider whitespace-nowrap">
-              Aviso de Portfólio / Não-Oficial:
+              Aviso de Estudo de Caso / Não-Oficial:
             </strong>
           </div>
           <p className="font-medium tracking-wide text-center sm:text-left text-zinc-300">
-            Este site é um projeto demonstrativo de portfólio acadêmico para fins de estudo de design e tecnologia. Não possui vínculos oficiais ou comerciais com a CazéTV (Live Mode) ou com a FIFA. Marcas e direitos de imagem pertencem aos seus respectivos titulares.
+            Este site é um projeto demonstrativo de estudo de caso profissional para fins de estudo de design e tecnologia. Não possui vínculos oficiais ou comerciais com a CazéTV (Live Mode) ou com a FIFA. Marcas e direitos de imagem pertencem aos seus respectivos titulares.
           </p>
         </div>
       </div>
@@ -392,6 +415,16 @@ export default function CazeTVLanding() {
             >
               Chaveamento Mata-Mata
             </button>
+            <button
+              onClick={() => handleTabChange("estatisticas")}
+              className={`pb-4 text-sm font-black uppercase tracking-wider transition duration-200 border-b-2 ${
+                activeTab === "estatisticas"
+                  ? "border-orange-500 text-white"
+                  : "border-transparent text-zinc-500 hover:text-zinc-300"
+              }`}
+            >
+              Estatísticas
+            </button>
           </div>
         </div>
       </div>
@@ -408,7 +441,41 @@ export default function CazeTVLanding() {
             />
 
             {/* Filters Section Anchor */}
-            <div id="jogos-filters">
+            <div id="jogos-filters" className="flex flex-col gap-6">
+              {/* Game State Buttons/Pills */}
+              <div className="flex flex-wrap gap-2.5 border-b border-zinc-900/60 pb-4">
+                <button
+                  onClick={() => setMatchStateFilter("all")}
+                  className={`rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-wider transition duration-150 ${
+                    matchStateFilter === "all"
+                      ? "bg-orange-600 text-white"
+                      : "bg-zinc-900/40 text-zinc-400 hover:bg-zinc-900/60 hover:text-white"
+                  }`}
+                >
+                  Todos os Jogos
+                </button>
+                <button
+                  onClick={() => setMatchStateFilter("completed")}
+                  className={`rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-wider transition duration-150 ${
+                    matchStateFilter === "completed"
+                      ? "bg-orange-600 text-white"
+                      : "bg-zinc-900/40 text-zinc-400 hover:bg-zinc-900/60 hover:text-white"
+                  }`}
+                >
+                  Partidas Concluídas
+                </button>
+                <button
+                  onClick={() => setMatchStateFilter("upcoming")}
+                  className={`rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-wider transition duration-150 ${
+                    matchStateFilter === "upcoming"
+                      ? "bg-orange-600 text-white"
+                      : "bg-zinc-900/40 text-zinc-400 hover:bg-zinc-900/60 hover:text-white"
+                  }`}
+                >
+                  Próximos Jogos
+                </button>
+              </div>
+
               <FixturesFilter
                 searchTerm={searchTerm}
                 setSearchTerm={setSearchTerm}
@@ -491,9 +558,13 @@ export default function CazeTVLanding() {
           <div className="mt-4">
             <GroupTables teamIsoCodes={teamIsoCodes} onTeamClick={handleTeamClick} />
           </div>
-        ) : (
+        ) : activeTab === "chaveamento" ? (
           <div className="mt-4">
             <Bracket fixtures={fixtures} teamIsoCodes={teamIsoCodes} onShowDetails={handleShowDetails} />
+          </div>
+        ) : (
+          <div className="mt-4">
+            <StatsTab fixtures={fixtures} teamIsoCodes={teamIsoCodes} onTeamClick={handleTeamClick} />
           </div>
         )}
 
@@ -563,131 +634,254 @@ export default function CazeTVLanding() {
           const awayResolved = selectedMatch.awayTeam;
           const hasScore = typeof selectedMatch.homeScore === "number" && typeof selectedMatch.awayScore === "number";
 
+          // Calculate tournament stats for both teams
+          const getTeamStats = (teamName: string) => {
+            let matchesPlayed = 0;
+            let wins = 0;
+            let draws = 0;
+            let losses = 0;
+            let goalsFor = 0;
+            let goalsAgainst = 0;
+
+            fixtures.forEach((match) => {
+              const hs = match.homeScore;
+              const as = match.awayScore;
+              const hsNum = typeof hs === "number";
+              const asNum = typeof as === "number";
+              
+              if (hsNum && asNum) {
+                if (match.homeTeam === teamName) {
+                  matchesPlayed++;
+                  goalsFor += hs || 0;
+                  goalsAgainst += as || 0;
+                  if (hs! > as!) wins++;
+                  else if (hs! === as!) draws++;
+                  else losses++;
+                } else if (match.awayTeam === teamName) {
+                  matchesPlayed++;
+                  goalsFor += as || 0;
+                  goalsAgainst += hs || 0;
+                  if (as! > hs!) wins++;
+                  else if (as! === hs!) draws++;
+                  else losses++;
+                }
+              }
+            });
+
+            return { matchesPlayed, wins, draws, losses, goalsFor, goalsAgainst };
+          };
+
+          const homeStats = getTeamStats(selectedMatch.homeTeam);
+          const awayStats = getTeamStats(selectedMatch.awayTeam);
+
           return (
-            <div 
-              onClick={handleCloseModal}
-              className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto transition-all duration-200 ease-out ${
-                isModalOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-              }`}
-            >
+            <>
+              {/* Backdrop Overlay */}
               <div 
-                onClick={(e) => e.stopPropagation()}
-                className={`relative w-full max-w-lg rounded-3xl bg-zinc-950 border border-zinc-900 p-6 md:p-8 shadow-2xl text-zinc-100 my-auto transition-all duration-200 ease-out ${
-                  isModalOpen ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-4"
+                onClick={handleCloseModal}
+                className={`fixed inset-0 z-50 bg-black/70 transition-opacity duration-300 ease-in-out ${
+                  isModalOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+                }`}
+              />
+
+              {/* Drawer Panel */}
+              <div 
+                className={`fixed top-0 right-0 h-full w-full max-w-md bg-zinc-950 border-l border-zinc-900 shadow-2xl z-50 flex flex-col transition-transform duration-300 ease-in-out transform ${
+                  isModalOpen ? "translate-x-0" : "translate-x-full"
                 }`}
               >
-                {/* Close Button */}
-                <button
-                  onClick={handleCloseModal}
-                  className="absolute top-4 right-4 rounded-full p-2 text-zinc-500 hover:text-white hover:bg-zinc-900 transition duration-200 border-0 outline-none cursor-pointer"
-                >
-                  <X size={18} />
-                </button>
-
-                {/* Match info header */}
-                <div className="text-[10px] font-black uppercase tracking-widest text-zinc-500 mb-6 flex items-center gap-2">
-                  <span>Jogo {selectedMatch.matchNumber}</span>
-                  <span>•</span>
-                  <span className="text-orange-500">
-                    {stageTranslations[selectedMatch.stage]} {selectedMatch.group ? `• Grupo ${selectedMatch.group}` : ""}
-                  </span>
+                {/* Drawer Header */}
+                <div className="flex items-center justify-between border-b border-zinc-900 p-6 shrink-0">
+                  <div className="text-[10px] font-black uppercase tracking-widest text-zinc-500 flex items-center gap-2">
+                    <span>Jogo {selectedMatch.matchNumber}</span>
+                    <span>•</span>
+                    <span className="text-orange-500">
+                      {stageTranslations[selectedMatch.stage]} {selectedMatch.group ? `• Grupo ${selectedMatch.group}` : ""}
+                    </span>
+                  </div>
+                  <button
+                    onClick={handleCloseModal}
+                    className="rounded-full p-2 text-zinc-500 hover:text-white hover:bg-zinc-900 transition duration-200 border-0 outline-none cursor-pointer"
+                  >
+                    <X size={18} />
+                  </button>
                 </div>
 
-                {/* Core Match Row */}
-                <div className="grid grid-cols-3 items-center gap-2 py-4 border-b border-zinc-900/60 pb-6 mb-6">
-                  <div className="flex flex-col items-center text-center gap-2">
-                    {renderModalFlag(selectedMatch.homeTeam)}
-                    <span className="text-xs font-black text-white">{homeResolved || "A Definir"}</span>
-                  </div>
-                  
-                  <div className="flex flex-col items-center">
-                    <div className="font-mono text-3xl md:text-4xl font-black text-white tracking-tighter">
-                      {hasScore ? (
-                        <>
-                          <span>{selectedMatch.homeScore}</span>
-                          <span className="text-zinc-800 text-xl mx-1.5">:</span>
-                          <span>{selectedMatch.awayScore}</span>
-                        </>
-                      ) : (
-                        <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500 px-3 py-1.5 bg-zinc-900/80 rounded-xl">VS</span>
-                      )}
+                {/* Drawer Scrollable Content */}
+                <div className="flex-1 overflow-y-auto p-6 md:p-8 scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-transparent flex flex-col gap-6">
+                  {/* Core Match Row */}
+                  <div className="grid grid-cols-3 items-center gap-2 py-4 border-b border-zinc-900/60 pb-6 mb-6 shrink-0">
+                    <div className="flex flex-col items-center text-center gap-2">
+                      {renderModalFlag(selectedMatch.homeTeam)}
+                      <span className="text-xs font-black text-white">{homeResolved || "A Definir"}</span>
+                    </div>
+                    
+                    <div className="flex flex-col items-center">
+                      <div className="font-mono text-3xl font-black text-white tracking-tighter">
+                        {hasScore ? (
+                          <>
+                            <span>{selectedMatch.homeScore}</span>
+                            <span className="text-zinc-800 text-xl mx-1.5">:</span>
+                            <span>{selectedMatch.awayScore}</span>
+                          </>
+                        ) : (
+                          <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500 px-3 py-1.5 bg-zinc-900/80 rounded-xl">VS</span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-col items-center text-center gap-2">
+                      {renderModalFlag(selectedMatch.awayTeam)}
+                      <span className="text-xs font-black text-white">{awayResolved || "A Definir"}</span>
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-center text-center gap-2">
-                    {renderModalFlag(selectedMatch.awayTeam)}
-                    <span className="text-xs font-black text-white">{awayResolved || "A Definir"}</span>
-                  </div>
-                </div>
+                  {/* Events Timeline */}
+                  {selectedMatch.events && selectedMatch.events.length > 0 && (
+                    <div className="mb-2 flex flex-col shrink-0">
+                      <h4 className="text-[9px] font-black uppercase tracking-widest text-zinc-500 mb-4">Acontecimentos</h4>
+                      <div className="relative flex flex-col gap-5 pl-2 pr-2 before:absolute before:left-1/2 before:top-2 before:bottom-2 before:w-[1px] before:bg-zinc-900 before:-translate-x-1/2">
+                        {[...selectedMatch.events]
+                          .sort((a, b) => {
+                            const parseMin = (minStr: string) => {
+                              const parts = minStr.split("+");
+                              const base = parseInt(parts[0]) || 0;
+                              const extra = parseInt(parts[1]) || 0;
+                              return base + extra / 100;
+                            };
+                            return parseMin(a.minuto) - parseMin(b.minuto);
+                          })
+                          .map((event, idx) => {
+                            const isHome = event.time === "casa";
+                          
+                          // Icon and color map
+                          let icon = "⚽";
+                          let labelColor = "text-zinc-300";
+                          if (event.tipo === "gol") {
+                            icon = "⚽";
+                          } else if (event.tipo === "gol_contra") {
+                            icon = "⚽";
+                            labelColor = "text-red-400";
+                          } else if (event.tipo === "cartao_amarelo") {
+                            icon = "🟨";
+                          } else if (event.tipo === "cartao_vermelho") {
+                            icon = "🟥";
+                          }
 
-                {/* Events Timeline */}
-                {selectedMatch.events && selectedMatch.events.length > 0 && (
-                  <div className="mb-6 flex flex-col gap-2.5">
-                    <h4 className="text-[9px] font-black uppercase tracking-widest text-zinc-500 mb-1">Acontecimentos</h4>
-                    {selectedMatch.events.map((event, idx) => {
-                      const isHome = event.time === "casa";
-                      return (
-                        <div key={idx} className={`flex items-center gap-2 text-xs ${isHome ? "justify-start text-left" : "justify-end text-right"}`}>
-                          {isHome && (
-                            <>
-                              {event.tipo === "gol" && <span className="text-sm">⚽</span>}
-                              {event.tipo === "gol_contra" && <span className="text-sm text-red-500">⚽</span>}
-                              {event.tipo === "cartao_amarelo" && <span className="text-xs text-yellow-500">🟨</span>}
-                              {event.tipo === "cartao_vermelho" && <span className="text-xs text-red-500">🟥</span>}
-                              <span className="text-zinc-300 font-semibold">
-                                {event.autor} <span className="text-zinc-550 text-[10px]">({event.minuto}){event.tipo === "gol_contra" && " (GC)"}</span>
-                              </span>
-                            </>
-                          )}
-                          {!isHome && (
-                            <>
-                              <span className="text-zinc-300 font-semibold">
-                                {event.autor} <span className="text-zinc-550 text-[10px]">({event.minuto}){event.tipo === "gol_contra" && " (GC)"}</span>
-                              </span>
-                              {event.tipo === "gol" && <span className="text-sm">⚽</span>}
-                              {event.tipo === "gol_contra" && <span className="text-sm text-red-500">⚽</span>}
-                              {event.tipo === "cartao_amarelo" && <span className="text-xs text-yellow-500">🟨</span>}
-                              {event.tipo === "cartao_vermelho" && <span className="text-xs text-red-500">🟥</span>}
-                            </>
-                          )}
+                          return (
+                            <div key={idx} className="relative flex items-center w-full min-h-[32px]">
+                              {/* Left column (Home events) */}
+                              <div className={`w-1/2 pr-6 text-right text-xs ${isHome ? "opacity-100 animate-in fade-in slide-in-from-left-2 duration-200" : "opacity-0 pointer-events-none"}`}>
+                                {isHome && (
+                                  <div className="flex items-center justify-end gap-1.5">
+                                    <span className="text-[11px] font-bold text-zinc-300 tracking-tight leading-snug">
+                                      <span className={labelColor}>{event.autor}</span>
+                                      {event.tipo === "gol_contra" && (
+                                        <span className="text-[8px] font-extrabold text-red-500 block uppercase tracking-wider mt-0.5">Gol Contra (GC)</span>
+                                      )}
+                                    </span>
+                                    <span className="text-sm shrink-0 select-none">{icon}</span>
+                                  </div>
+                                )}
+                              </div>
+
+                              {/* Center Node (Minute Badge) */}
+                              <div className="absolute left-1/2 -translate-x-1/2 z-10 flex flex-col items-center justify-center">
+                                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-zinc-950 border border-zinc-900 text-[9px] font-black text-zinc-500 shadow-md">
+                                  {event.minuto}'
+                                </div>
+                              </div>
+
+                              {/* Right column (Away events) */}
+                              <div className={`w-1/2 pl-6 text-left text-xs ${!isHome ? "opacity-100 animate-in fade-in slide-in-from-right-2 duration-200" : "opacity-0 pointer-events-none"}`}>
+                                {!isHome && (
+                                  <div className="flex items-center justify-start gap-1.5">
+                                    <span className="text-sm shrink-0 select-none">{icon}</span>
+                                    <span className="text-[11px] font-bold text-zinc-300 tracking-tight leading-snug">
+                                      <span className={labelColor}>{event.autor}</span>
+                                      {event.tipo === "gol_contra" && (
+                                        <span className="text-[8px] font-extrabold text-red-500 block uppercase tracking-wider mt-0.5">Gol Contra (GC)</span>
+                                      )}
+                                    </span>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* H2H Panel */}
+                  {(homeStats.matchesPlayed > 0 || awayStats.matchesPlayed > 0) && (
+                    <div className="rounded-2xl bg-zinc-900/10 border border-zinc-900 p-4 text-xs shrink-0">
+                      <h4 className="text-[9px] font-black uppercase tracking-widest text-zinc-500 mb-3 text-center">
+                        Desempenho no Torneio
+                      </h4>
+                      <div className="flex flex-col gap-2">
+                        <div className="flex justify-between items-center text-zinc-400 font-semibold py-1 border-b border-zinc-900/30">
+                          <span className="w-16 text-left text-zinc-200 font-black">{homeStats.matchesPlayed}</span>
+                          <span className="text-[10px] uppercase text-zinc-555 font-bold">Partidas</span>
+                          <span className="w-16 text-right text-zinc-200 font-black">{awayStats.matchesPlayed}</span>
                         </div>
-                      );
-                    })}
-                  </div>
-                )}
+                        <div className="flex justify-between items-center text-zinc-400 font-semibold py-1 border-b border-zinc-900/30">
+                          <span className="w-16 text-left text-emerald-500 font-black">{homeStats.wins}</span>
+                          <span className="text-[10px] uppercase text-zinc-555 font-bold">Vitórias</span>
+                          <span className="w-16 text-right text-emerald-500 font-black">{awayStats.wins}</span>
+                        </div>
+                        <div className="flex justify-between items-center text-zinc-400 font-semibold py-1 border-b border-zinc-900/30">
+                          <span className="w-16 text-left text-zinc-400 font-black">{homeStats.draws}</span>
+                          <span className="text-[10px] uppercase text-zinc-555 font-bold">Empates</span>
+                          <span className="w-16 text-right text-zinc-400 font-black">{awayStats.draws}</span>
+                        </div>
+                        <div className="flex justify-between items-center text-zinc-400 font-semibold py-1 border-b border-zinc-900/30">
+                          <span className="w-16 text-left text-red-500 font-black">{homeStats.losses}</span>
+                          <span className="text-[10px] uppercase text-zinc-555 font-bold">Derrotas</span>
+                          <span className="w-16 text-right text-red-500 font-black">{awayStats.losses}</span>
+                        </div>
+                        <div className="flex justify-between items-center text-zinc-400 font-semibold py-1">
+                          <span className="w-16 text-left text-zinc-200 font-black">{homeStats.goalsFor} : {homeStats.goalsAgainst}</span>
+                          <span className="text-[10px] uppercase text-zinc-555 font-bold text-center flex-grow mx-2">Gols (Marcados : Sofridos)</span>
+                          <span className="w-16 text-right text-zinc-200 font-black">{awayStats.goalsFor} : {awayStats.goalsAgainst}</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
 
-                {/* Match Details Extra info */}
-                <div className="flex flex-col gap-2.5 text-xs text-zinc-400 border-t border-zinc-900/60 pt-6">
-                  <div className="flex justify-between items-center py-1">
-                    <span className="text-zinc-500 font-medium">Horário da Partida</span>
-                    <span className="font-bold text-zinc-200">{formatMatchDateTime(selectedMatch.kickoffUtc)}</span>
+                  {/* Match Details Extra info */}
+                  <div className="flex flex-col gap-2.5 text-xs text-zinc-400 border-t border-zinc-900/60 pt-6 shrink-0">
+                    <div className="flex justify-between items-center py-1">
+                      <span className="text-zinc-500 font-medium">Horário da Partida</span>
+                      <span className="font-bold text-zinc-200">{formatMatchDateTime(selectedMatch.kickoffUtc)}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-1">
+                      <span className="text-zinc-500 font-medium">Estádio</span>
+                      <span className="font-bold text-zinc-200">{selectedMatch.stadium}</span>
+                    </div>
+                    <div className="flex justify-between items-center py-1">
+                      <span className="text-zinc-500 font-medium">Cidade Sede</span>
+                      <span className="font-bold text-zinc-200 uppercase tracking-wide text-[10px]">{selectedMatch.hostCity.replace("-", " ")}</span>
+                    </div>
                   </div>
-                  <div className="flex justify-between items-center py-1">
-                    <span className="text-zinc-500 font-medium">Estádio</span>
-                    <span className="font-bold text-zinc-200">{selectedMatch.stadium}</span>
-                  </div>
-                  <div className="flex justify-between items-center py-1">
-                    <span className="text-zinc-500 font-medium">Cidade Sede</span>
-                    <span className="font-bold text-zinc-200 uppercase tracking-wide text-[10px]">{selectedMatch.hostCity.replace("-", " ")}</span>
-                  </div>
+
+                  {/* Watch CTA Button */}
+                  {selectedMatch.matchUrl && (
+                    <div className="mt-auto pt-6 shrink-0">
+                      <Link
+                        href={selectedMatch.matchUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/btn flex w-full items-center justify-center gap-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 px-5 py-3.5 text-xs font-black uppercase tracking-wider text-white transition-colors duration-200 outline-none border-0 select-none text-center"
+                      >
+                        Assistir Transmissão Oficial
+                        <ArrowSquareOut size={14} className="transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                      </Link>
+                    </div>
+                  )}
                 </div>
-
-                {/* Watch CTA Button */}
-                {selectedMatch.matchUrl && (
-                  <div className="mt-8">
-                    <Link
-                      href={selectedMatch.matchUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group/btn flex w-full items-center justify-center gap-1.5 rounded-xl bg-orange-600 hover:bg-orange-500 px-5 py-3.5 text-xs font-black uppercase tracking-wider text-white transition-colors duration-200 outline-none border-0 select-none text-center"
-                    >
-                      Assistir Transmissão Oficial
-                      <ArrowSquareOut size={14} className="transition-transform duration-200 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                    </Link>
-                  </div>
-                )}
               </div>
-            </div>
+            </>
           );
         })()}
       </section>

@@ -194,11 +194,11 @@ export function buildProjectMetadata(
       images: [entry.cardImage ?? siteConfig.ogImage],
     },
     robots: {
-      index: true,
-      follow: true,
+      index: entry.slug !== "cazetv",
+      follow: entry.slug !== "cazetv",
       googleBot: {
-        index: true,
-        follow: true,
+        index: entry.slug !== "cazetv",
+        follow: entry.slug !== "cazetv",
         "max-image-preview": "large",
         "max-snippet": -1,
         "max-video-preview": -1,

@@ -89,7 +89,7 @@ export default function Footer() {
             Aviso de Propriedade Intelectual e Isenção de Responsabilidade
           </p>
           <p>
-            Este website é um projeto não-oficial desenvolvido exclusivamente com finalidade demonstrativa de portfólio acadêmico, design de interfaces e estudo de tecnologia. Todos os logotipos, marcas registradas, nomes comerciais e direitos de imagem associados à CazéTV pertencem à Live Mode / CazéTV. Todos os direitos e propriedade intelectual sobre o torneio Copa do Mundo FIFA 2026 e suas marcas associadas pertencem à FIFA e entidades parceiras. Este site não possui fins lucrativos, comerciais ou afiliação comercial, não pretendendo representar, agir em nome ou sugerir vínculo oficial com as entidades proprietárias das marcas.
+            Este website é um projeto não-oficial desenvolvido exclusivamente como um estudo de caso profissional de design de interfaces e estudo de tecnologia. Todos os logotipos, marcas registradas, nomes comerciais e direitos de imagem associados à CazéTV pertencem à Live Mode / CazéTV. Todos os direitos e propriedade intelectual sobre o torneio Copa do Mundo FIFA 2026 e suas marcas associadas pertencem à FIFA e entidades parceiras. Este site não possui fins lucrativos, comerciais ou afiliação comercial, não pretendendo representar, agir em nome ou sugerir vínculo oficial com as entidades proprietárias das marcas.
           </p>
         </div>
       </div>

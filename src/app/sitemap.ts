@@ -13,12 +13,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
-    ...visibleSections.map((section) => ({
-      url: `${siteUrl}/projetos/${section.slug}`,
-      lastModified,
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-      images: section.cardImage ? [`${siteUrl}${section.cardImage}`] : undefined,
-    })),
+    ...visibleSections
+      .filter((section) => section.slug !== "cazetv")
+      .map((section) => ({
+        url: `${siteUrl}/projetos/${section.slug}`,
+        lastModified,
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+        images: section.cardImage ? [`${siteUrl}${section.cardImage}`] : undefined,
+      })),
   ];
 }
