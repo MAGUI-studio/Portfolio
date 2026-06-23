@@ -78,10 +78,12 @@ export default async function ProjectPage(props: PageProps<"/projetos/[slug]">) 
         }}
       />
       <SectionComponent />
-      <ProjectWhatsappButton
-        projectSlug={entry.slug}
-        projectTitle={sanitizeText(entry.title)}
-      />
+      {entry.slug !== "cazetv" && (
+        <ProjectWhatsappButton
+          projectSlug={entry.slug}
+          projectTitle={sanitizeText(entry.title)}
+        />
+      )}
       {previousEntry && nextEntry ? (
         <nav
           aria-label="Navegação entre projetos"

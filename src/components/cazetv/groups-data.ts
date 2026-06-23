@@ -113,10 +113,10 @@ export const groupsStandings: GroupData[] = [
   {
     groupName: "Grupo K",
     teams: [
-      { rank: 1, team: "Portugal", points: "4-0", played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 5, goalsAgainst: 1, goalDifference: 4, lastFive: ["E", "N", "N", "N", "N"], qualifies: true },
+      { rank: 1, team: "Portugal", points: 4, played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 6, goalsAgainst: 1, goalDifference: 5, lastFive: ["E", "V", "N", "N", "N"], qualifies: true },
       { rank: 2, team: "Colômbia", points: 3, played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 3, goalsAgainst: 1, goalDifference: 2, lastFive: ["V", "N", "N", "N", "N"], qualifies: true },
       { rank: 3, team: "RD Congo", points: 1, played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 1, goalDifference: 0, lastFive: ["E", "N", "N", "N", "N"], qualifies: true },
-      { rank: 4, team: "Uzbequistão", points: "0-4", played: 2, won: 0, drawn: 0, lost: 2, goalsFor: 1, goalsAgainst: 7, goalDifference: -6, lastFive: ["D", "N", "N", "N", "N"], qualifies: false }
+      { rank: 4, team: "Uzbequistão", points: 0, played: 2, won: 0, drawn: 0, lost: 2, goalsFor: 1, goalsAgainst: 8, goalDifference: -7, lastFive: ["D", "D", "N", "N", "N"], qualifies: false }
     ]
   },
   {
