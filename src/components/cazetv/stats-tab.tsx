@@ -33,6 +33,16 @@ interface StatsTabProps {
   onTeamClick: (teamName: string) => void;
 }
 
+const stageTranslations: Record<string, string> = {
+  "group-stage": "Fase de Grupos",
+  "round-of-32": "Dezesseis-avos",
+  "round-of-16": "Oitavas de Final",
+  "quarter-finals": "Quartas de Final",
+  "semi-finals": "Semifinais",
+  "third-place": "3º Lugar",
+  "final": "Grande Final"
+};
+
 interface Scorer {
   name: string;
   team: string;
@@ -49,7 +59,11 @@ export default function StatsTab({ fixtures, teamIsoCodes, onTeamClick }: StatsT
     sortedDefense,
     goalIntervals,
     maxIntervalGoals,
-    averageGoalsPerMatch
+    averageGoalsPerMatch,
+    biggestVictoryMatch,
+    maxGoalDiff,
+    highestScoringMatch,
+    maxTotalGoals
   } = useMemo(() => {
     let goalsCount = 0;
     let matchesCount = 0;
@@ -136,8 +150,41 @@ export default function StatsTab({ fixtures, teamIsoCodes, onTeamClick }: StatsT
         });
       }
     });
+
     const maxInt = Math.max(...intervals, 1);
     const avgGoals = matchesCount > 0 ? (goalsCount / matchesCount).toFixed(2) : "0.00";
+
+    // Find biggest victory (highest goal difference) and highest scoring match
+    let biggestVictoryMatch: Fixture | null = null;
+    let maxGoalDiff = -1;
+    let maxGoalDiffTotal = -1;
+
+    let highestScoringMatch: Fixture | null = null;
+    let maxTotalGoals = -1;
+
+    fixtures.forEach((match) => {
+      const hs = match.homeScore;
+      const as = match.awayScore;
+      const hasScore = typeof hs === "number" && typeof as === "number";
+
+      if (hasScore) {
+        const total = (hs || 0) + (as || 0);
+        const diff = Math.abs((hs || 0) - (as || 0));
+
+        // Biggest victory (goal difference)
+        if (diff > maxGoalDiff || (diff === maxGoalDiff && total > maxGoalDiffTotal)) {
+          maxGoalDiff = diff;
+          maxGoalDiffTotal = total;
+          biggestVictoryMatch = match;
+        }
+
+        // Highest scoring match
+        if (total > maxTotalGoals) {
+          maxTotalGoals = total;
+          highestScoringMatch = match;
+        }
+      }
+    });
 
     return {
       totalGoals: goalsCount,
@@ -147,7 +194,11 @@ export default function StatsTab({ fixtures, teamIsoCodes, onTeamClick }: StatsT
       sortedDefense: defenseList,
       goalIntervals: intervals,
       maxIntervalGoals: maxInt,
-      averageGoalsPerMatch: avgGoals
+      averageGoalsPerMatch: avgGoals,
+      biggestVictoryMatch,
+      maxGoalDiff,
+      highestScoringMatch,
+      maxTotalGoals
     };
   }, [fixtures]);
 
@@ -355,7 +406,7 @@ export default function StatsTab({ fixtures, teamIsoCodes, onTeamClick }: StatsT
             <div className="overflow-x-auto select-none">
               <table className="w-full text-left text-xs text-zinc-400">
                 <thead>
-                  <tr className="text-[9px] font-black uppercase tracking-wider text-zinc-550 border-b border-zinc-900/40">
+                  <tr className="text-[9px] font-black uppercase tracking-wider text-zinc-555 border-b border-zinc-900/40">
                     <th className="py-2 px-1 text-center w-8">Pos</th>
                     <th className="py-2 px-2">Seleção</th>
                     <th className="py-2 px-2 text-center font-bold text-zinc-350">Gols Sofridos</th>
@@ -379,6 +430,80 @@ export default function StatsTab({ fixtures, teamIsoCodes, onTeamClick }: StatsT
                   ))}
                 </tbody>
               </table>
+            </div>
+          </div>
+
+          {/* Tournament Records */}
+          <div className="rounded-2xl border border-zinc-900/60 bg-zinc-950/30 p-6">
+            <div className="flex items-center gap-2 border-b border-zinc-900 pb-4 mb-6">
+              <Flame size={18} className="text-orange-500 animate-pulse" />
+              <h3 className="text-base font-black uppercase tracking-wider text-white">Recordes do Torneio</h3>
+            </div>
+
+            <div className="flex flex-col gap-5 text-xs text-zinc-400">
+              {/* Biggest Victory */}
+              {biggestVictoryMatch && (
+                <div className="flex flex-col gap-2">
+                  <span className="text-[9px] font-black uppercase tracking-widest text-zinc-500">Maior Goleada</span>
+                  <div className="rounded-xl bg-zinc-900/20 border border-zinc-900/40 p-3.5 flex flex-col gap-2.5">
+                    <div className="flex items-center justify-between font-black text-white">
+                      <button
+                        onClick={() => onTeamClick((biggestVictoryMatch as any).homeTeam)}
+                        className="flex items-center gap-1.5 hover:text-orange-500 transition focus:outline-none"
+                      >
+                        {renderFlag((biggestVictoryMatch as any).homeTeam)}
+                        <span className="truncate max-w-[80px] sm:max-w-none">{(biggestVictoryMatch as any).homeTeam}</span>
+                      </button>
+                      <span className="font-mono text-orange-500 bg-orange-600/10 px-2 py-0.5 rounded border border-orange-500/10 shrink-0 mx-2 text-[10px]">
+                        {(biggestVictoryMatch as any).homeScore} - {(biggestVictoryMatch as any).awayScore}
+                      </span>
+                      <button
+                        onClick={() => onTeamClick((biggestVictoryMatch as any).awayTeam)}
+                        className="flex items-center gap-1.5 hover:text-orange-500 transition focus:outline-none"
+                      >
+                        <span className="truncate max-w-[80px] sm:max-w-none">{(biggestVictoryMatch as any).awayTeam}</span>
+                        {renderFlag((biggestVictoryMatch as any).awayTeam)}
+                      </button>
+                    </div>
+                    <div className="flex justify-between items-center text-[9px] font-extrabold uppercase text-zinc-500 tracking-wider">
+                      <span>{stageTranslations[(biggestVictoryMatch as any).stage] || (biggestVictoryMatch as any).stage}</span>
+                      <span>Diferença: +{maxGoalDiff} gols</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Highest Scoring Match */}
+              {highestScoringMatch && (
+                <div className="flex flex-col gap-2">
+                  <span className="text-[9px] font-black uppercase tracking-widest text-zinc-500">Jogo com Mais Gols</span>
+                  <div className="rounded-xl bg-zinc-900/20 border border-zinc-900/40 p-3.5 flex flex-col gap-2.5">
+                    <div className="flex items-center justify-between font-black text-white">
+                      <button
+                        onClick={() => onTeamClick((highestScoringMatch as any).homeTeam)}
+                        className="flex items-center gap-1.5 hover:text-orange-500 transition focus:outline-none"
+                      >
+                        {renderFlag((highestScoringMatch as any).homeTeam)}
+                        <span className="truncate max-w-[80px] sm:max-w-none">{(highestScoringMatch as any).homeTeam}</span>
+                      </button>
+                      <span className="font-mono text-orange-500 bg-orange-600/10 px-2 py-0.5 rounded border border-orange-500/10 shrink-0 mx-2 text-[10px]">
+                        {(highestScoringMatch as any).homeScore} - {(highestScoringMatch as any).awayScore}
+                      </span>
+                      <button
+                        onClick={() => onTeamClick((highestScoringMatch as any).awayTeam)}
+                        className="flex items-center gap-1.5 hover:text-orange-500 transition focus:outline-none"
+                      >
+                        <span className="truncate max-w-[80px] sm:max-w-none">{(highestScoringMatch as any).awayTeam}</span>
+                        {renderFlag((highestScoringMatch as any).awayTeam)}
+                      </button>
+                    </div>
+                    <div className="flex justify-between items-center text-[9px] font-extrabold uppercase text-zinc-500 tracking-wider">
+                      <span>{stageTranslations[(highestScoringMatch as any).stage] || (highestScoringMatch as any).stage}</span>
+                      <span>Total: {maxTotalGoals} gols</span>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
