@@ -142,7 +142,7 @@ export default function BrazilWidget({ fixtures, teamIsoCodes, onShowDetails }: 
           <div className="flex items-center gap-2">
             <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse" />
             <span className="text-[10px] font-black uppercase tracking-widest text-green-400">
-              {isUpcoming ? "Próximo Confronto da Seleção 🇧🇷" : "Última Partida da Seleção 🇧🇷"}
+              {isUpcoming ? "Próximo Confronto da Seleção" : "Última Partida da Seleção"}
             </span>
           </div>
 

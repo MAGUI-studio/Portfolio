@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ScrollTopLink } from "@/components/scroll-top-link";
+import { Warning } from "@phosphor-icons/react";
 
 export default function Footer() {
   return (
@@ -84,8 +85,8 @@ export default function Footer() {
 
         {/* Legal Disclaimer Box */}
         <div className="mt-8 rounded-2xl bg-zinc-900/10 border border-zinc-900/50 p-6 text-[10px] text-zinc-500 leading-relaxed">
-          <p className="font-extrabold uppercase text-zinc-300 mb-2 tracking-wider flex items-center gap-1.5">
-            <span className="text-orange-500 text-xs">⚠️</span>
+          <p className="font-extrabold uppercase text-zinc-300 mb-2 tracking-wider flex items-center gap-1.5 select-none">
+            <Warning size={12} className="text-orange-500 shrink-0" />
             Aviso de Propriedade Intelectual e Isenção de Responsabilidade
           </p>
           <p>

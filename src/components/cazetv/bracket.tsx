@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { resolvePlaceholder } from "./groups-data";
+import { Warning, Trophy } from "@phosphor-icons/react";
 
 interface MatchEvent {
   tipo: string;
@@ -222,7 +223,7 @@ export default function Bracket({ fixtures, teamIsoCodes, onShowDetails }: Brack
       {/* Pending Matches Warning Banner */}
       {hasPendingGroupMatches && (
         <div className="mb-6 rounded-xl bg-orange-950/20 border border-orange-900/30 p-4 text-xs font-semibold text-orange-400 flex items-start gap-3">
-          <span className="text-sm shrink-0">⚠️</span>
+          <Warning size={16} className="text-orange-500 shrink-0 mt-0.5" />
           <span>
             <strong className="uppercase mr-1">Previsão Parcial:</strong> Esta é uma simulação baseada na classificação atual dos grupos. Os confrontos finais das fases eliminatórias serão oficialmente consolidados assim que todos os jogos da Fase de Grupos forem finalizados.
           </span>
@@ -292,8 +293,14 @@ export default function Bracket({ fixtures, teamIsoCodes, onShowDetails }: Brack
             <div className="flex-grow flex flex-col justify-center gap-12">
               {finals.map((match) => (
                 <div key={match.matchNumber} className="flex flex-col gap-2">
-                  <span className="text-[9px] font-black text-center uppercase tracking-widest text-orange-500 animate-pulse">
-                    {match.stage === "final" ? "Grande Final 🏆" : "Disputa de 3º Lugar"}
+                  <span className="text-[9px] font-black text-center uppercase tracking-widest text-orange-500 animate-pulse flex items-center justify-center gap-1">
+                    {match.stage === "final" ? (
+                      <>
+                        Grande Final <Trophy size={11} className="text-orange-500 shrink-0 inline-block align-middle" />
+                      </>
+                    ) : (
+                      "Disputa de 3º Lugar"
+                    )}
                   </span>
                   {renderMatchNode(match)}
                 </div>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ReactCountryFlag from "react-country-flag";
-import { ArrowSquareOut } from "@phosphor-icons/react";
+import { ArrowSquareOut, Trophy } from "@phosphor-icons/react";
 
 interface Fixture {
   matchNumber: number;
@@ -132,7 +132,7 @@ export default function HeroSection({
         <div
           className={`flex ${sizeClass} items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900 aspect-[3/2]`}
         >
-          🏆
+          <Trophy size={16} className="text-zinc-600" />
         </div>
       );
     }

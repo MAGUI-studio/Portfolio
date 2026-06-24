@@ -779,62 +779,61 @@ export default function CazeTVLanding() {
                           })
                           .map((event, idx) => {
                             const isHome = event.time === "casa";
-                          
-                          // Icon and color map
-                          let icon = "⚽";
-                          let labelColor = "text-zinc-300";
-                          if (event.tipo === "gol") {
-                            icon = "⚽";
-                          } else if (event.tipo === "gol_contra") {
-                            icon = "⚽";
-                            labelColor = "text-red-400";
-                          } else if (event.tipo === "cartao_amarelo") {
-                            icon = "🟨";
-                          } else if (event.tipo === "cartao_vermelho") {
-                            icon = "🟥";
-                          }
+                            
+                            let icon: React.ReactNode = <SoccerBall size={14} className="text-zinc-400 shrink-0" />;
+                            let labelColor = "text-zinc-300";
+                            if (event.tipo === "gol") {
+                              icon = <SoccerBall size={14} className="text-white shrink-0" />;
+                            } else if (event.tipo === "gol_contra") {
+                              icon = <SoccerBall size={14} className="text-red-500 shrink-0" />;
+                              labelColor = "text-red-400";
+                            } else if (event.tipo === "cartao_amarelo") {
+                              icon = <div className="w-2.5 h-3.5 bg-yellow-500 rounded-[2px] border border-yellow-600/40 shadow-sm shrink-0 inline-block" />;
+                            } else if (event.tipo === "cartao_vermelho") {
+                              icon = <div className="w-2.5 h-3.5 bg-red-600 rounded-[2px] border border-red-700/40 shadow-sm shrink-0 inline-block" />;
+                            }
 
-                          return (
-                            <div key={idx} className="relative flex items-center w-full min-h-[32px]">
-                              {/* Left column (Home events) */}
-                              <div className={`w-1/2 pr-6 text-right text-xs ${isHome ? "opacity-100 animate-in fade-in slide-in-from-left-2 duration-200" : "opacity-0 pointer-events-none"}`}>
-                                {isHome && (
-                                  <div className="flex items-center justify-end gap-1.5">
-                                    <span className="text-[11px] font-bold text-zinc-300 tracking-tight leading-snug">
-                                      <span className={labelColor}>{event.autor}</span>
-                                      {event.tipo === "gol_contra" && (
-                                        <span className="text-[8px] font-extrabold text-red-500 block uppercase tracking-wider mt-0.5">Gol Contra (GC)</span>
-                                      )}
-                                    </span>
-                                    <span className="text-sm shrink-0 select-none">{icon}</span>
+                            return (
+                              <div key={idx} className="relative flex items-center w-full min-h-[32px]">
+                                {/* Left column (Home events) */}
+                                <div className={`w-1/2 pr-6 text-right text-xs ${isHome ? "opacity-100 animate-in fade-in slide-in-from-left-2 duration-200" : "opacity-0 pointer-events-none"}`}>
+                                  {isHome && (
+                                    <div className="flex items-center justify-end gap-1.5">
+                                      <span className="text-[11px] font-bold text-zinc-300 tracking-tight leading-snug">
+                                        <span className={labelColor}>{event.autor}</span>
+                                        {event.tipo === "gol_contra" && (
+                                          <span className="text-[8px] font-extrabold text-red-500 block uppercase tracking-wider mt-0.5">Gol Contra (GC)</span>
+                                        )}
+                                      </span>
+                                      <span className="flex items-center justify-center shrink-0 select-none w-5 h-5">{icon}</span>
+                                    </div>
+                                  )}
+                                </div>
+
+                                {/* Center Node (Minute Badge) */}
+                                <div className="absolute left-1/2 -translate-x-1/2 z-10 flex flex-col items-center justify-center">
+                                  <div className="flex h-6 w-6 items-center justify-center rounded-full bg-zinc-950 border border-zinc-900 text-[9px] font-black text-zinc-500 shadow-md">
+                                    {event.minuto}'
                                   </div>
-                                )}
-                              </div>
+                                </div>
 
-                              {/* Center Node (Minute Badge) */}
-                              <div className="absolute left-1/2 -translate-x-1/2 z-10 flex flex-col items-center justify-center">
-                                <div className="flex h-6 w-6 items-center justify-center rounded-full bg-zinc-950 border border-zinc-900 text-[9px] font-black text-zinc-500 shadow-md">
-                                  {event.minuto}'
+                                {/* Right column (Away events) */}
+                                <div className={`w-1/2 pl-6 text-left text-xs ${!isHome ? "opacity-100 animate-in fade-in slide-in-from-right-2 duration-200" : "opacity-0 pointer-events-none"}`}>
+                                  {!isHome && (
+                                    <div className="flex items-center justify-start gap-1.5">
+                                      <span className="flex items-center justify-center shrink-0 select-none w-5 h-5">{icon}</span>
+                                      <span className="text-[11px] font-bold text-zinc-300 tracking-tight leading-snug">
+                                        <span className={labelColor}>{event.autor}</span>
+                                        {event.tipo === "gol_contra" && (
+                                          <span className="text-[8px] font-extrabold text-red-500 block uppercase tracking-wider mt-0.5">Gol Contra (GC)</span>
+                                        )}
+                                      </span>
+                                    </div>
+                                  )}
                                 </div>
                               </div>
-
-                              {/* Right column (Away events) */}
-                              <div className={`w-1/2 pl-6 text-left text-xs ${!isHome ? "opacity-100 animate-in fade-in slide-in-from-right-2 duration-200" : "opacity-0 pointer-events-none"}`}>
-                                {!isHome && (
-                                  <div className="flex items-center justify-start gap-1.5">
-                                    <span className="text-sm shrink-0 select-none">{icon}</span>
-                                    <span className="text-[11px] font-bold text-zinc-300 tracking-tight leading-snug">
-                                      <span className={labelColor}>{event.autor}</span>
-                                      {event.tipo === "gol_contra" && (
-                                        <span className="text-[8px] font-extrabold text-red-500 block uppercase tracking-wider mt-0.5">Gol Contra (GC)</span>
-                                      )}
-                                    </span>
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          );
-                        })}
+                            );
+                          })}
                       </div>
                     </div>
                   )}
