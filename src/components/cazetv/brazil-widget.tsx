@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Calendar, Timer, MapPin } from "@phosphor-icons/react";
 
 interface MatchEvent {
@@ -36,6 +37,7 @@ interface BrazilWidgetProps {
 export default function BrazilWidget({ fixtures, teamIsoCodes, onShowDetails }: BrazilWidgetProps) {
   const [nextMatch, setNextMatch] = useState<Fixture | null>(null);
   const [isUpcoming, setIsUpcoming] = useState(true);
+  const [isLive, setIsLive] = useState(false);
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
@@ -62,22 +64,32 @@ export default function BrazilWidget({ fixtures, teamIsoCodes, onShowDetails }: 
   useEffect(() => {
     if (!nextMatch || !isUpcoming) return;
 
-    const timer = setInterval(() => {
+    const updateTimer = () => {
       const target = new Date(nextMatch.kickoffUtc).getTime();
       const now = new Date().getTime();
       const difference = target - now;
 
       if (difference <= 0) {
-        clearInterval(timer);
+        // If the game started less than 2.5 hours ago and score is still null, it is live
+        const isGameStillGoing = now < (target + 2.5 * 60 * 60 * 1000) && nextMatch.homeScore === null;
+        if (isGameStillGoing) {
+          setIsLive(true);
+        } else {
+          setIsLive(false);
+        }
         setCountdown({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       } else {
+        setIsLive(false);
         const d = Math.floor(difference / (1000 * 60 * 60 * 24));
         const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const s = Math.floor((difference % (1000 * 60)) / 1000);
         setCountdown({ days: d, hours: h, minutes: m, seconds: s });
       }
-    }, 1000);
+    };
+
+    updateTimer();
+    const timer = setInterval(updateTimer, 1000);
 
     return () => clearInterval(timer);
   }, [nextMatch, isUpcoming]);
@@ -174,9 +186,19 @@ export default function BrazilWidget({ fixtures, teamIsoCodes, onShowDetails }: 
 
         {/* Right Side: Countdown Timer or Details Button */}
         <div className="flex flex-col sm:flex-row lg:flex-col items-start sm:items-center lg:items-end justify-between sm:justify-start lg:justify-center gap-4 shrink-0 border-t lg:border-t-0 lg:border-l border-zinc-900 pt-6 lg:pt-0 lg:pl-8 w-full sm:w-auto">
-          {isUpcoming ? (
+          {isLive ? (
+            <div className="flex flex-col gap-1.5 lg:items-end">
+              <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-red-950/40 border border-red-500/30 text-[9px] font-black uppercase tracking-widest text-red-500 animate-pulse">
+                <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-ping" />
+                Partida Ao Vivo
+              </span>
+              <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">
+                Acompanhe a transmissão
+              </span>
+            </div>
+          ) : isUpcoming ? (
             <div className="flex flex-col gap-1.5">
-              <span className="text-[9px] font-black uppercase tracking-widest text-zinc-500 flex items-center gap-1 lg:justify-end">
+              <span className="text-[9px] font-black uppercase tracking-widest text-zinc-550 flex items-center gap-1 lg:justify-end">
                 <Timer size={12} className="text-yellow-500 animate-spin-slow" />
                 Contagem Regressiva
               </span>
@@ -208,12 +230,23 @@ export default function BrazilWidget({ fixtures, teamIsoCodes, onShowDetails }: 
             </div>
           )}
 
-          <button
-            onClick={() => onShowDetails(nextMatch.matchNumber)}
-            className="rounded-xl bg-green-600 hover:bg-green-500 px-5 py-3 text-xs font-black uppercase tracking-wider text-white transition duration-200 shadow-md shadow-green-950/20 border-0 outline-none select-none w-full sm:w-auto"
-          >
-            Ver Detalhes do Jogo
-          </button>
+          {isLive ? (
+            <Link
+              href={nextMatch.matchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-500 hover:to-orange-500 px-5 py-3 text-xs font-black uppercase tracking-wider text-white transition duration-200 shadow-md shadow-red-950/20 border-0 outline-none select-none w-full sm:w-auto cursor-pointer text-center animate-pulse"
+            >
+              Assistir na CazéTV
+            </Link>
+          ) : (
+            <button
+              onClick={() => onShowDetails(nextMatch.matchNumber)}
+              className="rounded-xl bg-green-600 hover:bg-green-500 px-5 py-3 text-xs font-black uppercase tracking-wider text-white transition duration-200 shadow-md shadow-green-950/20 border-0 outline-none select-none w-full sm:w-auto cursor-pointer"
+            >
+              Ver Detalhes do Jogo
+            </button>
+          )}
         </div>
       </div>
     </div>

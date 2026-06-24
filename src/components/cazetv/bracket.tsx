@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { resolvePlaceholder } from "./groups-data";
 
 interface MatchEvent {
   tipo: string;
@@ -34,6 +35,7 @@ interface BracketProps {
 
 export default function Bracket({ fixtures, teamIsoCodes, onShowDetails }: BracketProps) {
   const [activeMobileRound, setActiveMobileRound] = useState<string>("round-of-32");
+  const [hoveredTeam, setHoveredTeam] = useState<string | null>(null);
 
   // Custom stage translations
   const stageTitles: Record<string, string> = {
@@ -42,63 +44,6 @@ export default function Bracket({ fixtures, teamIsoCodes, onShowDetails }: Brack
     "quarter-finals": "Quartas de Final (1/4)",
     "semi-finals": "Semifinais",
     "final-stages": "Final e 3º Lugar"
-  };
-
-  // Group standings resolver for placeholders
-  const resolvePlaceholder = (teamName: string): string => {
-    if (!teamName) return "";
-
-    const mappings: Record<string, string> = {
-      "1º do Grupo A": "México",
-      "2º do Grupo A": "Coreia do Sul",
-      "3º do Grupo A": "Tchéquia",
-      "1º do Grupo B": "Canadá",
-      "2º do Grupo B": "Suíça",
-      "3º do Grupo B": "Bósnia e Herzegovina",
-      "1º do Grupo C": "Brasil",
-      "2º do Grupo C": "Marrocos",
-      "3º do Grupo C": "Escócia",
-      "1º do Grupo D": "Estados Unidos",
-      "2º do Grupo D": "Austrália",
-      "3º do Grupo D": "Paraguai",
-      "1º do Grupo E": "Alemanha",
-      "2º do Grupo E": "Costa do Marfim",
-      "3º do Grupo E": "Equador",
-      "1º do Grupo F": "Holanda",
-      "2º do Grupo F": "Japão",
-      "3º do Grupo F": "Suícia",
-      "1º do Grupo G": "Egito",
-      "2º do Grupo G": "Irã",
-      "3º do Grupo G": "Bélgica",
-      "1º do Grupo H": "Espanha",
-      "2º do Grupo H": "Uruguai",
-      "3º do Grupo H": "Cabo Verde",
-      "1º do Grupo I": "França",
-      "2º do Grupo I": "Noruega",
-      "3º do Grupo I": "Senegal",
-      "1º do Grupo J": "Argentina",
-      "2º do Grupo J": "Áustria",
-      "3º do Grupo J": "Argélia",
-      "1º do Grupo K": "Portugal",
-      "2º do Grupo K": "Colômbia",
-      "3º do Grupo K": "RD Congo",
-      "1º do Grupo L": "Inglaterra",
-      "2º do Grupo L": "Gana",
-      "3º do Grupo L": "Panamá"
-    };
-
-    if (teamName.startsWith("3º do Grupo")) {
-      if (teamName.includes("A/B/C/D/F")) return "Tchéquia";
-      if (teamName.includes("C/D/F/G/H")) return "Escócia";
-      if (teamName.includes("C/E/F/H/I")) return "Suécia";
-      if (teamName.includes("E/H/I/J/K")) return "Paraguai";
-      if (teamName.includes("D/E/G/I/J")) return "Argélia";
-      if (teamName.includes("A/B/D/G/I")) return "Bélgica";
-      if (teamName.includes("B/C/E/F/I")) return "Cabo Verde";
-      if (teamName.includes("B/F/G/J/L")) return "Bósnia e Herzegovina";
-    }
-
-    return mappings[teamName] || teamName;
   };
 
   // Check if there are still pending games in the group stage
@@ -161,11 +106,19 @@ export default function Bracket({ fixtures, teamIsoCodes, onShowDetails }: Brack
     const awayResolved = resolvePlaceholder(match.awayTeam);
     const hasScore = typeof match.homeScore === "number" && typeof match.awayScore === "number";
 
+    const isHomeHovered = hoveredTeam && homeResolved === hoveredTeam;
+    const isAwayHovered = hoveredTeam && awayResolved === hoveredTeam;
+    const isMatchHighlighted = isHomeHovered || isAwayHovered;
+
     return (
       <button
         key={match.matchNumber}
         onClick={() => onShowDetails(match.matchNumber)}
-        className={`group relative text-left rounded-xl border border-zinc-900 bg-zinc-950/60 p-3 shadow-lg select-none hover:border-orange-500 hover:bg-zinc-900/40 transition duration-200 focus:outline-none ${
+        className={`group relative text-left rounded-xl border p-3 shadow-lg select-none transition-all duration-300 focus:outline-none cursor-pointer ${
+          isMatchHighlighted 
+            ? "border-orange-500 bg-orange-500/5 shadow-[0_0_15px_rgba(249,115,22,0.15)] scale-[1.02] z-10" 
+            : "border-zinc-900 bg-zinc-950/60 hover:border-orange-500/60 hover:bg-zinc-900/30"
+        } ${
           isCompact ? "w-full" : "w-60"
         }`}
       >
@@ -178,30 +131,66 @@ export default function Bracket({ fixtures, teamIsoCodes, onShowDetails }: Brack
         {/* Teams List */}
         <div className="flex flex-col gap-1.5">
           {/* Home */}
-          <div className="flex items-center justify-between gap-2">
+          <div 
+            className={`flex items-center justify-between gap-2 p-1 rounded-lg transition duration-200 ${
+              isHomeHovered ? "bg-orange-500/10 text-orange-400" : ""
+            }`}
+            onMouseEnter={() => homeResolved && !homeResolved.startsWith("1º") && !homeResolved.startsWith("2º") && !homeResolved.startsWith("3º") && setHoveredTeam(homeResolved)}
+            onMouseLeave={() => setHoveredTeam(null)}
+          >
             <div className="flex items-center gap-2 min-w-0">
               {renderFlag(match.homeTeam)}
-              <span className={`text-[11px] font-bold truncate ${hasScore && match.homeScore! < match.awayScore! ? "text-zinc-500" : "text-white"}`}>
+              <span className={`text-[11px] font-bold truncate transition duration-200 ${
+                isHomeHovered 
+                  ? "text-orange-500 font-extrabold" 
+                  : hasScore && match.homeScore! < match.awayScore! 
+                    ? "text-zinc-500" 
+                    : "text-white"
+              }`}>
                 {homeResolved || match.homeTeam}
               </span>
             </div>
             {hasScore && (
-              <span className={`text-xs font-black ${match.homeScore! < match.awayScore! ? "text-zinc-500" : "text-orange-500"}`}>
+              <span className={`text-xs font-black transition duration-200 ${
+                isHomeHovered
+                  ? "text-orange-500"
+                  : match.homeScore! < match.awayScore! 
+                    ? "text-zinc-500" 
+                    : "text-orange-500"
+              }`}>
                 {match.homeScore}
               </span>
             )}
           </div>
 
           {/* Away */}
-          <div className="flex items-center justify-between gap-2">
+          <div 
+            className={`flex items-center justify-between gap-2 p-1 rounded-lg transition duration-200 ${
+              isAwayHovered ? "bg-orange-500/10 text-orange-400" : ""
+            }`}
+            onMouseEnter={() => awayResolved && !awayResolved.startsWith("1º") && !awayResolved.startsWith("2º") && !awayResolved.startsWith("3º") && setHoveredTeam(awayResolved)}
+            onMouseLeave={() => setHoveredTeam(null)}
+          >
             <div className="flex items-center gap-2 min-w-0">
               {renderFlag(match.awayTeam)}
-              <span className={`text-[11px] font-bold truncate ${hasScore && match.awayScore! < match.homeScore! ? "text-zinc-500" : "text-white"}`}>
+              <span className={`text-[11px] font-bold truncate transition duration-200 ${
+                isAwayHovered 
+                  ? "text-orange-500 font-extrabold" 
+                  : hasScore && match.awayScore! < match.homeScore! 
+                    ? "text-zinc-500" 
+                    : "text-white"
+              }`}>
                 {awayResolved || match.awayTeam}
               </span>
             </div>
             {hasScore && (
-              <span className={`text-xs font-black ${match.awayScore! < match.homeScore! ? "text-zinc-500" : "text-orange-500"}`}>
+              <span className={`text-xs font-black transition duration-200 ${
+                isAwayHovered
+                  ? "text-orange-500"
+                  : match.awayScore! < match.homeScore! 
+                    ? "text-zinc-500" 
+                    : "text-orange-500"
+              }`}>
                 {match.awayScore}
               </span>
             )}

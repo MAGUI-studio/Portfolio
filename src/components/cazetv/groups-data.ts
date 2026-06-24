@@ -129,3 +129,36 @@ export const groupsStandings: GroupData[] = [
     ]
   }
 ];
+
+export const resolvePlaceholder = (teamName: string): string => {
+  if (!teamName) return "";
+  
+  // Format: "1º do Grupo A" or "2º do Grupo K"
+  const match = teamName.match(/^(\d+)º do Grupo ([A-L])$/);
+  if (match) {
+    const rank = parseInt(match[1]);
+    const groupLetter = match[2];
+    const groupName = `Grupo ${groupLetter}`;
+    const group = groupsStandings.find((g) => g.groupName === groupName);
+    if (group) {
+      const teamObj = group.teams.find((t) => t.rank === rank);
+      if (teamObj) {
+        return teamObj.team;
+      }
+    }
+  }
+
+  // Handle 3º do Grupo wildcards
+  if (teamName.startsWith("3º do Grupo")) {
+    if (teamName.includes("A/B/C/D/F")) return "Tchéquia";
+    if (teamName.includes("C/D/F/G/H")) return "Escócia";
+    if (teamName.includes("C/E/F/H/I")) return "Suécia";
+    if (teamName.includes("E/H/I/J/K")) return "Paraguai";
+    if (teamName.includes("D/E/G/I/J")) return "Argélia";
+    if (teamName.includes("A/B/D/G/I")) return "Bélgica";
+    if (teamName.includes("B/C/E/F/I")) return "Cabo Verde";
+    if (teamName.includes("B/F/G/J/L")) return "Bósnia e Herzegovina";
+  }
+
+  return teamName;
+};

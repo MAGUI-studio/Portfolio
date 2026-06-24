@@ -17,7 +17,8 @@ import Bracket from "../cazetv/bracket";
 import BrazilWidget from "../cazetv/brazil-widget";
 import StatsTab from "../cazetv/stats-tab";
 import Footer from "../cazetv/footer";
-import { Calendar, X, ArrowSquareOut, Warning } from "@phosphor-icons/react";
+import { resolvePlaceholder } from "../cazetv/groups-data";
+import { Calendar, X, ArrowSquareOut, Warning, SoccerBall } from "@phosphor-icons/react";
 
 interface MatchEvent {
   tipo: string;
@@ -194,6 +195,17 @@ export default function CazeTVLanding() {
       return () => window.removeEventListener("popstate", handlePopState);
     }
   }, [fixtures]);
+
+  // Fechar modal/drawer ao pressionar ESC
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isModalOpen) {
+        handleCloseModal();
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isModalOpen]);
 
   const handleTabChange = (newTab: "jogos" | "grupos" | "chaveamento" | "estatisticas") => {
     setActiveTab(newTab);
@@ -382,7 +394,12 @@ export default function CazeTVLanding() {
       />
 
       {/* Navigation Tabs */}
-      <div className="mx-auto w-full px-0 sm:px-6 lg:px-8 mt-10">
+      <div className="mx-auto w-full px-0 sm:px-6 lg:px-8 mt-10 relative">
+        {/* Left fade overlay */}
+        <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-neutral-950 to-transparent pointer-events-none z-10 md:hidden" />
+        {/* Right fade overlay */}
+        <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-neutral-950 to-transparent pointer-events-none z-10 md:hidden" />
+
         <div className="border-b border-zinc-900 overflow-x-auto scrollbar-none">
           <div className="flex gap-6 md:gap-8 justify-start md:justify-center min-w-max px-4 md:px-0">
             <button
@@ -492,13 +509,19 @@ export default function CazeTVLanding() {
             {/* Match Fixtures List */}
             <div className="mt-8">
               {filteredFixtures.length === 0 ? (
-                <div className="mt-12 text-center rounded-xl border border-dashed border-zinc-800 py-16 px-4">
-                  <span className="text-3xl">📭</span>
-                  <h3 className="mt-4 text-lg font-bold text-white">Nenhum confronto correspondente</h3>
-                  <p className="mt-2 text-sm text-zinc-400">Experimente alterar as opções de filtros ou a busca.</p>
+                <div className="mt-12 text-center rounded-2xl border border-zinc-900 bg-zinc-950/20 py-16 px-6 max-w-md mx-auto flex flex-col items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-zinc-900/50 border border-zinc-800/50 text-zinc-550">
+                    <SoccerBall size={24} className="animate-spin-slow" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-black uppercase tracking-wider text-white">Nenhum confronto encontrado</h3>
+                    <p className="mt-1.5 text-xs text-zinc-400 leading-relaxed">
+                      Experimente alterar os filtros selecionados ou digite outro termo de busca para encontrar as partidas.
+                    </p>
+                  </div>
                   <button
                     onClick={handleClearFilters}
-                    className="mt-6 rounded-lg bg-orange-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-orange-500"
+                    className="mt-2 rounded-xl bg-orange-600 hover:bg-orange-500 px-6 py-2.5 text-xs font-black uppercase tracking-wider text-white transition duration-200 shadow-md shadow-orange-950/20 outline-none select-none border-0 cursor-pointer"
                   >
                     Limpar Todos os Filtros
                   </button>
@@ -588,11 +611,12 @@ export default function CazeTVLanding() {
             }
           };
 
-          const renderModalFlag = (teamName: string) => {
+          const renderModalFlag = (rawTeamName: string) => {
+            const teamName = resolvePlaceholder(rawTeamName);
             if (!teamName || teamName.startsWith("Vencedor") || teamName.startsWith("Perdedor") || teamName.startsWith("1º") || teamName.startsWith("2º") || teamName.startsWith("3º")) {
               return (
                 <div className="relative w-16 h-10 bg-zinc-900 rounded-lg shrink-0 overflow-hidden border border-zinc-800">
-                  <Image src="/placeholder.svg" alt="" fill className="object-cover opacity-30" />
+                  <Image src="/utils/placeholder.svg" alt="" fill className="object-cover opacity-30" />
                 </div>
               );
             }
@@ -625,16 +649,16 @@ export default function CazeTVLanding() {
 
             return (
               <div className="relative w-16 h-10 bg-zinc-900 rounded-lg shrink-0 overflow-hidden border border-zinc-800">
-                <Image src="/placeholder.svg" alt="" fill className="object-cover opacity-30" />
+                <Image src="/utils/placeholder.svg" alt="" fill className="object-cover opacity-30" />
               </div>
             );
           };
 
-          const homeResolved = selectedMatch.homeTeam;
-          const awayResolved = selectedMatch.awayTeam;
+          const homeResolved = resolvePlaceholder(selectedMatch.homeTeam);
+          const awayResolved = resolvePlaceholder(selectedMatch.awayTeam);
           const hasScore = typeof selectedMatch.homeScore === "number" && typeof selectedMatch.awayScore === "number";
 
-          // Calculate tournament stats for both teams
+           // Calculate tournament stats for both teams
           const getTeamStats = (teamName: string) => {
             let matchesPlayed = 0;
             let wins = 0;
@@ -650,14 +674,16 @@ export default function CazeTVLanding() {
               const asNum = typeof as === "number";
               
               if (hsNum && asNum) {
-                if (match.homeTeam === teamName) {
+                const matchHomeResolved = resolvePlaceholder(match.homeTeam);
+                const matchAwayResolved = resolvePlaceholder(match.awayTeam);
+                if (matchHomeResolved === teamName) {
                   matchesPlayed++;
                   goalsFor += hs || 0;
                   goalsAgainst += as || 0;
                   if (hs! > as!) wins++;
                   else if (hs! === as!) draws++;
                   else losses++;
-                } else if (match.awayTeam === teamName) {
+                } else if (matchAwayResolved === teamName) {
                   matchesPlayed++;
                   goalsFor += as || 0;
                   goalsAgainst += hs || 0;
@@ -671,8 +697,8 @@ export default function CazeTVLanding() {
             return { matchesPlayed, wins, draws, losses, goalsFor, goalsAgainst };
           };
 
-          const homeStats = getTeamStats(selectedMatch.homeTeam);
-          const awayStats = getTeamStats(selectedMatch.awayTeam);
+          const homeStats = getTeamStats(homeResolved);
+          const awayStats = getTeamStats(awayResolved);
 
           return (
             <>
