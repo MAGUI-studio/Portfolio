@@ -162,11 +162,11 @@ export default function BrazilWidget({ fixtures, teamIsoCodes, onShowDetails }: 
           {/* Details Row */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-y-1.5 gap-x-4 text-xs text-zinc-400 mt-1">
             <div className="flex items-center gap-1.5">
-              <Calendar size={14} className="text-green-500" />
+              <Calendar size={14} className="text-white" />
               <span className="capitalize">{formatMatchDate(nextMatch.kickoffUtc)}</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <MapPin size={14} className="text-yellow-500" />
+              <MapPin size={14} className="text-white" />
               <span>{nextMatch.stadium} • {nextMatch.hostCity.replace("-", " ").toUpperCase()}</span>
             </div>
           </div>
@@ -197,7 +197,7 @@ export default function BrazilWidget({ fixtures, teamIsoCodes, onShowDetails }: 
                 </div>
                 <span className="text-zinc-800 text-base mb-3">:</span>
                 <div className="flex flex-col items-center">
-                  <span className="text-yellow-500">{String(countdown.seconds).padStart(2, "0")}</span>
+                  <span>{String(countdown.seconds).padStart(2, "0")}</span>
                   <span className="text-[8px] font-bold uppercase tracking-wider text-zinc-500 font-sans mt-0.5">Seg</span>
                 </div>
               </div>

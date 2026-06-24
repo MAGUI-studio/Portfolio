@@ -1576,8 +1576,9 @@
       "stadium": "Gillette Stadium",
       "hostCity": "boston",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 0,
+      "awayScore": 0,
+      "events": []
     },
     {
       "matchNumber": 46,
@@ -1590,8 +1591,16 @@
       "stadium": "BMO Field",
       "hostCity": "toronto",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 0,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "54'",
+          "autor": "Ante BUDIMIR",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 47,
@@ -1650,8 +1659,16 @@
       "stadium": "Estadio Akron",
       "hostCity": "guadalajara",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 1,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "76'",
+          "autor": "Daniel MUNOZ",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 49,

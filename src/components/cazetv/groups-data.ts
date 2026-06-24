@@ -113,19 +113,19 @@ export const groupsStandings: GroupData[] = [
   {
     groupName: "Grupo K",
     teams: [
-      { rank: 1, team: "Portugal", points: 4, played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 6, goalsAgainst: 1, goalDifference: 5, lastFive: ["E", "V", "N", "N", "N"], qualifies: true },
-      { rank: 2, team: "Colômbia", points: 3, played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 3, goalsAgainst: 1, goalDifference: 2, lastFive: ["V", "N", "N", "N", "N"], qualifies: true },
-      { rank: 3, team: "RD Congo", points: 1, played: 1, won: 0, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 1, goalDifference: 0, lastFive: ["E", "N", "N", "N", "N"], qualifies: true },
+      { rank: 1, team: "Colômbia", points: 6, played: 2, won: 2, drawn: 0, lost: 0, goalsFor: 4, goalsAgainst: 1, goalDifference: 3, lastFive: ["V", "V", "N", "N", "N"], qualifies: true },
+      { rank: 2, team: "Portugal", points: 4, played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 6, goalsAgainst: 1, goalDifference: 5, lastFive: ["E", "V", "N", "N", "N"], qualifies: true },
+      { rank: 3, team: "RD Congo", points: 1, played: 2, won: 0, drawn: 1, lost: 1, goalsFor: 1, goalsAgainst: 2, goalDifference: -1, lastFive: ["E", "D", "N", "N", "N"], qualifies: false },
       { rank: 4, team: "Uzbequistão", points: 0, played: 2, won: 0, drawn: 0, lost: 2, goalsFor: 1, goalsAgainst: 8, goalDifference: -7, lastFive: ["D", "D", "N", "N", "N"], qualifies: false }
     ]
   },
   {
     groupName: "Grupo L",
     teams: [
-      { rank: 1, team: "Inglaterra", points: 3, played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 4, goalsAgainst: 2, goalDifference: 2, lastFive: ["V", "N", "N", "N", "N"], qualifies: true },
-      { rank: 2, team: "Gana", points: 3, played: 1, won: 1, drawn: 0, lost: 0, goalsFor: 1, goalsAgainst: 0, goalDifference: 1, lastFive: ["V", "N", "N", "N", "N"], qualifies: true },
-      { rank: 3, team: "Panamá", points: 0, played: 1, won: 0, drawn: 0, lost: 1, goalsFor: 0, goalsAgainst: 1, goalDifference: -1, lastFive: ["D", "N", "N", "N", "N"], qualifies: false },
-      { rank: 4, team: "Croácia", points: 0, played: 1, won: 0, drawn: 0, lost: 1, goalsFor: 2, goalsAgainst: 4, goalDifference: -2, lastFive: ["D", "N", "N", "N", "N"], qualifies: false }
+      { rank: 1, team: "Inglaterra", points: 4, played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 4, goalsAgainst: 2, goalDifference: 2, lastFive: ["V", "E", "N", "N", "N"], qualifies: true },
+      { rank: 2, team: "Gana", points: 4, played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 0, goalDifference: 1, lastFive: ["V", "E", "N", "N", "N"], qualifies: true },
+      { rank: 3, team: "Croácia", points: 3, played: 2, won: 1, drawn: 0, lost: 1, goalsFor: 3, goalsAgainst: 4, goalDifference: -1, lastFive: ["D", "V", "N", "N", "N"], qualifies: true },
+      { rank: 4, team: "Panamá", points: 0, played: 2, won: 0, drawn: 0, lost: 2, goalsFor: 0, goalsAgainst: 2, goalDifference: -2, lastFive: ["D", "D", "N", "N", "N"], qualifies: false }
     ]
   }
 ];

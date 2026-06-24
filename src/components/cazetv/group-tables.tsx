@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import ReactCountryFlag from "react-country-flag";
 import { groupsStandings, GroupStandingTeam } from "./groups-data";
 
 interface GroupTablesProps {
@@ -11,46 +10,16 @@ interface GroupTablesProps {
 
 export default function GroupTables({ teamIsoCodes, onTeamClick }: GroupTablesProps) {
   const renderFlag = (teamName: string) => {
-    if (teamName === "Inglaterra") {
-      return (
-        <div className="relative w-6 h-4 overflow-hidden rounded shrink-0 border border-zinc-800 bg-zinc-900">
-          <Image
-            src="https://flagcdn.com/gb-eng.svg"
-            alt="Inglaterra"
-            fill
-            className="object-cover"
-            unoptimized
-          />
-        </div>
-      );
-    }
-    if (teamName === "Escócia") {
-      return (
-        <div className="relative w-6 h-4 overflow-hidden rounded shrink-0 border border-zinc-800 bg-zinc-900">
-          <Image
-            src="https://flagcdn.com/gb-sct.svg"
-            alt="Escócia"
-            fill
-            className="object-cover"
-            unoptimized
-          />
-        </div>
-      );
-    }
-
     const isoCode = teamIsoCodes[teamName];
     if (isoCode) {
       return (
         <div className="relative w-6 h-4 overflow-hidden rounded shrink-0 border border-zinc-800 bg-zinc-900">
-          <ReactCountryFlag
-            countryCode={isoCode}
-            svg
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover"
-            }}
-            title={teamName}
+          <Image
+            src={`https://flagcdn.com/${isoCode.toLowerCase()}.svg`}
+            alt={teamName}
+            fill
+            className="object-cover"
+            unoptimized
           />
         </div>
       );
@@ -59,9 +28,9 @@ export default function GroupTables({ teamIsoCodes, onTeamClick }: GroupTablesPr
       <div className="relative w-6 h-4 overflow-hidden rounded bg-zinc-900 shrink-0 border border-zinc-800">
         <Image
           src="/utils/placeholder.svg"
-          alt="Indefinido"
+          alt=""
           fill
-          className="object-cover opacity-60"
+          className="object-cover opacity-30"
         />
       </div>
     );
