@@ -23,28 +23,28 @@ export const groupsStandings: GroupData[] = [
   {
     groupName: "Grupo A",
     teams: [
-      { rank: 1, team: "México", points: 6, played: 2, won: 2, drawn: 0, lost: 0, goalsFor: 3, goalsAgainst: 0, goalDifference: 3, lastFive: ["V", "V", "N", "N", "N"], qualifies: true },
-      { rank: 2, team: "Coreia do Sul", points: 3, played: 2, won: 1, drawn: 0, lost: 1, goalsFor: 2, goalsAgainst: 2, goalDifference: 0, lastFive: ["V", "D", "N", "N", "N"], qualifies: true },
-      { rank: 3, team: "Tchéquia", points: 1, played: 2, won: 0, drawn: 1, lost: 1, goalsFor: 2, goalsAgainst: 3, goalDifference: -1, lastFive: ["D", "E", "N", "N", "N"], qualifies: true },
-      { rank: 4, team: "África do Sul", points: 1, played: 2, won: 0, drawn: 1, lost: 1, goalsFor: 1, goalsAgainst: 3, goalDifference: -2, lastFive: ["D", "E", "N", "N", "N"], qualifies: false }
+      { rank: 1, team: "México", points: 9, played: 3, won: 3, drawn: 0, lost: 0, goalsFor: 6, goalsAgainst: 0, goalDifference: 6, lastFive: ["V", "V", "V", "N", "N"], qualifies: true },
+      { rank: 2, team: "África do Sul", points: 4, played: 3, won: 1, drawn: 1, lost: 1, goalsFor: 2, goalsAgainst: 3, goalDifference: -1, lastFive: ["D", "E", "V", "N", "N"], qualifies: true },
+      { rank: 3, team: "Coreia do Sul", points: 3, played: 3, won: 1, drawn: 0, lost: 2, goalsFor: 2, goalsAgainst: 3, goalDifference: -1, lastFive: ["V", "D", "D", "N", "N"], qualifies: true },
+      { rank: 4, team: "Tchéquia", points: 1, played: 3, won: 0, drawn: 1, lost: 2, goalsFor: 2, goalsAgainst: 6, goalDifference: -4, lastFive: ["D", "E", "D", "N", "N"], qualifies: false }
     ]
   },
   {
     groupName: "Grupo B",
     teams: [
-      { rank: 1, team: "Canadá", points: 4, played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 7, goalsAgainst: 1, goalDifference: 6, lastFive: ["E", "V", "N", "N", "N"], qualifies: true },
-      { rank: 2, team: "Suíça", points: 4, played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 5, goalsAgainst: 2, goalDifference: 3, lastFive: ["E", "V", "N", "N", "N"], qualifies: true },
-      { rank: 3, team: "Bósnia e Herzegovina", points: 1, played: 2, won: 0, drawn: 1, lost: 1, goalsFor: 2, goalsAgainst: 5, goalDifference: -3, lastFive: ["E", "D", "N", "N", "N"], qualifies: false },
-      { rank: 4, team: "Catar", points: 1, played: 2, won: 0, drawn: 1, lost: 1, goalsFor: 1, goalsAgainst: 7, goalDifference: -6, lastFive: ["E", "D", "N", "N", "N"], qualifies: false }
+      { rank: 1, team: "Suíça", points: 7, played: 3, won: 2, drawn: 1, lost: 0, goalsFor: 7, goalsAgainst: 3, goalDifference: 4, lastFive: ["E", "V", "V", "N", "N"], qualifies: true },
+      { rank: 2, team: "Canadá", points: 4, played: 3, won: 1, drawn: 1, lost: 1, goalsFor: 8, goalsAgainst: 3, goalDifference: 5, lastFive: ["E", "V", "D", "N", "N"], qualifies: true },
+      { rank: 3, team: "Bósnia e Herzegovina", points: 4, played: 3, won: 1, drawn: 1, lost: 1, goalsFor: 5, goalsAgainst: 6, goalDifference: -1, lastFive: ["E", "D", "V", "N", "N"], qualifies: true },
+      { rank: 4, team: "Catar", points: 1, played: 3, won: 0, drawn: 1, lost: 2, goalsFor: 2, goalsAgainst: 10, goalDifference: -8, lastFive: ["E", "D", "D", "N", "N"], qualifies: false }
     ]
   },
   {
     groupName: "Grupo C",
     teams: [
-      { rank: 1, team: "Brasil", points: 4, played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 4, goalsAgainst: 1, goalDifference: 3, lastFive: ["E", "V", "N", "N", "N"], qualifies: true },
-      { rank: 2, team: "Marrocos", points: 4, played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 2, goalsAgainst: 1, goalDifference: 1, lastFive: ["E", "V", "N", "N", "N"], qualifies: true },
-      { rank: 3, team: "Escócia", points: 3, played: 2, won: 1, drawn: 0, lost: 1, goalsFor: 1, goalsAgainst: 1, goalDifference: 0, lastFive: ["V", "D", "N", "N", "N"], qualifies: true },
-      { rank: 4, team: "Haiti", points: 0, played: 2, won: 0, drawn: 0, lost: 2, goalsFor: 0, goalsAgainst: 4, goalDifference: -4, lastFive: ["D", "D", "N", "N", "N"], qualifies: false }
+      { rank: 1, team: "Brasil", points: 7, played: 3, won: 2, drawn: 1, lost: 0, goalsFor: 7, goalsAgainst: 1, goalDifference: 6, lastFive: ["E", "V", "V", "N", "N"], qualifies: true },
+      { rank: 2, team: "Marrocos", points: 7, played: 3, won: 2, drawn: 1, lost: 0, goalsFor: 6, goalsAgainst: 3, goalDifference: 3, lastFive: ["E", "V", "V", "N", "N"], qualifies: true },
+      { rank: 3, team: "Escócia", points: 3, played: 3, won: 1, drawn: 0, lost: 2, goalsFor: 1, goalsAgainst: 4, goalDifference: -3, lastFive: ["V", "D", "D", "N", "N"], qualifies: true },
+      { rank: 4, team: "Haiti", points: 0, played: 3, won: 0, drawn: 0, lost: 3, goalsFor: 2, goalsAgainst: 8, goalDifference: -6, lastFive: ["D", "D", "D", "N", "N"], qualifies: false }
     ]
   },
   {

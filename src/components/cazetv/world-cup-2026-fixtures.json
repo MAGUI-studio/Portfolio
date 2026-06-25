@@ -1681,8 +1681,28 @@
       "stadium": "Hard Rock Stadium",
       "hostCity": "miami",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 0,
+      "awayScore": 3,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "7'",
+          "autor": "VINICIUS JUNIOR",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "45'+3'",
+          "autor": "VINICIUS JUNIOR",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "60'",
+          "autor": "MATHEUS CUNHA",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 50,
@@ -1695,8 +1715,46 @@
       "stadium": "Mercedes-Benz Stadium",
       "hostCity": "atlanta",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 4,
+      "awayScore": 2,
+      "events": [
+        {
+          "tipo": "gol_contra",
+          "minuto": "10'",
+          "autor": "Yassine BOUNOU",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "39'",
+          "autor": "Achraf HAKIMI",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "43'",
+          "autor": "Wilson Isidor",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "45'+1'",
+          "autor": "Ismael SAIBARI",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "78'",
+          "autor": "Soufiane RAHIMI",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "89'",
+          "autor": "Gessime YASSINE",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 51,
@@ -1709,8 +1767,28 @@
       "stadium": "BC Place",
       "hostCity": "vancouver",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 2,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "46'",
+          "autor": "Ruben VARGAS",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "57'",
+          "autor": "Johan MANZAMBI",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "76'",
+          "autor": "Promise DAVID",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 52,
@@ -1723,8 +1801,34 @@
       "stadium": "Lumen Field",
       "hostCity": "seattle",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 3,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "29'",
+          "autor": "Kerim ALAJBEGOVIC",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol_contra",
+          "minuto": "34'",
+          "autor": "Mahmoud ABUNADA",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "42'",
+          "autor": "HASSAN ALHAYDOS",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "80'",
+          "autor": "Ermin MAHMIC",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 53,
@@ -1737,8 +1841,28 @@
       "stadium": "Estadio Azteca",
       "hostCity": "mexico-city",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 0,
+      "awayScore": 3,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "55'",
+          "autor": "Mateo CHAVEZ",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "61'",
+          "autor": "Julian QUINONES",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+4'",
+          "autor": "Alvaro FIDALGO",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 54,
@@ -1751,8 +1875,16 @@
       "stadium": "Estadio BBVA",
       "hostCity": "monterrey",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 1,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "63'",
+          "autor": "Thapelo MASEKO",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 55,

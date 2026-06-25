@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, Timer, MapPin } from "@phosphor-icons/react";
+import { resolvePlaceholder } from "./groups-data";
 
 interface MatchEvent {
   tipo: string;
@@ -43,7 +44,7 @@ export default function BrazilWidget({ fixtures, teamIsoCodes, onShowDetails }: 
   useEffect(() => {
     // Find Brazil matches
     const brazilMatches = fixtures.filter(
-      (f) => f.homeTeam === "Brasil" || f.awayTeam === "Brasil"
+      (f) => resolvePlaceholder(f.homeTeam) === "Brasil" || resolvePlaceholder(f.awayTeam) === "Brasil"
     );
 
     // Try to find the next upcoming match (no score yet or kickoff is in the future)
@@ -134,6 +135,9 @@ export default function BrazilWidget({ fixtures, teamIsoCodes, onShowDetails }: 
     }
   };
 
+  const resolvedHome = resolvePlaceholder(nextMatch.homeTeam);
+  const resolvedAway = resolvePlaceholder(nextMatch.awayTeam);
+
   return (
     <div className="w-full rounded-3xl border border-zinc-900 bg-zinc-950/40 p-6 md:p-8 shadow-2xl relative overflow-hidden group select-none mb-8">
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative z-10">
@@ -149,8 +153,8 @@ export default function BrazilWidget({ fixtures, teamIsoCodes, onShowDetails }: 
           <div className="flex items-center gap-4 py-2">
             {/* Home Team */}
             <div className="flex items-center gap-2.5">
-              {renderFlag(nextMatch.homeTeam)}
-              <span className="text-sm sm:text-base font-black text-white">{nextMatch.homeTeam}</span>
+              {renderFlag(resolvedHome)}
+              <span className="text-sm sm:text-base font-black text-white">{resolvedHome}</span>
             </div>
             
             {/* Score or VS */}
@@ -166,8 +170,8 @@ export default function BrazilWidget({ fixtures, teamIsoCodes, onShowDetails }: 
 
             {/* Away Team */}
             <div className="flex items-center gap-2.5">
-              <span className="text-sm sm:text-base font-black text-white">{nextMatch.awayTeam}</span>
-              {renderFlag(nextMatch.awayTeam)}
+              <span className="text-sm sm:text-base font-black text-white">{resolvedAway}</span>
+              {renderFlag(resolvedAway)}
             </div>
           </div>
 
