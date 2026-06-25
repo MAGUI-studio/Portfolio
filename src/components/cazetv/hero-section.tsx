@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import ReactCountryFlag from "react-country-flag";
-import { ArrowSquareOut, Trophy } from "@phosphor-icons/react";
+import { ArrowSquareOut, Trophy, CaretLeft, CaretRight } from "@phosphor-icons/react";
+import { resolvePlaceholder } from "./groups-data";
 
 interface Fixture {
   matchNumber: number;
@@ -30,7 +31,8 @@ export default function HeroSection({
   stageTranslations,
   teamIsoCodes,
 }: HeroSectionProps) {
-  const [currentMatch, setCurrentMatch] = useState<Fixture | null>(null);
+  const [concurrentMatches, setConcurrentMatches] = useState<Fixture[]>([]);
+  const [activeIdx, setActiveIdx] = useState(0);
   const [isLive, setIsLive] = useState(false);
 
   const [timeLeft, setTimeLeft] = useState({
@@ -39,6 +41,16 @@ export default function HeroSection({
     minutes: 0,
     seconds: 0,
   });
+
+  const currentMatch = concurrentMatches[activeIdx] || null;
+
+  const handlePrev = () => {
+    setActiveIdx((prev) => (prev === 0 ? concurrentMatches.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setActiveIdx((prev) => (prev === concurrentMatches.length - 1 ? 0 : prev + 1));
+  };
 
   useEffect(() => {
     const updateWidget = () => {
@@ -72,21 +84,38 @@ export default function HeroSection({
         foundMatch = sortedFixtures[sortedFixtures.length - 1];
       }
 
-      setCurrentMatch(foundMatch);
       setIsLive(live);
 
-      if (foundMatch && !live) {
-        const kickoff = new Date(foundMatch.kickoffUtc);
-        const diff = kickoff.getTime() - now.getTime();
+      if (foundMatch) {
+        const targetKickoff = foundMatch.kickoffUtc;
+        const matchesAtSameTime = sortedFixtures.filter(
+          (f) => f.kickoffUtc === targetKickoff
+        );
+        setConcurrentMatches((prev) => {
+          if (prev.length === 0 || prev[0].kickoffUtc !== targetKickoff) {
+            setActiveIdx(0);
+          }
+          return matchesAtSameTime;
+        });
 
-        if (diff > 0) {
-          setTimeLeft({
-            days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-            hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-            minutes: Math.floor((diff / (1000 * 60)) % 60),
-            seconds: Math.floor((diff / 1000) % 60),
-          });
+        if (!live) {
+          const kickoff = new Date(targetKickoff);
+          const diff = kickoff.getTime() - now.getTime();
+
+          if (diff > 0) {
+            setTimeLeft({
+              days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+              hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+              minutes: Math.floor((diff / (1000 * 60)) % 60),
+              seconds: Math.floor((diff / 1000) % 60),
+            });
+          } else {
+            setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+          }
         }
+      } else {
+        setConcurrentMatches([]);
+        setActiveIdx(0);
       }
     };
 
@@ -170,6 +199,9 @@ export default function HeroSection({
 
   if (!currentMatch) return null;
 
+  const resolvedHome = resolvePlaceholder(currentMatch.homeTeam);
+  const resolvedAway = resolvePlaceholder(currentMatch.awayTeam);
+
   return (
     <section className="relative overflow-hidden border-b border-zinc-900 bg-black">
       {/* Background */}
@@ -200,17 +232,37 @@ export default function HeroSection({
               Mundo FIFA 2026 com transmissão ao vivo pela CazéTV.
             </p>
 
-            {/* MATCH CARD */}
             {currentMatch && (
-              <div className="mt-10">
+              <div className="mt-10 w-full max-w-4xl mx-auto">
+                {/* CAROUSEL SELECTOR */}
+                {concurrentMatches.length > 1 && (
+                  <div className="mb-6 flex items-center justify-center gap-4 bg-zinc-950/65 border border-zinc-900/80 rounded-2xl py-2 px-4 w-fit mx-auto shadow-md">
+                    <button
+                      onClick={handlePrev}
+                      className="p-1.5 rounded-lg hover:bg-zinc-900 text-zinc-400 hover:text-white transition duration-200 cursor-pointer flex items-center justify-center"
+                    >
+                      <CaretLeft size={14} weight="bold" />
+                    </button>
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 select-none">
+                      Jogo {activeIdx + 1} de {concurrentMatches.length} em simultâneo
+                    </span>
+                    <button
+                      onClick={handleNext}
+                      className="p-1.5 rounded-lg hover:bg-zinc-900 text-zinc-400 hover:text-white transition duration-200 cursor-pointer flex items-center justify-center"
+                    >
+                      <CaretRight size={14} weight="bold" />
+                    </button>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-8">
                   {/* HOME */}
 
                   <div className="flex flex-col items-center text-center">
-                    {renderFlag(currentMatch.homeTeam)}
+                    {renderFlag(resolvedHome)}
 
                     <span className="mt-4 text-lg font-black uppercase text-white">
-                      {currentMatch.homeTeam}
+                      {resolvedHome}
                     </span>
                   </div>
 
@@ -304,10 +356,10 @@ export default function HeroSection({
                   {/* AWAY */}
 
                   <div className="flex flex-col items-center text-center">
-                    {renderFlag(currentMatch.awayTeam)}
+                    {renderFlag(resolvedAway)}
 
                     <span className="mt-4 text-lg font-black uppercase text-white">
-                      {currentMatch.awayTeam}
+                      {resolvedAway}
                     </span>
                   </div>
                 </div>
