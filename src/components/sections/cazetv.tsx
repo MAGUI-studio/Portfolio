@@ -710,12 +710,15 @@ export default function CazeTVLanding() {
                 }`}
               />
 
-              {/* Drawer Panel */}
-              <div 
-                className={`fixed top-0 right-0 h-full w-full max-w-md bg-zinc-950 border-l border-zinc-900 shadow-2xl z-50 flex flex-col transition-transform duration-300 ease-in-out transform ${
-                  isModalOpen ? "translate-x-0" : "translate-x-full"
-                }`}
-              >
+              {/* Drawer Container (Constrained by max-w-440 of layout.tsx) */}
+              <div className="fixed inset-0 z-50 pointer-events-none">
+                <div className="relative w-full h-full max-w-440 mx-auto">
+                  {/* Drawer Panel */}
+                  <div 
+                    className={`absolute top-0 right-0 h-full w-full max-w-md bg-zinc-950 border-l border-zinc-900 shadow-2xl flex flex-col transition-transform duration-300 ease-in-out transform pointer-events-auto ${
+                      isModalOpen ? "translate-x-0" : "translate-x-full"
+                    }`}
+                  >
                 {/* Drawer Header */}
                 <div className="flex items-center justify-between border-b border-zinc-900 p-6 shrink-0">
                   <div className="text-[10px] font-black uppercase tracking-widest text-zinc-500 flex items-center gap-2">
@@ -904,9 +907,11 @@ export default function CazeTVLanding() {
                       </Link>
                     </div>
                   )}
+                  </div>
                 </div>
               </div>
-            </>
+            </div>
+          </>
           );
         })()}
       </section>
