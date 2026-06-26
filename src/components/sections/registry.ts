@@ -348,6 +348,8 @@ export const sections: SectionEntry[] = [
     cardImage: "/images/cazetv/project-cover.webp",
     industry: "Mídia & Entretenimento",
     projectType: "Canal de streaming",
+    seoTitle: "CazéTV | Transmissões esportivas e entretenimento digital | MAGUI.studio",
+    seoDescription: "Landing page da CazéTV com cronograma da Copa do Mundo 2026, transmissões esportivas ao vivo e entretenimento digital para engajar fãs.",
     goal: "Engajar fãs com transmissões esportivas ao vivo e entretenimento.",
     tags: ["Streaming", "Esportes", "Entretenimento"],
     visible: true,
