@@ -68,7 +68,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
         </p>
       </div>
 
-      <div className="overflow-hidden rounded-lg border border-black/8 bg-white">
+      <div className="overflow-hidden rounded-xl border border-black/8 bg-white shadow-xl shadow-neutral-100/40 transition-all duration-500 hover:shadow-2xl hover:shadow-neutral-200/40">
         <div className="grid lg:grid-cols-[0.62fr_0.38fr]">
           <Link
             key={`${activeProject.slug}-image`}
@@ -80,11 +80,11 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
               alt={activeProject.title}
               fill
               sizes="(max-width: 1024px) 100vw, 62vw"
-              className="object-cover animate-[featured-image-in_700ms_ease-out]"
+              className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] animate-[featured-image-in_700ms_ease-out]"
               priority
             />
             <div className="absolute inset-0 bg-black/5 transition-colors group-hover:bg-transparent" />
-            <span className="absolute left-5 top-5 rounded-md bg-white/92 px-3 py-2 text-[10px] font-semibold uppercase text-black backdrop-blur">
+            <span className="absolute left-5 top-5 rounded-md bg-white/92 px-3 py-2 text-[10px] font-semibold uppercase text-black backdrop-blur-md shadow-xs">
               Projeto 0{activeIndex + 1}
             </span>
           </Link>
@@ -95,15 +95,15 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
           >
             <div>
               <div className="flex items-center justify-between gap-4">
-                <p className="text-[10px] font-semibold uppercase text-[#0093C8]">
+                <p className="text-[10px] font-semibold uppercase text-[#0093C8] tracking-wider">
                   {activeProject.industry} / {activeProject.projectType}
                 </p>
-                <span className="text-xs font-medium text-neutral-400">
+                <span className="text-xs font-semibold text-neutral-400">
                   0{activeIndex + 1} / 0{projects.length}
                 </span>
               </div>
 
-              <h3 className="mt-9 min-h-[120px] text-5xl font-medium leading-none text-black md:min-h-[144px] md:text-6xl">
+              <h3 className="mt-9 min-h-[120px] text-5xl font-medium leading-none text-black tracking-tight md:min-h-[144px] md:text-6xl">
                 {activeProject.title}
               </h3>
               <p className="mt-6 min-h-[84px] text-sm leading-7 text-neutral-600">
@@ -111,7 +111,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
               </p>
 
               <div className="mt-8 min-h-[144px] border-t border-black/8 pt-6">
-                <p className="text-[10px] font-semibold uppercase text-neutral-400">
+                <p className="text-[10px] font-semibold uppercase text-neutral-400 tracking-wider">
                   Objetivo
                 </p>
                 <p className="mt-3 text-sm leading-7 text-neutral-600">
@@ -125,7 +125,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                 {activeProject.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-sm bg-neutral-100 px-2 py-1 text-[10px] font-medium text-neutral-500"
+                    className="rounded-xs bg-neutral-100 px-2 py-1 text-[10px] font-medium text-neutral-500"
                   >
                     {tag}
                   </span>
@@ -134,7 +134,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
 
               <Link
                 href={`/projetos/${activeProject.slug}`}
-                className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-black"
+                className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-black hover:text-[#0093C8] transition-colors"
               >
                 Abrir projeto
                 <ArrowUpRight
@@ -147,7 +147,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
         </div>
 
         <div className="grid border-t border-black/8 lg:grid-cols-[1fr_auto]">
-          <div className="grid sm:grid-cols-3">
+          <div className="grid grid-cols-2 sm:grid-flow-col sm:auto-cols-fr">
             {projects.map((project, index) => {
               const isActive = index === activeIndex;
 
@@ -156,7 +156,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
                   key={project.slug}
                   type="button"
                   onClick={() => setActiveIndex(index)}
-                  className={`relative border-b border-black/8 px-5 py-4 text-left transition-colors sm:border-b-0 sm:border-r ${
+                  className={`relative border-b border-r border-black/8 px-5 py-4 text-left transition-colors last:border-r-0 sm:border-b-0 ${
                     isActive ? "bg-neutral-50" : "bg-white hover:bg-neutral-50"
                   }`}
                 >
@@ -187,7 +187,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
               type="button"
               onClick={showPrevious}
               aria-label="Projeto anterior"
-              className="inline-flex size-10 items-center justify-center rounded-md border border-black/8 text-black transition-colors hover:bg-neutral-50"
+              className="inline-flex size-10 items-center justify-center rounded-md border border-black/8 text-black transition-colors hover:bg-neutral-50 cursor-pointer"
             >
               <ArrowLeft size={16} />
             </button>
@@ -195,7 +195,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
               type="button"
               onClick={() => setIsPaused((current) => !current)}
               aria-label={isPaused ? "Continuar carrossel" : "Pausar carrossel"}
-              className="inline-flex size-10 items-center justify-center rounded-md border border-black/8 text-black transition-colors hover:bg-neutral-50"
+              className="inline-flex size-10 items-center justify-center rounded-md border border-black/8 text-black transition-colors hover:bg-neutral-50 cursor-pointer"
             >
               {isPaused ? <Play size={16} weight="fill" /> : <Pause size={16} weight="fill" />}
             </button>
@@ -203,7 +203,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
               type="button"
               onClick={showNext}
               aria-label="Próximo projeto"
-              className="inline-flex size-10 items-center justify-center rounded-md border border-black/8 text-black transition-colors hover:bg-neutral-50"
+              className="inline-flex size-10 items-center justify-center rounded-md border border-black/8 text-black transition-colors hover:bg-neutral-50 cursor-pointer"
             >
               <ArrowRight size={16} />
             </button>

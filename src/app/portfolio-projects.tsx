@@ -72,11 +72,13 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
     });
   }
 
+  // Handle input search
   function handleQueryChange(value: string) {
     setQuery(value);
     updateUrl(value, normalizedActiveIndustry);
   }
 
+  // Handle filter buttons
   function handleIndustryChange(industry: string) {
     setActiveIndustry(industry);
     updateUrl(query, industry);
@@ -128,13 +130,13 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
           <span className="sr-only">Buscar projetos</span>
           <MagnifyingGlass
             size={16}
-            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-black/40"
+            className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-black/40 transition-colors"
           />
           <input
             value={query}
             onChange={(event) => handleQueryChange(event.target.value)}
             placeholder="Buscar projetos..."
-            className="h-10 w-full border border-black/10 bg-white pl-9 pr-4 text-xs text-black outline-none transition rounded-md focus:border-black"
+            className="h-10 w-full border border-black/10 bg-white pl-9 pr-4 text-xs text-black outline-none transition-all rounded-md focus:border-black focus:ring-4 focus:ring-black/5"
           />
         </label>
 
@@ -144,10 +146,10 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
               key={industry}
               type="button"
               onClick={() => handleIndustryChange(industry)}
-              className={`h-8 px-3 text-xs font-medium transition rounded-md ${
+              className={`h-8 px-3 text-xs font-medium transition-all rounded-md cursor-pointer active:scale-95 ${
                 normalizedActiveIndustry === industry
-                  ? "bg-[#0093C8] text-white"
-                  : "bg-white border border-black/5 text-black/60 hover:border-black/20"
+                  ? "bg-[#0093C8] text-white shadow-md shadow-[#0093C8]/25"
+                  : "bg-white border border-black/5 text-black/60 hover:border-black/20 hover:text-black"
               }`}
             >
               {industry}
@@ -157,12 +159,12 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
       </div>
 
       {filteredProjects.length > 0 ? (
-        <div className="w-full grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="w-full grid gap-x-6 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project) => (
             <Link
               key={project.slug}
               href={`/projetos/${project.slug}`}
-              className="group flex flex-col space-y-3"
+              className="group flex flex-col space-y-3 p-4 rounded-xl border border-transparent bg-transparent hover:bg-white hover:border-black/5 hover:shadow-xl hover:shadow-neutral-100/50 hover:-translate-y-1 transition-all duration-300"
             >
               <div className="relative aspect-4/3 w-full overflow-hidden rounded-lg bg-neutral-100">
                 <Image
@@ -170,7 +172,7 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
                   alt={project.title}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
                   priority
                 />
 
@@ -181,12 +183,12 @@ export function PortfolioProjects({ projects }: PortfolioProjectsProps) {
 
               <div className="space-y-1">
                 <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-lg font-medium text-black tracking-tight group-hover:underline">
+                  <h3 className="text-lg font-medium text-black tracking-tight group-hover:text-[#0093C8] transition-colors">
                     {project.title}
                   </h3>
                   <ArrowUpRight
                     size={14}
-                    className="text-black/40 group-hover:text-black transition-colors"
+                    className="text-black/40 group-hover:text-[#0093C8] transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300"
                   />
                 </div>
 

@@ -26,6 +26,7 @@ const featuredProjectSlugs = new Set([
   "powervet",
   "flow",
   "arco-odontologia",
+  "cazetv",
 ]);
 
 function getActiveSlug(
@@ -107,7 +108,21 @@ export default async function Home(props: HomePageProps) {
           __html: JSON.stringify(createPortfolioJsonLd(visibleSections, baseUrl)),
         }}
       />
-      <section className="w-full">
+      <section className="w-full overflow-hidden bg-neutral-100">
+        <style>{`
+          @keyframes banner-reveal {
+            0% {
+              opacity: 0;
+              transform: scale(1.05);
+              filter: blur(4px);
+            }
+            100% {
+              opacity: 1;
+              transform: scale(1);
+              filter: blur(0);
+            }
+          }
+        `}</style>
         <Image
           src="/utils/page-banner.webp"
           alt="MAGUI.studio"
@@ -115,14 +130,13 @@ export default async function Home(props: HomePageProps) {
           height={854}
           priority
           sizes="100vw"
-          className="h-auto w-full block"
+          className="h-auto w-full block animate-[banner-reveal_1.4s_cubic-bezier(0.16,1,0.3,1)_forwards]"
         />
       </section>
 
       <FeaturedProjects projects={featuredProjects} />
 
       <PortfolioProjects projects={regularProjects} />
-
       <footer className="w-full mt-20 border-t border-black/10 bg-white pt-24 pb-12 px-6 md:px-12 lg:px-16">
         <div className="space-y-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
