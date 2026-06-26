@@ -1897,8 +1897,22 @@
       "stadium": "Lincoln Financial Field",
       "hostCity": "philadelphia",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 0,
+      "awayScore": 2,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "7'",
+          "autor": "Nicolas PEPE",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "64'",
+          "autor": "Nicolas PEPE",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 56,
@@ -1911,8 +1925,28 @@
       "stadium": "MetLife Stadium",
       "hostCity": "new-york",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 2,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "2'",
+          "autor": "Leroy SANE",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "9'",
+          "autor": "Nilson ANGULO",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "77'",
+          "autor": "Gonzalo PLATA",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 57,
@@ -1925,8 +1959,22 @@
       "stadium": "AT&T Stadium",
       "hostCity": "dallas",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 1,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "56'",
+          "autor": "Daizen MAEDA",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "62'",
+          "autor": "Anthony ELANGA",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 58,
@@ -1939,8 +1987,34 @@
       "stadium": "Arrowhead Stadium",
       "hostCity": "kansas-city",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 1,
+      "awayScore": 3,
+      "events": [
+        {
+          "tipo": "gol_contra",
+          "minuto": "3'",
+          "autor": "Ellyes SKHIRI",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "7'",
+          "autor": "Brian BROBBEY",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "54'",
+          "autor": "Hazem MASTOURI",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "62'",
+          "autor": "Jan Paul VAN HECKE",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 59,
@@ -1953,8 +2027,40 @@
       "stadium": "SoFi Stadium",
       "hostCity": "los-angeles",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 3,
+      "awayScore": 2,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "3'",
+          "autor": "Auston TRUSTY",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "10'",
+          "autor": "Arda GULER",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "31'",
+          "autor": "Baris Alper YILMAZ",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "49'",
+          "autor": "Sebastian BERHALTER",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+8'",
+          "autor": "Kaan Ayhan",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 60,
@@ -1967,8 +2073,8 @@
       "stadium": "Levi's Stadium",
       "hostCity": "san-francisco",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "matchNumber": 61,

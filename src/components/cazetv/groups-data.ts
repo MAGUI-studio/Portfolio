@@ -50,28 +50,28 @@ export const groupsStandings: GroupData[] = [
   {
     groupName: "Grupo D",
     teams: [
-      { rank: 1, team: "Estados Unidos", points: 6, played: 2, won: 2, drawn: 0, lost: 0, goalsFor: 6, goalsAgainst: 1, goalDifference: 5, lastFive: ["V", "V", "N", "N", "N"], qualifies: true },
-      { rank: 2, team: "Austrália", points: 3, played: 2, won: 1, drawn: 0, lost: 1, goalsFor: 2, goalsAgainst: 2, goalDifference: 0, lastFive: ["V", "D", "N", "N", "N"], qualifies: true },
-      { rank: 3, team: "Paraguai", points: 3, played: 2, won: 1, drawn: 0, lost: 1, goalsFor: 2, goalsAgainst: 4, goalDifference: -2, lastFive: ["D", "V", "N", "N", "N"], qualifies: true },
-      { rank: 4, team: "Turquia", points: 0, played: 2, won: 0, drawn: 0, lost: 2, goalsFor: 0, goalsAgainst: 3, goalDifference: -3, lastFive: ["D", "D", "N", "N", "N"], qualifies: false }
+      { rank: 1, team: "Estados Unidos", points: 6, played: 3, won: 2, drawn: 0, lost: 1, goalsFor: 8, goalsAgainst: 4, goalDifference: 4, lastFive: ["V", "V", "D", "N", "N"], qualifies: true },
+      { rank: 2, team: "Austrália", points: 4, played: 3, won: 1, drawn: 1, lost: 1, goalsFor: 2, goalsAgainst: 2, goalDifference: 0, lastFive: ["V", "D", "E", "N", "N"], qualifies: true },
+      { rank: 3, team: "Paraguai", points: 4, played: 3, won: 1, drawn: 1, lost: 1, goalsFor: 2, goalsAgainst: 4, goalDifference: -2, lastFive: ["D", "V", "E", "N", "N"], qualifies: true },
+      { rank: 4, team: "Turquia", points: 3, played: 3, won: 1, drawn: 0, lost: 2, goalsFor: 3, goalsAgainst: 5, goalDifference: -2, lastFive: ["D", "D", "V", "N", "N"], qualifies: false }
     ]
   },
   {
     groupName: "Grupo E",
     teams: [
-      { rank: 1, team: "Alemanha", points: 6, played: 2, won: 2, drawn: 0, lost: 0, goalsFor: 9, goalsAgainst: 2, goalDifference: 7, lastFive: ["V", "V", "N", "N", "N"], qualifies: true },
-      { rank: 2, team: "Costa do Marfim", points: 3, played: 2, won: 1, drawn: 0, lost: 1, goalsFor: 2, goalsAgainst: 2, goalDifference: 0, lastFive: ["V", "D", "N", "N", "N"], qualifies: true },
-      { rank: 3, team: "Equador", points: 1, played: 2, won: 0, drawn: 1, lost: 1, goalsFor: 0, goalsAgainst: 1, goalDifference: -1, lastFive: ["D", "E", "N", "N", "N"], qualifies: false },
-      { rank: 4, team: "Curaçao", points: 1, played: 2, won: 0, drawn: 1, lost: 1, goalsFor: 1, goalsAgainst: 7, goalDifference: -6, lastFive: ["D", "E", "N", "N", "N"], qualifies: false }
+      { rank: 1, team: "Alemanha", points: 6, played: 3, won: 2, drawn: 0, lost: 1, goalsFor: 10, goalsAgainst: 4, goalDifference: 6, lastFive: ["V", "V", "D", "N", "N"], qualifies: true },
+      { rank: 2, team: "Costa do Marfim", points: 6, played: 3, won: 2, drawn: 0, lost: 1, goalsFor: 4, goalsAgainst: 2, goalDifference: 2, lastFive: ["V", "D", "V", "N", "N"], qualifies: true },
+      { rank: 3, team: "Equador", points: 4, played: 3, won: 1, drawn: 1, lost: 1, goalsFor: 2, goalsAgainst: 2, goalDifference: 0, lastFive: ["D", "E", "V", "N", "N"], qualifies: true },
+      { rank: 4, team: "Curaçao", points: 1, played: 3, won: 0, drawn: 1, lost: 2, goalsFor: 1, goalsAgainst: 9, goalDifference: -8, lastFive: ["D", "E", "D", "N", "N"], qualifies: false }
     ]
   },
   {
     groupName: "Grupo F",
     teams: [
-      { rank: 1, team: "Holanda", teamDisplay: "Países Baixos", points: 4, played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 7, goalsAgainst: 3, goalDifference: 4, lastFive: ["E", "V", "N", "N", "N"], qualifies: true },
-      { rank: 2, team: "Japão", points: 4, played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 6, goalsAgainst: 2, goalDifference: 4, lastFive: ["E", "V", "N", "N", "N"], qualifies: true },
-      { rank: 3, team: "Suécia", points: 3, played: 2, won: 1, drawn: 0, lost: 1, goalsFor: 6, goalsAgainst: 6, goalDifference: 0, lastFive: ["V", "D", "N", "N", "N"], qualifies: true },
-      { rank: 4, team: "Tunísia", points: 0, played: 2, won: 0, drawn: 0, lost: 2, goalsFor: 1, goalsAgainst: 9, goalDifference: -8, lastFive: ["D", "D", "N", "N", "N"], qualifies: false }
+      { rank: 1, team: "Holanda", teamDisplay: "Países Baixos", points: 7, played: 3, won: 2, drawn: 1, lost: 0, goalsFor: 10, goalsAgainst: 4, goalDifference: 6, lastFive: ["E", "V", "V", "N", "N"], qualifies: true },
+      { rank: 2, team: "Japão", points: 5, played: 3, won: 1, drawn: 2, lost: 0, goalsFor: 7, goalsAgainst: 3, goalDifference: 4, lastFive: ["E", "V", "E", "N", "N"], qualifies: true },
+      { rank: 3, team: "Suécia", points: 4, played: 3, won: 1, drawn: 1, lost: 1, goalsFor: 7, goalsAgainst: 7, goalDifference: 0, lastFive: ["V", "D", "E", "N", "N"], qualifies: true },
+      { rank: 4, team: "Tunísia", points: 0, played: 3, won: 0, drawn: 0, lost: 3, goalsFor: 2, goalsAgainst: 12, goalDifference: -10, lastFive: ["D", "D", "D", "N", "N"], qualifies: false }
     ]
   },
   {
