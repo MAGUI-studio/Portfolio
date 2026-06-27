@@ -2087,8 +2087,40 @@
       "stadium": "Gillette Stadium",
       "hostCity": "boston",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 1,
+      "awayScore": 4,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "21'",
+          "autor": "Thelo AASGAARD",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "7'",
+          "autor": "Ousmane DEMBELE",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "20'",
+          "autor": "Ousmane DEMBELE",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "32'",
+          "autor": "Ousmane DEMBELE",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+4'",
+          "autor": "Desire DOUE",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 62,
@@ -2101,8 +2133,46 @@
       "stadium": "BMO Field",
       "hostCity": "toronto",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 5,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "4'",
+          "autor": "Habib DIARRA",
+          "time": "casa"
+        },
+        {
+          "tipo": "cartao_vermelho",
+          "minuto": "13'",
+          "autor": "REBIN SULAKA",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "56'",
+          "autor": "Ismaila SARR",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "59'",
+          "autor": "Pape GUEYE",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "71'",
+          "autor": "Pape GUEYE",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "82'",
+          "autor": "Iliman NDIAYE",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 63,
@@ -2115,8 +2185,22 @@
       "stadium": "Lumen Field",
       "hostCity": "seattle",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 1,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "5'",
+          "autor": "MAHMOUD SABER",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "14'",
+          "autor": "Ramin REZAEIAN",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 64,
@@ -2129,8 +2213,46 @@
       "stadium": "BC Place",
       "hostCity": "vancouver",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 1,
+      "awayScore": 5,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "28'",
+          "autor": "Leandro TROSSARD",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "50'",
+          "autor": "Leandro TROSSARD",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "66'",
+          "autor": "Kevin DE BRUYNE",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "84'",
+          "autor": "Elijah JUST",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "86'",
+          "autor": "Romelu LUKAKU",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+4'",
+          "autor": "Alexis SAELEMAEKERS",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 65,
@@ -2143,8 +2265,8 @@
       "stadium": "NRG Stadium",
       "hostCity": "houston",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "matchNumber": 66,
@@ -2157,8 +2279,22 @@
       "stadium": "Estadio Akron",
       "hostCity": "guadalajara",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 0,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "42'",
+          "autor": "Alex BAENA",
+          "time": "fora"
+        },
+        {
+          "tipo": "cartao_vermelho",
+          "minuto": "90'+4'",
+          "autor": "Agustin CANOBBIO",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 67,
