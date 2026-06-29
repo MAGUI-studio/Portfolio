@@ -89,17 +89,17 @@ export default function Bracket({ fixtures, teamIsoCodes, onShowDetails }: Brack
   const finals = fixtures.filter((f) => f.stage === "final" || f.stage === "third-place").sort((a, b) => b.matchNumber - a.matchNumber); // Final first, then 3rd Place
 
   // Symmetrical bracket lists based on matchNumbers (J73 to J104)
-  const roundOf32LeftNumbers = [74, 77, 73, 75, 83, 84, 81, 82];
-  const roundOf32RightNumbers = [76, 78, 79, 80, 86, 88, 85, 87];
+  const roundOf32LeftNumbers = [76, 78, 79, 80, 86, 88, 85, 87];
+  const roundOf32RightNumbers = [74, 77, 73, 75, 83, 84, 81, 82];
   
-  const roundOf16LeftNumbers = [89, 90, 93, 94];
-  const roundOf16RightNumbers = [91, 92, 95, 96];
+  const roundOf16LeftNumbers = [91, 92, 95, 96];
+  const roundOf16RightNumbers = [89, 90, 93, 94];
 
-  const quartersLeftNumbers = [97, 98];
-  const quartersRightNumbers = [99, 100];
+  const quartersLeftNumbers = [99, 100];
+  const quartersRightNumbers = [97, 98];
 
-  const semisLeftNumbers = [101];
-  const semisRightNumbers = [102];
+  const semisLeftNumbers = [102];
+  const semisRightNumbers = [101];
 
   // Helper to map and sort fixtures by a specific number sequence
   const mapFixturesByNumbers = (nums: number[]) => {
@@ -176,13 +176,13 @@ export default function Bracket({ fixtures, teamIsoCodes, onShowDetails }: Brack
       if (isCompact || isFeatured) return null;
       const num = match.matchNumber;
 
-      const leftTops = [74, 73, 83, 81, 89, 93, 97];
-      const leftBottoms = [77, 75, 84, 82, 90, 94, 98];
-      const rightTops = [76, 79, 86, 85, 91, 95, 99];
-      const rightBottoms = [78, 80, 88, 87, 92, 96, 100];
+      const leftTops = [76, 86, 79, 85, 91, 95, 99];
+      const leftBottoms = [78, 88, 80, 87, 92, 96, 100];
+      const rightTops = [74, 73, 83, 81, 89, 93, 97];
+      const rightBottoms = [77, 75, 84, 82, 90, 94, 98];
 
-      const leftInputs = [89, 90, 93, 94, 97, 98, 101];
-      const rightInputs = [91, 92, 95, 96, 99, 100, 102];
+      const leftInputs = [91, 92, 95, 96, 99, 100, 102];
+      const rightInputs = [89, 90, 93, 94, 97, 98, 101];
 
       let vHeight = "0px";
       if ([73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88].includes(num)) {
