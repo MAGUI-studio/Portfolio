@@ -235,7 +235,22 @@ export default function Bracket({ fixtures, teamIsoCodes, onShowDetails }: Brack
         {/* Match Header */}
         <div className={`flex items-center justify-between font-black uppercase tracking-wider text-zinc-500 ${isFeatured ? "text-[10px] mb-3" : "text-[8px] mb-2"}`}>
           <span>Jogo {match.matchNumber}</span>
-          <span className="truncate max-w-[120px]">{match.hostCity.replace("-", " ")}</span>
+          <span className="truncate max-w-[130px]">
+            {(() => {
+              try {
+                const dateObj = new Date(match.kickoffUtc);
+                return dateObj.toLocaleDateString("pt-BR", {
+                  day: "2-digit",
+                  month: "2-digit",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  timeZone: "America/Sao_Paulo"
+                });
+              } catch {
+                return match.date;
+              }
+            })()}
+          </span>
         </div>
 
         {/* Teams List */}
