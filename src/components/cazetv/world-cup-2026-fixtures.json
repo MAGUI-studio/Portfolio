@@ -2307,8 +2307,22 @@
       "stadium": "MetLife Stadium",
       "hostCity": "new-york",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 0,
+      "awayScore": 2,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "62'",
+          "autor": "Jude BELLINGHAM",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "67'",
+          "autor": "Harry KANE",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 68,
@@ -2321,8 +2335,28 @@
       "stadium": "Lincoln Financial Field",
       "hostCity": "philadelphia",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 2,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "31'",
+          "autor": "Petar SUCIC",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "73'",
+          "autor": "Derrick LUCKASSEN",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "83'",
+          "autor": "Nikola VLASIC",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 69,
@@ -2335,8 +2369,46 @@
       "stadium": "Arrowhead Stadium",
       "hostCity": "kansas-city",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 3,
+      "awayScore": 3,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "28'",
+          "autor": "Marko ARNAUTOVIC",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "45'",
+          "autor": "Rafik BELGHALI",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "55'",
+          "autor": "Marcel SABITZER",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "60'",
+          "autor": "Riyad Mahrez",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+3'",
+          "autor": "Riyad Mahrez",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+6'",
+          "autor": "Sasa KALAJDZIC",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 70,
@@ -2349,8 +2421,34 @@
       "stadium": "AT&T Stadium",
       "hostCity": "dallas",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 1,
+      "awayScore": 3,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "19'",
+          "autor": "Giovani Lo Celso",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "31'",
+          "autor": "Lautaro MARTINEZ",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "55'",
+          "autor": "MOUSA ALTAMARI",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "80'",
+          "autor": "Lionel MESSI",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 71,
@@ -2363,8 +2461,8 @@
       "stadium": "Hard Rock Stadium",
       "hostCity": "miami",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 0,
+      "awayScore": 0
     },
     {
       "matchNumber": 72,
@@ -2377,8 +2475,34 @@
       "stadium": "Mercedes-Benz Stadium",
       "hostCity": "atlanta",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 3,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "10'",
+          "autor": "Eldor SHOMURODOV",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "68'",
+          "autor": "Yoane WISSA",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "78'",
+          "autor": "Fiston MAYELE",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+1'",
+          "autor": "Yoane WISSA",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 73,
@@ -2386,13 +2510,21 @@
       "kickoffUtc": "2026-06-28T19:00:00Z",
       "stage": "round-of-32",
       "group": null,
-      "homeTeam": "2º do Grupo A",
-      "awayTeam": "2º do Grupo B",
+      "homeTeam": "África do Sul",
+      "awayTeam": "Canadá",
       "stadium": "SoFi Stadium",
       "hostCity": "los-angeles",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 0,
+      "awayScore": 1,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "90'+2'",
+          "autor": "Stephen EUSTAQUIO",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 74,

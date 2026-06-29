@@ -25,7 +25,7 @@ export const groupsStandings: GroupData[] = [
     teams: [
       { rank: 1, team: "México", points: 9, played: 3, won: 3, drawn: 0, lost: 0, goalsFor: 6, goalsAgainst: 0, goalDifference: 6, lastFive: ["V", "V", "V", "N", "N"], qualifies: true },
       { rank: 2, team: "África do Sul", points: 4, played: 3, won: 1, drawn: 1, lost: 1, goalsFor: 2, goalsAgainst: 3, goalDifference: -1, lastFive: ["D", "E", "V", "N", "N"], qualifies: true },
-      { rank: 3, team: "Coreia do Sul", points: 3, played: 3, won: 1, drawn: 0, lost: 2, goalsFor: 2, goalsAgainst: 3, goalDifference: -1, lastFive: ["V", "D", "D", "N", "N"], qualifies: true },
+      { rank: 3, team: "Coreia do Sul", points: 3, played: 3, won: 1, drawn: 0, lost: 2, goalsFor: 2, goalsAgainst: 3, goalDifference: -1, lastFive: ["V", "D", "D", "N", "N"], qualifies: false },
       { rank: 4, team: "Tchéquia", points: 1, played: 3, won: 0, drawn: 1, lost: 2, goalsFor: 2, goalsAgainst: 6, goalDifference: -4, lastFive: ["D", "E", "D", "N", "N"], qualifies: false }
     ]
   },
@@ -43,7 +43,7 @@ export const groupsStandings: GroupData[] = [
     teams: [
       { rank: 1, team: "Brasil", points: 7, played: 3, won: 2, drawn: 1, lost: 0, goalsFor: 7, goalsAgainst: 1, goalDifference: 6, lastFive: ["E", "V", "V", "N", "N"], qualifies: true },
       { rank: 2, team: "Marrocos", points: 7, played: 3, won: 2, drawn: 1, lost: 0, goalsFor: 6, goalsAgainst: 3, goalDifference: 3, lastFive: ["E", "V", "V", "N", "N"], qualifies: true },
-      { rank: 3, team: "Escócia", points: 3, played: 3, won: 1, drawn: 0, lost: 2, goalsFor: 1, goalsAgainst: 4, goalDifference: -3, lastFive: ["V", "D", "D", "N", "N"], qualifies: true },
+      { rank: 3, team: "Escócia", points: 3, played: 3, won: 1, drawn: 0, lost: 2, goalsFor: 1, goalsAgainst: 4, goalDifference: -3, lastFive: ["V", "D", "D", "N", "N"], qualifies: false },
       { rank: 4, team: "Haiti", points: 0, played: 3, won: 0, drawn: 0, lost: 3, goalsFor: 2, goalsAgainst: 8, goalDifference: -6, lastFive: ["D", "D", "D", "N", "N"], qualifies: false }
     ]
   },
@@ -79,7 +79,7 @@ export const groupsStandings: GroupData[] = [
     teams: [
       { rank: 1, team: "Bélgica", points: 5, played: 3, won: 1, drawn: 2, lost: 0, goalsFor: 6, goalsAgainst: 2, goalDifference: 4, lastFive: ["E", "E", "V", "N", "N"], qualifies: true },
       { rank: 2, team: "Egito", points: 5, played: 3, won: 1, drawn: 2, lost: 0, goalsFor: 5, goalsAgainst: 3, goalDifference: 2, lastFive: ["E", "V", "E", "N", "N"], qualifies: true },
-      { rank: 3, team: "Irã", points: 3, played: 3, won: 0, drawn: 3, lost: 0, goalsFor: 3, goalsAgainst: 3, goalDifference: 0, lastFive: ["E", "E", "E", "N", "N"], qualifies: true },
+      { rank: 3, team: "Irã", points: 3, played: 3, won: 0, drawn: 3, lost: 0, goalsFor: 3, goalsAgainst: 3, goalDifference: 0, lastFive: ["E", "E", "E", "N", "N"], qualifies: false },
       { rank: 4, team: "Nova Zelândia", points: 1, played: 3, won: 0, drawn: 1, lost: 2, goalsFor: 4, goalsAgainst: 10, goalDifference: -6, lastFive: ["E", "D", "D", "N", "N"], qualifies: false }
     ]
   },
@@ -88,7 +88,7 @@ export const groupsStandings: GroupData[] = [
     teams: [
       { rank: 1, team: "Espanha", points: 7, played: 3, won: 2, drawn: 1, lost: 0, goalsFor: 5, goalsAgainst: 0, goalDifference: 5, lastFive: ["E", "V", "V", "N", "N"], qualifies: true },
       { rank: 2, team: "Cabo Verde", points: 3, played: 3, won: 0, drawn: 3, lost: 0, goalsFor: 2, goalsAgainst: 2, goalDifference: 0, lastFive: ["E", "E", "E", "N", "N"], qualifies: true },
-      { rank: 3, team: "Uruguai", points: 2, played: 3, won: 0, drawn: 2, lost: 1, goalsFor: 3, goalsAgainst: 4, goalDifference: -1, lastFive: ["E", "E", "D", "N", "N"], qualifies: true },
+      { rank: 3, team: "Uruguai", points: 2, played: 3, won: 0, drawn: 2, lost: 1, goalsFor: 3, goalsAgainst: 4, goalDifference: -1, lastFive: ["E", "E", "D", "N", "N"], qualifies: false },
       { rank: 4, team: "Arábia Saudita", points: 2, played: 3, won: 0, drawn: 2, lost: 1, goalsFor: 1, goalsAgainst: 5, goalDifference: -4, lastFive: ["E", "D", "E", "N", "N"], qualifies: false }
     ]
   },
@@ -104,28 +104,28 @@ export const groupsStandings: GroupData[] = [
   {
     groupName: "Grupo J",
     teams: [
-      { rank: 1, team: "Argentina", points: 6, played: 2, won: 2, drawn: 0, lost: 0, goalsFor: 5, goalsAgainst: 0, goalDifference: 5, lastFive: ["V", "V", "N", "N", "N"], qualifies: true },
-      { rank: 2, team: "Áustria", points: 3, played: 2, won: 1, drawn: 0, lost: 1, goalsFor: 3, goalsAgainst: 3, goalDifference: 0, lastFive: ["V", "D", "N", "N", "N"], qualifies: true },
-      { rank: 3, team: "Argélia", points: 3, played: 2, won: 1, drawn: 0, lost: 1, goalsFor: 2, goalsAgainst: 4, goalDifference: -2, lastFive: ["D", "V", "N", "N", "N"], qualifies: true },
-      { rank: 4, team: "Jordânia", points: 0, played: 2, won: 0, drawn: 0, lost: 2, goalsFor: 2, goalsAgainst: 5, goalDifference: -3, lastFive: ["D", "D", "N", "N", "N"], qualifies: false }
+      { rank: 1, team: "Argentina", points: 9, played: 3, won: 3, drawn: 0, lost: 0, goalsFor: 8, goalsAgainst: 1, goalDifference: 7, lastFive: ["V", "V", "V", "N", "N"], qualifies: true },
+      { rank: 2, team: "Áustria", points: 4, played: 3, won: 1, drawn: 1, lost: 1, goalsFor: 6, goalsAgainst: 6, goalDifference: 0, lastFive: ["V", "D", "E", "N", "N"], qualifies: true },
+      { rank: 3, team: "Argélia", points: 4, played: 3, won: 1, drawn: 1, lost: 1, goalsFor: 5, goalsAgainst: 7, goalDifference: -2, lastFive: ["D", "V", "E", "N", "N"], qualifies: true },
+      { rank: 4, team: "Jordânia", points: 0, played: 3, won: 0, drawn: 0, lost: 3, goalsFor: 3, goalsAgainst: 8, goalDifference: -5, lastFive: ["D", "D", "D", "N", "N"], qualifies: false }
     ]
   },
   {
     groupName: "Grupo K",
     teams: [
-      { rank: 1, team: "Colômbia", points: 6, played: 2, won: 2, drawn: 0, lost: 0, goalsFor: 4, goalsAgainst: 1, goalDifference: 3, lastFive: ["V", "V", "N", "N", "N"], qualifies: true },
-      { rank: 2, team: "Portugal", points: 4, played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 6, goalsAgainst: 1, goalDifference: 5, lastFive: ["E", "V", "N", "N", "N"], qualifies: true },
-      { rank: 3, team: "RD Congo", points: 1, played: 2, won: 0, drawn: 1, lost: 1, goalsFor: 1, goalsAgainst: 2, goalDifference: -1, lastFive: ["E", "D", "N", "N", "N"], qualifies: false },
-      { rank: 4, team: "Uzbequistão", points: 0, played: 2, won: 0, drawn: 0, lost: 2, goalsFor: 1, goalsAgainst: 8, goalDifference: -7, lastFive: ["D", "D", "N", "N", "N"], qualifies: false }
+      { rank: 1, team: "Colômbia", points: 7, played: 3, won: 2, drawn: 1, lost: 0, goalsFor: 4, goalsAgainst: 1, goalDifference: 3, lastFive: ["V", "V", "E", "N", "N"], qualifies: true },
+      { rank: 2, team: "Portugal", points: 5, played: 3, won: 1, drawn: 2, lost: 0, goalsFor: 6, goalsAgainst: 1, goalDifference: 5, lastFive: ["E", "V", "E", "N", "N"], qualifies: true },
+      { rank: 3, team: "RD Congo", points: 4, played: 3, won: 1, drawn: 1, lost: 1, goalsFor: 4, goalsAgainst: 3, goalDifference: 1, lastFive: ["E", "D", "V", "N", "N"], qualifies: true },
+      { rank: 4, team: "Uzbequistão", points: 0, played: 3, won: 0, drawn: 0, lost: 3, goalsFor: 2, goalsAgainst: 11, goalDifference: -9, lastFive: ["D", "D", "D", "N", "N"], qualifies: false }
     ]
   },
   {
     groupName: "Grupo L",
     teams: [
-      { rank: 1, team: "Inglaterra", points: 4, played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 4, goalsAgainst: 2, goalDifference: 2, lastFive: ["V", "E", "N", "N", "N"], qualifies: true },
-      { rank: 2, team: "Gana", points: 4, played: 2, won: 1, drawn: 1, lost: 0, goalsFor: 1, goalsAgainst: 0, goalDifference: 1, lastFive: ["V", "E", "N", "N", "N"], qualifies: true },
-      { rank: 3, team: "Croácia", points: 3, played: 2, won: 1, drawn: 0, lost: 1, goalsFor: 3, goalsAgainst: 4, goalDifference: -1, lastFive: ["D", "V", "N", "N", "N"], qualifies: true },
-      { rank: 4, team: "Panamá", points: 0, played: 2, won: 0, drawn: 0, lost: 2, goalsFor: 0, goalsAgainst: 2, goalDifference: -2, lastFive: ["D", "D", "N", "N", "N"], qualifies: false }
+      { rank: 1, team: "Inglaterra", points: 7, played: 3, won: 2, drawn: 1, lost: 0, goalsFor: 6, goalsAgainst: 2, goalDifference: 4, lastFive: ["V", "E", "V", "N", "N"], qualifies: true },
+      { rank: 2, team: "Croácia", points: 6, played: 3, won: 2, drawn: 0, lost: 1, goalsFor: 5, goalsAgainst: 5, goalDifference: 0, lastFive: ["D", "V", "V", "N", "N"], qualifies: true },
+      { rank: 3, team: "Gana", points: 4, played: 3, won: 1, drawn: 1, lost: 1, goalsFor: 2, goalsAgainst: 2, goalDifference: 0, lastFive: ["V", "E", "D", "N", "N"], qualifies: true },
+      { rank: 4, team: "Panamá", points: 0, played: 3, won: 0, drawn: 0, lost: 3, goalsFor: 0, goalsAgainst: 4, goalDifference: -4, lastFive: ["D", "D", "D", "N", "N"], qualifies: false }
     ]
   }
 ];
@@ -148,16 +148,17 @@ export const resolvePlaceholder = (teamName: string): string => {
     }
   }
 
-  // Handle 3º do Grupo wildcards
+  // Handle 3º do Grupo wildcards based on the actual qualified teams:
+  // Best 3rd place teams: 1. RD Congo, 2. Suécia, 3. Gana, 4. Equador, 5. Bósnia, 6. Argélia, 7. Paraguai, 8. Senegal
   if (teamName.startsWith("3º do Grupo")) {
-    if (teamName.includes("A/B/C/D/F")) return "Tchéquia";
-    if (teamName.includes("C/D/F/G/H")) return "Escócia";
-    if (teamName.includes("C/E/F/H/I")) return "Suécia";
-    if (teamName.includes("E/H/I/J/K")) return "Paraguai";
-    if (teamName.includes("D/E/G/I/J")) return "Argélia";
-    if (teamName.includes("A/B/D/G/I")) return "Bélgica";
-    if (teamName.includes("B/C/E/F/I")) return "Cabo Verde";
-    if (teamName.includes("B/F/G/J/L")) return "Bósnia e Herzegovina";
+    if (teamName.includes("A/B/C/D/F")) return "Suécia"; // Suécia (2nd best)
+    if (teamName.includes("C/D/F/G/H")) return "Paraguai"; // Paraguai (7th best)
+    if (teamName.includes("C/E/F/H/I")) return "Senegal"; // Senegal (8th best)
+    if (teamName.includes("E/H/I/J/K")) return "Argélia"; // Argélia (6th best)
+    if (teamName.includes("D/E/G/I/J")) return "Equador"; // Equador (4th best)
+    if (teamName.includes("A/B/D/G/I")) return "Bósnia e Herzegovina"; // Bósnia (5th best)
+    if (teamName.includes("B/C/E/F/I")) return "RD Congo"; // RD Congo (1st best)
+    if (teamName.includes("B/F/G/J/L")) return "Gana"; // Gana (3rd best)
   }
 
   return teamName;

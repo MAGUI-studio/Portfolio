@@ -337,15 +337,6 @@ export default function Bracket({ fixtures, teamIsoCodes, onShowDetails }: Brack
 
   return (
     <div className="w-full">
-      {/* Pending Matches Warning Banner */}
-      {hasPendingGroupMatches && (
-        <div className="mb-6 rounded-xl bg-orange-950/20 border border-orange-900/30 p-4 text-xs font-semibold text-orange-400 flex items-start gap-3">
-          <Warning size={16} className="text-orange-500 shrink-0 mt-0.5" />
-          <span>
-            <strong className="uppercase mr-1">Previsão Parcial:</strong> Esta é uma simulação baseada na classificação atual dos grupos. Os confrontos finais das fases eliminatórias serão oficialmente consolidados assim que todos os jogos da Fase de Grupos forem finalizados.
-          </span>
-        </div>
-      )}
 
       {/* Symmetrical tree view for both mobile and desktop (scrollable horizontally) */}
       <div 
