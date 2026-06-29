@@ -25,6 +25,10 @@ interface Fixture {
   matchUrl: string;
   homeScore?: number | null;
   awayScore?: number | null;
+  homePenalties?: number | null;
+  awayPenalties?: number | null;
+  winner?: string | null;
+  vencedor?: string | null;
   events?: MatchEvent[];
 }
 
@@ -254,81 +258,102 @@ export default function Bracket({ fixtures, teamIsoCodes, onShowDetails }: Brack
         </div>
 
         {/* Teams List */}
-        <div className={`flex flex-col ${isFeatured ? "gap-2.5" : "gap-1.5"}`}>
-          {/* Home */}
-          <div 
-            className={`flex items-center justify-between gap-2 py-0.5 transition duration-200 ${
-              isHomeHovered ? "text-orange-400" : ""
-            }`}
-            onMouseEnter={() => homeResolved && !homeResolved.startsWith("1º") && !homeResolved.startsWith("2º") && !homeResolved.startsWith("3º") && setHoveredTeam(homeResolved)}
-            onMouseLeave={() => setHoveredTeam(null)}
-          >
-            <div className="flex items-center gap-2 min-w-0">
-              {renderFlag(match.homeTeam)}
-              <span className={`font-bold truncate transition duration-200 ${
-                isFeatured ? "text-[13px]" : "text-[11px]"
-              } ${
-                isHomeHovered 
-                  ? "text-orange-500 font-extrabold" 
-                  : hasScore && match.homeScore! < match.awayScore! 
-                    ? "text-zinc-500" 
-                    : "text-white"
-              }`}>
-                {homeResolved || match.homeTeam}
-              </span>
-            </div>
-            {hasScore && (
-              <span className={`font-black transition duration-200 ${
-                isFeatured ? "text-sm" : "text-xs"
-              } ${
-                isHomeHovered
-                  ? "text-orange-500"
-                  : match.homeScore! < match.awayScore! 
-                    ? "text-zinc-500" 
-                    : "text-orange-500"
-              }`}>
-                {match.homeScore}
-              </span>
-            )}
-          </div>
+        {(() => {
+          const isHomeWinner = hasScore && (
+            match.homeScore! > match.awayScore! || 
+            (match.homeScore! === match.awayScore! && (match.winner === homeResolved || match.vencedor === homeResolved))
+          );
+          const isAwayWinner = hasScore && (
+            match.awayScore! > match.homeScore! || 
+            (match.homeScore! === match.awayScore! && (match.winner === awayResolved || match.vencedor === awayResolved))
+          );
+          const isHomeLoser = hasScore && !isHomeWinner && (match.homeScore! < match.awayScore! || isAwayWinner);
+          const isAwayLoser = hasScore && !isAwayWinner && (match.awayScore! < match.homeScore! || isHomeWinner);
 
-          {/* Away */}
-          <div 
-            className={`flex items-center justify-between gap-2 py-0.5 transition duration-200 ${
-              isAwayHovered ? "text-orange-400" : ""
-            }`}
-            onMouseEnter={() => awayResolved && !awayResolved.startsWith("1º") && !awayResolved.startsWith("2º") && !awayResolved.startsWith("3º") && setHoveredTeam(awayResolved)}
-            onMouseLeave={() => setHoveredTeam(null)}
-          >
-            <div className="flex items-center gap-2 min-w-0">
-              {renderFlag(match.awayTeam)}
-              <span className={`font-bold truncate transition duration-200 ${
-                isFeatured ? "text-[13px]" : "text-[11px]"
-              } ${
-                isAwayHovered 
-                  ? "text-orange-500 font-extrabold" 
-                  : hasScore && match.awayScore! < match.homeScore! 
-                    ? "text-zinc-500" 
-                    : "text-white"
-              }`}>
-                {awayResolved || match.awayTeam}
-              </span>
+          return (
+            <div className={`flex flex-col ${isFeatured ? "gap-2.5" : "gap-1.5"}`}>
+              {/* Home */}
+              <div 
+                className={`flex items-center justify-between gap-2 py-0.5 transition duration-200 ${
+                  isHomeHovered ? "text-orange-400" : ""
+                }`}
+                onMouseEnter={() => homeResolved && !homeResolved.startsWith("1º") && !homeResolved.startsWith("2º") && !homeResolved.startsWith("3º") && setHoveredTeam(homeResolved)}
+                onMouseLeave={() => setHoveredTeam(null)}
+              >
+                <div className="flex items-center gap-2 min-w-0">
+                  {renderFlag(match.homeTeam)}
+                  <span className={`font-bold truncate transition duration-200 ${
+                    isFeatured ? "text-[13px]" : "text-[11px]"
+                  } ${
+                    isHomeHovered 
+                      ? "text-orange-500 font-extrabold" 
+                      : isHomeLoser 
+                        ? "text-zinc-500" 
+                        : "text-white"
+                  }`}>
+                    {homeResolved || match.homeTeam}
+                  </span>
+                </div>
+                {hasScore && (
+                  <span className={`font-black transition duration-200 ${
+                    isFeatured ? "text-sm" : "text-xs"
+                  } ${
+                    isHomeHovered
+                      ? "text-orange-500"
+                      : isHomeLoser 
+                        ? "text-zinc-500" 
+                        : "text-orange-500"
+                  }`}>
+                    {match.homeScore}
+                    {typeof match.homePenalties === "number" && (
+                      <span className="text-[9px] font-normal text-zinc-400 ml-1">({match.homePenalties})</span>
+                    )}
+                  </span>
+                )}
+              </div>
+
+              {/* Away */}
+              <div 
+                className={`flex items-center justify-between gap-2 py-0.5 transition duration-200 ${
+                  isAwayHovered ? "text-orange-400" : ""
+                }`}
+                onMouseEnter={() => awayResolved && !awayResolved.startsWith("1º") && !awayResolved.startsWith("2º") && !awayResolved.startsWith("3º") && setHoveredTeam(awayResolved)}
+                onMouseLeave={() => setHoveredTeam(null)}
+              >
+                <div className="flex items-center gap-2 min-w-0">
+                  {renderFlag(match.awayTeam)}
+                  <span className={`font-bold truncate transition duration-200 ${
+                    isFeatured ? "text-[13px]" : "text-[11px]"
+                  } ${
+                    isAwayHovered 
+                      ? "text-orange-500 font-extrabold" 
+                      : isAwayLoser 
+                        ? "text-zinc-500" 
+                        : "text-white"
+                  }`}>
+                    {awayResolved || match.awayTeam}
+                  </span>
+                </div>
+                {hasScore && (
+                  <span className={`font-black transition duration-200 ${
+                    isFeatured ? "text-sm" : "text-xs"
+                  } ${
+                    isAwayHovered
+                      ? "text-orange-500"
+                      : isAwayLoser 
+                        ? "text-zinc-500" 
+                        : "text-orange-500"
+                  }`}>
+                    {match.awayScore}
+                    {typeof match.awayPenalties === "number" && (
+                      <span className="text-[9px] font-normal text-zinc-400 ml-1">({match.awayPenalties})</span>
+                    )}
+                  </span>
+                )}
+              </div>
             </div>
-            {hasScore && (
-              <span className={`font-black transition duration-200 ${
-                isFeatured ? "text-sm" : "text-xs"
-              } ${
-                isAwayHovered
-                  ? "text-orange-500"
-                  : match.awayScore! < match.homeScore! 
-                    ? "text-zinc-500" 
-                    : "text-orange-500"
-              }`}>
-                {match.awayScore}
-              </span>
-            )}
-          </div>
-        </div>
+          );
+        })()}
       </button>
     );
   };

@@ -40,6 +40,10 @@ interface Fixture {
   matchUrl: string;
   homeScore?: number | null;
   awayScore?: number | null;
+  homePenalties?: number | null;
+  awayPenalties?: number | null;
+  winner?: string | null;
+  vencedor?: string | null;
   events?: MatchEvent[];
 }
 
@@ -757,6 +761,11 @@ export default function CazeTVLanding() {
                           <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500 px-3 py-1.5 bg-zinc-900/80 rounded-xl">VS</span>
                         )}
                       </div>
+                      {hasScore && typeof selectedMatch.homePenalties === "number" && typeof selectedMatch.awayPenalties === "number" && (
+                        <div className="text-[10px] font-black uppercase tracking-wider text-orange-500 mt-1 select-none">
+                          ({selectedMatch.homePenalties}) Pên. ({selectedMatch.awayPenalties})
+                        </div>
+                      )}
                     </div>
 
                     <div className="flex flex-col items-center text-center gap-2">

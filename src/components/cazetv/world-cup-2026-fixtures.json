@@ -2537,9 +2537,26 @@
       "stadium": "Gillette Stadium",
       "hostCity": "boston",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": 0,
-      "awayScore": 0,
-      "events": []
+      "homeScore": 1,
+      "awayScore": 1,
+      "homePenalties": 3,
+      "awayPenalties": 4,
+      "winner": "Paraguai",
+      "vencedor": "Paraguai",
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "42'",
+          "autor": "Julio ENCISO",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "54'",
+          "autor": "Kai HAVERTZ",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 75,

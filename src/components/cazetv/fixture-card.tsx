@@ -22,6 +22,10 @@ interface Fixture {
   matchUrl: string;
   homeScore?: number | null;
   awayScore?: number | null;
+  homePenalties?: number | null;
+  awayPenalties?: number | null;
+  winner?: string | null;
+  vencedor?: string | null;
   events?: MatchEvent[];
 }
 
@@ -159,6 +163,11 @@ export default function FixtureCard({
                 <span className="text-zinc-800 text-2xl md:text-3xl">:</span>
                 <span>{fixture.awayScore}</span>
               </div>
+              {typeof fixture.homePenalties === "number" && typeof fixture.awayPenalties === "number" && (
+                <div className="text-[10px] font-black uppercase tracking-wider text-orange-500 mt-1 select-none">
+                  ({fixture.homePenalties}) Pên. ({fixture.awayPenalties})
+                </div>
+              )}
               {isLiveNow && (
                 <div className="mt-2.5 flex items-center justify-center gap-2">
                   <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />
