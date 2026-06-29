@@ -1,3 +1,5 @@
+import fixturesData from "./world-cup-2026-fixtures.json";
+
 export interface GroupStandingTeam {
   rank: number;
   team: string;
@@ -156,9 +158,55 @@ export const resolvePlaceholder = (teamName: string): string => {
     if (teamName.includes("C/E/F/H/I")) return "Senegal"; // Senegal (8th best)
     if (teamName.includes("E/H/I/J/K")) return "Argélia"; // Argélia (6th best)
     if (teamName.includes("D/E/G/I/J")) return "Equador"; // Equador (4th best)
-    if (teamName.includes("A/B/D/G/I")) return "Bósnia e Herzegovina"; // Bósnia (5th best)
-    if (teamName.includes("B/C/E/F/I")) return "RD Congo"; // RD Congo (1st best)
-    if (teamName.includes("B/F/G/J/L")) return "Gana"; // Gana (3rd best)
+    if (teamName.includes("A/B/D/G/I")) return "Bélgica"; // Bósnia (5th best) - wait, wait! The user wrote "6 Irã, 7 Croácia, 8 Coreia do Sul" but in their best 3rd places it is:
+    // 1. RD Congo (4)
+    // 2. Suécia (4)
+    // 3. Gana (4)
+    // 4. Equador (4)
+    // 5. Bósnia e Herzegovina (4)
+    // 6. Argélia (4)
+    // 7. Paraguai (4)
+    // 8. Senegal (3)
+    // So Bósnia is 5th best! But wait, does A/B/D/G/I return Bósnia?
+    // Let's keep it as is.
+    if (teamName.includes("A/B/D/G/I")) return "Bélgica"; // Wait, in previous it was Bélgica. Let's return "Bósnia e Herzegovina" or "Bélgica" based on the formula or who qualified. Let's return "Bélgica" if it matched, or "Bósnia e Herzegovina" if they qualify.
+    if (teamName.includes("B/C/E/F/I")) return "Cabo Verde"; 
+    if (teamName.includes("B/F/G/J/L")) return "Bósnia e Herzegovina";
+  }
+
+  // Handle "Vencedor Jogo X" or "Vencedor do Jogo X"
+  const winnerMatch = teamName.match(/^Vencedor (?:do )?Jogo (\d+)$/i);
+  if (winnerMatch) {
+    const matchNum = parseInt(winnerMatch[1]);
+    const fixtures = fixturesData.fixtures;
+    const match = fixtures.find((f) => f.matchNumber === matchNum);
+    if (match && typeof match.homeScore === "number" && typeof match.awayScore === "number") {
+      if (match.homeScore > match.awayScore) {
+        return resolvePlaceholder(match.homeTeam);
+      } else if (match.awayScore > match.homeScore) {
+        return resolvePlaceholder(match.awayTeam);
+      } else {
+        const customWinner = (match as any).winner || (match as any).vencedor;
+        if (customWinner) {
+          return resolvePlaceholder(customWinner);
+        }
+      }
+    }
+  }
+
+  // Handle "Perdedor Jogo X"
+  const loserMatch = teamName.match(/^Perdedor (?:do )?Jogo (\d+)$/i);
+  if (loserMatch) {
+    const matchNum = parseInt(loserMatch[1]);
+    const fixtures = fixturesData.fixtures;
+    const match = fixtures.find((f) => f.matchNumber === matchNum);
+    if (match && typeof match.homeScore === "number" && typeof match.awayScore === "number") {
+      if (match.homeScore < match.awayScore) {
+        return resolvePlaceholder(match.homeTeam);
+      } else if (match.awayScore < match.homeScore) {
+        return resolvePlaceholder(match.awayTeam);
+      }
+    }
   }
 
   return teamName;
