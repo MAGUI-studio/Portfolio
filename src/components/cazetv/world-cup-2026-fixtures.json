@@ -2569,8 +2569,26 @@
       "stadium": "Estadio BBVA",
       "hostCity": "monterrey",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 1,
+      "awayScore": 1,
+      "homePenalties": 2,
+      "awayPenalties": 3,
+      "winner": "Marrocos",
+      "vencedor": "Marrocos",
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "72'",
+          "autor": "Cody GAKPO",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "90'+1'",
+          "autor": "Issa DIOP",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 76,
