@@ -2635,8 +2635,28 @@
       "stadium": "MetLife Stadium",
       "hostCity": "new-york",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 3,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "74'",
+          "autor": "Kylian MBAPPE",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "53'",
+          "autor": "Bradley BARCOLA",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "45'",
+          "autor": "Kylian MBAPPE",
+          "time": "casa"
+        }
+      ]
     },
     {
       "matchNumber": 78,
@@ -2649,8 +2669,28 @@
       "stadium": "AT&T Stadium",
       "hostCity": "dallas",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 1,
+      "awayScore": 2,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "74'",
+          "autor": "Amad DIALLO",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "86'",
+          "autor": "Erling HAALAND",
+          "time": "fora"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "39'",
+          "autor": "Antonio NUSA",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 79,
@@ -2663,8 +2703,28 @@
       "stadium": "Estadio Azteca",
       "hostCity": "mexico-city",
       "matchUrl": "https://www.youtube.com/@CazeTV",
-      "homeScore": null,
-      "awayScore": null
+      "homeScore": 2,
+      "awayScore": 0,
+      "events": [
+        {
+          "tipo": "gol",
+          "minuto": "31'",
+          "autor": "Raul JIMENEZ",
+          "time": "casa"
+        },
+        {
+          "tipo": "gol",
+          "minuto": "22'",
+          "autor": "Julian QUINONES",
+          "time": "casa"
+        },
+        {
+          "tipo": "cartao_vermelho",
+          "minuto": "90'+5'",
+          "autor": "Piero HINCAPIE",
+          "time": "fora"
+        }
+      ]
     },
     {
       "matchNumber": 80,
